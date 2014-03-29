@@ -8,10 +8,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
-namespace Gameplay.Core.Type
+
+namespace Assets.Scripts.Gameplay.Core.Type
 {
+    /// <summary>
+    /// All types of gamestates
+    /// </summary>
 	public enum GamestateType
 	{
+        Invalid,        // If none is set
 		MainMenu,
 		Training,
 		Multiplayer
