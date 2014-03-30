@@ -235,6 +235,4 @@ public class InputManager : MonoBehaviour
 	private Dictionary<InputCategory, List<IInputListener>> m_CategoryInputListener;
 
 	////////////////////////////////////////////////////////
-
-	public float AxisThreshold;
 }

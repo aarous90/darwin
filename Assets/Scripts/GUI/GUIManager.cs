@@ -12,6 +12,7 @@ public class GUIManager : MonoBehaviour, IInputListener
     void Start()
     {
         GlobalInput.RegisterListener(InputManager.InputCategory.GUI, this);
+		FocusIndex(0);
     }
 
     // Update is called once per frame
@@ -38,20 +39,15 @@ public class GUIManager : MonoBehaviour, IInputListener
 		}
 		if ((Math.Abs(axisValue) < AxisMax && m_MaxAxis.ContainsKey(axisName)))
 		{
-			m_GUITimer += Time.deltaTime;
-			if (m_GUITimer > InputDelay)
+			if (axisName == InputStringMapping.GUIInputMapping.NavigateHorizontal)
 			{
-				if (axisName == InputStringMapping.GUIInputMapping.NavigateHorizontal)
-				{
-					NavigateHorizontal(axisValue);
-				}
-				if (axisName == InputStringMapping.GUIInputMapping.NavigateVertical)
-				{
-					NavigateVertical(axisValue);
-				}
-				m_MaxAxis.Remove(axisName);
-				m_GUITimer = 0;
+				NavigateHorizontal(axisValue);
 			}
+			if (axisName == InputStringMapping.GUIInputMapping.NavigateVertical)
+			{
+				NavigateVertical(axisValue);
+			}
+			m_MaxAxis.Remove(axisName);
 		}		
 	}
 
@@ -172,8 +168,6 @@ public class GUIManager : MonoBehaviour, IInputListener
 
     ////////////////////////////////////////////////////////
 
-	private float							m_GUITimer = 0;
-
     private int                             m_CurrentAccessIndex = 0;
 
     private GUIItem                         m_Focus;
@@ -187,7 +181,6 @@ public class GUIManager : MonoBehaviour, IInputListener
     public InputManager						GlobalInput;
 	public float							AxisThreshold = 0.1f;
 	public float							AxisMax = 0.9f;
-	public float							InputDelay = 0.166f;
 
 
 }

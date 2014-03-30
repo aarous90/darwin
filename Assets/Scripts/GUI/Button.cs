@@ -7,6 +7,7 @@ public class Button : GUIItem
 		m_ButtonTexture = GetComponent<GUITexture>();
 		Selected = (Texture2D) m_ButtonTexture.texture;
 		m_Name = this.GetType().Name;
+		m_ButtonTexture.texture = Unfocused;
         base.Init();
 	}
 	
