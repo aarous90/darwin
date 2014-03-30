@@ -1,24 +1,18 @@
-﻿using Assets.Scripts.Gameplay.Core.Type;
-
-
-namespace Assets.Scripts.Gameplay.Core.Gamestates 
+﻿
+/// <summary>
+/// The abstract gamestate
+/// </summary>
+public interface IGameState 
 {
-    /// <summary>
-    /// The abstract gamestate
-    /// </summary>
-	public interface IGameState 
-	{
+	string GetName();
 
-		string GetName();
+	GamestateType GetGamestateType();
 
-		GamestateType GetGamestateType();
+	void Enter();
 
-		void Enter();
+	void Leave();
 
-		void Leave();
-
-		void Reset();
-
-	}
+	void Reset();
 
 }
+

@@ -7,49 +7,43 @@
 //     der Code erneut generiert wird.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System;
-using Assets.Scripts.Gameplay.Core.Type;
 
-
-namespace Assets.Scripts.Gameplay.Core.Gamestates 
+/// <summary>
+/// The training
+/// </summary>
+public class TrainingState : IGameState
 {
-    /// <summary>
-    /// The training
-    /// </summary>
-	public class TrainingState : IGameState
+	public TrainingState()
 	{
-		public TrainingState()
-		{
 
-		}
-
-
-		#region IGameState implementation
-		public string GetName()
-		{
-			return "Training State";
-		}
-
-		public GamestateType GetGamestateType()
-		{
-			return GamestateType.Training;
-		}
-
-		public void Enter()
-		{
-
-		}
-
-		public void Leave()
-		{
-
-		}
-
-		public void Reset()
-		{
-
-		}
-		#endregion
 	}
+
+
+	#region IGameState implementation
+	public string GetName()
+	{
+		return "Training State";
+	}
+
+	public GamestateType GetGamestateType()
+	{
+		return GamestateType.Training;
+	}
+
+	public void Enter()
+	{
+
+	}
+
+	public void Leave()
+	{
+
+	}
+
+	public void Reset()
+	{
+
+	}
+	#endregion
 }
 

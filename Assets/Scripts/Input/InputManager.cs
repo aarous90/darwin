@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 /// <summary>
@@ -39,16 +38,29 @@ public class InputManager : MonoBehaviour
 		}
 	}
 
+	public static InputManager Get()
+	{
+		GameObject im = GameObject.Find("InputManager");
+		if (im != null)
+		{
+			return im.GetComponent<InputManager>();
+		}
+		return null;
+	}
+
 	// Use this for initialization
 	void Start()
 	{
+		UnityEngine.Object.DontDestroyOnLoad(this);
 		SetupInputHandler();
+
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
 		HandleInput();
+		RemoveListeners();
 	}
 
 	////////////////////////////////////////////////////////
@@ -83,12 +95,33 @@ public class InputManager : MonoBehaviour
 		}
 	}
 
+	public void UnregisterListener(InputCategory category, IInputListener listener)
+	{
+		List<IInputListener> listenerList;
+		
+		if (m_CategoryInputListener.TryGetValue(category, out listenerList))
+		{
+			listenerList.Remove(listener);
+		}
+		else
+		{
+			// TODO hans: handle errors
+			
+		}
+	}
+
 	////////////////////////////////////////////////////////
 
 	private void HandleInput()
 	{
 		foreach (KeyValuePair<KeyCategory, List<IInputListener>> entry in m_InputListener)
 		{
+			// clear missing listeners automatically
+			if (entry.Value == null)
+			{
+				m_RemoveList.Add(entry.Key);
+				continue;
+			}
 			List<IInputListener> categoryListener;
 			bool HasCategory = m_CategoryInputListener.TryGetValue(entry.Key.Category, out categoryListener) && (categoryListener.Count > 0);
 			bool HasListener = (entry.Value.Count > 0) ? true : false;
@@ -106,6 +139,15 @@ public class InputManager : MonoBehaviour
 					break;
 			}
 		}
+	}
+
+	private void RemoveListeners()
+	{
+		foreach(KeyCategory kc in m_RemoveList)
+		{
+			m_InputListener.Remove(kc);
+		}
+		m_RemoveList.Clear();
 	}
 
 	private void HandleButtonInput(bool hasListener, bool hasCategory, KeyValuePair<KeyCategory, List<IInputListener>> entry, List<IInputListener> categoryListener)
@@ -229,6 +271,8 @@ public class InputManager : MonoBehaviour
 	}
 
 	////////////////////////////////////////////////////////
+
+	private List<KeyCategory> m_RemoveList = new List<KeyCategory>();
 
 	private Dictionary<KeyCategory, List<IInputListener>> m_InputListener;
 

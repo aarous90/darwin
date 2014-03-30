@@ -7,19 +7,16 @@
 //     der Code erneut generiert wird.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System;
 
-namespace Assets.Scripts.Gameplay.Core.Type
+/// <summary>
+/// All types of gamestates
+/// </summary>
+public enum GamestateType
 {
-    /// <summary>
-    /// All types of gamestates
-    /// </summary>
-	public enum GamestateType
-	{
-        Invalid,        // If none is set
-		MainMenu,
-		Training,
-		Multiplayer
-	}
+	Invalid,        // If none is set
+	MainMenu,
+	Training,
+	Multiplayer,
+	Exit
 }
 

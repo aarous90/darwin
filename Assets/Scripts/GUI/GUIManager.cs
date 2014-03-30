@@ -7,11 +7,21 @@ using System.Collections.Generic;
 /// </summary>
 public class GUIManager : MonoBehaviour, IInputListener
 {
+	public static GUIManager Get()
+	{
+		GameObject im = GameObject.Find("GUIManager");
+		if (im != null)
+		{
+			return im.GetComponent<GUIManager>();
+		}
+		return null;
+	}
 
     // Use this for initialization
     void Start()
-    {
-        GlobalInput.RegisterListener(InputManager.InputCategory.GUI, this);
+	{
+		UnityEngine.Object.DontDestroyOnLoad(this);
+		GlobalInput.RegisterListener(InputManager.InputCategory.GUI, this);
 		FocusIndex(0);
     }
 
@@ -30,6 +40,14 @@ public class GUIManager : MonoBehaviour, IInputListener
 			m_GUIElements.Add(item.AccessIndex, item);
 		}
     }
+
+	public void RemoveItem(GUIItem item)
+	{
+		if (item.AccessIndex >= 0)
+		{
+			m_GUIElements.Remove(item.AccessIndex);
+		}
+	}
 
     ////////////////////////////////////////////////////////
 	

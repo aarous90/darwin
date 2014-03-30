@@ -7,45 +7,39 @@
 //     der Code erneut generiert wird.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System;
-using Assets.Scripts.Gameplay.Core.Type;
 
-
-namespace Assets.Scripts.Gameplay.Core.Gamestates 
+/// <summary>
+/// The main menu
+/// </summary>
+public class MainMenuState : IGameState
 {
-    /// <summary>
-    /// The main menu
-    /// </summary>
-	public class MainMenuState : IGameState
+	public MainMenuState()
 	{
-		public MainMenuState()
-		{
 
-		}
-
-		#region IGameState implementation
-
-		public string GetName()
-		{
-			return "Main Menu State";
-		}
-		public GamestateType GetGamestateType()
-		{
-			return GamestateType.MainMenu;
-		}
-		public void Enter()
-		{
-
-		}
-		public void Leave()
-		{
-
-		}
-		public void Reset()
-		{
-
-		}
-
-		#endregion
 	}
+
+	#region IGameState implementation
+
+	public string GetName()
+	{
+		return "Main Menu State";
+	}
+	public GamestateType GetGamestateType()
+	{
+		return GamestateType.MainMenu;
+	}
+	public void Enter()
+	{
+
+	}
+	public void Leave()
+	{
+
+	}
+	public void Reset()
+	{
+
+	}
+
+	#endregion
 }

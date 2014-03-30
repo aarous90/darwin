@@ -7,44 +7,38 @@
 //     der Code erneut generiert wird.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System;
-using Assets.Scripts.Gameplay.Core.Type;
 
-
-namespace Assets.Scripts.Gameplay.Core.Gamestates 
+/// <summary>
+/// Ther multiplayer
+/// </summary>
+public class MultiplayerState : IGameState
 {
-    /// <summary>
-    /// Ther multiplayer
-    /// </summary>
-	public class MultiplayerState : IGameState
+	public MultiplayerState()
 	{
-		public MultiplayerState()
-		{
 
-		}
-
-
-		#region IGameState implementation
-		public string GetName ()
-		{
-			return "Multiplayer State";
-		}
-		public GamestateType GetGamestateType ()
-		{
-			return GamestateType.Multiplayer;
-		}
-		public void Enter ()
-		{
-		}
-		public void Leave()
-		{
-
-		}
-		public void Reset()
-		{
-
-		}
-		#endregion
 	}
+
+
+	#region IGameState implementation
+	public string GetName ()
+	{
+		return "Multiplayer State";
+	}
+	public GamestateType GetGamestateType ()
+	{
+		return GamestateType.Multiplayer;
+	}
+	public void Enter ()
+	{
+	}
+	public void Leave()
+	{
+
+	}
+	public void Reset()
+	{
+
+	}
+	#endregion
 }
 
