@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class MultiplayerButton : Button 
 {
-
+	public override void OnSelect()
+	{
+		Application.LoadLevel("Multiplayer");
+	}
 }

@@ -25,7 +25,10 @@ public class GUIManager : MonoBehaviour, IInputListener
 
     public void AddItem(GUIItem item)
     {
-        m_GUIElements.Add(item.AccessIndex, item);
+		if (item.AccessIndex >= 0)
+		{
+			m_GUIElements.Add(item.AccessIndex, item);
+		}
     }
 
     ////////////////////////////////////////////////////////
@@ -34,18 +37,19 @@ public class GUIManager : MonoBehaviour, IInputListener
 	{
 		if (Math.Abs(axisValue) > AxisMax && !m_MaxAxis.ContainsKey(axisName))
 		{
-			m_MaxAxis.Add(axisName, true);
+			m_MaxAxis.Add(axisName, axisValue);
 			return;
 		}
-		if ((Math.Abs(axisValue) < AxisMax && m_MaxAxis.ContainsKey(axisName)))
+		float value;
+		if ((Math.Abs(axisValue) < AxisMax && m_MaxAxis.TryGetValue(axisName, out value)))
 		{
 			if (axisName == InputStringMapping.GUIInputMapping.NavigateHorizontal)
 			{
-				NavigateHorizontal(axisValue);
+				NavigateHorizontal(value);
 			}
 			if (axisName == InputStringMapping.GUIInputMapping.NavigateVertical)
 			{
-				NavigateVertical(axisValue);
+				NavigateVertical(value);
 			}
 			m_MaxAxis.Remove(axisName);
 		}		
@@ -97,13 +101,11 @@ public class GUIManager : MonoBehaviour, IInputListener
     {
 		if (axis > AxisThreshold)
 		{
-			int nextIndex = Math.Abs(m_CurrentAccessIndex - 1) % m_GUIElements.Count;
-			FocusIndex(nextIndex);
+			FocusIndex(-1);
 		}
 		else if (axis < -AxisThreshold)
-		{
-			int nextIndex = (m_CurrentAccessIndex + 1) % m_GUIElements.Count;
-			FocusIndex(nextIndex);
+		{			
+			FocusIndex(1);
 		}
     }
 
@@ -133,15 +135,30 @@ public class GUIManager : MonoBehaviour, IInputListener
 
     ////////////////////////////////////////////////////////
 
-    public void FocusIndex(int index)
+    public void FocusIndex(int go)
     {
-        // sanity check
-        if (index < 0 || index > m_GUIElements.Count)
-        {
-            return;
-        }
+		if (go > 0)
+		{
+			++m_CurrentAccessIndex;
+			m_CurrentAccessIndex = m_CurrentAccessIndex % m_GUIElements.Count;
+		}
+		else if (go < 0)
+		{
+			--m_CurrentAccessIndex;
+			if (m_CurrentAccessIndex < 0)
+			{
+				m_CurrentAccessIndex = m_GUIElements.Count - 1;
+			}
+			else
+			{
+				m_CurrentAccessIndex = (m_CurrentAccessIndex % m_GUIElements.Count);
+			}
+		}
+		else
+		{
+			m_CurrentAccessIndex = 0;
+		}
 
-        m_CurrentAccessIndex = index;
         GUIItem lastFocus = m_Focus;
         m_Focus = GetCurrentFocus();
 
@@ -174,7 +191,7 @@ public class GUIManager : MonoBehaviour, IInputListener
 
     private Dictionary<int, GUIItem>        m_GUIElements = new Dictionary<int, GUIItem>();
 
-	private Dictionary<string, bool>		m_MaxAxis = new Dictionary<string, bool>();
+	private Dictionary<string, float>		m_MaxAxis = new Dictionary<string, float>();
 
     ////////////////////////////////////////////////////////
 

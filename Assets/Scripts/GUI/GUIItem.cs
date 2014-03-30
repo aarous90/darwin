@@ -28,6 +28,21 @@ public class GUIItem : MonoBehaviour
     
     }
 
+	public virtual void OnBack()
+	{
+
+	}
+
+	public virtual void OnCancel()
+	{
+
+	}
+
+	public virtual void OnPause()
+	{
+
+	}
+
 	public virtual void OnFocused()
     { 
         
@@ -55,8 +70,8 @@ public class GUIItem : MonoBehaviour
 
     ////////////////////////////////////////////////////////
 
-    protected string        m_Name;         /// The name of the gui element component
-    private Component       m_Element;      /// A reference to the Component itself
-    public GUIManager       GlobalGUI;      /// Field for the global GUIManager
-    public int              AccessIndex;    /// The index for navigaion with gamepad
+    protected string        m_Name;         	/// The name of the gui element component
+    private Component       m_Element;      	/// A reference to the Component itself
+    public GUIManager       GlobalGUI;      	/// Field for the global GUIManager
+    public int              AccessIndex = -1;    /// The index for navigaion with gamepad
 }
