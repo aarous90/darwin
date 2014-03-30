@@ -5,6 +5,9 @@ using System.Collections.Generic;
 /// <summary>
 /// Manages the input of the users
 /// </summary>
+using System;
+
+
 public class InputManager : MonoBehaviour
 {
 	public enum InputCategory
@@ -105,11 +108,11 @@ public class InputManager : MonoBehaviour
 		}
 	}
 
-	private void HandleButtonInput(bool HasListener, bool HasCategory, KeyValuePair<KeyCategory, List<IInputListener>> entry, List<IInputListener> categoryListener)
+	private void HandleButtonInput(bool hasListener, bool hasCategory, KeyValuePair<KeyCategory, List<IInputListener>> entry, List<IInputListener> categoryListener)
 	{
-		if ((HasListener || HasCategory) && Input.GetButtonUp(entry.Key.Name))
+		if ((hasListener || hasCategory) && Input.GetButtonUp(entry.Key.Name))
 		{
-			if (HasListener)
+			if (hasListener)
 			{
 				foreach (IInputListener l in entry.Value)
 				{
@@ -118,7 +121,7 @@ public class InputManager : MonoBehaviour
 				}
 			}
 
-			if (HasCategory)
+			if (hasCategory)
 			{
 				foreach (IInputListener l in categoryListener)
 				{
@@ -126,9 +129,9 @@ public class InputManager : MonoBehaviour
 				}
 			}
 		}
-		if ((HasListener || HasCategory) && Input.GetButton(entry.Key.Name))
+		if ((hasListener || hasCategory) && Input.GetButton(entry.Key.Name))
 		{
-			if (HasListener)
+			if (hasListener)
 			{
 				foreach (IInputListener l in entry.Value)
 				{
@@ -136,7 +139,7 @@ public class InputManager : MonoBehaviour
 				}
 			}
 
-			if (HasCategory)
+			if (hasCategory)
 			{
 				foreach (IInputListener l in categoryListener)
 				{
@@ -144,9 +147,9 @@ public class InputManager : MonoBehaviour
 				}
 			}
 		}
-		if ((HasListener || HasCategory) && Input.GetButtonDown(entry.Key.Name))
+		if ((hasListener || hasCategory) && Input.GetButtonDown(entry.Key.Name))
 		{
-			if (HasListener)
+			if (hasListener)
 			{
 				foreach (IInputListener l in entry.Value)
 				{
@@ -154,7 +157,7 @@ public class InputManager : MonoBehaviour
 				}
 			}
 
-			if (HasCategory)
+			if (hasCategory)
 			{
 				foreach (IInputListener l in categoryListener)
 				{
@@ -164,12 +167,12 @@ public class InputManager : MonoBehaviour
 		}
 	}
 	
-	private void HandleAxisInput(bool HasListener, bool HasCategory, KeyValuePair<KeyCategory, List<IInputListener>> entry, List<IInputListener> categoryListener)
+	private void HandleAxisInput(bool hasListener, bool hasCategory, KeyValuePair<KeyCategory, List<IInputListener>> entry, List<IInputListener> categoryListener)
 	{
-		float axisValue = Input.GetAxis(entry.Key.Name);
-		if ((HasListener || HasCategory) && axisValue > AxisThreshold)
+		if ((hasListener || hasCategory))
 		{
-			if (HasListener)
+			float axisValue = Input.GetAxis (entry.Key.Name);
+			if (hasListener)
 			{
 				foreach (IInputListener l in entry.Value)
 				{
@@ -178,7 +181,7 @@ public class InputManager : MonoBehaviour
 				}
 			}
 
-			if (HasCategory)
+			if (hasCategory)
 			{
 				foreach (IInputListener l in categoryListener)
 				{

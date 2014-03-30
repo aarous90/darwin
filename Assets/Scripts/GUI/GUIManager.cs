@@ -31,14 +31,28 @@ public class GUIManager : MonoBehaviour, IInputListener
 	
 	public void OnAxis(string axisName, float axisValue)
 	{
-		if (axisName == InputStringMapping.GUIInputMapping.NavigateHorizontal)
+		if (Math.Abs(axisValue) > AxisMax && !m_MaxAxis.ContainsKey(axisName))
 		{
-			NavigateHorizontal(axisValue);
+			m_MaxAxis.Add(axisName, true);
+			return;
 		}
-		if (axisName == InputStringMapping.GUIInputMapping.NavigateVertical)
+		if ((Math.Abs(axisValue) < AxisMax && m_MaxAxis.ContainsKey(axisName)))
 		{
-			NavigateVertical(axisValue);
-		}
+			m_GUITimer += Time.deltaTime;
+			if (m_GUITimer > InputDelay)
+			{
+				if (axisName == InputStringMapping.GUIInputMapping.NavigateHorizontal)
+				{
+					NavigateHorizontal(axisValue);
+				}
+				if (axisName == InputStringMapping.GUIInputMapping.NavigateVertical)
+				{
+					NavigateVertical(axisValue);
+				}
+				m_MaxAxis.Remove(axisName);
+				m_GUITimer = 0;
+			}
+		}		
 	}
 
 	public void OnMovement(string moveName, int x, int y)
@@ -80,21 +94,21 @@ public class GUIManager : MonoBehaviour, IInputListener
 
     private void NavigateHorizontal(float axis)
     {
-		if (axis > 0.1f)
-		{
-			int nextIndex = Math.Abs(m_CurrentAccessIndex - 1) % m_GUIElements.Count;
-			FocusIndex(nextIndex);
-		}
-		else if (axis < -0.1f)
-		{
-			int nextIndex = (m_CurrentAccessIndex + 1) % m_GUIElements.Count;
-			FocusIndex(nextIndex);
-		}
+		// TODO
     }
 
 	private void NavigateVertical(float axis)
     {
-		// TODO
+		if (axis > AxisThreshold)
+		{
+			int nextIndex = Math.Abs(m_CurrentAccessIndex - 1) % m_GUIElements.Count;
+			FocusIndex(nextIndex);
+		}
+		else if (axis < -AxisThreshold)
+		{
+			int nextIndex = (m_CurrentAccessIndex + 1) % m_GUIElements.Count;
+			FocusIndex(nextIndex);
+		}
     }
 
     private void Select()
@@ -158,15 +172,22 @@ public class GUIManager : MonoBehaviour, IInputListener
 
     ////////////////////////////////////////////////////////
 
-    private int                                 m_CurrentAccessIndex = 0;
+	private float							m_GUITimer = 0;
 
-    private GUIItem                          m_Focus;
+    private int                             m_CurrentAccessIndex = 0;
 
-    private Dictionary<int, GUIItem>         m_GUIElements = new Dictionary<int, GUIItem>();
+    private GUIItem                         m_Focus;
+
+    private Dictionary<int, GUIItem>        m_GUIElements = new Dictionary<int, GUIItem>();
+
+	private Dictionary<string, bool>		m_MaxAxis = new Dictionary<string, bool>();
 
     ////////////////////////////////////////////////////////
 
-    public InputManager                         GlobalInput;
+    public InputManager						GlobalInput;
+	public float							AxisThreshold = 0.1f;
+	public float							AxisMax = 0.9f;
+	public float							InputDelay = 0.166f;
 
 
 }

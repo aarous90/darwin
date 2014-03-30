@@ -23,7 +23,6 @@ public class Button : GUIItem
 
 	public override void OnUnfocused()
 	{
-
 		guiTexture.texture = Unfocused;
 	}
 
@@ -35,8 +34,8 @@ public class Button : GUIItem
     ////////////////////////////////////////////////////////
     
     public Texture2D Focused;
-    public Texture2D Unfocused;
-	public Texture2D Selected;
+	public Texture2D Unfocused;
+	private Texture2D Selected;
 
     ////////////////////////////////////////////////////////
 
@@ -46,5 +45,5 @@ public class Button : GUIItem
 
     private bool m_IsDown;
 
-    private bool m_IsUp;
+	private bool m_IsUp;
 }
