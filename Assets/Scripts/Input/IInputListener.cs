@@ -11,4 +11,8 @@ public interface IInputListener
     void OnButtonUp(string button);
     void OnButtonPressed(string button);
     void OnButtonDown(string button);
+
+	void OnAxis(string axisName, float axisValue);
+
+	void OnMovement(string moveName, int x, int y);
 }
