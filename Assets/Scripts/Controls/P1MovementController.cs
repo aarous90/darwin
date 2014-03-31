@@ -23,7 +23,7 @@ public class P1MovementController : MonoBehaviour, IInputListener {
 	}
 
 	private void special(){
-		transform.Translate (Vector2.right * 0.5f);
+		transform.Translate (Vector2.right * 0.1f);
 	}
 
 	private void move(){

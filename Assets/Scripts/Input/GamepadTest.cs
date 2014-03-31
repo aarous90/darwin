@@ -27,6 +27,7 @@ public class GamepadTest : MonoBehaviour
 		}
 		print("Axis h: " + Input.GetAxisRaw("L_XAxis_1"));
 		print("Axis v: " + Input.GetAxisRaw("L_YAxis_1"));
-		print("Axis T: " + Input.GetAxisRaw("Triggers_1"));
+		print("Axis LT: " + Input.GetAxisRaw("L_Trigger_1"));
+		print("Axis RT: " + Input.GetAxisRaw("R_Trigger_1"));
 	}
 }
