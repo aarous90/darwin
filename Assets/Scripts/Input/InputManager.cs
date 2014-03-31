@@ -242,6 +242,8 @@ public class InputManager : MonoBehaviour
 		m_CategoryInputListener = new Dictionary<InputCategory, List<IInputListener>>();
 
 		// create entries for the dic
+
+		//GUI
 		List<string> guiMappingStrings = InputStringMapping.GUIInputMapping.GetButtons();
 		foreach (string mappingString in guiMappingStrings)
 		{
@@ -257,6 +259,26 @@ public class InputManager : MonoBehaviour
 			KeyCategory kc;
 			kc.Name = mappingString;
 			kc.Category = InputCategory.GUI;
+			kc.Type = InputType.Axis;
+			m_InputListener.Add(kc, new List<IInputListener>());
+		}
+
+		//Ground
+		List<string> groundMappingStrings = InputStringMapping.GroundInputMapping.GetButtons();
+		foreach (string mappingString in groundMappingStrings)
+		{
+			KeyCategory kc;
+			kc.Name = mappingString;
+			kc.Category = InputCategory.Ground;
+			kc.Type = InputType.Button;
+			m_InputListener.Add(kc, new List<IInputListener>());
+		}
+		groundMappingStrings = InputStringMapping.GroundInputMapping.GetAxis();
+		foreach (string mappingString in groundMappingStrings)
+		{
+			KeyCategory kc;
+			kc.Name = mappingString;
+			kc.Category = InputCategory.Ground;
 			kc.Type = InputType.Axis;
 			m_InputListener.Add(kc, new List<IInputListener>());
 		}

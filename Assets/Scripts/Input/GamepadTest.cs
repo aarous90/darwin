@@ -25,7 +25,8 @@ public class GamepadTest : MonoBehaviour
 				print("Button " + i + " is pressed!");
 			}
 		}
-		print("Axis h: " + Input.GetAxisRaw("Horizontal"));
-		print("Axis v: " + Input.GetAxisRaw("Vertical"));
+		print("Axis h: " + Input.GetAxisRaw("L_XAxis_1"));
+		print("Axis v: " + Input.GetAxisRaw("L_YAxis_1"));
+		print("Axis T: " + Input.GetAxisRaw("Triggers_1"));
 	}
 }
