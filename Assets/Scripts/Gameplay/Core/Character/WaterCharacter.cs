@@ -1,4 +1,5 @@
-public class WaterCharacter
+
+public class WaterCharacter : ICharacter
 {
 	public WaterCharacter()
 	{
