@@ -72,6 +72,14 @@ public static class InputStringMapping
 		public static List<string> GetAxis()
 		{
 			List<string> mappingStrings = new List<string>();
+
+			//Player 1
+			mappingStrings.Add(P1_NavigateHorizontal);
+			mappingStrings.Add(P1_NavigateVertical);
+
+			//Player 2
+			mappingStrings.Add(P2_NavigateHorizontal);
+			mappingStrings.Add(P2_NavigateVertical);
 			return mappingStrings;
 		}
 
