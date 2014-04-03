@@ -20,14 +20,32 @@ public class GamepadTest : MonoBehaviour
 	{
 		for (int i = 0; i < 20; ++i)
 		{
+			//P1
 			if (Input.GetKey("joystick 1 button "+i))
 			{
-				print("Button " + i + " is pressed!");
+				print("Joystick 1 Button " + i + " is pressed!");
 			}
+
+            //P2
+//			if (Input.GetKey("joystick 2 button "+i))
+//			{
+//				print("Joystick 2 Button " + i + " is pressed!");
+//			}
 		}
-		print("Axis h: " + Input.GetAxisRaw("L_XAxis_1"));
-		print("Axis v: " + Input.GetAxisRaw("L_YAxis_1"));
-		print("Axis LT: " + Input.GetAxisRaw("L_Trigger_1"));
-		print("Axis RT: " + Input.GetAxisRaw("R_Trigger_1"));
+		//P1
+		print("1_L_Axis h: " + Input.GetAxisRaw("L_XAxis_1"));
+		print("1_L_Axis v: " + Input.GetAxisRaw("L_YAxis_1"));
+		print("1_R_Axis h: " + Input.GetAxisRaw("R_XAxis_1"));
+		print("1_R_Axis v: " + Input.GetAxisRaw("R_YAxis_1"));
+		print("1_Axis LT: " + Input.GetAxisRaw("L_Trigger_1"));
+		print("1_Axis RT: " + Input.GetAxisRaw("R_Trigger_1"));
+
+		//P2
+//		print("2_L_Axis h: " + Input.GetAxisRaw("L_XAxis_2"));
+//		print("2_L_Axis v: " + Input.GetAxisRaw("L_YAxis_2"));
+//		print("2_R_Axis h: " + Input.GetAxisRaw("R_XAxis_2"));
+//		print("2_R_Axis v: " + Input.GetAxisRaw("R_YAxis_2"));
+//		print("2_Axis LT: " + Input.GetAxisRaw("L_Trigger_2"));
+//		print("2_Axis RT: " + Input.GetAxisRaw("R_Trigger_2"));
 	}
 }
