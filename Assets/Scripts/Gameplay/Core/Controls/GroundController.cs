@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GroundController : MonoBehaviour, IInputListener
@@ -36,37 +37,34 @@ public class GroundController : MonoBehaviour, IInputListener
 	
 		public void OnAxis (string axisName, float axisValue)
 		{
-			if (Math.Abs(axisValue) > AxisMax && !m_MaxAxis.ContainsKey(axisName))
-				{
-				m_MaxAxis.Add(axisName, axisValue);
-				if(!AxisInUse.ContainsKey(axisName))
-				{
-				AxisInUse.Add(axisName, true);
-				}
-				else{
-				AxisInUse[axisName] = true;
-				}
-				print (axisName +"  "+ AxisInUse[axisName]);
-						return;
-				}
-			float value;
-			
-			if ((Math.Abs(axisValue) < AxisMax && m_MaxAxis.TryGetValue(axisName, out value)))
-				{
-				if (axisName == InputStringMapping.GroundInputMapping.P1_L_Step)
-				{
+		if (Math.Abs(axisValue) > AxisMax && !m_MaxAxis.ContainsKey(axisName))
+		{
+			m_MaxAxis.Add(axisName, axisValue);
+			if(!AxisInUse.ContainsKey(axisName))
+			{
+				AxisInUse.Add(axisName, Time.time);
+			}
+			else{
+				AxisInUse[axisName] = Time.time;
+			}
+			return;
+		}
+		float value;
+		
+		if ((Math.Abs(axisValue) < AxisMax && m_MaxAxis.TryGetValue(axisName, out value)))
+		{
+			if (axisName == InputStringMapping.GroundInputMapping.P1_L_Step)
+			{
 				TakeStep();
-				}
-				if(m_MaxAxis.ContainsKey(InputStringMapping.GroundInputMapping.P1_L_Step) && m_MaxAxis.ContainsKey(InputStringMapping.GroundInputMapping.P1_R_Step)){
-				if (AxisInUse[InputStringMapping.GroundInputMapping.P1_L_Step] == true && AxisInUse[InputStringMapping.GroundInputMapping.P1_R_Step] == true )
+			}
+			if(m_MaxAxis.ContainsKey(InputStringMapping.GroundInputMapping.P1_L_Step) && m_MaxAxis.ContainsKey(InputStringMapping.GroundInputMapping.P1_R_Step)){
+				if (Math.Abs(AxisInUse[InputStringMapping.GroundInputMapping.P1_L_Step]-AxisInUse[InputStringMapping.GroundInputMapping.P1_R_Step])<=0.05)
 				{
-				//Jump();
+					TriggeredJump=true;
 				}
-				}
-				m_MaxAxis.Remove(axisName);
-				AxisInUse[axisName] = false;
-				print (axisName +"  "+ AxisInUse[axisName]);
-				}	
+			}
+			m_MaxAxis.Remove(axisName);
+		}
 
 		
 		}
@@ -102,7 +100,7 @@ public class GroundController : MonoBehaviour, IInputListener
 		}
 
 		private Dictionary<string, float>		m_MaxAxis = new Dictionary<string, float> ();
-		private Dictionary<string, bool>		AxisInUse = new Dictionary<string, bool> ();
+		private Dictionary<string, float>		AxisInUse = new Dictionary<string, float> ();
 	
 		////////////////////////////////////////////////////////
 		public InputManager						GlobalInput;
@@ -110,6 +108,7 @@ public class GroundController : MonoBehaviour, IInputListener
 		Vector3                                 MoveDirection = Vector3.zero;
 		bool									TriggeredJump = false;
 		bool									IsAxisInUse = false;
+		float									ButtonPressed;
 		float 									JumpTime;
 		float 									AirTime;
 		public float							Gravity = 20;
