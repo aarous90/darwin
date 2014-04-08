@@ -1,15 +1,120 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class GroundController : MonoBehaviour {
+public class GroundController : MonoBehaviour, IInputListener
+{
 
-	// Use this for initialization
-	void Start () {
+		// Use this for initialization
+		void Start ()
+		{
+				UnityEngine.Object.DontDestroyOnLoad (this);
+				GlobalInput.RegisterListener (InputManager.InputCategory.Ground, this);
+				CharacterController = GetComponent<CharacterController> ();
+		}
 	
-	}
+		// Update is called once per frame
+		void Update ()
+		{
+				Move ();
+		}
+
+		public void OnButtonUp (string button)
+		{
+
+		}
+
+		public void OnButtonPressed (string button)
+		{
 	
-	// Update is called once per frame
-	void Update () {
+		}
+
+		public void OnButtonDown (string button)
+		{
+		
+		}
 	
-	}
+		public void OnAxis (string axisName, float axisValue)
+		{
+			if (Math.Abs(axisValue) > AxisMax && !m_MaxAxis.ContainsKey(axisName))
+				{
+				m_MaxAxis.Add(axisName, axisValue);
+				if(!AxisInUse.ContainsKey(axisName))
+				{
+				AxisInUse.Add(axisName, true);
+				}
+				else{
+				AxisInUse[axisName] = true;
+				}
+				print (axisName +"  "+ AxisInUse[axisName]);
+						return;
+				}
+			float value;
+			
+			if ((Math.Abs(axisValue) < AxisMax && m_MaxAxis.TryGetValue(axisName, out value)))
+				{
+				if (axisName == InputStringMapping.GroundInputMapping.P1_L_Step)
+				{
+				TakeStep();
+				}
+				if(m_MaxAxis.ContainsKey(InputStringMapping.GroundInputMapping.P1_L_Step) && m_MaxAxis.ContainsKey(InputStringMapping.GroundInputMapping.P1_R_Step)){
+				if (AxisInUse[InputStringMapping.GroundInputMapping.P1_L_Step] == true && AxisInUse[InputStringMapping.GroundInputMapping.P1_R_Step] == true )
+				{
+				//Jump();
+				}
+				}
+				m_MaxAxis.Remove(axisName);
+				AxisInUse[axisName] = false;
+				print (axisName +"  "+ AxisInUse[axisName]);
+				}	
+
+		
+		}
+	
+		public void OnMovement (string moveName, int x, int y)
+		{
+	
+		}
+
+		public void Move ()
+		{
+				if (CharacterController.isGrounded) {
+						if (TriggeredJump) {
+								print ("Jump!");
+								Jump ();
+
+						}
+				}
+				MoveDirection.y -= Gravity * Time.deltaTime;
+				CharacterController.Move (MoveDirection * Time.deltaTime);
+	
+		}
+
+		public void TakeStep ()
+		{
+				transform.position += Vector3.right * MovementSpeed * Time.deltaTime;
+		}
+
+		public void Jump ()
+		{
+				MoveDirection.y = JumpSpeed;
+				TriggeredJump = false;
+		}
+
+		private Dictionary<string, float>		m_MaxAxis = new Dictionary<string, float> ();
+		private Dictionary<string, bool>		AxisInUse = new Dictionary<string, bool> ();
+	
+		////////////////////////////////////////////////////////
+		public InputManager						GlobalInput;
+		CharacterController 					CharacterController;
+		Vector3                                 MoveDirection = Vector3.zero;
+		bool									TriggeredJump = false;
+		bool									IsAxisInUse = false;
+		float 									JumpTime;
+		float 									AirTime;
+		public float							Gravity = 20;
+		public float							MovementSpeed = 10;
+		public float							JumpSpeed = 40;
+		public float							AxisThreshold = 0;
+		public float							AxisMax = 0.9f;
 }
