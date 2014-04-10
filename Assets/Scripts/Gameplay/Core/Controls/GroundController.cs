@@ -61,6 +61,7 @@ public class GroundController : MonoBehaviour, IInputListener
 					if (CharacterController.isGrounded) {
 					TriggeredJump = true;
 					AxisInUse.Clear();
+					m_MaxAxis.Clear();
 					}
 				}
 			}
