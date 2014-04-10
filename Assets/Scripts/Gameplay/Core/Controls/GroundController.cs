@@ -100,34 +100,47 @@ public class GroundController : MonoBehaviour, IInputListener
 
 		public void Move ()
 		{
+
+		if (CharacterController.isGrounded) {
+			if (MoveDirection.x > 0) {
+				MoveDirection.x -= MoveDirection.x * 0.5f;
+			} 
+			if (MoveDirection.x < 0) {
+				MoveDirection.x -= MoveDirection.x * 0.5f;
+			} 
+		}
 				
 						if (TriggeredJump) {
-								Jump ();
+						MoveDirection.x=MoveDirection.x*0.1f;					
+							Jump ();
+								
 						}
 				
 
 				MoveDirection.y -= Gravity * Time.deltaTime;
 				CharacterController.Move (MoveDirection * Time.deltaTime);
+
+	
 	
 		}
 
 		public void TakeStep (bool dstep)
 	{		
 				if (CharacterController.isGrounded) {
-						if (Input.GetAxis (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal) >= 0) {
+						if (Input.GetAxis (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal) > 0.1) {
 								transform.rotation = LookRight; 
 								if (dstep) {
-										transform.position += Vector3.right * MovementSpeed * Time.deltaTime * 2;
+										MoveDirection.x = MovementSpeed*2;
 								} else {
-										transform.position += Vector3.right * MovementSpeed * Time.deltaTime;
+										MoveDirection.x = MovementSpeed;
 								}
 						}
 						if (Input.GetAxis (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal) < -0.1) {
 								transform.rotation = LookLeft; 
 								if (dstep) {
-										transform.position -= Vector3.right * MovementSpeed * Time.deltaTime * 2;
+									MoveDirection.x = -MovementSpeed*2;
 								} else {
-										transform.position -= Vector3.right * MovementSpeed * Time.deltaTime;
+									MoveDirection.x = -MovementSpeed;
 								}
 						}
 				
@@ -136,9 +149,8 @@ public class GroundController : MonoBehaviour, IInputListener
 
 		public void Jump ()
 		{
-		TriggeredJump = false;		
+		TriggeredJump = false;
 		MoveDirection.y = JumpSpeed;
-
 		}
 
 		private Dictionary<string, float>		m_MaxAxis = new Dictionary<string, float> ();
@@ -154,7 +166,8 @@ public class GroundController : MonoBehaviour, IInputListener
 		Quaternion								LookRight;
 		Quaternion								LookLeft;
 		public float							Gravity = 20;
-		public float							MovementSpeed = 10;
+		public float							MovementSpeed = 1;
+		public float							MaxMovementSpeed = 100;
 		public float							JumpSpeed = 10;
 		public float							AxisThreshold = 0;
 		public float							AxisMax = 0.9f;
