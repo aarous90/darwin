@@ -1,0 +1,2 @@
+Frame 000 - 080 Idle, schwapppt im Wasser
+Frame 080 - 190 Sinken, sobald der Spieler darauf steht
