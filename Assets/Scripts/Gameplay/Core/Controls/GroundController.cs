@@ -12,6 +12,9 @@ public class GroundController : MonoBehaviour, IInputListener
 				UnityEngine.Object.DontDestroyOnLoad (this);
 				GlobalInput.RegisterListener (InputManager.InputCategory.Ground, this);
 				CharacterController = GetComponent<CharacterController> ();
+
+				LookRight = transform.rotation;
+				LookLeft = LookRight * Quaternion.Euler(0, 180, 0); 
 		}
 	
 		// Update is called once per frame
@@ -49,14 +52,18 @@ public class GroundController : MonoBehaviour, IInputListener
 				float value;
 
 
-		if (AxisInUse.ContainsKey (InputStringMapping.GroundInputMapping.P1_L_Step) && AxisInUse.ContainsKey (InputStringMapping.GroundInputMapping.P1_R_Step)) {
-			if (Math.Abs (AxisInUse [InputStringMapping.GroundInputMapping.P1_L_Step] - AxisInUse [InputStringMapping.GroundInputMapping.P1_R_Step]) <= 0.05) {
-				TriggeredJump = true;
-				AxisInUse.Clear();
-			}
-		}
+
 
 				if ((Math.Abs (axisValue) < AxisMax && m_MaxAxis.TryGetValue (axisName, out value))) {
+
+			if (AxisInUse.ContainsKey (InputStringMapping.GroundInputMapping.P1_L_Step) && AxisInUse.ContainsKey (InputStringMapping.GroundInputMapping.P1_R_Step)) {
+				if (Math.Abs (AxisInUse [InputStringMapping.GroundInputMapping.P1_L_Step] - AxisInUse [InputStringMapping.GroundInputMapping.P1_R_Step]) <= 0.05) {
+					if (CharacterController.isGrounded) {
+					TriggeredJump = true;
+					AxisInUse.Clear();
+					}
+				}
+			}
 
 				if (axisName == InputStringMapping.GroundInputMapping.P1_L_Step) {
 				TrigL = true;	
@@ -93,12 +100,11 @@ public class GroundController : MonoBehaviour, IInputListener
 
 		public void Move ()
 		{
-				if (CharacterController.isGrounded) {
+				
 						if (TriggeredJump) {
-				print ("jump!");
 								Jump ();
 						}
-				}
+				
 
 				MoveDirection.y -= Gravity * Time.deltaTime;
 				CharacterController.Move (MoveDirection * Time.deltaTime);
@@ -109,6 +115,7 @@ public class GroundController : MonoBehaviour, IInputListener
 	{		
 				if (CharacterController.isGrounded) {
 						if (Input.GetAxis (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal) >= 0) {
+								transform.rotation = LookRight; 
 								if (dstep) {
 										transform.position += Vector3.right * MovementSpeed * Time.deltaTime * 2;
 								} else {
@@ -116,6 +123,7 @@ public class GroundController : MonoBehaviour, IInputListener
 								}
 						}
 						if (Input.GetAxis (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal) < -0.1) {
+								transform.rotation = LookLeft; 
 								if (dstep) {
 										transform.position -= Vector3.right * MovementSpeed * Time.deltaTime * 2;
 								} else {
@@ -143,9 +151,11 @@ public class GroundController : MonoBehaviour, IInputListener
 		bool									TriggeredJump = false;
 		bool    								TrigL = false;
 		bool 									TrigR = false;
+		Quaternion								LookRight;
+		Quaternion								LookLeft;
 		public float							Gravity = 20;
 		public float							MovementSpeed = 10;
-		public float							JumpSpeed = 40;
+		public float							JumpSpeed = 10;
 		public float							AxisThreshold = 0;
 		public float							AxisMax = 0.9f;
 
