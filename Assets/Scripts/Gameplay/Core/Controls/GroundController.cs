@@ -13,10 +13,10 @@ public class GroundController : MonoBehaviour, IInputListener
 				GlobalInput.RegisterListener (InputManager.InputCategory.Ground, this);
 
 				LookRight = transform.rotation;
-				LookLeft = LookRight * Quaternion.Euler(0, 180, 0); 
+				LookLeft = LookRight * Quaternion.Euler (0, 180, 0); 
 				
 				//Length of Raycast to check ground considering collider offset
-				RayLength = collider.bounds.size.y/2 - Math.Abs(transform.position.y-collider.bounds.center.y);
+				RayLength = collider.bounds.size.y / 2 - Math.Abs (transform.position.y - collider.bounds.center.y);
 		}
 	
 		// Update is called once per frame
@@ -24,18 +24,16 @@ public class GroundController : MonoBehaviour, IInputListener
 		{
 
 		}
-		
 
 		void FixedUpdate ()
 		{		
-		//Jump
-		if (TriggeredJump)
-		{
-			Jump();
-		}
+				//Jump
+				if (TriggeredJump) {
+						Jump ();
+				}
 
-		//Apply own Gravity
-		rigidbody.AddForce(-Vector3.up*Gravity * rigidbody.mass);
+				//Apply own Gravity
+				rigidbody.AddForce (-Vector3.up * Gravity * rigidbody.mass);
 
 		}
 
@@ -57,57 +55,57 @@ public class GroundController : MonoBehaviour, IInputListener
 		public void OnAxis (string axisName, float axisValue)
 		{
 		
-		if (Math.Abs (axisValue) > AxisMax && !m_MaxAxis.ContainsKey (axisName)) {
-			m_MaxAxis.Add (axisName, axisValue);
-			if (axisName == InputStringMapping.GroundInputMapping.P1_NavigateHorizontal) {
-				HAxis *= axisValue;	
-			}
-			if (!AxisInUse.ContainsKey (axisName)) {
-				AxisInUse.Add (axisName, Time.time);
-			} else {
-				AxisInUse [axisName] = Time.time;
-			}
-			return;
-		}
+				if (Math.Abs (axisValue) > AxisMax && !m_MaxAxis.ContainsKey (axisName)) {
+						m_MaxAxis.Add (axisName, axisValue);
+						if (axisName == InputStringMapping.GroundInputMapping.P1_NavigateHorizontal) {
+								HAxis *= axisValue;	
+						}
+						if (!AxisInUse.ContainsKey (axisName)) {
+								AxisInUse.Add (axisName, Time.time);
+						} else {
+								AxisInUse [axisName] = Time.time;
+						}
+						return;
+				}
 
-		float value;
+				float value;
 		
-		if ((Math.Abs (axisValue) < AxisMax && m_MaxAxis.TryGetValue (axisName, out value))) {
+				if ((Math.Abs (axisValue) < AxisMax && m_MaxAxis.TryGetValue (axisName, out value))) {
 			
-			if (AxisInUse.ContainsKey (InputStringMapping.GroundInputMapping.P1_L_Step) && AxisInUse.ContainsKey (InputStringMapping.GroundInputMapping.P1_R_Step)) {
-				if (Math.Abs (AxisInUse [InputStringMapping.GroundInputMapping.P1_L_Step] - AxisInUse [InputStringMapping.GroundInputMapping.P1_R_Step]) <= 0.05) {
-						TriggeredJump = true;
-						AxisInUse.Clear();
-						m_MaxAxis.Clear();
-				}
-			}
+						if (AxisInUse.ContainsKey (InputStringMapping.GroundInputMapping.P1_L_Step) && AxisInUse.ContainsKey (InputStringMapping.GroundInputMapping.P1_R_Step)) {
+								if (Math.Abs (AxisInUse [InputStringMapping.GroundInputMapping.P1_L_Step] - AxisInUse [InputStringMapping.GroundInputMapping.P1_R_Step]) <= 0.05) {
+										TriggeredJump = true;
+										AxisInUse.Clear ();
+										m_MaxAxis.Clear ();
+								}
+						}
 			
-			if (axisName == InputStringMapping.GroundInputMapping.P1_L_Step && m_MaxAxis.ContainsKey (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)) {
-				HAxis = m_MaxAxis[(InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)];
-				TrigL = true;	
-				if (TrigR) {
-					TakeStep (true);
-					TrigR = false;
-				} else {
-					TakeStep (false);
-				}
-			}
+						if (axisName == InputStringMapping.GroundInputMapping.P1_L_Step && m_MaxAxis.ContainsKey (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)) {
+								HAxis = m_MaxAxis [(InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)];
+								TrigL = true;	
+								if (TrigR) {
+										Move (true);
+										TrigR = false;
+								} else {
+										Move (false);
+								}
+						}
 			
-			if (axisName == InputStringMapping.GroundInputMapping.P1_R_Step && m_MaxAxis.ContainsKey (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)) {
-				HAxis = m_MaxAxis[(InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)];
-				TrigR = true;	
-				if (TrigL) {
-					TakeStep (true);
-					TrigL = false;
-				} else {
-					TakeStep (false);
-				}
+						if (axisName == InputStringMapping.GroundInputMapping.P1_R_Step && m_MaxAxis.ContainsKey (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)) {
+								HAxis = m_MaxAxis [(InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)];
+								TrigR = true;	
+								if (TrigL) {
+										Move (true);
+										TrigL = false;
+								} else {
+										Move (false);
+								}
 				
 				
 				
-			}
-			m_MaxAxis.Remove (axisName);
-		}
+						}
+						m_MaxAxis.Remove (axisName);
+				}
 			
 
 		
@@ -118,49 +116,47 @@ public class GroundController : MonoBehaviour, IInputListener
 	
 		}
 
-		public void TakeStep (bool dstep)
+		public void Move (bool dstep)
 		{		
 				HAxis *= MovementForce;
-				Flip(HAxis);
-				if (rigidbody.velocity.magnitude < MaxSpeed && Grounded == true) 
-				{
-								if (dstep) {
-									//rigidbody.AddForce (Vector3.right * HAxis * MovementSpeed*2);
-									rigidbody.velocity = rigidbody.velocity + (Vector3.right * HAxis);
-								} else {
-									//rigidbody.AddForce (Vector3.right * HAxis * MovementSpeed);
-									rigidbody.velocity = rigidbody.velocity + (Vector3.right * HAxis*0.5f);
-								}
+				Flip (HAxis);
+				if (rigidbody.velocity.magnitude < MaxSpeed && IsGrounded () == true) {
+						if (dstep) {
+								//rigidbody.AddForce (Vector3.right * HAxis * MovementSpeed*2);
+								rigidbody.velocity = rigidbody.velocity + (Vector3.right * HAxis);
+						} else {
+								//rigidbody.AddForce (Vector3.right * HAxis * MovementSpeed);
+								rigidbody.velocity = rigidbody.velocity + (Vector3.right * HAxis * 0.5f);
+						}
 				}
 		}
 
 		public void Jump ()
 		{
-		if (IsGrounded()) 
-		{					
+				if (IsGrounded ()) {					
 						TriggeredJump = false;
 						rigidbody.velocity = rigidbody.velocity + (Vector3.up * JumpSpeed);
-		}
+				}
 		}
 
 		void Flip (float h)
 		{
-		if (h > 0) {
-			transform.rotation = LookRight;
-		}
-		if (h < 0) {
-			transform.rotation = LookLeft; 
-		}
+				if (h > 0) {
+						transform.rotation = LookRight;
+				}
+				if (h < 0) {
+						transform.rotation = LookLeft; 
+				}
 		}
 		
 		public bool IsGrounded ()
 		{
-		if (Physics.Raycast (transform.position, -transform.up, RayLength)) {
-			Grounded=true;
+				if (Physics.Raycast (transform.position, -transform.up, RayLength)) {
+						Grounded = true;
 				} else {
-			Grounded=false;
+						Grounded = false;
 				}
-		return Grounded;
+				return Grounded;
 		}
 
 		private Dictionary<string, float>		m_MaxAxis = new Dictionary<string, float> ();
