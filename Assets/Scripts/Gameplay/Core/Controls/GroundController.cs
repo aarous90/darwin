@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,16 +11,32 @@ public class GroundController : MonoBehaviour, IInputListener
 		{
 				UnityEngine.Object.DontDestroyOnLoad (this);
 				GlobalInput.RegisterListener (InputManager.InputCategory.Ground, this);
-				CharacterController = GetComponent<CharacterController> ();
 
 				LookRight = transform.rotation;
 				LookLeft = LookRight * Quaternion.Euler(0, 180, 0); 
+				
+				//Length of Raycast to check ground considering collider offset
+				RayLength = collider.bounds.size.y/2 - Math.Abs(transform.position.y-collider.bounds.center.y);
 		}
 	
 		// Update is called once per frame
 		void Update ()
 		{
-				Move ();
+
+		}
+		
+
+		void FixedUpdate ()
+		{		
+		//Jump
+		if (TriggeredJump)
+		{
+			Jump();
+		}
+
+		//Apply own Gravity
+		rigidbody.AddForce(-Vector3.up*Gravity * rigidbody.mass);
+
 		}
 
 		public void OnButtonUp (string button)
@@ -40,33 +56,34 @@ public class GroundController : MonoBehaviour, IInputListener
 	
 		public void OnAxis (string axisName, float axisValue)
 		{
-				if (Math.Abs (axisValue) > AxisMax && !m_MaxAxis.ContainsKey (axisName)) {
-						m_MaxAxis.Add (axisName, axisValue);
-						if (!AxisInUse.ContainsKey (axisName)) {
-								AxisInUse.Add (axisName, Time.time);
-						} else {
-								AxisInUse [axisName] = Time.time;
-						}
-						return;
-				}
-				float value;
+		
+		if (Math.Abs (axisValue) > AxisMax && !m_MaxAxis.ContainsKey (axisName)) {
+			m_MaxAxis.Add (axisName, axisValue);
+			if (axisName == InputStringMapping.GroundInputMapping.P1_NavigateHorizontal) {
+				HAxis *= axisValue;	
+			}
+			if (!AxisInUse.ContainsKey (axisName)) {
+				AxisInUse.Add (axisName, Time.time);
+			} else {
+				AxisInUse [axisName] = Time.time;
+			}
+			return;
+		}
 
-
-
-
-				if ((Math.Abs (axisValue) < AxisMax && m_MaxAxis.TryGetValue (axisName, out value))) {
-
+		float value;
+		
+		if ((Math.Abs (axisValue) < AxisMax && m_MaxAxis.TryGetValue (axisName, out value))) {
+			
 			if (AxisInUse.ContainsKey (InputStringMapping.GroundInputMapping.P1_L_Step) && AxisInUse.ContainsKey (InputStringMapping.GroundInputMapping.P1_R_Step)) {
 				if (Math.Abs (AxisInUse [InputStringMapping.GroundInputMapping.P1_L_Step] - AxisInUse [InputStringMapping.GroundInputMapping.P1_R_Step]) <= 0.05) {
-					if (CharacterController.isGrounded) {
-					TriggeredJump = true;
-					AxisInUse.Clear();
-					m_MaxAxis.Clear();
-					}
+						TriggeredJump = true;
+						AxisInUse.Clear();
+						m_MaxAxis.Clear();
 				}
 			}
-
-				if (axisName == InputStringMapping.GroundInputMapping.P1_L_Step) {
+			
+			if (axisName == InputStringMapping.GroundInputMapping.P1_L_Step && m_MaxAxis.ContainsKey (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)) {
+				HAxis = m_MaxAxis[(InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)];
 				TrigL = true;	
 				if (TrigR) {
 					TakeStep (true);
@@ -75,21 +92,23 @@ public class GroundController : MonoBehaviour, IInputListener
 					TakeStep (false);
 				}
 			}
-
-						if (axisName == InputStringMapping.GroundInputMapping.P1_R_Step) {
-								TrigR = true;	
-								if (TrigL) {
-										TakeStep (true);
-										TrigL = false;
-								} else {
-										TakeStep (false);
-								}
-					
-					
-					
-						}
-						m_MaxAxis.Remove (axisName);
+			
+			if (axisName == InputStringMapping.GroundInputMapping.P1_R_Step && m_MaxAxis.ContainsKey (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)) {
+				HAxis = m_MaxAxis[(InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)];
+				TrigR = true;	
+				if (TrigL) {
+					TakeStep (true);
+					TrigL = false;
+				} else {
+					TakeStep (false);
 				}
+				
+				
+				
+			}
+			m_MaxAxis.Remove (axisName);
+		}
+			
 
 		
 		}
@@ -99,59 +118,49 @@ public class GroundController : MonoBehaviour, IInputListener
 	
 		}
 
-		public void Move ()
-		{
-
-		if (CharacterController.isGrounded) {
-			if (MoveDirection.x > 0) {
-				MoveDirection.x -= MoveDirection.x * 0.5f;
-			} 
-			if (MoveDirection.x < 0) {
-				MoveDirection.x -= MoveDirection.x * 0.5f;
-			} 
-		}
-				
-						if (TriggeredJump) {
-						MoveDirection.x=MoveDirection.x*0.1f;					
-							Jump ();
-								
-						}
-				
-
-				MoveDirection.y -= Gravity * Time.deltaTime;
-				CharacterController.Move (MoveDirection * Time.deltaTime);
-
-	
-	
-		}
-
 		public void TakeStep (bool dstep)
-	{		
-				if (CharacterController.isGrounded) {
-						if (Input.GetAxis (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal) > 0.1) {
-								transform.rotation = LookRight; 
+		{		
+				HAxis *= MovementForce;
+				Flip(HAxis);
+				if (rigidbody.velocity.magnitude < MaxSpeed && Grounded == true) 
+				{
 								if (dstep) {
-										MoveDirection.x = MovementSpeed*2;
+									//rigidbody.AddForce (Vector3.right * HAxis * MovementSpeed*2);
+									rigidbody.velocity = rigidbody.velocity + (Vector3.right * HAxis);
 								} else {
-										MoveDirection.x = MovementSpeed;
+									//rigidbody.AddForce (Vector3.right * HAxis * MovementSpeed);
+									rigidbody.velocity = rigidbody.velocity + (Vector3.right * HAxis*0.5f);
 								}
-						}
-						if (Input.GetAxis (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal) < -0.1) {
-								transform.rotation = LookLeft; 
-								if (dstep) {
-									MoveDirection.x = -MovementSpeed*2;
-								} else {
-									MoveDirection.x = -MovementSpeed;
-								}
-						}
-				
 				}
 		}
 
 		public void Jump ()
 		{
-		TriggeredJump = false;
-		MoveDirection.y = JumpSpeed;
+		if (IsGrounded()) 
+		{					
+						TriggeredJump = false;
+						rigidbody.velocity = rigidbody.velocity + (Vector3.up * JumpSpeed);
+		}
+		}
+
+		void Flip (float h)
+		{
+		if (h > 0) {
+			transform.rotation = LookRight;
+		}
+		if (h < 0) {
+			transform.rotation = LookLeft; 
+		}
+		}
+		
+		public bool IsGrounded ()
+		{
+		if (Physics.Raycast (transform.position, -transform.up, RayLength)) {
+			Grounded=true;
+				} else {
+			Grounded=false;
+				}
+		return Grounded;
 		}
 
 		private Dictionary<string, float>		m_MaxAxis = new Dictionary<string, float> ();
@@ -159,21 +168,23 @@ public class GroundController : MonoBehaviour, IInputListener
 	
 		////////////////////////////////////////////////////////
 		public InputManager						GlobalInput;
-		CharacterController 					CharacterController;
-		Vector3                                 MoveDirection = Vector3.zero;
+		bool 									Grounded;
+		float 									RayLength;
+		float 									HAxis;
 		bool									TriggeredJump = false;
 		bool    								TrigL = false;
 		bool 									TrigR = false;
 		Quaternion								LookRight;
 		Quaternion								LookLeft;
-		public float							Gravity = 20;
-		public float							MovementSpeed = 1;
-		public float							MaxMovementSpeed = 100;
+		public float							Gravity = 9.81f;
+		public float							MovementSpeed = 10;
+		public float							MovementForce = 5;
+		public float							MaxSpeed = 10;
 		public float							JumpSpeed = 10;
 		public float							AxisThreshold = 0;
 		public float							AxisMax = 0.9f;
 
-		// not implemented
+		// not implemented yet
 		float 									JumpTime;
 		float 									AirTime;
 }
