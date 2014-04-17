@@ -1,137 +1,169 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class WaterController : MonoBehaviour, IInputListener
 {
-	
-		// Use this for initialization
+
+// Use this for initialization
 		void Start ()
 		{
 				UnityEngine.Object.DontDestroyOnLoad (this);
 				GlobalInput.RegisterListener (InputManager.InputCategory.Water, this);
-		
+
 				LookRight = transform.rotation;
 				LookLeft = LookRight * Quaternion.Euler (0, 180, 0); 
-		
-				//Length of Raycast to check ground considering collider offset
-				RayLength = collider.bounds.size.y / 2 - Math.Abs (transform.position.y - collider.bounds.center.y);
 		}
-	
-		// Update is called once per frame
+
+// Update is called once per frame
 		void Update ()
 		{
+
 		}
-	
+
 		void FixedUpdate ()
-		{		
-		
+		{
+
+				rigidbody.AddForce (Vector3.right * HorizontalForce * MovementSpeed);
+				rigidbody.AddForce (Vector3.up * VerticalForce * MovementSpeed);
+//MovementForce Drag
+				VerticalForce *= 1.0f - Drag;
+				HorizontalForce *= 1.0f - Drag;
+
+//Velocity Drag
+				Velocity = rigidbody.velocity;
+				Velocity.x *= 0.9f;
+				Velocity.y *= 0.9f;
+				rigidbody.velocity = Velocity;
+
+// set velocity to MaxSpeed if exceeding
+				if (Mathf.Abs (rigidbody.velocity.x) > MaxSpeed) {
+						Velocity = rigidbody.velocity;
+						Velocity.x = Mathf.Sign (rigidbody.velocity.x) * MaxSpeed;
+						rigidbody.velocity = Velocity;
+				}
+				if (Mathf.Abs (rigidbody.velocity.y) > MaxSpeed) {
+						Velocity = rigidbody.velocity;
+						Velocity.y = Mathf.Sign (rigidbody.velocity.y) * MaxSpeed;
+						rigidbody.velocity = Velocity;
+				}
+
 		}
-	
+
 		public void OnButtonUp (string button)
 		{
-		
+
 		}
-	
+
 		public void OnButtonPressed (string button)
 		{
-		
+
 		}
-	
+
 		public void OnButtonDown (string button)
 		{
-		
+				test ();
 		}
-	
+
 		public void OnAxis (string axisName, float axisValue)
 		{
-		
-				if (Math.Abs (axisValue) > AxisMax && !m_MaxAxis.ContainsKey (axisName)) {
-						m_MaxAxis.Add (axisName, axisValue);
-						if (!AxisInUse.ContainsKey (axisName)) {
-								AxisInUse.Add (axisName, Time.time);
-						} else {
-								AxisInUse [axisName] = Time.time;
+
+				Vector2 LStroke = Vector2.zero;
+				Vector2 RStroke = Vector2.zero;
+				Vector2 Stroke = Vector2.zero;
+
+// Left Analog Stick
+				StickInput_1.x = Input.GetAxis (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1);
+				StickInput_1.y = Input.GetAxis (InputStringMapping.WaterInputMapping.P1_NavigateVertical_1);
+				if (StickInput_1.magnitude < deadzone) {
+						StickInput_1 = Vector2.zero;
+						if (AxisInUse.ContainsKey (axisName)) {
+								AxisInUse [InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1] = false;
+								AxisInUse [InputStringMapping.WaterInputMapping.P1_NavigateVertical_1] = false;
 						}
-						return;
-				}
-		
-				float value;
-		
-				if ((Math.Abs (axisValue) < AxisMax && m_MaxAxis.TryGetValue (axisName, out value))) {
-			
-						if (AxisInUse.ContainsKey (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1) && AxisInUse.ContainsKey (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2)) {
-								if (Math.Abs (AxisInUse [InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1] - AxisInUse [InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2]) <= 0.5) {
-										MoveHorizontal (true, axisValue);
-										AxisInUse.Clear ();
-										m_MaxAxis.Clear ();
+				} else {
+						if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1 || axisName == InputStringMapping.WaterInputMapping.P1_NavigateVertical_1) {
+								if (!AxisInUse.ContainsKey (axisName)) {
+										AxisInUse.Add (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1, true);
+										AxisInUse.Add (InputStringMapping.WaterInputMapping.P1_NavigateVertical_1, true);
+										;
+										lTimer = Time.time;
+										LStroke = StickInput_1;
+								} else {
+										if (AxisInUse [axisName] == false) {
+												AxisInUse [InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1] = true;
+												AxisInUse [InputStringMapping.WaterInputMapping.P1_NavigateVertical_1] = true;
+												lTimer = Time.time;
+												LStroke = StickInput_1;
+										}
 								}
 						}
+				}
 
-						if (AxisInUse.ContainsKey (InputStringMapping.WaterInputMapping.P1_NavigateVertical_1) && AxisInUse.ContainsKey (InputStringMapping.WaterInputMapping.P1_NavigateVertical_2)) {
-								if (Math.Abs (AxisInUse [InputStringMapping.WaterInputMapping.P1_NavigateVertical_1] - AxisInUse [InputStringMapping.WaterInputMapping.P1_NavigateVertical_2]) <= 0.5) {
-										MoveVertical (true, axisValue);
-										AxisInUse.Clear ();
-										m_MaxAxis.Clear ();
+// Right Analog Stick
+				StickInput_2.x = Input.GetAxis (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2);
+				StickInput_2.y = Input.GetAxis (InputStringMapping.WaterInputMapping.P1_NavigateVertical_2);
+				if (StickInput_2.magnitude < deadzone) {
+						StickInput_2 = Vector2.zero;
+						if (AxisInUse.ContainsKey (axisName)) {
+								AxisInUse [InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2] = false;
+								AxisInUse [InputStringMapping.WaterInputMapping.P1_NavigateVertical_2] = false;
+						}
+				} else {
+						if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2 || axisName == InputStringMapping.WaterInputMapping.P1_NavigateVertical_2) {
+								if (!AxisInUse.ContainsKey (axisName)) {
+										AxisInUse.Add (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2, true);
+										AxisInUse.Add (InputStringMapping.WaterInputMapping.P1_NavigateVertical_2, true);
+										rTimer = Time.time;
+										RStroke = StickInput_2;
+								} else {
+										if (AxisInUse [axisName] == false) {
+												AxisInUse [InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2] = true;
+												AxisInUse [InputStringMapping.WaterInputMapping.P1_NavigateVertical_2] = true;
+												rTimer = Time.time;
+												RStroke = StickInput_2;
+										}
 								}
 						}
-			
-						if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1 && m_MaxAxis.ContainsKey (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1)) {
-								MoveHorizontal (false, axisValue);
-						}
-
-						if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2 && m_MaxAxis.ContainsKey (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2)) {
-								MoveHorizontal (false, axisValue);
-						}
-
-						if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateVertical_1 && m_MaxAxis.ContainsKey (InputStringMapping.WaterInputMapping.P1_NavigateVertical_1)) {
-								MoveVertical (false, axisValue);
-						}
-			
-						if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateVertical_2 && m_MaxAxis.ContainsKey (InputStringMapping.WaterInputMapping.P1_NavigateVertical_2)) {
-								MoveVertical (false, axisValue);
-						}
 				}
-				m_MaxAxis.Remove (axisName);
+
+
+				if (lTimer != 0 && rTimer != 0) {
+						if (Math.Abs (lTimer - rTimer) <= 0.1) {
+								Stroke = LStroke + RStroke;
+								Move (true, Stroke.x, Stroke.y);
+
+						} 
+						lTimer = 0;
+						rTimer = 0;
+				} else {
+						Move (false, LStroke.x, LStroke.y);
+						Move (false, RStroke.x, RStroke.y);
+				}
+
 		}
-	
+
 		public void OnMovement (string moveName, int x, int y)
 		{
-		
+
 		}
-	
-		public void MoveHorizontal (bool dstep, float value)
-		{
-				Flip (value);
-				if (rigidbody.velocity.magnitude < MaxSpeed) {
-						if (dstep) {
-								print ("MH2");
-									//rigidbody.AddForce (Vector3.right * value * MovementSpeed * 2);
-				rigidbody.velocity = rigidbody.velocity + (Vector3.right*MovementSpeed * value);
-						} else {
-								print ("MH1");
-								//rigidbody.AddForce (Vector3.right * value * MovementSpeed);
-				rigidbody.velocity = rigidbody.velocity + (Vector3.right *MovementSpeed* value * 0.5f);
-						}
+
+		public void Move (bool dstep, float x, float y)
+		{		
+				Flip (x);
+				if (dstep) {
+						MaxSpeed = MaxSpeed_2;
+						HorizontalForce += 0.5f * MovementSpeed * Math.Sign (x);
+						VerticalForce += 0.5f * MovementSpeed * Math.Sign (y) * -1;
+
+				} else {
+						MaxSpeed = MaxSpeed_1;
+						HorizontalForce += 0.5f * MovementSpeed * Math.Sign (x);
+						VerticalForce += 0.5f * MovementSpeed * Math.Sign (y) * -1;
 				}
 		}
 
-		public void MoveVertical (bool dstep, float value)
-		{		
-				if (rigidbody.velocity.magnitude < MaxSpeed) {
-						if (dstep) {
-								print ("MV2");
-								//rigidbody.AddForce (Vector3.up * value * MovementSpeed * 2*-1);
-				rigidbody.velocity = rigidbody.velocity + (Vector3.up *MovementSpeed * -value);
-						} else {
-								print ("MV1");
-								//rigidbody.AddForce (Vector3.up * value * MovementSpeed*-1);
-				rigidbody.velocity = rigidbody.velocity + (Vector3.up *MovementSpeed * -value * 0.5f);
-						}
-				}
-		}
-	
 		void Flip (float h)
 		{
 				if (h > 0) {
@@ -142,19 +174,32 @@ public class WaterController : MonoBehaviour, IInputListener
 				}
 		}
 
+		void test ()
+		{
+		}
+
 		private Dictionary<string, float>		m_MaxAxis = new Dictionary<string, float> ();
-		private Dictionary<string, float>		AxisInUse = new Dictionary<string, float> ();
-	
-		////////////////////////////////////////////////////////
+		private Dictionary<string, bool>		AxisInUse = new Dictionary<string, bool> ();
+
+////////////////////////////////////////////////////////
 		public InputManager						GlobalInput;
 		float 									RayLength;
+		float									MaxSpeed;
+		float 									deadzone = 0.75f;
+		float									HorizontalForce;
+		float									VerticalForce;
+		float 									lTimer;
+		float 									rTimer;
 		Quaternion								LookRight;
 		Quaternion								LookLeft;
-		public float							Gravity = 9.81f;
-		public float							MovementSpeed = 100;
-		public float							MovementForce = 5;
-		public float							MaxSpeed = 10;
+		Vector3 								Velocity;
+		Vector2 								StickInput_1;
+		Vector2 								StickInput_2;
+		public float 							Drag = 0.3f;
+		public float							MovementSpeed = 10;
+		public float 							MaxSpeed_1 = 5;
+		public float 							MaxSpeed_2 = 10;
 		public float							JumpSpeed = 10;
-		public float							AxisThreshold = 0.1f;
-		public float							AxisMax = 0.3f;
+		public float							AxisThreshold = 0;
+		public float							AxisMax = 0.9f;
 }
