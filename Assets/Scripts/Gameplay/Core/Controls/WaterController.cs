@@ -63,7 +63,7 @@ public class WaterController : MonoBehaviour, IInputListener
 
 		public void OnButtonDown (string button)
 		{
-				test ();
+
 		}
 
 		public void OnAxis (string axisName, float axisValue)
@@ -74,12 +74,14 @@ public class WaterController : MonoBehaviour, IInputListener
 				Vector2 Stroke = Vector2.zero;
 
 // Left Analog Stick
-				if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1) {
-						StickInput_1.x = Input.GetAxis (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1);
-				}
-				if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateVertical_1) {
-						StickInput_1.y = Input.GetAxis (InputStringMapping.WaterInputMapping.P1_NavigateVertical_1);
-				}
+//				if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1) {
+//						StickInput_1.x = axisValue;
+//				}
+//				if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateVertical_1) {
+//						StickInput_1.y = axisValue;
+//				}
+				StickInput_1.x = Input.GetAxis (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1);
+				StickInput_1.y = Input.GetAxis (InputStringMapping.WaterInputMapping.P1_NavigateVertical_1);
 				if (StickInput_1.magnitude < deadzone) {
 						StickInput_1 = Vector2.zero;
 						if (AxisInUse.ContainsKey (axisName)) {
@@ -91,7 +93,6 @@ public class WaterController : MonoBehaviour, IInputListener
 								if (!AxisInUse.ContainsKey (axisName)) {
 										AxisInUse.Add (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_1, true);
 										AxisInUse.Add (InputStringMapping.WaterInputMapping.P1_NavigateVertical_1, true);
-										;
 										lTimer = Time.time;
 										LStroke = StickInput_1;
 								} else {
@@ -106,12 +107,14 @@ public class WaterController : MonoBehaviour, IInputListener
 				}
 
 // Right Analog Stick
-				if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2) {
-						StickInput_2.x = Input.GetAxis (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2);
-				}
-				if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateVertical_2) {
-						StickInput_2.y = Input.GetAxis (InputStringMapping.WaterInputMapping.P1_NavigateVertical_2);
-				}
+//				if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2) {
+//						StickInput_2.x = axisValue;
+//				}
+//				if (axisName == InputStringMapping.WaterInputMapping.P1_NavigateVertical_2) {
+//						StickInput_2.y = axisValue;
+//				}
+				StickInput_2.x = Input.GetAxis (InputStringMapping.WaterInputMapping.P1_NavigateHorizontal_2);
+				StickInput_2.y = Input.GetAxis (InputStringMapping.WaterInputMapping.P1_NavigateVertical_2);
 				if (StickInput_2.magnitude < deadzone) {
 						StickInput_2 = Vector2.zero;
 						if (AxisInUse.ContainsKey (axisName)) {
@@ -207,7 +210,6 @@ public class WaterController : MonoBehaviour, IInputListener
 		public float							MovementSpeed = 10;
 		public float 							MaxSpeed_1 = 5;
 		public float 							MaxSpeed_2 = 10;
-		public float							JumpSpeed = 10;
 		public float							AxisThreshold = 0;
 		public float							AxisMax = 0.9f;
 }
