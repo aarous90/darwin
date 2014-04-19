@@ -32,11 +32,13 @@ public class GroundController : IController, IInputListener
 
 //Length of Raycast to check ground considering collider offset
 				RayLength = collider.bounds.size.y / 2 - Math.Abs (transform.position.y - collider.bounds.center.y);
-		}
+				RayOffset = Vector3.right * (collider.bounds.size.x / 2 - Math.Abs (transform.position.x - collider.bounds.center.x));
+		}			
 
 // Update is called once per frame
 		void Update ()
 		{
+
 		}
 
 		void FixedUpdate ()
@@ -84,7 +86,8 @@ public class GroundController : IController, IInputListener
 				if (Math.Abs (axisValue) > AxisMax && !m_MaxAxis.ContainsKey (axisName)) {
 						m_MaxAxis.Add (axisName, axisValue);
 						if (axisName == InputStringMapping.GroundInputMapping.P1_NavigateHorizontal) {
-								HAxis *= axisValue;	
+								HAxis = axisValue;
+								Flip (HAxis);
 						}
 						if (!AxisInUse.ContainsKey (axisName)) {
 								AxisInUse.Add (axisName, Time.time);
@@ -107,7 +110,6 @@ public class GroundController : IController, IInputListener
 						}
 
 						if (axisName == InputStringMapping.GroundInputMapping.P1_L_Step && m_MaxAxis.ContainsKey (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)) {
-								HAxis = m_MaxAxis [(InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)];
 								TrigL = true;	
 								if (TrigR) {
 										Move (true);
@@ -118,7 +120,6 @@ public class GroundController : IController, IInputListener
 						}
 
 						if (axisName == InputStringMapping.GroundInputMapping.P1_R_Step && m_MaxAxis.ContainsKey (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)) {
-								HAxis = m_MaxAxis [(InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)];
 								TrigR = true;	
 								if (TrigL) {
 										Move (true);
@@ -143,14 +144,15 @@ public class GroundController : IController, IInputListener
 		}
 
 		public void Move (bool dstep)
-		{		
-				Flip (HAxis);
-				if (dstep) {
-						MaxSpeed = MaxSpeed_2;
-						MovementForce += 0.5f * MovementSpeed * Math.Sign (HAxis);
-				} else {
-						MaxSpeed = MaxSpeed_1;
-						MovementForce += 0.5f * MovementSpeed * Math.Sign (HAxis);
+		{
+				if (IsGrounded ()) {
+						if (dstep) {
+								MaxSpeed = MaxSpeed_2;
+								MovementForce += 0.5f * MovementSpeed * Math.Sign (HAxis);
+						} else {
+								MaxSpeed = MaxSpeed_1;
+								MovementForce += 0.5f * MovementSpeed * Math.Sign (HAxis);
+						}
 				}
 		}
 
@@ -174,7 +176,7 @@ public class GroundController : IController, IInputListener
 
 		public bool IsGrounded ()
 		{
-				if (Physics.Raycast (transform.position, -transform.up, RayLength)) {
+				if (Physics.Raycast (transform.position, -transform.up, RayLength) || Physics.Raycast (transform.position + RayOffset, -transform.up, RayLength) || Physics.Raycast (transform.position - RayOffset, -transform.up, RayLength)) {
 						Grounded = true;
 				} else {
 						Grounded = false;
@@ -190,6 +192,7 @@ public class GroundController : IController, IInputListener
 		public InputManager						GlobalInput;
 		bool 									Grounded;
 		float 									RayLength;
+		Vector3 								RayOffset;
 		float 									HAxis;
 		float 									MaxSpeed = 0;
 		float 									MovementForce;
