@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class AirController : IController, IInputListener 
+public class AirController : IController, IInputListener
 {
 	#region IController implementation
 
-	public void Initialize(ICharacter character)
+	public override void Initialize(ICharacter character)
 	{
 		if (character is AirCharacter)
 		{
@@ -22,62 +22,68 @@ public class AirController : IController, IInputListener
 	#endregion
 
 	// Use this for initialization
-	void Start ()
+	public override void Start()
 	{
-		UnityEngine.Object.DontDestroyOnLoad (this);
-		GlobalInput.RegisterListener (InputManager.InputCategory.Ground, this);
+		GlobalInput.RegisterListener(InputManager.InputCategory.Ground, this);
 		
-		LookRight = transform.rotation;
-		LookLeft = LookRight * Quaternion.Euler (0, 180, 0); 
+		LookRight = currentCharacter.transform.rotation;
+		LookLeft = LookRight * Quaternion.Euler(0, 180, 0); 
 		
 		//Length of Raycast to check ground considering collider offset
-		RayLength = collider.bounds.size.y / 2 - Math.Abs (transform.position.y - collider.bounds.center.y);
+		RayLength = currentCharacter.collider.bounds.size.y / 2 -
+			Math.Abs(currentCharacter.transform.position.y - currentCharacter.collider.bounds.center.y);
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	public override void Update()
 	{
 		
 	}
 	
-	void FixedUpdate ()
+	public override void FixedUpdate()
 	{		
 		//Jump
-		if (TriggeredJump) {
-			Jump ();
+		if (TriggeredJump)
+		{
+			Jump();
 		}
 		
 		//Apply own Gravity
-		rigidbody.AddForce (-Vector3.up * Gravity * rigidbody.mass);
+		currentCharacter.rigidbody.AddForce(-Vector3.up * Gravity * currentCharacter.rigidbody.mass);
 		
 	}
 	
-	public void OnButtonUp (string button)
+	public void OnButtonUp(string button)
 	{
 		
 	}
 	
-	public void OnButtonPressed (string button)
+	public void OnButtonPressed(string button)
 	{
 		
 	}
 	
-	public void OnButtonDown (string button)
+	public void OnButtonDown(string button)
 	{
 		
 	}
 	
-	public void OnAxis (string axisName, float axisValue)
+	public void OnAxis(string axisName, float axisValue)
 	{
 		
-		if (Math.Abs (axisValue) > AxisMax && !m_MaxAxis.ContainsKey (axisName)) {
-			m_MaxAxis.Add (axisName, axisValue);
-			if (axisName == InputStringMapping.GroundInputMapping.P1_NavigateHorizontal) {
+		if (Math.Abs(axisValue) > AxisMax && !m_MaxAxis.ContainsKey(axisName))
+		{
+			m_MaxAxis.Add(axisName, axisValue);
+			if (axisName == InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)
+			{
 				HAxis *= axisValue;	
 			}
-			if (!AxisInUse.ContainsKey (axisName)) {
-				AxisInUse.Add (axisName, Time.time);
-			} else {
+			if (!AxisInUse.ContainsKey(axisName))
+			{
+				AxisInUse.Add(axisName, Time.time);
+			}
+			else
+			{
 				AxisInUse [axisName] = Time.time;
 			}
 			return;
@@ -85,97 +91,118 @@ public class AirController : IController, IInputListener
 		
 		float value;
 		
-		if ((Math.Abs (axisValue) < AxisMax && m_MaxAxis.TryGetValue (axisName, out value))) {
+		if ((Math.Abs(axisValue) < AxisMax && m_MaxAxis.TryGetValue(axisName, out value)))
+		{
 			
-			if (AxisInUse.ContainsKey (InputStringMapping.GroundInputMapping.P1_L_Step) && AxisInUse.ContainsKey (InputStringMapping.GroundInputMapping.P1_R_Step)) {
-				if (Math.Abs (AxisInUse [InputStringMapping.GroundInputMapping.P1_L_Step] - AxisInUse [InputStringMapping.GroundInputMapping.P1_R_Step]) <= 0.05) {
+			if (AxisInUse.ContainsKey(InputStringMapping.GroundInputMapping.P1_L_Step) && AxisInUse.ContainsKey(InputStringMapping.GroundInputMapping.P1_R_Step))
+			{
+				if (Math.Abs(AxisInUse [InputStringMapping.GroundInputMapping.P1_L_Step] - AxisInUse [InputStringMapping.GroundInputMapping.P1_R_Step]) <= 0.05)
+				{
 					TriggeredJump = true;
-					AxisInUse.Clear ();
-					m_MaxAxis.Clear ();
+					AxisInUse.Clear();
+					m_MaxAxis.Clear();
 				}
 			}
 			
-			if (axisName == InputStringMapping.GroundInputMapping.P1_L_Step && m_MaxAxis.ContainsKey (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)) {
+			if (axisName == InputStringMapping.GroundInputMapping.P1_L_Step && m_MaxAxis.ContainsKey(InputStringMapping.GroundInputMapping.P1_NavigateHorizontal))
+			{
 				HAxis = m_MaxAxis [(InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)];
 				TrigL = true;	
-				if (TrigR) {
-					Move (true);
+				if (TrigR)
+				{
+					Move(true);
 					TrigR = false;
-				} else {
-					Move (false);
+				}
+				else
+				{
+					Move(false);
 				}
 			}
 			
-			if (axisName == InputStringMapping.GroundInputMapping.P1_R_Step && m_MaxAxis.ContainsKey (InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)) {
+			if (axisName == InputStringMapping.GroundInputMapping.P1_R_Step && m_MaxAxis.ContainsKey(InputStringMapping.GroundInputMapping.P1_NavigateHorizontal))
+			{
 				HAxis = m_MaxAxis [(InputStringMapping.GroundInputMapping.P1_NavigateHorizontal)];
 				TrigR = true;	
-				if (TrigL) {
-					Move (true);
+				if (TrigL)
+				{
+					Move(true);
 					TrigL = false;
-				} else {
-					Move (false);
+				}
+				else
+				{
+					Move(false);
 				}
 				
 				
 				
 			}
-			m_MaxAxis.Remove (axisName);
+			m_MaxAxis.Remove(axisName);
 		}
 		
 		
 		
 	}
 	
-	public void OnMovement (string moveName, int x, int y)
+	public void OnMovement(string moveName, int x, int y)
 	{
 		
 	}
 	
-	public void Move (bool dstep)
+	public void Move(bool dstep)
 	{		
 		HAxis *= MovementForce;
-		Flip (HAxis);
-		if (rigidbody.velocity.magnitude < MaxSpeed && IsGrounded () == true) {
-			if (dstep) {
+		Flip(HAxis);
+		if (currentCharacter.rigidbody.velocity.magnitude < MaxSpeed && IsGrounded() == true)
+		{
+			if (dstep)
+			{
 				//rigidbody.AddForce (Vector3.right * HAxis * MovementSpeed*2);
-				rigidbody.velocity = rigidbody.velocity + (Vector3.right * HAxis);
-			} else {
+				currentCharacter.rigidbody.velocity = currentCharacter.rigidbody.velocity + (Vector3.right * HAxis);
+			}
+			else
+			{
 				//rigidbody.AddForce (Vector3.right * HAxis * MovementSpeed);
-				rigidbody.velocity = rigidbody.velocity + (Vector3.right * HAxis * 0.5f);
+				currentCharacter.rigidbody.velocity = currentCharacter.rigidbody.velocity + (Vector3.right * HAxis * 0.5f);
 			}
 		}
 	}
 	
-	public void Jump ()
+	public void Jump()
 	{
-		if (IsGrounded ()) {					
+		if (IsGrounded())
+		{					
 			TriggeredJump = false;
-			rigidbody.velocity = rigidbody.velocity + (Vector3.up * JumpSpeed);
+			currentCharacter.rigidbody.velocity = currentCharacter.rigidbody.velocity + (Vector3.up * JumpSpeed);
 		}
 	}
 	
-	void Flip (float h)
+	void Flip(float h)
 	{
-		if (h > 0) {
-			transform.rotation = LookRight;
+		if (h > 0)
+		{
+			currentCharacter.transform.rotation = LookRight;
 		}
-		if (h < 0) {
-			transform.rotation = LookLeft; 
+		if (h < 0)
+		{
+			currentCharacter.transform.rotation = LookLeft; 
 		}
 	}
 	
-	public bool IsGrounded ()
+	public bool IsGrounded()
 	{
-		if (Physics.Raycast (transform.position, -transform.up, RayLength)) {
+		if (Physics.Raycast(currentCharacter.transform.position, -currentCharacter.transform.up, RayLength))
+		{
 			Grounded = true;
-		} else {
+		}
+		else
+		{
 			Grounded = false;
 		}
 		return Grounded;
 	}
 	
-	private Dictionary<string, float>		m_MaxAxis = new Dictionary<string, float> ();
-	private Dictionary<string, float>		AxisInUse = new Dictionary<string, float> ();
+	private Dictionary<string, float>		m_MaxAxis = new Dictionary<string, float>();
+	private Dictionary<string, float>		AxisInUse = new Dictionary<string, float>();
 	
 	////////////////////////////////////////////////////////
 

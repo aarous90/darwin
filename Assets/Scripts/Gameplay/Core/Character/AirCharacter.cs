@@ -1,7 +1,17 @@
 
-public class AirCharacter : ICharacter
+using UnityEngine;
+
+public class AirCharacter : MonoBehaviour, ICharacter
 {
 	public AirCharacter()
+	{
+	}
+	
+	void Start()
+	{
+	}
+	
+	void Update()
 	{
 	}
 
@@ -10,6 +20,11 @@ public class AirCharacter : ICharacter
 	public Player GetOwningPlayer()
 	{
 		throw new System.NotImplementedException();
+	}
+	
+	public void Spawn()
+	{
+		
 	}
 
 	public float GetLive()

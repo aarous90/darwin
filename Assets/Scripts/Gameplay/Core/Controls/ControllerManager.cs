@@ -28,6 +28,11 @@ public class ControllerManager : MonoBehaviour
 	
 	}
 
+	void FixedUpdate()
+	{
+
+	}
+
 	////////////////////////////////////////////////////////////////////
 
 	public Dictionary<uint, MovementController> GetControllers()

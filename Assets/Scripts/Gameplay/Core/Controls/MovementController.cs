@@ -19,7 +19,34 @@ public class MovementController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-	
+
+	}
+
+	void FixedUpdate()
+	{
+		switch (currentControlType)
+		{
+			case ControlType.Air:
+			{
+				airController.FixedUpdate();
+			}
+				break;
+			case ControlType.Ground:
+			{
+				groundController.FixedUpdate();
+			}
+				break;
+			case ControlType.Water:
+			{
+				waterController.FixedUpdate();
+			}
+				break;
+			case ControlType.Invalid: // no break here
+			default:
+			{
+				throw new UnityException("Invalid control type!");
+			}
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////
@@ -30,44 +57,24 @@ public class MovementController : MonoBehaviour
 
 		if (currentCharacter is AirCharacter)
 		{
+			currentControlType = ControlType.Air;
 			airController.Initialize(character);
 		}
 		else if (currentCharacter is GroundCharacter)
 		{
+			currentControlType = ControlType.Ground;
 			groundController.Initialize(character);
 		}
 		else if (currentCharacter is WaterCharacter)
 		{
+			currentControlType = ControlType.Water;
 			waterController.Initialize(character);
 		}
-
-		/**
-		switch (type)
+		else
 		{
-			case ControlType.Air:
-				{
-
-
-				}
-				break;
-			case ControlType.Ground:
-				{
-
-				}
-				break;
-			case ControlType.Water:
-				{
-
-				}
-				break;
-			case ControlType.Invalid: // no break here
-			default:
-				{
-
-				}
-				break;
+			currentControlType = ControlType.Invalid;
+			throw new UnityException("Invalid control type!");
 		}
-		*/
 	}
 
 	////////////////////////////////////////////////////////////////////
@@ -81,6 +88,6 @@ public class MovementController : MonoBehaviour
 
 	AirController airController = new AirController();
 	GroundController groundController = new GroundController();
-	WaterController waterController = new WaterCharacter();
+	WaterController waterController = new WaterController();
 
 }

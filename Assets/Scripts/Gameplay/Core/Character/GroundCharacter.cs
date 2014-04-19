@@ -1,7 +1,18 @@
 
-public class GroundCharacter : ICharacter
+using UnityEngine;
+
+public class GroundCharacter : MonoBehaviour, ICharacter
 {
 	public GroundCharacter()
+	{
+
+	}
+
+	void Start()
+	{
+	}
+
+	void Update()
 	{
 	}
 
@@ -10,6 +21,11 @@ public class GroundCharacter : ICharacter
 	public Player GetOwningPlayer()
 	{
 		throw new System.NotImplementedException();
+	}
+	
+	public void Spawn()
+	{
+		
 	}
 
 	public float GetLive()

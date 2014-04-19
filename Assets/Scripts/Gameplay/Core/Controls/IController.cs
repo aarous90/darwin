@@ -1,13 +1,13 @@
 using System;
 
-public interface IController
+public abstract class IController
 {
-	void Initialize(ICharacter character);
+	public abstract void Initialize(ICharacter character);
 
-	protected void Start();
+	public abstract void Start();
 
-	protected void Update();
+	public abstract void Update();
 	
-	protected void FixedUpdate();
+	public abstract void FixedUpdate();
 }
 

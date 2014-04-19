@@ -1,7 +1,17 @@
 
-public class WaterCharacter : ICharacter
+using UnityEngine;
+
+public class WaterCharacter : MonoBehaviour, ICharacter
 {
 	public WaterCharacter()
+	{
+	}
+	
+	void Start()
+	{
+	}
+	
+	void Update()
 	{
 	}
 
@@ -10,6 +20,11 @@ public class WaterCharacter : ICharacter
 	public Player GetOwningPlayer()
 	{
 		throw new System.NotImplementedException();
+	}
+
+	public void Spawn()
+	{
+
 	}
 	
 	public float GetLive()
