@@ -3,6 +3,11 @@ using System.Collections;
 
 public class PlayerStats 
 {
+	public PlayerStats(Player owner)
+	{
+		this.owner = owner;
+	}
+
 	// Use this for initialization
 	void Start() 
 	{
@@ -14,4 +19,6 @@ public class PlayerStats
 	{
 	
 	}
+
+	private Player owner;
 }

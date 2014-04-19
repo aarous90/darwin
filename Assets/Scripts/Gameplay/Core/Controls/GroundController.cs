@@ -3,8 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class GroundController : MonoBehaviour, IInputListener
+public class GroundController : IController, IInputListener
 {
+	#region IController implementation
+	
+	public void Initialize(ICharacter character)
+	{
+		if (character is GroundCharacter)
+		{
+			this.currentCharacter = character as GroundCharacter;
+		}
+		else
+		{
+			throw new ArgumentException("Invalid character type!");
+		}
+	}
+	
+	#endregion
 
 // Use this for initialization
 		void Start ()
@@ -170,7 +185,8 @@ public class GroundController : MonoBehaviour, IInputListener
 		private Dictionary<string, float>		m_MaxAxis = new Dictionary<string, float> ();
 		private Dictionary<string, float>		AxisInUse = new Dictionary<string, float> ();
 
-////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////
+
 		public InputManager						GlobalInput;
 		bool 									Grounded;
 		float 									RayLength;
@@ -192,4 +208,7 @@ public class GroundController : MonoBehaviour, IInputListener
 		public float							AxisThreshold = 0;
 		public float							AxisMax = 0.9f;
 
+		////////////////////////////////////////////////////////
+
+		GroundCharacter currentCharacter;
 }

@@ -3,9 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class AirController : MonoBehaviour, IInputListener
+public class AirController : IController, IInputListener 
 {
-	
+	#region IController implementation
+
+	public void Initialize(ICharacter character)
+	{
+		if (character is AirCharacter)
+		{
+			this.currentCharacter = character as AirCharacter;
+		}
+		else
+		{
+			throw new ArgumentException("Invalid character type!");
+		}
+	}
+
+	#endregion
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -163,6 +178,7 @@ public class AirController : MonoBehaviour, IInputListener
 	private Dictionary<string, float>		AxisInUse = new Dictionary<string, float> ();
 	
 	////////////////////////////////////////////////////////
+
 	public InputManager						GlobalInput;
 	bool 									Grounded;
 	float 									RayLength;
@@ -183,4 +199,9 @@ public class AirController : MonoBehaviour, IInputListener
 	// not implemented yet
 	float 									JumpTime;
 	float 									AirTime;
+
+	////////////////////////////////////////////////////////
+
+	AirCharacter currentCharacter;
+
 }

@@ -3,8 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class WaterController : MonoBehaviour, IInputListener
+public class WaterController : IController, IInputListener 
 {
+	#region IController implementation
+	
+	public void Initialize(ICharacter character)
+	{
+		if (character is WaterCharacter)
+		{
+			this.currentCharacter = character as WaterCharacter;
+		}
+		else
+		{
+			throw new ArgumentException("Invalid character type!");
+		}
+	}
+	
+	#endregion
 
 // Use this for initialization
 		void Start ()
@@ -181,7 +196,8 @@ public class WaterController : MonoBehaviour, IInputListener
 		private Dictionary<string, float>		m_MaxAxis = new Dictionary<string, float> ();
 		private Dictionary<string, bool>		AxisInUse = new Dictionary<string, bool> ();
 
-////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////
+		
 		public InputManager						GlobalInput;
 		float 									RayLength;
 		float									MaxSpeed;
@@ -202,4 +218,8 @@ public class WaterController : MonoBehaviour, IInputListener
 		public float							JumpSpeed = 10;
 		public float							AxisThreshold = 0;
 		public float							AxisMax = 0.9f;
+	
+		////////////////////////////////////////////////////////
+		
+		WaterCharacter 							currentCharacter;
 }

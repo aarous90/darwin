@@ -4,6 +4,13 @@ using System.Collections;
 public class Player 
 {
 
+	public Player(uint index)
+	{
+		PlayerName = "Player " + index;
+		PlayerIndex = index;
+		playerStats = new PlayerStats(this);
+	}
+
 	// Use this for initialization
 	void Start() 
 	{
@@ -15,4 +22,12 @@ public class Player
 	{
 	
 	}
+
+	public string 			PlayerName;
+
+	public uint 			PlayerIndex;
+
+	////////////////////////////////////////////////////////////////////
+
+	private PlayerStats 	playerStats;
 }

@@ -18,8 +18,8 @@ public class MultiplayerState : IGameState
 
 	}
 
-
 	#region IGameState implementation
+
 	public string GetName ()
 	{
 		return "Multiplayer State";
@@ -39,6 +39,7 @@ public class MultiplayerState : IGameState
 	{
 
 	}
+
 	#endregion
 }
 

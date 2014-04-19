@@ -18,8 +18,8 @@ public class TrainingState : IGameState
 
 	}
 
-
 	#region IGameState implementation
+
 	public string GetName()
 	{
 		return "Training State";
@@ -44,6 +44,7 @@ public class TrainingState : IGameState
 	{
 
 	}
+
 	#endregion
 }
 
