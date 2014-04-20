@@ -1,6 +1,6 @@
 ﻿
 /// <summary>
-/// The abstract gamestate
+/// The gamestate interface
 /// </summary>
 public interface IGameState 
 {

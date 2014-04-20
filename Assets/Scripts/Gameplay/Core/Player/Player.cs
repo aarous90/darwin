@@ -3,12 +3,13 @@ using System.Collections;
 
 public class Player 
 {
-
-	public Player(uint index)
+	public Player(uint key, MovementController value)
 	{
-		PlayerName = "Player " + index;
-		PlayerIndex = index;
+		PlayerName = "Player " + key;
+		PlayerIndex = key;
 		playerStats = new PlayerStats(this);
+
+		controller = value;
 	}
 
 	// Use this for initialization
@@ -23,11 +24,37 @@ public class Player
 	
 	}
 
-	public string 			PlayerName;
+	public MovementController GetController()
+	{
+		if (controller == null)
+		{
+			throw new UnityEngine.UnityException("Player " + PlayerIndex + " has no valid controller!");
+		}
+		return controller;
+	}
 
-	public uint 			PlayerIndex;
+	public ICharacter GetCharacter()
+	{
+		MovementController c = GetController();
+		return c.CurrentCharacter;
+
+	}
 
 	////////////////////////////////////////////////////////////////////
 
-	private PlayerStats 	playerStats;
+	public string 				PlayerName;
+
+	public uint 				PlayerIndex;
+
+	////////////////////////////////////////////////////////////////////
+
+	/// <summary>
+	/// The movement controller of this player.
+	/// </summary>
+	private MovementController 	controller;
+
+	/// <summary>
+	/// The player stats.
+	/// </summary>
+	private PlayerStats 		playerStats;
 }

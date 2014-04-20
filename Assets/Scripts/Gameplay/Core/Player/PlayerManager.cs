@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// The Player manager takes care of the players/controllers registered to a game session.
+/// </summary>
 public class PlayerManager : MonoBehaviour {
 
 	public static PlayerManager Get()
@@ -33,13 +36,38 @@ public class PlayerManager : MonoBehaviour {
 		return (uint) players.Count;
 	}
 
-	private void CreatePlayers()
+	/// <summary>
+	/// Gets a player by its index.
+	/// </summary>
+	/// <returns>The player with the index or null if not found.</returns>
+	/// <param name="index">The index of the player to be returned</param>
+	public Player GetPlayer(uint index)
 	{
-		int controllerCount = ControllerManager.Get().GetControllers().Count;
-		players.Add(0, new Player(0));
-		players.Add(1, new Player(1));
+		if (players.ContainsKey(index))
+		{
+			return players[index];
+		}
+		return null;
 	}
 
-	private Dictionary<int, Player> players = new Dictionary<int, Player>();
+	/// <summary>
+	/// Creates the players based on the controllers the controller manager offers.
+	/// </summary>
+	void CreatePlayers()
+	{
+		foreach (var mc in ControllerManager.Get().GetControllers())
+		{
+			players.Add(mc.Key, new Player(mc.Key, mc.Value));
+		}
+	}
+
+	////////////////////////////////////////////////////////////////////
+
+	/// <summary>
+	/// All players that are managed.
+	/// </summary>
+	Dictionary<uint, Player> players = new Dictionary<uint, Player>();
+
+
 
 }

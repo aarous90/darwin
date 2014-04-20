@@ -28,21 +28,36 @@ public class CharacterManager : MonoBehaviour
 
 	////////////////////////////////////////////////////////////////////
 
+	/// <summary>
+	/// Gets the spawners.
+	/// </summary>
+	/// <value>The spawners.</value>
+	public Dictionary<int, CharacterSpawn> Spawners
+	{
+		get
+		{
+			return new Dictionary<int, CharacterSpawn>(spawners);
+		}
+	}
+	/// <summary>
+	/// Registers a CharacterSpawn automatically on start.
+	/// </summary>
+	/// <param name="spawner">Spawner.</param>
 	public void RegisterSpawn(CharacterSpawn spawner)
 	{
 		if (spawner == null)
 		{
 			throw new System.ArgumentNullException("spawner");
 		}
-		if (spawners.Contains(spawner))
+		if (spawners.ContainsKey(spawner.PlayerIndex) || spawners.ContainsValue(spawner))
 		{
 			return;
 		}
-		spawners.Add(spawner);
+		spawners.Add(spawner.PlayerIndex, spawner);
 	}
 
 	////////////////////////////////////////////////////////////////////
 
-	HashSet<CharacterSpawn> spawners = new HashSet<CharacterSpawn>();
+	Dictionary<int, CharacterSpawn> spawners = new Dictionary<int, CharacterSpawn>();
 
 }

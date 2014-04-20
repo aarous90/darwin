@@ -83,6 +83,43 @@ public class MovementController : MonoBehaviour
 		}
 	}
 
+	public ICharacter CurrentCharacter
+	{
+		get
+		{
+			if (currentCharacter == null)
+			{
+				print("WARNING: Tried to fetch the controllers character while no character is controlled!");
+				return null;
+			}
+			return currentCharacter;
+		}
+	}
+
+	public ControlType CurrentControlType
+	{
+		get
+		{
+			return currentControlType;
+		}
+	}
+
+	public string JoystickName
+	{
+		get
+		{
+			return joystickName;
+		}
+	}
+
+	public uint JoystickID
+	{
+		get
+		{
+			return joystickID;
+		}
+	}
+
 	////////////////////////////////////////////////////////////////////
 
 	string joystickName;
