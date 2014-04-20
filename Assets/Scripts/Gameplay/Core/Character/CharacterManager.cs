@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 /// Character manager.
@@ -17,7 +18,7 @@ public class CharacterManager : MonoBehaviour
 
 	void Start()
 	{
-		UnityEngine.Object.DontDestroyOnLoad(this);
+		Object.DontDestroyOnLoad(this);
 	}
 
 	void Update()
@@ -27,5 +28,21 @@ public class CharacterManager : MonoBehaviour
 
 	////////////////////////////////////////////////////////////////////
 
+	public void RegisterSpawn(CharacterSpawn spawner)
+	{
+		if (spawner == null)
+		{
+			throw new System.ArgumentNullException("spawner");
+		}
+		if (spawners.Contains(spawner))
+		{
+			return;
+		}
+		spawners.Add(spawner);
+	}
+
+	////////////////////////////////////////////////////////////////////
+
+	HashSet<CharacterSpawn> spawners = new HashSet<CharacterSpawn>();
 
 }

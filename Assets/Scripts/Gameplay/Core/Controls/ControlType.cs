@@ -1,5 +1,6 @@
-using System;
-
+/// <summary>
+/// Simple enum to switch case on.
+/// </summary>
 public enum ControlType
 {
 	Air,

@@ -2,6 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// Controller manager singleton. Initialises joysticks/gamepads and keeps references about them.
+/// TODO: add functionality to find unplugged/replugged joypads?
+/// </summary>
 public class ControllerManager : MonoBehaviour
 {
 
@@ -18,7 +22,7 @@ public class ControllerManager : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		UnityEngine.Object.DontDestroyOnLoad(this);
+		Object.DontDestroyOnLoad(this);
 		Initialize();
 	}
 	
@@ -34,12 +38,18 @@ public class ControllerManager : MonoBehaviour
 	}
 
 	////////////////////////////////////////////////////////////////////
-
+	
+	/// <summary>
+	/// Returns a copy of the known controllers
+	/// </summary>
 	public Dictionary<uint, MovementController> GetControllers()
 	{
 		return new Dictionary<uint, MovementController>(joysticks);
 	}
 
+	/// <summary>
+	/// Initialize the controllers by fetching joystick names known to unity.
+	/// </summary>
 	void Initialize()
 	{
 		uint i = 0;
@@ -50,6 +60,9 @@ public class ControllerManager : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// The joysticks found on initalize.
+	/// </summary>
 	Dictionary<uint, MovementController> joysticks = new Dictionary<uint, MovementController>();
 
 }

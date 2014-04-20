@@ -10,7 +10,7 @@ public class GroundController : IController, IInputListener
 	{
 		if (character is GroundCharacter)
 		{
-			this.currentCharacter = character as GroundCharacter;
+			currentCharacter = character as GroundCharacter;
 		}
 		else
 		{

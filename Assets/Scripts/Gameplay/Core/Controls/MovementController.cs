@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// The Movement controller manages to switch between different input settings for each terrain (Air, Ground, Water).
+/// </summary>
 public class MovementController : MonoBehaviour
 {
 
@@ -24,6 +26,7 @@ public class MovementController : MonoBehaviour
 
 	void FixedUpdate()
 	{
+		// Switch on control type
 		switch (currentControlType)
 		{
 			case ControlType.Air:
@@ -49,9 +52,13 @@ public class MovementController : MonoBehaviour
 	}
 
 	////////////////////////////////////////////////////////////////////
-
+	
+	/// <summary>
+	/// Take control of a certain character. Automaticly switches the input layout!
+	/// </summary>
 	public void UseCharacter(ICharacter character)
 	{
+		// TODO: free old character
 		currentCharacter = character;
 
 		if (currentCharacter is AirCharacter)
@@ -81,12 +88,29 @@ public class MovementController : MonoBehaviour
 	string joystickName;
 	uint joystickID;
 
+	/// <summary>
+	/// The type of the current control.
+	/// </summary>
 	ControlType currentControlType;
 
+	/// <summary>
+	/// The current used character.
+	/// </summary>
 	ICharacter currentCharacter;
 
+	/// <summary>
+	/// The air controller.
+	/// </summary>
 	AirController airController = new AirController();
+
+	/// <summary>
+	/// The ground controller.
+	/// </summary>
 	GroundController groundController = new GroundController();
+
+	/// <summary>
+	/// The water controller.
+	/// </summary>
 	WaterController waterController = new WaterController();
 
 }
