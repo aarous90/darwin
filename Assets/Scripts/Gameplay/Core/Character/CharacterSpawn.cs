@@ -26,7 +26,7 @@ public class CharacterSpawn : MonoBehaviour
 	public uint TestSector
 	{
 		get { return testSector; }
-		set { testSector = value }
+		set { testSector = value; }
 	}
 
 	/// <summary>

@@ -22,9 +22,9 @@ public class AirCharacter : MonoBehaviour, ICharacter
 		throw new System.NotImplementedException();
 	}
 	
-	public void Spawn()
+	public void Spawn(CharacterSpawn spawner)
 	{
-		
+		Object.Instantiate(this, spawner.transform.position, spawner.transform.rotation);
 	}
 
 	public float GetLive()

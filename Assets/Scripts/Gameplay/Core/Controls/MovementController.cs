@@ -41,7 +41,6 @@ public class MovementController : MonoBehaviour
 				waterController.FixedUpdate();
 			}
 				break;
-			case ControlType.Invalid: // no break here
 			default:
 			{
 				throw new UnityException("Invalid control type!");
