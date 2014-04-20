@@ -23,7 +23,8 @@ public class MultiplayerState : IGameState
 
 	public void Enter()
 	{
-
+		//LevelManager.Get().Load();
+		//LevelManager.Get().Spawn();
 	}
 
 	public void Leave()

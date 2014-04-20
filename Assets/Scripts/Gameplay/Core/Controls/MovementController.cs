@@ -3,7 +3,10 @@
 /// <summary>
 /// The Movement controller manages to switch between different input settings for each terrain (Air, Ground, Water).
 /// </summary>
-public class MovementController : MonoBehaviour
+using System;
+
+
+public class MovementController
 {
 
 	public MovementController(string joystickName, uint joystickID)
@@ -17,14 +20,14 @@ public class MovementController : MonoBehaviour
 	{
 	
 	}
-	
+
 	// Update is called once per frame
 	void Update()
 	{
 
 	}
 
-	void FixedUpdate()
+	public void FixedUpdate()
 	{
 		// Switch on control type
 		switch (currentControlType)
@@ -89,7 +92,7 @@ public class MovementController : MonoBehaviour
 		{
 			if (currentCharacter == null)
 			{
-				print("WARNING: Tried to fetch the controllers character while no character is controlled!");
+				//print("WARNING: Tried to fetch the controllers character while no character is controlled!");
 				return null;
 			}
 			return currentCharacter;
@@ -128,12 +131,12 @@ public class MovementController : MonoBehaviour
 	/// <summary>
 	/// The type of the current control.
 	/// </summary>
-	ControlType currentControlType;
+	ControlType currentControlType = ControlType.Invalid;
 
 	/// <summary>
 	/// The current used character.
 	/// </summary>
-	ICharacter currentCharacter;
+	ICharacter currentCharacter = null;
 
 	/// <summary>
 	/// The air controller.

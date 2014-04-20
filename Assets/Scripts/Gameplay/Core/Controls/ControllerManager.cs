@@ -34,7 +34,10 @@ public class ControllerManager : MonoBehaviour
 
 	void FixedUpdate()
 	{
-
+		foreach (var controller in joysticks)
+		{
+			controller.Value.FixedUpdate();
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////

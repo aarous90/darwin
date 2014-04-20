@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class GroundCharacter : MonoBehaviour, ICharacter
+public class GroundCharacter : ICharacter
 {
 	public GroundCharacter()
 	{
@@ -18,112 +18,102 @@ public class GroundCharacter : MonoBehaviour, ICharacter
 
 	#region ICharacter implementation
 
-	public Player GetOwningPlayer()
-	{
-		throw new System.NotImplementedException();
-	}
-	
-	public void Spawn(CharacterSpawn spawner)
-	{
-		Object.Instantiate(this, spawner.transform.position, spawner.transform.rotation);
-	}
-
-	public float GetLive()
+	public override float GetLive()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public void Regenerate(float value)
+	public override void Regenerate(float value)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public void TakeDamage(float value)
+	public override void TakeDamage(float value)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public float GetBoost()
+	public override float GetBoost()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public void GainBoost(float value)
+	public override void GainBoost(float value)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public void UseBoost(float value)
+	public override void UseBoost(float value)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public bool UseSpecial(AttackContext context)
+	public override bool UseSpecial(AttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public bool UseMelee(AttackContext context)
+	public override bool UseMelee(AttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public bool UseRanged(AttackContext context)
+	public override bool UseRanged(AttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public void DoMeleeDamage(DamageContext context)
+	public override void DoMeleeDamage(DamageContext context)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public void DoRangedDamage(DamageContext context)
+	public override void DoRangedDamage(DamageContext context)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public void DoSpecialDamage(DamageContext context)
+	public override void DoSpecialDamage(DamageContext context)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public bool CanMove()
+	public override bool CanMove()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public void Move(float deltaTime)
+	public override void Move(float deltaTime)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public bool CanJump()
+	public override bool CanJump()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public void Jump(float deltaTime)
+	public override void Jump(float deltaTime)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public bool CanFly()
+	public override bool CanFly()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public void Fly(float deltaTime)
+	public override void Fly(float deltaTime)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public bool CanSwim()
+	public override bool CanSwim()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public void Swim(float deltaTime)
+	public override void Swim(float deltaTime)
 	{
 		throw new System.NotImplementedException();
 	}

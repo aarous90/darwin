@@ -39,6 +39,7 @@ public class CharacterManager : MonoBehaviour
 			return new Dictionary<int, CharacterSpawn>(spawners);
 		}
 	}
+
 	/// <summary>
 	/// Registers a CharacterSpawn automatically on start.
 	/// </summary>
@@ -56,8 +57,35 @@ public class CharacterManager : MonoBehaviour
 		spawners.Add(spawner.PlayerIndex, spawner);
 	}
 
+	/// <summary>
+	/// Registers a character on spawn.
+	/// </summary>
+	/// <param name="character">Character.</param>
+	public void RegisterCharacter(ICharacter character)
+	{
+		if (character == null)
+		{
+			throw new System.ArgumentNullException("character");
+		}
+		if (characters.ContainsKey(character.GetOwningPlayer().PlayerIndex) || characters.ContainsValue(character))
+		{
+			return;
+		}
+		characters.Add(character.GetOwningPlayer().PlayerIndex, character);
+		
+	}
+
+	public void UnregisterCharacter(ICharacter character)
+	{
+		if (characters.ContainsKey(character.GetOwningPlayer().PlayerIndex))
+		{
+			characters.Remove(character.GetOwningPlayer().PlayerIndex);
+		}
+	}
+
 	////////////////////////////////////////////////////////////////////
 
 	Dictionary<int, CharacterSpawn> spawners = new Dictionary<int, CharacterSpawn>();
+	Dictionary<int, ICharacter> characters = new Dictionary<int, ICharacter>();
 
 }

@@ -1,12 +1,22 @@
 ﻿
-public interface ICharacter 
+using UnityEngine;
+
+public abstract class ICharacter : MonoBehaviour
 {
 
-	Player GetOwningPlayer();
+	public Player GetOwningPlayer()
+	{
+		return Owner;
+	}
 
 	////////////////////////////////////////////////////////////////////
 
-	void Spawn(CharacterSpawn spawner);
+	public void Spawn(CharacterSpawn spawner)
+	{
+		IsSpawned = true;
+		Object.Instantiate(this, spawner.transform.position, spawner.transform.rotation);
+		Owner = PlayerManager.Get().GetPlayer((uint)spawner.PlayerIndex);
+	}
 
 	////////////////////////////////////////////////////////////////////
 
@@ -16,56 +26,62 @@ public interface ICharacter
 
 	////////////////////////////////////////////////////////////////////
 
-	float GetLive();
+	public abstract float GetLive();
 
-	void Regenerate(float value);
+	public abstract void Regenerate(float value);
 
-	void TakeDamage(float value);
+	public abstract void TakeDamage(float value);
 
 	////////////////////////////////////////////////////////////////////
 
-	float GetBoost();
+	public abstract float GetBoost();
 
-	void GainBoost(float value);
+	public abstract void GainBoost(float value);
 
-	void UseBoost(float value);
+	public abstract void UseBoost(float value);
 
 	////////////////////////////////////////////////////////////////////
 
 	/// Try using a special ability, return true if successful
-	bool UseSpecial(AttackContext context);
+	public abstract bool UseSpecial(AttackContext context);
 
 	/// Try using a melee attack, return true if successful
-	bool UseMelee(AttackContext context);
+	public abstract bool UseMelee(AttackContext context);
 
 	/// Try using a ranged attack, return true if successful
-	bool UseRanged(AttackContext context);
+	public abstract bool UseRanged(AttackContext context);
 
 	////////////////////////////////////////////////////////////////////
 
-	void DoMeleeDamage(DamageContext context);
+	public abstract void DoMeleeDamage(DamageContext context);
 
-	void DoRangedDamage(DamageContext context);
+	public abstract void DoRangedDamage(DamageContext context);
 
-	void DoSpecialDamage(DamageContext context);
+	public abstract void DoSpecialDamage(DamageContext context);
+
+	////////////////////////////////////////////////////////////////////
+
+	public abstract bool CanMove();
+
+	public abstract void Move(float deltaTime);
+
+	public abstract bool CanJump();
+
+	public abstract void Jump(float deltaTime);
+
+	public abstract bool CanFly();
+
+	public abstract void Fly(float deltaTime);
+
+	public abstract bool CanSwim();
+
+	public abstract void Swim(float deltaTime);
 
 	////////////////////////////////////////////////////////////////////
 
-	bool CanMove();
-
-	void Move(float deltaTime);
-
-	bool CanJump();
-
-	void Jump(float deltaTime);
-
-	bool CanFly();
-
-	void Fly(float deltaTime);
-
-	bool CanSwim();
-
-	void Swim(float deltaTime);
+	public bool IsSpawned;
 
 	////////////////////////////////////////////////////////////////////
+
+	protected Player Owner;
 }
