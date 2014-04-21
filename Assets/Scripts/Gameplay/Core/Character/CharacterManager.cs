@@ -41,6 +41,18 @@ public class CharacterManager : MonoBehaviour
 	}
 
 	/// <summary>
+	/// Gets the characters.
+	/// </summary>
+	/// <value>The characters.</value>
+	public Dictionary<int, ICharacter> Characters
+	{
+		get
+		{
+			return new Dictionary<int, ICharacter>(characters);
+		}
+	}
+
+	/// <summary>
 	/// Registers a CharacterSpawn automatically on start.
 	/// </summary>
 	/// <param name="spawner">Spawner.</param>
@@ -55,6 +67,18 @@ public class CharacterManager : MonoBehaviour
 			return;
 		}
 		spawners.Add(spawner.PlayerIndex, spawner);
+	}
+
+	/// <summary>
+	/// Unregisters the CharacterSpawn.
+	/// </summary>
+	/// <param name="characterSpawn">Character spawn.</param>
+	public void UnregisterSpawn(CharacterSpawn characterSpawn)
+	{
+		if (spawners.ContainsKey(characterSpawn.PlayerIndex))
+		{
+			spawners.Remove(characterSpawn.PlayerIndex);
+        }
 	}
 
 	/// <summary>
@@ -75,6 +99,10 @@ public class CharacterManager : MonoBehaviour
 		
 	}
 
+	/// <summary>
+	/// Unregisters the character.
+	/// </summary>
+	/// <param name="character">Character.</param>
 	public void UnregisterCharacter(ICharacter character)
 	{
 		if (characters.ContainsKey(character.GetOwningPlayer().PlayerIndex))
@@ -82,6 +110,10 @@ public class CharacterManager : MonoBehaviour
 			characters.Remove(character.GetOwningPlayer().PlayerIndex);
 		}
 	}
+
+	////////////////////////////////////////////////////////////////////
+
+	public ICharacter[] CharacterTypes;
 
 	////////////////////////////////////////////////////////////////////
 

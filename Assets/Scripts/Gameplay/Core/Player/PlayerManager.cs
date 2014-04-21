@@ -41,9 +41,9 @@ public class PlayerManager : MonoBehaviour {
 	/// </summary>
 	/// <returns>The player with the index or null if not found.</returns>
 	/// <param name="index">The index of the player to be returned</param>
-	public Player GetPlayer(uint index)
+	public Player GetPlayer(int index)
 	{
-		if (players.ContainsKey(index))
+		if (index >= 0 && players.ContainsKey(index))
 		{
 			return players[index];
 		}
@@ -66,7 +66,7 @@ public class PlayerManager : MonoBehaviour {
 	/// <summary>
 	/// All players that are managed.
 	/// </summary>
-	Dictionary<uint, Player> players = new Dictionary<uint, Player>();
+	Dictionary<int, Player> players = new Dictionary<int, Player>();
 
 
 

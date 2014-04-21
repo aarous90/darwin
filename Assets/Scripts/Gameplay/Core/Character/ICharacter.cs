@@ -14,8 +14,14 @@ public abstract class ICharacter : MonoBehaviour
 	public void Spawn(CharacterSpawn spawner)
 	{
 		IsSpawned = true;
+		CharacterManager.Get().RegisterCharacter(this);
 		Object.Instantiate(this, spawner.transform.position, spawner.transform.rotation);
-		Owner = PlayerManager.Get().GetPlayer((uint)spawner.PlayerIndex);
+		Owner = PlayerManager.Get().GetPlayer(spawner.PlayerIndex);
+	}
+
+	public void Remove()
+	{
+		CharacterManager.Get().UnregisterCharacter(this);
 	}
 
 	////////////////////////////////////////////////////////////////////

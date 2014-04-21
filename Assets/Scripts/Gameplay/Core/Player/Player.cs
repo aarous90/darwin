@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player 
 {
-	public Player(uint key, MovementController value)
+	public Player(int key, MovementController value)
 	{
 		PlayerName = "Player " + key;
 		PlayerIndex = key;
@@ -28,7 +28,7 @@ public class Player
 	{
 		if (controller == null)
 		{
-			throw new UnityEngine.UnityException("Player " + PlayerIndex + " has no valid controller!");
+			throw new UnityException("Player " + PlayerIndex + " has no valid controller!");
 		}
 		return controller;
 	}
@@ -44,17 +44,17 @@ public class Player
 
 	public string 				PlayerName;
 
-	public uint 				PlayerIndex;
+	public int 				PlayerIndex;
 
 	////////////////////////////////////////////////////////////////////
 
 	/// <summary>
 	/// The movement controller of this player.
 	/// </summary>
-	private MovementController 	controller;
+	MovementController 			controller;
 
 	/// <summary>
 	/// The player stats.
 	/// </summary>
-	private PlayerStats 		playerStats;
+	PlayerStats 				playerStats;
 }

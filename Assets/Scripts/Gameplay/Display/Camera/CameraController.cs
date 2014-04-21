@@ -13,9 +13,9 @@ public class CameraController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (owner.GetCharacter() is MonoBehaviour)
+		if (owner.GetCharacter() != null)
 		{
-			MonoBehaviour character = owner.GetCharacter() as MonoBehaviour;
+			ICharacter character = owner.GetCharacter();
 			transform.position = character.transform.position + cameraOffset;
 			Vector3 lookAt = character.transform.position;
 			lookAt.x = transform.position.x;
@@ -52,7 +52,7 @@ public class CameraController : MonoBehaviour
 
 	////////////////////////////////////////////////////////////////////
 
-	public uint PlayerIndex = 0;
+	public int PlayerIndex = 0;
 
 	public float RightOffset = 5f;
 

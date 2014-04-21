@@ -13,7 +13,16 @@ public class CharacterSpawn : MonoBehaviour
 
 	void Start()
 	{
-		CharacterManager.Get().RegisterSpawn(this);
+		if (create)
+		{
+			CharacterManager.Get().RegisterSpawn(this);
+			create = false;
+		}
+		if (remove)
+		{
+			CharacterManager.Get().UnregisterSpawn(this);
+			remove = false;
+		}
 	}
 
 	void Update()
@@ -24,6 +33,7 @@ public class CharacterSpawn : MonoBehaviour
 	public void DoSpawn(ICharacter character)
 	{
 		character.Spawn(this);
+		PlayerManager.Get().GetPlayer(PlayerIndex).GetController().UseCharacter(character);
 	}
 
 	/// <summary>
@@ -52,5 +62,8 @@ public class CharacterSpawn : MonoBehaviour
 	uint testSector /* = 0 */;
 
 
+	bool create = true;
+
+	bool remove;
 }
 

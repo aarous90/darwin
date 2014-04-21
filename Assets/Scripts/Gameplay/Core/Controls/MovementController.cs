@@ -9,7 +9,7 @@ using System;
 public class MovementController
 {
 
-	public MovementController(string joystickName, uint joystickID)
+	public MovementController(string joystickName, int joystickID)
 	{
 		this.joystickID = joystickID;
 		this.joystickName = joystickName;
@@ -47,6 +47,10 @@ public class MovementController
 				waterController.FixedUpdate();
 			}
 				break;
+			case ControlType.Invalid:
+			{
+			}
+				break;
 			default:
 			{
 				throw new UnityException("Invalid control type!");
@@ -68,16 +72,19 @@ public class MovementController
 		{
 			currentControlType = ControlType.Air;
 			airController.Initialize(character);
+			airController.Start(); // TODO: remove start call after moving init to character
 		}
 		else if (currentCharacter is GroundCharacter)
 		{
 			currentControlType = ControlType.Ground;
 			groundController.Initialize(character);
+			groundController.Start(); // TODO: remove start call after moving init to character
 		}
 		else if (currentCharacter is WaterCharacter)
 		{
 			currentControlType = ControlType.Water;
 			waterController.Initialize(character);
+			waterController.Start(); // TODO: remove start call after moving init to character
 		}
 		else
 		{
@@ -115,7 +122,7 @@ public class MovementController
 		}
 	}
 
-	public uint JoystickID
+	public int JoystickID
 	{
 		get
 		{
@@ -126,7 +133,7 @@ public class MovementController
 	////////////////////////////////////////////////////////////////////
 
 	string joystickName;
-	uint joystickID;
+	int joystickID;
 
 	/// <summary>
 	/// The type of the current control.

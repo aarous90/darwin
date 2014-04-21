@@ -45,9 +45,9 @@ public class ControllerManager : MonoBehaviour
 	/// <summary>
 	/// Returns a copy of the known controllers
 	/// </summary>
-	public Dictionary<uint, MovementController> GetControllers()
+	public Dictionary<int, MovementController> GetControllers()
 	{
-		return new Dictionary<uint, MovementController>(joysticks);
+		return new Dictionary<int, MovementController>(joysticks);
 	}
 
 	/// <summary>
@@ -55,10 +55,10 @@ public class ControllerManager : MonoBehaviour
 	/// </summary>
 	void Initialize()
 	{
-		uint i = 0;
+		int i = 0;
 		foreach (string joystick in Input.GetJoystickNames())
 		{
-			uint ID = i++;
+			int ID = i++;
 			joysticks.Add(ID, new MovementController(joystick, ID));
 		}
 	}
@@ -66,6 +66,6 @@ public class ControllerManager : MonoBehaviour
 	/// <summary>
 	/// The joysticks found on initalize.
 	/// </summary>
-	Dictionary<uint, MovementController> joysticks = new Dictionary<uint, MovementController>();
+	Dictionary<int, MovementController> joysticks = new Dictionary<int, MovementController>();
 
 }
