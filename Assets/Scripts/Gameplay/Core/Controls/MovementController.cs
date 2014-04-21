@@ -18,36 +18,38 @@ public class MovementController
 	// Use this for initialization
 	void Start()
 	{
-	
+		// TODO: remove this, character will do all stuff
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-
+		// TODO: remove this, character will do all stuff
 	}
 
 	public void FixedUpdate()
 	{
+		// TODO: remove this, character will do all stuff
+
 		// Switch on control type
-		switch (currentControlType)
+		switch (currentMovementType)
 		{
-			case ControlType.Air:
+			case MovementType.Air:
 			{
 				airController.FixedUpdate();
 			}
 				break;
-			case ControlType.Ground:
+			case MovementType.Ground:
 			{
 				groundController.FixedUpdate();
 			}
 				break;
-			case ControlType.Water:
+			case MovementType.Water:
 			{
 				waterController.FixedUpdate();
 			}
 				break;
-			case ControlType.Invalid:
+			case MovementType.Invalid:
 			{
 			}
 				break;
@@ -70,25 +72,25 @@ public class MovementController
 
 		if (currentCharacter is AirCharacter)
 		{
-			currentControlType = ControlType.Air;
+			currentMovementType = MovementType.Air;
 			airController.Initialize(character);
 			airController.Start(); // TODO: remove start call after moving init to character
 		}
 		else if (currentCharacter is GroundCharacter)
 		{
-			currentControlType = ControlType.Ground;
+			currentMovementType = MovementType.Ground;
 			groundController.Initialize(character);
 			groundController.Start(); // TODO: remove start call after moving init to character
 		}
 		else if (currentCharacter is WaterCharacter)
 		{
-			currentControlType = ControlType.Water;
+			currentMovementType = MovementType.Water;
 			waterController.Initialize(character);
 			waterController.Start(); // TODO: remove start call after moving init to character
 		}
 		else
 		{
-			currentControlType = ControlType.Invalid;
+			currentMovementType = MovementType.Invalid;
 			throw new UnityException("Invalid control type!");
 		}
 	}
@@ -106,11 +108,11 @@ public class MovementController
 		}
 	}
 
-	public ControlType CurrentControlType
+	public MovementType CurrentControlType
 	{
 		get
 		{
-			return currentControlType;
+			return currentMovementType;
 		}
 	}
 
@@ -138,7 +140,7 @@ public class MovementController
 	/// <summary>
 	/// The type of the current control.
 	/// </summary>
-	ControlType currentControlType = ControlType.Invalid;
+	MovementType currentMovementType = MovementType.Invalid;
 
 	/// <summary>
 	/// The current used character.

@@ -11,17 +11,30 @@ public abstract class ICharacter : MonoBehaviour
 
 	////////////////////////////////////////////////////////////////////
 
-	public void Spawn(CharacterSpawn spawner)
+	/// <summary>
+	/// Spawns an instance of this character for a player at a spawner.
+	/// </summary>
+	public ICharacter Spawn(Player owner, CharacterSpawn spawner)
 	{
-		IsSpawned = true;
-		CharacterManager.Get().RegisterCharacter(this);
-		Object.Instantiate(this, spawner.transform.position, spawner.transform.rotation);
-		Owner = PlayerManager.Get().GetPlayer(spawner.PlayerIndex);
+		IsSpawner = true;
+		Object obj = Object.Instantiate(this, spawner.transform.localPosition, spawner.transform.rotation);
+		if (obj is ICharacter)
+		{
+			ICharacter character = obj as ICharacter;
+			character.IsSpawned = true;
+			character.Owner = owner;
+			CharacterManager.Get().RegisterCharacter(owner.PlayerIndex, this);
+			return character;
+		}
+		return null;
 	}
 
+	/// <summary>
+	/// Remove this instance.
+	/// </summary>
 	public void Remove()
 	{
-		CharacterManager.Get().UnregisterCharacter(this);
+		CharacterManager.Get().UnregisterCharacter(Owner.PlayerIndex);
 	}
 
 	////////////////////////////////////////////////////////////////////
@@ -88,6 +101,8 @@ public abstract class ICharacter : MonoBehaviour
 	public bool IsSpawned;
 
 	////////////////////////////////////////////////////////////////////
+
+	protected bool IsSpawner;
 
 	protected Player Owner;
 }

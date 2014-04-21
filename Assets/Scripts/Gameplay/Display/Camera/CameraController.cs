@@ -34,20 +34,10 @@ public class CameraController : MonoBehaviour
 	void Initialize()
 	{
 		owner = PlayerManager.Get().GetPlayer(PlayerIndex);
-		cameraOffset = transform.right.normalized * RightOffset + transform.forward.normalized * -DistanceOffset + transform.up.normalized * HeightOffset;
-		CharacterSpawn spawn = CharacterManager.Get().Spawners[(int)PlayerIndex];
-		if (spawn != null)
-		{
-			transform.position = spawn.transform.position + cameraOffset;
-			Vector3 lookAt = spawn.transform.position;
-			lookAt.x = transform.position.x;
-			transform.LookAt(lookAt);
-		}
-		else
-		{
-			transform.position = new Vector3(10, 0, 10);
-			transform.LookAt(new Vector3());
-		}
+		cameraOffset = 
+				transform.right.normalized * RightOffset + 
+				transform.forward.normalized * -DistanceOffset + 
+				transform.up.normalized * HeightOffset;
 	}
 
 	////////////////////////////////////////////////////////////////////

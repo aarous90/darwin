@@ -6,23 +6,9 @@ using System.Collections.Generic;
 /// </summary>
 public class CharacterSpawn : MonoBehaviour
 {
-	public CharacterSpawn()
-	{
-
-	}
 
 	void Start()
 	{
-		if (create)
-		{
-			CharacterManager.Get().RegisterSpawn(this);
-			create = false;
-		}
-		if (remove)
-		{
-			CharacterManager.Get().UnregisterSpawn(this);
-			remove = false;
-		}
 	}
 
 	void Update()
@@ -30,40 +16,21 @@ public class CharacterSpawn : MonoBehaviour
 
 	}
 
-	public void DoSpawn(ICharacter character)
+	public void DoSpawn(int playerIndex, ICharacter character)
 	{
-		character.Spawn(this);
-		PlayerManager.Get().GetPlayer(PlayerIndex).GetController().UseCharacter(character);
+		if (playerIndex > -1 && playerIndex < PlayerManager.Get().GetPlayerCount())
+		{
+			ICharacter spawned;
+			if ((spawned = character.Spawn(PlayerManager.Get().GetPlayer(playerIndex), this)) != null)
+			{
+				PlayerManager.Get().GetPlayer(playerIndex).GetController().UseCharacter(spawned);
+			}
+		}
 	}
 
 	/// <summary>
-	/// Gets or sets the test sector this spawn leads in.
+	/// The type of the terrain that spawner is for, 0 - Air, 1 - Ground, 2 - Water.
 	/// </summary>
-	/// <value>The test sector.</value>
-	public uint TestSector
-	{
-		get { return testSector; }
-		set { testSector = value; }
-	}
-
-	/// <summary>
-	/// The index of the player if this is a start spawn.
-	/// </summary>
-	public int PlayerIndex = -1;
-
-	/// <summary>
-	/// The start spawn flag that indicates the beginning of a level.
-	/// </summary>
-	public bool StartSpawn /* = false */;
-
-	/// <summary>
-	/// The test sector this spawn leads in.
-	/// </summary>
-	uint testSector /* = 0 */;
-
-
-	bool create = true;
-
-	bool remove;
+	public int TerrainType = -1;
 }
 

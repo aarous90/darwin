@@ -23,7 +23,7 @@ public class GroundController : IController, IInputListener
 	// Use this for initialization
 	public override void Start()
 	{
-		GlobalInput.RegisterListener(InputManager.InputCategory.Ground, this);
+		InputManager.Get().RegisterListener(InputManager.InputCategory.Ground, this);
 
 		LookRight = currentCharacter.transform.rotation;
 		LookLeft = LookRight * Quaternion.Euler(0, 180, 0); 
@@ -220,7 +220,6 @@ public class GroundController : IController, IInputListener
 
 	////////////////////////////////////////////////////////
 
-	public InputManager						GlobalInput;
 	bool 									Grounded;
 	float 									RayLength;
 	Vector3 								RayOffset;

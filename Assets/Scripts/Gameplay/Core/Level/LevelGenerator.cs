@@ -7,61 +7,15 @@ public class LevelGenerator : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		Load(Generate(GeneratorSectorBowl));
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
-		if (isLevelGenerated && isLevelLoaded)
-		{
 
-		}
 	}
 	
 	////////////////////////////////////////////////////////////////////
-
-	public class LevelData
-	{
-		public List<SectorData> Sectors = new List<SectorData>();
-	}
-
-	public class SectorData
-	{
-		public SectorData()
-		{
-
-		}
-
-		public void Generate(Module[] modules)
-		{
-			if (modules == null)
-			{
-				throw new System.ArgumentNullException("modules");
-			}
-
-			List<Module> moduleBowl = new List<Module>(modules);
-			int maxModules = Mathf.Min(modules.Length, ModulesPerSectorCount);
-			Module m = null;
-			
-			for (int i = 0; i < maxModules; i++)
-			{
-				m = moduleBowl[randomizer.Next(moduleBowl.Count)];
-				Modules.Add(m);
-				moduleBowl.Remove(m);
-			}
-		}
-
-		public void Load()
-		{
-			foreach (Module m in Modules)
-			{
-				Object.Instantiate(m, new Vector3(), new Quaternion());
-            }
-        }
-
-		public List<Module> Modules = new List<Module>();
-	}
 
 	public LevelData Generate(Sector[] sectors)
 	{
@@ -70,6 +24,7 @@ public class LevelGenerator : MonoBehaviour
 			throw new System.ArgumentNullException("sectors");
 		}
 
+		randomizer = Util.Randomizer;
 		LevelData data = new LevelData();
 		List<Sector> sectorBowl = new List<Sector>(sectors);
 		int maxSector = Mathf.Min(sectors.Length, SectorCount);
@@ -78,11 +33,12 @@ public class LevelGenerator : MonoBehaviour
 		for (int i = 0; i < maxSector; i++)
 		{
 			s = sectorBowl[randomizer.Next(sectorBowl.Count)];
-			SectorData sd = new SectorData();
+			SectorData sd = new SectorData(ModulesPerSectorCount);
 			sd.Generate(s.Modules);
 			data.Sectors.Add(sd);
 			sectorBowl.Remove(s);
 		}
+
 		isLevelGenerated = true;
 		return data;
 	}
@@ -114,17 +70,13 @@ public class LevelGenerator : MonoBehaviour
 
 	////////////////////////////////////////////////////////////////////
 
-	static public int SectorCount = 2;
-	static public int ModulesPerSectorCount = 5;
-	static public int Seed = 42;
-
-	public Sector[] GeneratorSectorBowl;
+	public int SectorCount = 2;
+	public int ModulesPerSectorCount = 5;
+	public int Seed = 42;
 
 	////////////////////////////////////////////////////////////////////
 	
-	static System.Random randomizer = new System.Random(Seed);
-
-	LevelData levelData = new LevelData();
+	System.Random randomizer;
 
 	bool isLevelGenerated;
 

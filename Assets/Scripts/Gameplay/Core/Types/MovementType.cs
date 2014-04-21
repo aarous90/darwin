@@ -1,7 +1,7 @@
 /// <summary>
 /// Simple enum to switch case on.
 /// </summary>
-public enum ControlType
+public enum MovementType
 {
 	Air,
 	Ground,

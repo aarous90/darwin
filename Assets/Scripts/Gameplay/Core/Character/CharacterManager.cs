@@ -29,18 +29,6 @@ public class CharacterManager : MonoBehaviour
 	////////////////////////////////////////////////////////////////////
 
 	/// <summary>
-	/// Gets the spawners.
-	/// </summary>
-	/// <value>The spawners.</value>
-	public Dictionary<int, CharacterSpawn> Spawners
-	{
-		get
-		{
-			return new Dictionary<int, CharacterSpawn>(spawners);
-		}
-	}
-
-	/// <summary>
 	/// Gets the characters.
 	/// </summary>
 	/// <value>The characters.</value>
@@ -53,49 +41,20 @@ public class CharacterManager : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Registers a CharacterSpawn automatically on start.
-	/// </summary>
-	/// <param name="spawner">Spawner.</param>
-	public void RegisterSpawn(CharacterSpawn spawner)
-	{
-		if (spawner == null)
-		{
-			throw new System.ArgumentNullException("spawner");
-		}
-		if (spawners.ContainsKey(spawner.PlayerIndex) || spawners.ContainsValue(spawner))
-		{
-			return;
-		}
-		spawners.Add(spawner.PlayerIndex, spawner);
-	}
-
-	/// <summary>
-	/// Unregisters the CharacterSpawn.
-	/// </summary>
-	/// <param name="characterSpawn">Character spawn.</param>
-	public void UnregisterSpawn(CharacterSpawn characterSpawn)
-	{
-		if (spawners.ContainsKey(characterSpawn.PlayerIndex))
-		{
-			spawners.Remove(characterSpawn.PlayerIndex);
-        }
-	}
-
-	/// <summary>
 	/// Registers a character on spawn.
 	/// </summary>
 	/// <param name="character">Character.</param>
-	public void RegisterCharacter(ICharacter character)
+	public void RegisterCharacter(int playerIndex, ICharacter character)
 	{
 		if (character == null)
 		{
 			throw new System.ArgumentNullException("character");
 		}
-		if (characters.ContainsKey(character.GetOwningPlayer().PlayerIndex) || characters.ContainsValue(character))
+		if (characters.ContainsKey(playerIndex) || characters.ContainsValue(character))
 		{
 			return;
 		}
-		characters.Add(character.GetOwningPlayer().PlayerIndex, character);
+		characters.Add(playerIndex, character);
 		
 	}
 
@@ -103,11 +62,11 @@ public class CharacterManager : MonoBehaviour
 	/// Unregisters the character.
 	/// </summary>
 	/// <param name="character">Character.</param>
-	public void UnregisterCharacter(ICharacter character)
+	public void UnregisterCharacter(int playerIndex)
 	{
-		if (characters.ContainsKey(character.GetOwningPlayer().PlayerIndex))
+		if (characters.ContainsKey(playerIndex))
 		{
-			characters.Remove(character.GetOwningPlayer().PlayerIndex);
+			characters.Remove(playerIndex);
 		}
 	}
 
@@ -117,7 +76,6 @@ public class CharacterManager : MonoBehaviour
 
 	////////////////////////////////////////////////////////////////////
 
-	Dictionary<int, CharacterSpawn> spawners = new Dictionary<int, CharacterSpawn>();
 	Dictionary<int, ICharacter> characters = new Dictionary<int, ICharacter>();
 
 }
