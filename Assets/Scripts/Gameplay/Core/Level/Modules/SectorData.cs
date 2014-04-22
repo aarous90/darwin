@@ -7,7 +7,9 @@ public class SectorData
 	{
 		this.modulesPerSectorCount = modulesPerSectorCount;
 	}
-	
+
+	////////////////////////////////////////////////////////////////////
+
 	public void Generate(Module[] modules)
 	{
 		if (modules == null)
@@ -22,22 +24,83 @@ public class SectorData
 		for (int i = 0; i < maxModules; i++)
 		{
 			m = moduleBowl[Util.Randomizer.Next(moduleBowl.Count)];
-			Modules.Add(m);
+			gerneratorModules.Add(m);
 			moduleBowl.Remove(m);
 		}
 	}
-	
+
+	////////////////////////////////////////////////////////////////////
+
+	public void BeginSector(ConnectorElement outConnector)
+	{
+		lastOutConnector = outConnector;
+	}
+
 	public void Load()
 	{
-		foreach (Module m in Modules)
+		foreach (Module m in GenreatorModules)
 		{
-			Object.Instantiate(m, new Vector3(), new Quaternion());
+			Object obj = Object.Instantiate(m, PlaceModule(lastOutConnector, m), new Quaternion());
+			if (obj is Module)
+			{
+				Module loaded = obj as Module;
+				lastOutConnector = loaded.OutConnector;
+				sectorModules.Add(loaded);
+			}
 		}
 	}
 	
-	public List<Module> Modules = new List<Module>();
+	public void EndSector(out ConnectorElement outConnector)
+	{
+		outConnector = lastOutConnector;
+	}
+
+	////////////////////////////////////////////////////////////////////
+
+	Vector3 PlaceModule(ConnectorElement outConnector, Module module)
+	{
+		if (module == null)
+			throw new System.ArgumentNullException("module");
+
+		Vector3 newPos;
+		if (outConnector == null)
+		{
+			newPos = new Vector3(0, 0, 0);
+		}
+		else
+		{
+			newPos = -module.transform.position + outConnector.transform.position;// outConnector.transform.localPosition);
+		}
+		return newPos;
+	}
+
+	////////////////////////////////////////////////////////////////////
+
+	public List<Module> GenreatorModules
+	{
+		get
+		{
+			return gerneratorModules;
+		}
+	}
+
+	public List<Module> SectorModules
+	{
+		get
+		{
+			return sectorModules;
+		}
+	}
+
+	////////////////////////////////////////////////////////////////////
+	
+	List<Module> gerneratorModules = new List<Module>();
+
+	List<Module> sectorModules = new List<Module>();
 
 	int modulesPerSectorCount;
+
+	ConnectorElement lastOutConnector;
 }
 
 

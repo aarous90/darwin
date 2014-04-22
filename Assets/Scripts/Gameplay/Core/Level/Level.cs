@@ -30,7 +30,7 @@ public class Level : MonoBehaviour
 	/// </summary>
 	void SpawnFirst()
 	{
-		Module first = levelData.Sectors[0].Modules[0];
+		Module first = levelData.Sectors[0].GenreatorModules[0];
 
 		Spawn(first);
 	}
@@ -76,5 +76,7 @@ public class Level : MonoBehaviour
 	////////////////////////////////////////////////////////////////////
 
 	LevelData levelData;
+
+
 }
 

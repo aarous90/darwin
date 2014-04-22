@@ -18,11 +18,17 @@ public class Sector : MonoBehaviour
 	
 	////////////////////////////////////////////////////////////////////
 
+	public void Load(SectorData sectorData)
+	{
+		data = sectorData;
+	}
 	
 	////////////////////////////////////////////////////////////////////
 	
 	public Module[] Modules;
 
 	public string SectorName;
+
+	SectorData data = null;
 }
 
