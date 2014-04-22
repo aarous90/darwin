@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (owner.GetCharacter() != null)
+		if (owner != null && owner.GetCharacter() != null)
 		{
 			ICharacter character = owner.GetCharacter();
 			transform.position = character.transform.position + cameraOffset;
