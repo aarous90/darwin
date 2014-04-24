@@ -28,6 +28,8 @@ public class MultiplayerState : IGameState
 	{
 		//LevelManager.Get().Load();
 		//LevelManager.Get().Spawn();
+
+		GUIManager.Get().ClearGUI();
 	}
 
 	public void Leave()

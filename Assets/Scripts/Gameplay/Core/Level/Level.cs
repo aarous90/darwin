@@ -50,9 +50,19 @@ public class Level : MonoBehaviour
 			ICharacter[] charTypes = CharacterManager.Get().CharacterTypes;
 			// Spawn a random char 
 			// TODO: care about different terrain!
-			module.Spawns[pick].DoSpawn(i, charTypes[Util.Randomizer.Next(charTypes.Length)]);
+			spawnedCharacters.Add(module.Spawns[pick].DoSpawn(i, charTypes[Util.Randomizer.Next(charTypes.Length)]));
 			// remove spawn point from list
 			spawns.Remove(pick);
+		}
+	}
+
+	void TakeControl()
+	{
+		int maxSpawns = Mathf.Min(2, ControllerManager.Get().GetControllers().Count);
+		
+		foreach (ICharacter c in spawnedCharacters)
+		{
+			PlayerManager.Get().GetPlayer(c.GetOwningPlayer().PlayerIndex).GetController().UseCharacter(c);
 		}
 	}
 
@@ -74,6 +84,8 @@ public class Level : MonoBehaviour
 	////////////////////////////////////////////////////////////////////
 
 	LevelData levelData;
+
+	List<ICharacter> spawnedCharacters = new List<ICharacter>();
 
 
 }

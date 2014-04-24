@@ -49,6 +49,11 @@ public class GUIManager : MonoBehaviour, IInputListener
 		}
 	}
 
+	public void ClearGUI()
+	{
+		m_GUIElements.Clear();
+	}
+
     ////////////////////////////////////////////////////////
 	
 	public void OnAxis(string axisName, float axisValue)
