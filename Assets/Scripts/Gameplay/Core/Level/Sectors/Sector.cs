@@ -15,20 +15,15 @@ public class Sector : MonoBehaviour
 	{
 		
 	}
-	
-	////////////////////////////////////////////////////////////////////
 
-	public void Load(SectorData sectorData)
-	{
-		data = sectorData;
-	}
-	
 	////////////////////////////////////////////////////////////////////
 	
 	public Module[] Modules;
 
-	public string SectorName;
+	public SpawnModule Spawn;
 
-	SectorData data = null;
+	public FightingModule Fighting;
+
+	public string SectorName;
 }
 

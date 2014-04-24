@@ -3,22 +3,6 @@ using System.Collections;
 
 public class Module : MonoBehaviour
 {
-
-	// Use this for initialization
-	void Start()
-	{
-		if (Spawns.Length != 3)
-		{
-			throw new UnityException("Each module needs three spawns for air, ground and water!");
-		}
-	}
-	
-	// Update is called once per frame
-	void Update()
-	{
-	
-	}
-
 	/// <summary>
 	/// Intersect the specified point.
 	/// 
@@ -58,10 +42,7 @@ public class Module : MonoBehaviour
 		}
 	}
 
-	/// <summary>
-	/// The spawns, must be exactly two!
-	/// </summary>
-	public CharacterSpawn[] Spawns;
+	////////////////////////////////////////////////////////////////////
 
 	/// <summary>
 	/// The in connector.
@@ -72,6 +53,8 @@ public class Module : MonoBehaviour
 	/// The out connector.
 	/// </summary>
 	public ConnectorElement OutConnector;
+
+	////////////////////////////////////////////////////////////////////
 
 	/// <summary>
 	/// The offset of this module in world-position from (0,0,0).

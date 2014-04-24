@@ -10,23 +10,26 @@ public class SectorData
 
 	////////////////////////////////////////////////////////////////////
 
-	public void Generate(Module[] modules)
+	public void Generate(Sector sector)
 	{
-		if (modules == null)
+		if (sector == null)
 		{
 			throw new System.ArgumentNullException("modules");
 		}
+
+		generatorSector = sector;
 		
-		List<Module> moduleBowl = new List<Module>(modules);
-		int maxModules = Mathf.Min(modules.Length, modulesPerSectorCount);
+		List<Module> moduleBowl = new List<Module>(sector.Modules);
+		int maxModules = Mathf.Min(sector.Modules.Length, modulesPerSectorCount);
 		Module m = null;
-		
+
 		for (int i = 0; i < maxModules; i++)
 		{
 			m = moduleBowl[Util.Randomizer.Next(moduleBowl.Count)];
 			gerneratorModules.Add(m);
 			moduleBowl.Remove(m);
 		}
+
 	}
 
 	////////////////////////////////////////////////////////////////////
@@ -34,24 +37,24 @@ public class SectorData
 	public void BeginSector(ConnectorElement outConnector)
 	{
 		lastOutConnector = outConnector;
+		spawnModule = InstantiateModule(generatorSector.Spawn) as SpawnModule;
 	}
 
 	public void Load()
 	{
 		foreach (Module m in GenreatorModules)
 		{
-			Object obj = Object.Instantiate(m, PlaceModule(lastOutConnector, m), new Quaternion());
-			if (obj is Module)
+			Module newModule = InstantiateModule(m);
+			if (newModule != null)
 			{
-				Module loaded = obj as Module;
-				lastOutConnector = loaded.OutConnector;
-				sectorModules.Add(loaded);
+				sectorModules.Add(newModule);
 			}
 		}
 	}
 	
 	public void EndSector(out ConnectorElement outConnector)
 	{
+		fightingModule = InstantiateModule(generatorSector.Fighting) as FightingModule;
 		outConnector = lastOutConnector;
 	}
 
@@ -74,8 +77,28 @@ public class SectorData
 		return newPos;
 	}
 
-	////////////////////////////////////////////////////////////////////
+	Module InstantiateModule(Module module)
+	{
+		Object obj = 
+			Object.Instantiate(module, 
+			                   PlaceModule(lastOutConnector, module), 
+			                   new Quaternion());
+		if (obj is Module)
+		{
+			Module loaded = obj as Module;
+			lastOutConnector = loaded.OutConnector;
+			return loaded;
+		}
+		return null;
+	}
 
+	////////////////////////////////////////////////////////////////////
+	
+	/// <summary>
+	/// Gets the generator modules. 
+	/// The list of modules that will be instantiated.
+	/// </summary>
+	/// <value>The sector modules.</value>
 	public List<Module> GenreatorModules
 	{
 		get
@@ -83,7 +106,10 @@ public class SectorData
 			return gerneratorModules;
 		}
 	}
-
+	/// <summary>
+	/// Gets the sector modules.
+	/// </summary>
+	/// <value>The sector modules.</value>
 	public List<Module> SectorModules
 	{
 		get
@@ -92,11 +118,33 @@ public class SectorData
 		}
 	}
 
+	public SpawnModule SpawnModule
+	{
+		get
+		{
+			return spawnModule;
+		}
+	}
+
+	public FightingModule FightingModule
+	{
+		get
+		{
+			return fightingModule;
+		}
+	}
+
 	////////////////////////////////////////////////////////////////////
 	
 	List<Module> gerneratorModules = new List<Module>();
 
 	List<Module> sectorModules = new List<Module>();
+
+	Sector generatorSector;
+
+	SpawnModule spawnModule;
+
+	FightingModule fightingModule;
 
 	int modulesPerSectorCount;
 

@@ -33,7 +33,7 @@ public class LevelGenerator : MonoBehaviour
 		{
 			s = sectorBowl[Util.Randomizer.Next(sectorBowl.Count)];
 			SectorData sd = new SectorData(ModulesPerSectorCount);
-			sd.Generate(s.Modules);
+			sd.Generate(s);
 			data.Sectors.Add(sd);
 			sectorBowl.Remove(s);
 		}
