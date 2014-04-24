@@ -30,15 +30,13 @@ public class Level : MonoBehaviour
 	/// </summary>
 	void SpawnFirst()
 	{
-		Module first = levelData.Sectors[0].Modules[0];
-
-		Spawn(first);
+		Spawn(levelData.Sectors[0].SpawnModule);
 	}
 	/// <summary>
 	/// Spawn in the specified module.
 	/// </summary>
 	/// <param name="module">The Module to spawn in.</param>
-	void Spawn(Module module)
+	void Spawn(SpawnModule module)
 	{
 		List<int> spawns = new List<int>(new int[] {0, 1, 2});
 
@@ -62,9 +60,9 @@ public class Level : MonoBehaviour
 	/// Respawn in the specified sector at the first module.
 	/// </summary>
 	/// <param name="sector">Sector.</param>
-	void Respawn(Sector sector)
+	void Respawn(int sector)
 	{
-		Spawn(sector.Modules[0]);
+		Spawn(levelData.Sectors[sector].SpawnModule);
 	}
     
     ////////////////////////////////////////////////////////////////////
@@ -76,5 +74,7 @@ public class Level : MonoBehaviour
 	////////////////////////////////////////////////////////////////////
 
 	LevelData levelData;
+
+
 }
 

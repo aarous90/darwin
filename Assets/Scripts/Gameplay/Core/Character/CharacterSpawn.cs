@@ -9,6 +9,11 @@ public class CharacterSpawn : MonoBehaviour
 
 	void Start()
 	{
+		TextMesh text = GetComponent<TextMesh>();
+		if (text)
+		{
+			text.renderer.enabled = false;
+		}
 	}
 
 	void Update()

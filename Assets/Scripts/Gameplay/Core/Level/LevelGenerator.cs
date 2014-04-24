@@ -24,7 +24,6 @@ public class LevelGenerator : MonoBehaviour
 			throw new System.ArgumentNullException("sectors");
 		}
 
-		randomizer = Util.Randomizer;
 		LevelData data = new LevelData();
 		List<Sector> sectorBowl = new List<Sector>(sectors);
 		int maxSector = Mathf.Min(sectors.Length, SectorCount);
@@ -32,9 +31,9 @@ public class LevelGenerator : MonoBehaviour
 
 		for (int i = 0; i < maxSector; i++)
 		{
-			s = sectorBowl[randomizer.Next(sectorBowl.Count)];
+			s = sectorBowl[Util.Randomizer.Next(sectorBowl.Count)];
 			SectorData sd = new SectorData(ModulesPerSectorCount);
-			sd.Generate(s.Modules);
+			sd.Generate(s);
 			data.Sectors.Add(sd);
 			sectorBowl.Remove(s);
 		}
@@ -47,7 +46,9 @@ public class LevelGenerator : MonoBehaviour
 	{
 		foreach (var sd in data.Sectors)
 		{
+			sd.BeginSector(lastOutConnector);
 			sd.Load();
+			sd.EndSector(out lastOutConnector);
 		}
         isLevelLoaded = true;
 	}
@@ -72,15 +73,14 @@ public class LevelGenerator : MonoBehaviour
 
 	public int SectorCount = 2;
 	public int ModulesPerSectorCount = 5;
-	public int Seed = 42;
 
 	////////////////////////////////////////////////////////////////////
-	
-	System.Random randomizer;
 
 	bool isLevelGenerated;
 
 	bool isLevelLoaded;
+
+	ConnectorElement lastOutConnector = null;
 
 }
 

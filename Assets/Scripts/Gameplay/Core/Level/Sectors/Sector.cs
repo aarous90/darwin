@@ -15,13 +15,14 @@ public class Sector : MonoBehaviour
 	{
 		
 	}
-	
-	////////////////////////////////////////////////////////////////////
 
-	
 	////////////////////////////////////////////////////////////////////
 	
 	public Module[] Modules;
+
+	public SpawnModule Spawn;
+
+	public FightingModule Fighting;
 
 	public string SectorName;
 }

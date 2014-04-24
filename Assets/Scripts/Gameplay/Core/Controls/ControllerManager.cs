@@ -56,6 +56,7 @@ public class ControllerManager : MonoBehaviour
 	void Initialize()
 	{
 		int i = 0;
+		// TODO: also allow keyboard to be controller
 		foreach (string joystick in Input.GetJoystickNames())
 		{
 			int ID = i++;
