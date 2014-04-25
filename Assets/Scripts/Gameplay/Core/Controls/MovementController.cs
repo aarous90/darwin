@@ -143,6 +143,6 @@ public class MovementController
 		/// <summary>
 		/// The water controller.
 		/// </summary>
-		WaterController waterController = new WaterController ();
+		WaterController waterController = new WaterController (joystickID);
 
 }
