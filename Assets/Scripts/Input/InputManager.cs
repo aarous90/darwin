@@ -263,72 +263,9 @@ public class InputManager : MonoBehaviour
 			m_InputListener.Add(kc, new List<IInputListener>());
 		}
 
-		//Air
-		List<string> airMappingStrings = InputStringMapping.AirInputMapping.GetButtons();
-		foreach (string mappingString in airMappingStrings)
-		{
-			KeyCategory kc;
-			kc.Name = mappingString;
-			kc.Category = InputCategory.Air;
-			kc.Type = InputType.Button;
-			m_InputListener.Add(kc, new List<IInputListener>());
-		}
-		airMappingStrings = InputStringMapping.AirInputMapping.GetAxis();
-		foreach (string mappingString in airMappingStrings)
-		{
-			KeyCategory kc;
-			kc.Name = mappingString;
-			kc.Category = InputCategory.Air;
-			kc.Type = InputType.Axis;
-			m_InputListener.Add(kc, new List<IInputListener>());
-		}
-
-		//Ground
-		List<string> groundMappingStrings = InputStringMapping.GroundInputMapping.GetButtons();
-		foreach (string mappingString in groundMappingStrings)
-		{
-			KeyCategory kc;
-			kc.Name = mappingString;
-			kc.Category = InputCategory.Ground;
-			kc.Type = InputType.Button;
-			m_InputListener.Add(kc, new List<IInputListener>());
-		}
-		groundMappingStrings = InputStringMapping.GroundInputMapping.GetAxis();
-		foreach (string mappingString in groundMappingStrings)
-		{
-			KeyCategory kc;
-			kc.Name = mappingString;
-			kc.Category = InputCategory.Ground;
-			kc.Type = InputType.Axis;
-			m_InputListener.Add(kc, new List<IInputListener>());
-		}
-
-		//Water
-		List<string> waterMappingStrings = InputStringMapping.WaterInputMapping.GetButtons();
-		foreach (string mappingString in waterMappingStrings)
-		{
-			KeyCategory kc;
-			kc.Name = mappingString;
-			kc.Category = InputCategory.Water;
-			kc.Type = InputType.Button;
-			m_InputListener.Add(kc, new List<IInputListener>());
-		}
-		waterMappingStrings = InputStringMapping.WaterInputMapping.GetAxis();
-		foreach (string mappingString in waterMappingStrings)
-		{
-			KeyCategory kc;
-			kc.Name = mappingString;
-			kc.Category = InputCategory.Water;
-			kc.Type = InputType.Axis;
-			m_InputListener.Add(kc, new List<IInputListener>());
-		}
-
-
 
 		m_CategoryInputListener.Add(InputCategory.GUI, new List<IInputListener>());
-		m_CategoryInputListener.Add(InputCategory.Air, new List<IInputListener>());
-		m_CategoryInputListener.Add(InputCategory.Ground, new List<IInputListener>());
-		m_CategoryInputListener.Add(InputCategory.Water, new List<IInputListener>());
+
 
 		// TODO hans: add the rest
 
