@@ -119,11 +119,11 @@ public class GUIManager : MonoBehaviour, IInputListener
     {
 		if (axis > AxisThreshold)
 		{
-			FocusIndex(-1);
+			FocusIndex(1);
 		}
 		else if (axis < -AxisThreshold)
 		{			
-			FocusIndex(1);
+			FocusIndex(-1);
 		}
     }
 
