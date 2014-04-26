@@ -20,16 +20,16 @@ public class WaterCharacter : ICharacter
 		void Update ()
 		{
 		}
-
+	
 		void FixedUpdate ()
 		{
-
+		
 				//Check for Input Sequence adjust Maxspeed
 				MaxSpeed = (Sequence) ? MaxSpeed_2 : MaxSpeed_1;
-
+		
 				rigidbody.AddForce (Vector3.right * HorizontalForce * MovementSpeed);
 				rigidbody.AddForce (Vector3.up * VerticalForce * MovementSpeed);
-				
+		
 				//MovementForce Drag
 				VerticalForce *= 1.0f - Drag;
 				HorizontalForce *= 1.0f - Drag;
@@ -51,18 +51,21 @@ public class WaterCharacter : ICharacter
 						Velocity.y = Mathf.Sign (rigidbody.velocity.y) * MaxSpeed;
 						rigidbody.velocity = Velocity;
 				}
-
+		
 		}
-
-		public void ChangeDirection (float x, float y)
+	
+		public void Flip (float x)
 		{
 				transform.rotation = (x > 0) ? LookRight : LookLeft;
+		}
+	
+		public void SetDirection (float x, float y)
+		{
 				X_Direction = x;
 				Y_Direction = y;
 		}
-
 	#region ICharacter implementation
-
+	
 		public override float GetLive ()
 		{
 				throw new System.NotImplementedException ();
@@ -160,13 +163,14 @@ public class WaterCharacter : ICharacter
 	
 		public override void Swim (float deltaTime)
 		{
+				Flip (X_Direction);
 				HorizontalForce += 0.5f * MovementSpeed * Math.Sign (X_Direction);
 				VerticalForce += 0.5f * MovementSpeed * Math.Sign (Y_Direction) * -1;
 		}
 	
 	#endregion
-
-
+	
+	
 		float									MaxSpeed;
 		float									HorizontalForce;
 		float									VerticalForce;
