@@ -23,6 +23,8 @@ public abstract class ICharacter : MonoBehaviour
 			ICharacter character = obj as ICharacter;
 			character.IsSpawned = true;
 			character.Owner = owner;
+			character.live = MaxLive;
+			character.boost = 0;
 			CharacterManager.Get().RegisterCharacter(owner.PlayerIndex, this);
 			return character;
 		}
@@ -45,19 +47,49 @@ public abstract class ICharacter : MonoBehaviour
 
 	////////////////////////////////////////////////////////////////////
 
-	public abstract float GetLive();
+	public virtual float GetLive()
+	{
+		return live;
+	}
 
-	public abstract void Regenerate(float value);
+	public virtual void Regenerate(float value)
+	{
+		live += value;
+		if (live > MaxLive)
+		{
+			live = MaxLive;
+		}
+		OnRegenerate();
+	}
 
-	public abstract void TakeDamage(float value);
+	public virtual void TakeDamage(float value)
+	{
+		live -= value;
+		if (live <= 0)
+		{
+			live = 0;
+			OnDeath();
+			return;
+		}
+		OnDamaged();
+	}
 
 	////////////////////////////////////////////////////////////////////
 
-	public abstract float GetBoost();
+	public virtual float GetBoost()
+	{
+		return boost;
+	}
 
-	public abstract void GainBoost(float value);
+	public virtual void GainBoost(float value)
+	{
+		boost += value;
+	}
 
-	public abstract void UseBoost(float value);
+	public virtual void UseBoost(float value)
+	{
+		boost = 0;
+	}
 
 	////////////////////////////////////////////////////////////////////
 
@@ -98,11 +130,32 @@ public abstract class ICharacter : MonoBehaviour
 
 	////////////////////////////////////////////////////////////////////
 
+	public abstract void OnDamaged();
+
+	public abstract void OnDeath();
+
+	public abstract void OnRegenerate();
+
+	public abstract void OnBoost();
+
+	////////////////////////////////////////////////////////////////////
+
 	public bool IsSpawned;
+
+	public float MaxLive = 100f;
+	public float MaxBoost = 100f;
 
 	////////////////////////////////////////////////////////////////////
 
 	protected bool IsSpawner;
 
 	protected Player Owner;
+
+	////////////////////////////////////////////////////////////////////
+	 
+	float live;
+
+	float boost;
+
+
 }

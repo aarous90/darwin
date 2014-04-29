@@ -5,12 +5,10 @@ public class PlayerHUD : GUIItem
 {
 	protected override void Init()
 	{
-
-
+		player = PlayerManager.Get().GetPlayer(PlayerIndex);
 		backgroundGUI = GetComponent<GUITexture>();
 		backgroundGUI.enabled = false;
 		base.Init();
-
 	}
 
 	// Update is called once per frame
@@ -20,18 +18,16 @@ public class PlayerHUD : GUIItem
 		{
 			return;
 		}
-
+		UpdateLiveBar();
 	}
 
 	void UpdateLiveBar()
 	{
-		livePercentage = 
+		livePercentage = player.GetCharacter().GetLive() * 0.01f;
 	}
 
 	void OnGUI()
 	{
-		Display d = UnityEngine.Display.displays[0];
-
 		GUI.DrawTexture(new Rect(
 			0,
 			0, 
@@ -61,6 +57,8 @@ public class PlayerHUD : GUIItem
 	////////////////////////////////////////////////////////
 
 	public Texture2D LiveBar;
+
+	public int PlayerIndex;
 
 	////////////////////////////////////////////////////////
 

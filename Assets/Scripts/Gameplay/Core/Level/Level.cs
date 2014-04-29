@@ -31,6 +31,8 @@ public class Level : MonoBehaviour
 	void SpawnFirst()
 	{
 		Spawn(levelData.Sectors[0].SpawnModule);
+		
+		TakeControl();
 	}
 	/// <summary>
 	/// Spawn in the specified module.
@@ -81,9 +83,17 @@ public class Level : MonoBehaviour
 
 	public LevelGenerator Generator;
 
+	public static LevelData LevelData
+	{
+		get
+		{
+			return levelData;
+		}
+	}
+
 	////////////////////////////////////////////////////////////////////
 
-	LevelData levelData;
+	static LevelData levelData;
 
 	List<ICharacter> spawnedCharacters = new List<ICharacter>();
 

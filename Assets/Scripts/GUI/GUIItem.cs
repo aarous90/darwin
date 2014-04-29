@@ -5,7 +5,7 @@ public class GUIItem : MonoBehaviour
 {
 	protected virtual void Init()
 	{
-		m_Element = gameObject.GetComponent(m_Name);
+		element = gameObject.GetComponent(elementName);
 		GUIManager.Get().AddItem(this);
 	}
 
@@ -65,12 +65,12 @@ public class GUIItem : MonoBehaviour
     /// <returns></returns>
     public Component GetElement()
     {
-        return m_Element;
+        return element;
     }
 
     ////////////////////////////////////////////////////////
 
-    protected string        m_Name;         	/// The name of the gui element component
-    private Component       m_Element;      	/// A reference to the Component itself
-    public int              AccessIndex = -1;    /// The index for navigaion with gamepad
+    protected string        elementName;         	/// The name of the gui element component
+    Component       		element;      			/// A reference to the Component itself
+    public int              AccessIndex = -1;    	/// The index for navigaion with gamepad
 }
