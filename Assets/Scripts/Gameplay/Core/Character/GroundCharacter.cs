@@ -57,7 +57,7 @@ public class GroundCharacter : ICharacter
 				
 				//TODO Adjust position while fallling?
 				if (!CanJump ()) {
-				
+						rigidbody.AddForce (Vector2.right * Direction * 2);
 				}
 
 				//Apply Gravity
@@ -160,13 +160,21 @@ public class GroundCharacter : ICharacter
 
 		public override void Jump (float deltaTime)
 		{
+	
 				if (Math.Abs (Direction) > 0.3) {
 						if (Mathf.Abs (rigidbody.velocity.x) > MaxSpeed * 0.75f) {
-							rigidbody.AddForce (Vector2.up * JumpForce);
-							//TODO add horizontal force
+								//TODO add horizontal force
+								Velocity = Vector3.zero;
+								rigidbody.velocity = Velocity;
+
+								rigidbody.AddForce (new Vector2 (15, JumpForce));
 						} else {
-							rigidbody.AddForce (Vector2.up * JumpForce);
-							//TODO add horizontal force
+								//TODO add horizontal force
+								Velocity = Vector3.zero;
+								rigidbody.velocity = Velocity;
+
+								rigidbody.AddForce (new Vector2 (10, JumpForce));
+							
 						}	
 				} else {
 						rigidbody.AddForce (Vector2.up * JumpForce);
