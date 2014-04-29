@@ -36,7 +36,10 @@ public class GroundController : IController
 		}
 
 		public override void FixedUpdate ()
-		{	
+		{		
+				
+				currentCharacter.SetDirection(Input.GetAxis ("L_XAxis_" + PID));
+				
 				//Check horizontal input, flip character accordingly
 				if (Math.Abs (Input.GetAxis ("L_XAxis_" + PID)) > AxisThreshold) {
 						currentCharacter.Flip (Input.GetAxis ("L_XAxis_" + PID));
@@ -68,11 +71,15 @@ public class GroundController : IController
 						L_Trigger = true;	
 						if (R_Trigger) {
 								currentCharacter.Sequence = true;
-								currentCharacter.Move (1);
+								if (currentCharacter.CanMove ()) {
+										currentCharacter.Move (1);
+								}
 								R_Trigger = false;
 						} else {
 								currentCharacter.Sequence = false;
-								currentCharacter.Move (1);
+								if (currentCharacter.CanMove ()) {
+										currentCharacter.Move (1);
+								}
 						}
 						AxisInUse.Remove ("L_Trigger_" + PID);
 						L_Trigger_Time = Time.time;
@@ -82,12 +89,16 @@ public class GroundController : IController
 				if (Input.GetAxis ("R_Trigger_" + PID) < AxisMax && AxisInUse.Contains ("R_Trigger_" + PID)) {
 						R_Trigger = true;	
 						if (L_Trigger) {
-								currentCharacter.Move (1);
+								if (currentCharacter.CanMove ()) {
+										currentCharacter.Move (1);
+								}
 								currentCharacter.Sequence = true;
 								L_Trigger = false;
 						} else {
 								currentCharacter.Sequence = false;
-								currentCharacter.Move (1);
+								if (currentCharacter.CanMove ()) {
+										currentCharacter.Move (1);
+								}
 						}
 						AxisInUse.Remove ("R_Trigger_" + PID);
 						R_Trigger_Time = Time.time;
