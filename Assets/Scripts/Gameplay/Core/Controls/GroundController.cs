@@ -32,78 +32,67 @@ public class GroundController : IController
 		public override void Update ()
 		{
 
-
-		}
-
-		public override void FixedUpdate ()
-		{		
-				
-				currentCharacter.SetDirection(Input.GetAxis ("L_XAxis_" + PID));
-				
+				currentCharacter.SetDirection (Input.GetAxis ("L_XAxis_" + PID));
+		
 				//Check horizontal input, flip character accordingly
 				if (Math.Abs (Input.GetAxis ("L_XAxis_" + PID)) > AxisThreshold) {
 						currentCharacter.Flip (Input.GetAxis ("L_XAxis_" + PID));
 				}
-				
+		
 				//Add left Trigger to AxisInUse when value exceeds AxisMax and store time 
 				if (Input.GetAxis ("L_Trigger_" + PID) > AxisMax && !AxisInUse.Contains ("L_Trigger_" + PID)) {
 						AxisInUse.Add ("L_Trigger_" + PID);
 						L_Trigger_Time = Time.time;
 				}
-				
+		
 				//Add right Trigger to AxisInUse when value exceeds AxisMax and store time
 				if (Input.GetAxis ("R_Trigger_" + PID) > AxisMax && !AxisInUse.Contains ("R_Trigger_" + PID)) {
 						AxisInUse.Add ("R_Trigger_" + PID);
 						R_Trigger_Time = Time.time;
 				}	
-				
+		
 				//Jump if AxisInUse contains both Triggers and the time difference is below 0.05 
 				if (AxisInUse.Contains ("R_Trigger_" + PID) && AxisInUse.Contains ("L_Trigger_" + PID)) {
 						if (Math.Abs (L_Trigger_Time - R_Trigger_Time) <= 0.05) {
-								if (currentCharacter.CanJump ()) {
-										currentCharacter.Jump (1);
-								}
+								//TODO JUMP
 						}
 				}
-				
+		
 				//Remove left Trigger from AxisInUse when value deceeds AxisMax, check for input sequence and call move
 				if (Input.GetAxis ("L_Trigger_" + PID) < AxisMax && AxisInUse.Contains ("L_Trigger_" + PID)) {
 						L_Trigger = true;	
 						if (R_Trigger) {
 								currentCharacter.Sequence = true;
-								if (currentCharacter.CanMove ()) {
-										currentCharacter.Move (1);
-								}
+								//TODO MOVE
 								R_Trigger = false;
 						} else {
 								currentCharacter.Sequence = false;
-								if (currentCharacter.CanMove ()) {
-										currentCharacter.Move (1);
-								}
+								//TODO MOVE
 						}
 						AxisInUse.Remove ("L_Trigger_" + PID);
 						L_Trigger_Time = Time.time;
 				}
-				
+		
 				//Remove right Trigger from AxisInUse when value deceeds AxisMax, check for input sequence and call move
 				if (Input.GetAxis ("R_Trigger_" + PID) < AxisMax && AxisInUse.Contains ("R_Trigger_" + PID)) {
 						R_Trigger = true;	
 						if (L_Trigger) {
-								if (currentCharacter.CanMove ()) {
-										currentCharacter.Move (1);
-								}
+								//TODO MOVE
 								currentCharacter.Sequence = true;
 								L_Trigger = false;
 						} else {
 								currentCharacter.Sequence = false;
-								if (currentCharacter.CanMove ()) {
-										currentCharacter.Move (1);
-								}
+								//TODO MOVE
 						}
 						AxisInUse.Remove ("R_Trigger_" + PID);
 						R_Trigger_Time = Time.time;
 				}
+		}
 
+		public override void FixedUpdate ()
+		{		
+				
+	
 		}
 
 		List<string>							AxisInUse = new List<string> ();
