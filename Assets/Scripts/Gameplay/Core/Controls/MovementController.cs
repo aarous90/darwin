@@ -9,140 +9,147 @@ using System;
 public class MovementController
 {
 
-		public MovementController (string joystickName, int joystickID)
-		{
-				this.joystickID = joystickID;
-				this.joystickName = joystickName;
-		}
+	public MovementController(string joystickName, int joystickID)
+	{
+		this.joystickID = joystickID;
+		this.joystickName = joystickName;
+		groundController = new GroundController(joystickID);
+		waterController = new WaterController(joystickID);
+	}
 
-		// Use this for initialization
-		void Start ()
-		{
-		// TODO: remove this, character will do all stuff
-		}
-
-		// Update is called once per frame
-		void Update ()
-		{
-		// TODO: remove this, character will do all stuff
-		}
-
-		public void FixedUpdate ()
-		{
+	public void FixedUpdate()
+	{
 		// TODO: remove this, character will do all stuff
 
-				// Switch on control type
-				switch (currentMovementType) {
-				case MovementType.Air:
-						{
-								airController.FixedUpdate ();
-						}
-						break;
-				case MovementType.Ground:
-						{
-								groundController.FixedUpdate ();
-						}
-						break;
-				case MovementType.Water:
-						{
-								waterController.FixedUpdate ();
-						}
-						break;
-				case MovementType.Invalid:
-						{
-						}
-						break;
-				default:
-						{
-								throw new UnityException ("Invalid control type!");
-						}
+		// Switch on control type
+		switch (currentMovementType)
+		{
+			case MovementType.Air:
+				{
+					airController.FixedUpdate();
+				}
+				break;
+			case MovementType.Ground:
+				{
+					groundController.FixedUpdate();
+				}
+				break;
+			case MovementType.Water:
+				{
+					waterController.FixedUpdate();
+				}
+				break;
+			case MovementType.Invalid:
+				{
+				}
+				break;
+			default:
+				{
+					throw new UnityException("Invalid control type!");
 				}
 		}
+	}
 
 ////////////////////////////////////////////////////////////////////
 
-		/// <summary>
-		/// Take control of a certain character. Automaticly switches the input layout!
-		/// </summary>
-		public void UseCharacter (ICharacter character)
+	/// <summary>
+	/// Take control of a certain character. Automaticly switches the input layout!
+	/// </summary>
+	public void UseCharacter(ICharacter character)
+	{
+		// TODO: free old character
+		currentCharacter = character;
+
+		if (currentCharacter is AirCharacter)
 		{
-				// TODO: free old character
-				currentCharacter = character;
-
-				if (currentCharacter is AirCharacter) {
-						currentMovementType = MovementType.Air;
-						airController.Initialize (character);
-						airController.Start (); // TODO: remove start call after moving init to character
-				} else if (currentCharacter is GroundCharacter) {
-						currentMovementType = MovementType.Ground;
-						groundController.Initialize (character);
-						groundController.Start (); // TODO: remove start call after moving init to character
-				} else if (currentCharacter is WaterCharacter) {
-						currentMovementType = MovementType.Water;
-						waterController.Initialize (character);
-						waterController.Start (); // TODO: remove start call after moving init to character
-				} else {
-						currentMovementType = MovementType.Invalid;
-						throw new UnityException ("Invalid control type!");
-				}
+			currentMovementType = MovementType.Air;
+			airController.Initialize(character);
+			airController.Start(); // TODO: remove start call after moving init to character
 		}
-
-		public ICharacter CurrentCharacter {
-				get {
-						if (currentCharacter == null) {
-								//print("WARNING: Tried to fetch the controllers character while no character is controlled!");
-								return null;
-						}
-						return currentCharacter;
-				}
+		else if (currentCharacter is GroundCharacter)
+		{
+			currentMovementType = MovementType.Ground;
+			groundController.Initialize(character);
+			groundController.Start(); // TODO: remove start call after moving init to character
 		}
-
-		public MovementType CurrentControlType {
-				get {
-						return currentMovementType;
-				}
+		else if (currentCharacter is WaterCharacter)
+		{
+			currentMovementType = MovementType.Water;
+			waterController.Initialize(character);
+			waterController.Start(); // TODO: remove start call after moving init to character
 		}
-
-		public string JoystickName {
-				get {
-						return joystickName;
-				}
+		else
+		{
+			currentMovementType = MovementType.Invalid;
+			throw new UnityException("Invalid control type!");
 		}
+	}
 
-		public int JoystickID {
-				get {
-						return joystickID;
-				}
+	public ICharacter CurrentCharacter
+	{
+		get
+		{
+			if (currentCharacter == null)
+			{
+				//print("WARNING: Tried to fetch the controllers character while no character is controlled!");
+				return null;
+			}
+			return currentCharacter;
 		}
+	}
 
-////////////////////////////////////////////////////////////////////
+	public MovementType CurrentControlType
+	{
+		get
+		{
+			return currentMovementType;
+		}
+	}
 
-		string joystickName;
-		int joystickID;
+	public string JoystickName
+	{
+		get
+		{
+			return joystickName;
+		}
+	}
 
-		/// <summary>
-		/// The type of the current control.
-		/// </summary>
-		MovementType currentMovementType = MovementType.Invalid;
+	public int JoystickID
+	{
+		get
+		{
+			return joystickID;
+		}
+	}
 
-		/// <summary>
-		/// The current used character.
-		/// </summary>
-		ICharacter currentCharacter = null;
+	////////////////////////////////////////////////////////////////////
 
-		/// <summary>
-		/// The air controller.
-		/// </summary>
-		AirController airController = new AirController ();
+	string joystickName;
+	int joystickID;
 
-		/// <summary>
-		/// The ground controller.
-		/// </summary>
-		GroundController groundController = new GroundController (joystickID);
+	/// <summary>
+	/// The type of the current control.
+	/// </summary>
+	MovementType currentMovementType = MovementType.Invalid;
 
-		/// <summary>
-		/// The water controller.
-		/// </summary>
-		WaterController waterController = new WaterController (joystickID);
+	/// <summary>
+	/// The current used character.
+	/// </summary>
+	ICharacter currentCharacter = null;
+
+	/// <summary>
+	/// The air controller.
+	/// </summary>
+	AirController airController = new AirController();
+
+	/// <summary>
+	/// The ground controller.
+	/// </summary>
+	GroundController groundController;
+
+	/// <summary>
+	/// The water controller.
+	/// </summary>
+	WaterController waterController;
 
 }

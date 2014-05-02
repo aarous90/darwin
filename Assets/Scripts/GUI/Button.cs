@@ -4,10 +4,10 @@ public class Button : GUIItem
 {
 	protected override void Init()
 	{
-		m_ButtonTexture = GetComponent<GUITexture>();
-		Selected = (Texture2D) m_ButtonTexture.texture;
-		m_Name = this.GetType().Name;
-		m_ButtonTexture.texture = Unfocused;
+		buttonTexture = GetComponent<GUITexture>();
+		selected = (Texture2D) buttonTexture.texture;
+		ElementName = this.GetType().Name;
+		buttonTexture.texture = Unfocused;
         base.Init();
 	}
 	
@@ -29,22 +29,23 @@ public class Button : GUIItem
 
 	public override void OnSelect()
 	{
-		guiTexture.texture = Selected;
+		guiTexture.texture = selected;
 	}
 
     ////////////////////////////////////////////////////////
     
     public Texture2D Focused;
 	public Texture2D Unfocused;
-	private Texture2D Selected;
 
     ////////////////////////////////////////////////////////
 
-	protected GUITexture m_ButtonTexture;
+	protected GUITexture buttonTexture;
 
-    private bool m_IsHovered;
+    bool isHovered;
 
-    private bool m_IsDown;
+    bool isDown;
 
-	private bool m_IsUp;
+	bool isUp;
+
+	Texture2D selected;
 }
