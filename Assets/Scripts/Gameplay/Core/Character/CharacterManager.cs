@@ -72,7 +72,9 @@ public class CharacterManager : MonoBehaviour
 
 	////////////////////////////////////////////////////////////////////
 
-	public ICharacter[] CharacterTypes;
+	public AirCharacter[] 		AirCharacterTypes;
+	public GroundCharacter[] 	GroundCharacterTypes;
+	public WaterCharacter[] 	WaterCharacterTypes;
 
 	////////////////////////////////////////////////////////////////////
 

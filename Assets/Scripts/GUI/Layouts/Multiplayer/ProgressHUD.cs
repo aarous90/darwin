@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Timeline : GUIItem
+public class ProgressHUD : GUIItem
 {
 	protected override void Init()
 	{
@@ -18,7 +18,7 @@ public class Timeline : GUIItem
 		{
 			return;   
         }
-		//progressPercentage = 
+		progressPercentage = Level.GetLevelProgress(player.GetCharacter());
     }
     
     void OnGUI()
@@ -27,33 +27,29 @@ public class Timeline : GUIItem
 		{
 			return;   
         }
+
+		Display d = Display.displays[0];
 		// Draw the progress bar
         GUI.DrawTexture(new Rect(
-			0,
-			0, 
-			TimelineBar.width * progressPercentage, 
+			transform.position.x - TimelineBar.width * (1 - progressPercentage),
+			(1 - transform.position.y) * d.renderingHeight - TimelineBar.height, 
+			TimelineBar.width, 
 			TimelineBar.height),
-		                TimelineBar, 
-		                ScaleMode.ScaleToFit, 
-		                true);
+		                TimelineBar);
 		// draw the progress background
 		GUI.DrawTexture(new Rect(
-			0,
-			0, 
+			transform.position.x,
+			(1 - transform.position.y) * d.renderingHeight - TimelineBackground.height, 
 			TimelineBackground.width, 
 			TimelineBackground.height),
-		                TimelineBackground, 
-		                ScaleMode.ScaleToFit, 
-		                true);
+		                TimelineBackground);
 		// draw the character icon
 		GUI.DrawTexture(new Rect(
-			TimelineBar.width * progressPercentage,
-			0, 
+			TimelineBar.width * progressPercentage - CharacterIcon.width * 0.5f,
+			(1 - transform.position.y) * d.renderingHeight - CharacterIcon.height, 
 			CharacterIcon.width, 
 			CharacterIcon.height),
-		                CharacterIcon, 
-		                ScaleMode.ScaleToFit, 
-		                true);
+		                CharacterIcon);
 	}
 
 	////////////////////////////////////////////////////////
@@ -80,7 +76,7 @@ public class Timeline : GUIItem
 
 	////////////////////////////////////////////////////////
 
-	float progressPercentage;
+	float progressPercentage = 0;
 
 	GUITexture progressHUD;
 

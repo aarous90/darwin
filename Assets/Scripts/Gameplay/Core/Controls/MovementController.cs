@@ -13,18 +13,8 @@ public class MovementController
 	{
 		this.joystickID = joystickID;
 		this.joystickName = joystickName;
-	}
-
-	// Use this for initialization
-	void Start()
-	{
-		// TODO: remove this, character will do all stuff
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-		// TODO: remove this, character will do all stuff
+		groundController = new GroundController(joystickID);
+		waterController = new WaterController(joystickID);
 	}
 
 	public void FixedUpdate()
@@ -35,33 +25,33 @@ public class MovementController
 		switch (currentMovementType)
 		{
 			case MovementType.Air:
-			{
-				airController.FixedUpdate();
-			}
+				{
+					airController.FixedUpdate();
+				}
 				break;
 			case MovementType.Ground:
-			{
-				groundController.FixedUpdate();
-			}
+				{
+					groundController.FixedUpdate();
+				}
 				break;
 			case MovementType.Water:
-			{
-				waterController.FixedUpdate();
-			}
+				{
+					waterController.FixedUpdate();
+				}
 				break;
 			case MovementType.Invalid:
-			{
-			}
+				{
+				}
 				break;
 			default:
-			{
-				throw new UnityException("Invalid control type!");
-			}
+				{
+					throw new UnityException("Invalid control type!");
+				}
 		}
 	}
 
-	////////////////////////////////////////////////////////////////////
-	
+////////////////////////////////////////////////////////////////////
+
 	/// <summary>
 	/// Take control of a certain character. Automaticly switches the input layout!
 	/// </summary>
@@ -155,11 +145,11 @@ public class MovementController
 	/// <summary>
 	/// The ground controller.
 	/// </summary>
-	GroundController groundController = new GroundController();
+	GroundController groundController;
 
 	/// <summary>
 	/// The water controller.
 	/// </summary>
-	WaterController waterController = new WaterController();
+	WaterController waterController;
 
 }

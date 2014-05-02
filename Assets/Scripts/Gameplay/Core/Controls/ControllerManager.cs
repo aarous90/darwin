@@ -9,64 +9,67 @@ using System.Collections.Generic;
 public class ControllerManager : MonoBehaviour
 {
 
-	public static ControllerManager Get()
-	{
-		GameObject manager = GameObject.Find("ControllerManager");
-		if (manager != null)
+		public static ControllerManager Get ()
 		{
-			return manager.GetComponent<ControllerManager>();
+				GameObject manager = GameObject.Find ("ControllerManager");
+				if (manager != null) {
+						return manager.GetComponent<ControllerManager> ();
+				}
+				return null;
 		}
-		return null;
-	}
 
-	// Use this for initialization
-	void Start()
-	{
-		Object.DontDestroyOnLoad(this);
-		Initialize();
-	}
-	
-	// Update is called once per frame
-	void Update()
-	{
-	
-	}
-
-	void FixedUpdate()
-	{
-		foreach (var controller in joysticks)
+		// Use this for initialization
+		void Start ()
 		{
-			controller.Value.FixedUpdate();
+				Object.DontDestroyOnLoad (this);
+				Initialize ();
 		}
-	}
-
-	////////////////////////////////////////////////////////////////////
 	
-	/// <summary>
-	/// Returns a copy of the known controllers
-	/// </summary>
-	public Dictionary<int, MovementController> GetControllers()
-	{
-		return new Dictionary<int, MovementController>(joysticks);
-	}
-
-	/// <summary>
-	/// Initialize the controllers by fetching joystick names known to unity.
-	/// </summary>
-	void Initialize()
-	{
-		int i = 0;
-		// TODO: also allow keyboard to be controller
-		foreach (string joystick in Input.GetJoystickNames())
+		// Update is called once per frame
+		void Update ()
 		{
-			int ID = i++;
-			joysticks.Add(ID, new MovementController(joystick, ID));
+	
 		}
-	}
 
-	/// <summary>
-	/// The joysticks found on initalize.
-	/// </summary>
-	Dictionary<int, MovementController> joysticks = new Dictionary<int, MovementController>();
+		void FixedUpdate ()
+		{
+				foreach (var controller in joysticks) {
+						controller.Value.FixedUpdate ();
+				}
+		}
+
+		////////////////////////////////////////////////////////////////////
+	
+		/// <summary>
+		/// Returns a copy of the known controllers
+		/// </summary>
+		public Dictionary<int, MovementController> GetControllers ()
+		{
+				return new Dictionary<int, MovementController> (joysticks);
+		}
+
+		/// <summary>
+		/// Initialize the controllers by fetching joystick names known to unity.
+		/// </summary>
+		void Initialize ()
+		{
+				int i = 0;
+				// TODO: also allow keyboard to be controller
+				if (Input.GetJoystickNames ().Length == 0) {
+						joysticks.Add (0, new MovementController ("Keyboard", 0));
+				}
+
+				foreach (string joystick in Input.GetJoystickNames()) {
+						int ID = i++;
+						joysticks.Add (ID, new MovementController (joystick, ID));
+				}
+
+
+		}
+
+		/// <summary>
+		/// The joysticks found on initalize.
+		/// </summary>
+		Dictionary<int, MovementController> joysticks = new Dictionary<int, MovementController> ();
 
 }

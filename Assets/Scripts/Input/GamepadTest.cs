@@ -33,19 +33,19 @@ public class GamepadTest : MonoBehaviour
 //			}
 		}
 		//P1
-		print("1_L_Axis h: " + Input.GetAxisRaw("L_XAxis_1"));
-		print("1_L_Axis v: " + Input.GetAxisRaw("L_YAxis_1"));
-		print("1_R_Axis h: " + Input.GetAxisRaw("R_XAxis_1"));
-		print("1_R_Axis v: " + Input.GetAxisRaw("R_YAxis_1"));
-		print("1_Axis LT: " + Input.GetAxisRaw("L_Trigger_1"));
-		print("1_Axis RT: " + Input.GetAxisRaw("R_Trigger_1"));
+		print("1_L_Axis h: " + Input.GetAxisRaw("L_XAxis_0"));
+		print("1_L_Axis v: " + Input.GetAxisRaw("L_YAxis_0"));
+		print("1_R_Axis h: " + Input.GetAxisRaw("R_XAxis_0"));
+		print("1_R_Axis v: " + Input.GetAxisRaw("R_YAxis_0"));
+		print("1_Axis LT: " + Input.GetAxisRaw("L_Trigger_0"));
+		print("1_Axis RT: " + Input.GetAxisRaw("R_Trigger_0"));
 
 		//P2
-//		print("2_L_Axis h: " + Input.GetAxisRaw("L_XAxis_2"));
-//		print("2_L_Axis v: " + Input.GetAxisRaw("L_YAxis_2"));
-//		print("2_R_Axis h: " + Input.GetAxisRaw("R_XAxis_2"));
-//		print("2_R_Axis v: " + Input.GetAxisRaw("R_YAxis_2"));
-//		print("2_Axis LT: " + Input.GetAxisRaw("L_Trigger_2"));
-//		print("2_Axis RT: " + Input.GetAxisRaw("R_Trigger_2"));
+//		print("2_L_Axis h: " + Input.GetAxisRaw("L_XAxis_1"));
+//		print("2_L_Axis v: " + Input.GetAxisRaw("L_YAxis_1"));
+//		print("2_R_Axis h: " + Input.GetAxisRaw("R_XAxis_1"));
+//		print("2_R_Axis v: " + Input.GetAxisRaw("R_YAxis_1"));
+//		print("2_Axis LT: " + Input.GetAxisRaw("L_Trigger_1"));
+//		print("2_Axis RT: " + Input.GetAxisRaw("R_Trigger_1"));
 	}
 }

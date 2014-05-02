@@ -1,0 +1,3102 @@
+fileFormatVersion: 2
+guid: c5931564a5492e9449860e91ac3a956b
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Abdomen_SD
+    100002: Abdomen_SD_00_jnt
+    100004: Abdomen_SD_01_jnt
+    100006: Abdomen_SD_02_jnt
+    100008: Abdomen_SD_null
+    100010: AbdomenSD_con_
+    100012: Augen
+    100014: Charakter
+    100016: Claw
+    100018: Claw_1
+    100020: Gorcrasp
+    100022: Gorcrasp_2
+    100024: //RootNode
+    100026: Haare
+    100028: Head
+    100030: Head_00_jnt
+    100032: Head_01_jnt
+    100034: Head_con_
+    100036: Head_null
+    100038: Insect_rig
+    100040: Kugel
+    100042: Kugel_1
+    100044: Kugel_2
+    100046: Kugel_3
+    100048: L_Claw_00_goal
+    100050: L_Claw_00_goal_1
+    100052: L_Claw_00_goal_2
+    100054: L_Claw_00_goal_3
+    100056: L_Claw_con_
+    100058: L_Claw_goal
+    100060: L_Claw_jnt
+    100062: L_Claw_jnt_1
+    100064: L_Claw_jnt_2
+    100066: L_Claw_jnt_3
+    100068: L_Claw_null
+    100070: L_Claw_Pincers_null
+    100072: L_Coxa_jnt
+    100074: L_Coxa_jnt_1
+    100076: L_Coxa_jnt_2
+    100078: L_Coxa_jnt_3
+    100080: L_Femur_jnt
+    100082: L_Femur_jnt_1
+    100084: L_Femur_jnt_2
+    100086: L_Femur_jnt_2_2
+    100088: L_Femur_jnt_3
+    100090: L_Femur_pole
+    100092: L_Leg
+    100094: L_Leg_1
+    100096: L_Leg_2
+    100098: L_Leg_3
+    100100: L_Leg_con_
+    100102: L_Leg_con__1
+    100104: L_Leg_con__2
+    100106: L_Leg_con__3
+    100108: L_Leg_null
+    100110: L_Leg_null_1
+    100112: L_Leg_null_2
+    100114: L_Leg_null_3
+    100116: L_Leg_pole
+    100118: L_Leg_pole_1
+    100120: L_Leg_pole_2
+    100122: L_Leg_pole_3
+    100124: L_Metarsus_jnt
+    100126: L_Metarsus_jnt_1
+    100128: L_Metarsus_jnt_2
+    100130: L_Metarsus_jnt_3
+    100132: L_Patella_jnt
+    100134: L_Patella_jnt_1
+    100136: L_Patella_jnt_2
+    100138: L_Patella_jnt_2_2
+    100140: L_Patella_jnt_3
+    100142: L_Tarsus_00_jnt
+    100144: L_Tarsus_01_jnt
+    100146: L_Tarsus_02_jnt
+    100148: L_Tarsus_03_jnt
+    100150: L_Tarsus_04_jnt
+    100152: L_Tarsus_goal
+    100154: L_Tarsus_goal_1
+    100156: L_Tarsus_goal_2
+    100158: L_Tarsus_goal_3
+    100160: L_Tarsus_jnt
+    100162: L_Tarsus_jnt_1
+    100164: L_Tarsus_jnt_2
+    100166: L_Tarsus_jnt_3
+    100168: L_Tarsus_null
+    100170: L_Tibia_00_jnt
+    100172: L_Tibia_00_jnt_2
+    100174: L_Tibia_01_jnt
+    100176: L_Tibia_01_jnt_2
+    100178: L_Tibia_02_jnt
+    100180: L_Tibia_02_jnt_2
+    100182: L_Tibia_03_jnt
+    100184: L_Tibia_03_jnt_2
+    100186: L_Tibia_04_jnt
+    100188: L_Tibia_04_jnt_2
+    100190: L_Tibia_jnt
+    100192: L_Tibia_jnt_1
+    100194: L_Tibia_jnt_2
+    100196: L_Tibia_jnt_3
+    100198: L_Tibia_null
+    100200: L_Tibia_null_2
+    100202: L_Tip_goal
+    100204: L_Tip_goal_1
+    100206: L_Tip_goal_2
+    100208: L_Tip_goal_3
+    100210: L_Tip_jnt
+    100212: L_Tip_jnt_1
+    100214: L_Tip_jnt_2
+    100216: L_Tip_jnt_3
+    100218: L_Wrist_jnt
+    100220: Mandibles
+    100222: Mandibles_null
+    100224: Master_con_
+    100226: R_Claw_00_goal
+    100228: R_Claw_00_goal_1
+    100230: R_Claw_00_goal_2
+    100232: R_Claw_00_goal_3
+    100234: R_Claw_con__1
+    100236: R_Claw_goal_1
+    100238: R_Claw_jnt
+    100240: R_Claw_jnt_1
+    100242: R_Claw_jnt_2
+    100244: R_Claw_jnt_3
+    100246: R_Claw_null_1
+    100248: R_Claw_Pincers_null_1
+    100250: R_Coxa_jnt
+    100252: R_Coxa_jnt_1
+    100254: R_Coxa_jnt_2
+    100256: R_Coxa_jnt_3
+    100258: R_Femur_jnt
+    100260: R_Femur_jnt_1
+    100262: R_Femur_jnt_1_2
+    100264: R_Femur_jnt_2
+    100266: R_Femur_jnt_3
+    100268: R_Femur_pole_1
+    100270: R_Leg
+    100272: R_Leg_1
+    100274: R_Leg_2
+    100276: R_Leg_3
+    100278: R_Leg_con_
+    100280: R_Leg_con__1
+    100282: R_Leg_con__2
+    100284: R_Leg_con__3
+    100286: R_Leg_null
+    100288: R_Leg_null_1
+    100290: R_Leg_null_2
+    100292: R_Leg_null_3
+    100294: R_Leg_pole
+    100296: R_Leg_pole_1
+    100298: R_Leg_pole_2
+    100300: R_Leg_pole_3
+    100302: R_Metarsus_jnt
+    100304: R_Metarsus_jnt_1
+    100306: R_Metarsus_jnt_2
+    100308: R_Metarsus_jnt_3
+    100310: R_Patella_jnt
+    100312: R_Patella_jnt_1
+    100314: R_Patella_jnt_1_2
+    100316: R_Patella_jnt_2
+    100318: R_Patella_jnt_3
+    100320: R_Tarsus_00_jnt_1
+    100322: R_Tarsus_01_jnt_1
+    100324: R_Tarsus_02_jnt_1
+    100326: R_Tarsus_03_jnt_1
+    100328: R_Tarsus_04_jnt_1
+    100330: R_Tarsus_goal
+    100332: R_Tarsus_goal_1
+    100334: R_Tarsus_goal_2
+    100336: R_Tarsus_goal_3
+    100338: R_Tarsus_jnt
+    100340: R_Tarsus_jnt_1
+    100342: R_Tarsus_jnt_2
+    100344: R_Tarsus_jnt_3
+    100346: R_Tarsus_null_1
+    100348: R_Tibia_00_jnt
+    100350: R_Tibia_00_jnt_1
+    100352: R_Tibia_01_jnt
+    100354: R_Tibia_01_jnt_1
+    100356: R_Tibia_02_jnt
+    100358: R_Tibia_02_jnt_1
+    100360: R_Tibia_03_jnt
+    100362: R_Tibia_03_jnt_1
+    100364: R_Tibia_04_jnt
+    100366: R_Tibia_04_jnt_1
+    100368: R_Tibia_jnt
+    100370: R_Tibia_jnt_1
+    100372: R_Tibia_jnt_2
+    100374: R_Tibia_jnt_3
+    100376: R_Tibia_null
+    100378: R_Tibia_null_1
+    100380: R_Tip_goal
+    100382: R_Tip_goal_1
+    100384: R_Tip_goal_2
+    100386: R_Tip_goal_3
+    100388: R_Tip_jnt
+    100390: R_Tip_jnt_1
+    100392: R_Tip_jnt_2
+    100394: R_Tip_jnt_3
+    100396: R_Wrist_jnt_1
+    100398: Root_con_
+    100400: Skin
+    100402: Thorax
+    100404: Thorax_00_jnt
+    100406: Thorax_01_jnt
+    100408: Thorax_null
+    400000: Abdomen_SD
+    400002: Abdomen_SD_00_jnt
+    400004: Abdomen_SD_01_jnt
+    400006: Abdomen_SD_02_jnt
+    400008: Abdomen_SD_null
+    400010: AbdomenSD_con_
+    400012: Augen
+    400014: Charakter
+    400016: Claw
+    400018: Claw_1
+    400020: Gorcrasp
+    400022: Gorcrasp_2
+    400024: //RootNode
+    400026: Haare
+    400028: Head
+    400030: Head_00_jnt
+    400032: Head_01_jnt
+    400034: Head_con_
+    400036: Head_null
+    400038: Insect_rig
+    400040: Kugel
+    400042: Kugel_1
+    400044: Kugel_2
+    400046: Kugel_3
+    400048: L_Claw_00_goal
+    400050: L_Claw_00_goal_1
+    400052: L_Claw_00_goal_2
+    400054: L_Claw_00_goal_3
+    400056: L_Claw_con_
+    400058: L_Claw_goal
+    400060: L_Claw_jnt
+    400062: L_Claw_jnt_1
+    400064: L_Claw_jnt_2
+    400066: L_Claw_jnt_3
+    400068: L_Claw_null
+    400070: L_Claw_Pincers_null
+    400072: L_Coxa_jnt
+    400074: L_Coxa_jnt_1
+    400076: L_Coxa_jnt_2
+    400078: L_Coxa_jnt_3
+    400080: L_Femur_jnt
+    400082: L_Femur_jnt_1
+    400084: L_Femur_jnt_2
+    400086: L_Femur_jnt_2_2
+    400088: L_Femur_jnt_3
+    400090: L_Femur_pole
+    400092: L_Leg
+    400094: L_Leg_1
+    400096: L_Leg_2
+    400098: L_Leg_3
+    400100: L_Leg_con_
+    400102: L_Leg_con__1
+    400104: L_Leg_con__2
+    400106: L_Leg_con__3
+    400108: L_Leg_null
+    400110: L_Leg_null_1
+    400112: L_Leg_null_2
+    400114: L_Leg_null_3
+    400116: L_Leg_pole
+    400118: L_Leg_pole_1
+    400120: L_Leg_pole_2
+    400122: L_Leg_pole_3
+    400124: L_Metarsus_jnt
+    400126: L_Metarsus_jnt_1
+    400128: L_Metarsus_jnt_2
+    400130: L_Metarsus_jnt_3
+    400132: L_Patella_jnt
+    400134: L_Patella_jnt_1
+    400136: L_Patella_jnt_2
+    400138: L_Patella_jnt_2_2
+    400140: L_Patella_jnt_3
+    400142: L_Tarsus_00_jnt
+    400144: L_Tarsus_01_jnt
+    400146: L_Tarsus_02_jnt
+    400148: L_Tarsus_03_jnt
+    400150: L_Tarsus_04_jnt
+    400152: L_Tarsus_goal
+    400154: L_Tarsus_goal_1
+    400156: L_Tarsus_goal_2
+    400158: L_Tarsus_goal_3
+    400160: L_Tarsus_jnt
+    400162: L_Tarsus_jnt_1
+    400164: L_Tarsus_jnt_2
+    400166: L_Tarsus_jnt_3
+    400168: L_Tarsus_null
+    400170: L_Tibia_00_jnt
+    400172: L_Tibia_00_jnt_2
+    400174: L_Tibia_01_jnt
+    400176: L_Tibia_01_jnt_2
+    400178: L_Tibia_02_jnt
+    400180: L_Tibia_02_jnt_2
+    400182: L_Tibia_03_jnt
+    400184: L_Tibia_03_jnt_2
+    400186: L_Tibia_04_jnt
+    400188: L_Tibia_04_jnt_2
+    400190: L_Tibia_jnt
+    400192: L_Tibia_jnt_1
+    400194: L_Tibia_jnt_2
+    400196: L_Tibia_jnt_3
+    400198: L_Tibia_null
+    400200: L_Tibia_null_2
+    400202: L_Tip_goal
+    400204: L_Tip_goal_1
+    400206: L_Tip_goal_2
+    400208: L_Tip_goal_3
+    400210: L_Tip_jnt
+    400212: L_Tip_jnt_1
+    400214: L_Tip_jnt_2
+    400216: L_Tip_jnt_3
+    400218: L_Wrist_jnt
+    400220: Mandibles
+    400222: Mandibles_null
+    400224: Master_con_
+    400226: R_Claw_00_goal
+    400228: R_Claw_00_goal_1
+    400230: R_Claw_00_goal_2
+    400232: R_Claw_00_goal_3
+    400234: R_Claw_con__1
+    400236: R_Claw_goal_1
+    400238: R_Claw_jnt
+    400240: R_Claw_jnt_1
+    400242: R_Claw_jnt_2
+    400244: R_Claw_jnt_3
+    400246: R_Claw_null_1
+    400248: R_Claw_Pincers_null_1
+    400250: R_Coxa_jnt
+    400252: R_Coxa_jnt_1
+    400254: R_Coxa_jnt_2
+    400256: R_Coxa_jnt_3
+    400258: R_Femur_jnt
+    400260: R_Femur_jnt_1
+    400262: R_Femur_jnt_1_2
+    400264: R_Femur_jnt_2
+    400266: R_Femur_jnt_3
+    400268: R_Femur_pole_1
+    400270: R_Leg
+    400272: R_Leg_1
+    400274: R_Leg_2
+    400276: R_Leg_3
+    400278: R_Leg_con_
+    400280: R_Leg_con__1
+    400282: R_Leg_con__2
+    400284: R_Leg_con__3
+    400286: R_Leg_null
+    400288: R_Leg_null_1
+    400290: R_Leg_null_2
+    400292: R_Leg_null_3
+    400294: R_Leg_pole
+    400296: R_Leg_pole_1
+    400298: R_Leg_pole_2
+    400300: R_Leg_pole_3
+    400302: R_Metarsus_jnt
+    400304: R_Metarsus_jnt_1
+    400306: R_Metarsus_jnt_2
+    400308: R_Metarsus_jnt_3
+    400310: R_Patella_jnt
+    400312: R_Patella_jnt_1
+    400314: R_Patella_jnt_1_2
+    400316: R_Patella_jnt_2
+    400318: R_Patella_jnt_3
+    400320: R_Tarsus_00_jnt_1
+    400322: R_Tarsus_01_jnt_1
+    400324: R_Tarsus_02_jnt_1
+    400326: R_Tarsus_03_jnt_1
+    400328: R_Tarsus_04_jnt_1
+    400330: R_Tarsus_goal
+    400332: R_Tarsus_goal_1
+    400334: R_Tarsus_goal_2
+    400336: R_Tarsus_goal_3
+    400338: R_Tarsus_jnt
+    400340: R_Tarsus_jnt_1
+    400342: R_Tarsus_jnt_2
+    400344: R_Tarsus_jnt_3
+    400346: R_Tarsus_null_1
+    400348: R_Tibia_00_jnt
+    400350: R_Tibia_00_jnt_1
+    400352: R_Tibia_01_jnt
+    400354: R_Tibia_01_jnt_1
+    400356: R_Tibia_02_jnt
+    400358: R_Tibia_02_jnt_1
+    400360: R_Tibia_03_jnt
+    400362: R_Tibia_03_jnt_1
+    400364: R_Tibia_04_jnt
+    400366: R_Tibia_04_jnt_1
+    400368: R_Tibia_jnt
+    400370: R_Tibia_jnt_1
+    400372: R_Tibia_jnt_2
+    400374: R_Tibia_jnt_3
+    400376: R_Tibia_null
+    400378: R_Tibia_null_1
+    400380: R_Tip_goal
+    400382: R_Tip_goal_1
+    400384: R_Tip_goal_2
+    400386: R_Tip_goal_3
+    400388: R_Tip_jnt
+    400390: R_Tip_jnt_1
+    400392: R_Tip_jnt_2
+    400394: R_Tip_jnt_3
+    400396: R_Wrist_jnt_1
+    400398: Root_con_
+    400400: Skin
+    400402: Thorax
+    400404: Thorax_00_jnt
+    400406: Thorax_01_jnt
+    400408: Thorax_null
+    4300000: Gorcrasp_2
+    4300002: Haare
+    4300004: Kugel_3
+    4300006: Kugel_2
+    4300008: Kugel_1
+    4300010: Kugel
+    7400000: Idle
+    7400002: Boring
+    7400004: Walk
+    7400006: Jump
+    7400008: Hit
+    7400010: Death
+    9500000: //RootNode
+    13700000: Gorcrasp_2
+    13700002: Haare
+    13700004: Kugel
+    13700006: Kugel_1
+    13700008: Kugel_2
+    13700010: Kugel_3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: C4D Animation Take
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Charakter
+        weight: 1
+      - path: Charakter/Insect_rig
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Claw_00_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Tarsus_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Tip_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Claw_00_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Tarsus_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Tip_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Claw_00_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Tarsus_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Tip_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Claw_00_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Tarsus_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Tip_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Claw_00_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Tarsus_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Tip_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Claw_00_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Tarsus_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Tip_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Claw_00_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Tarsus_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Tip_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Claw_00_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Tarsus_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Tip_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/AbdomenSD_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/Head_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/L_Claw_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/L_Claw_con_/L_Claw_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/R_Claw_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/R_Claw_con__1/R_Claw_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt/L_Claw_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt/L_Claw_jnt/L_Tip_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Leg_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1/L_Claw_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1/L_Claw_jnt_1/L_Tip_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Leg_pole_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2/L_Claw_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2/L_Claw_jnt_2/L_Tip_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Leg_pole_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3/L_Claw_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3/L_Claw_jnt_3/L_Tip_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Leg_pole_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt/R_Claw_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt/R_Claw_jnt/R_Tip_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Leg_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1/R_Claw_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1/R_Claw_jnt_1/R_Tip_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Leg_pole_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2/R_Claw_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2/R_Claw_jnt_2/R_Tip_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Leg_pole_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3/R_Claw_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3/R_Claw_jnt_3/R_Tip_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Leg_pole_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt/Abdomen_SD_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt/Abdomen_SD_01_jnt/Abdomen_SD_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt/L_Tibia_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt/L_Tibia_03_jnt/L_Tibia_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt/R_Tibia_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt/R_Tibia_03_jnt/R_Tibia_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt/L_Tarsus_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt/L_Tarsus_03_jnt/L_Tarsus_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2/L_Tibia_03_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2/L_Tibia_03_jnt_2/L_Tibia_04_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1/R_Tarsus_03_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1/R_Tarsus_03_jnt_1/R_Tarsus_04_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1/R_Tibia_03_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1/R_Tibia_03_jnt_1/R_Tibia_04_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_pole_1
+        weight: 1
+      - path: Charakter/Thorax
+        weight: 1
+      - path: Charakter/Thorax/Abdomen_SD
+        weight: 1
+      - path: Charakter/Thorax/Claw
+        weight: 1
+      - path: Charakter/Thorax/Claw_1
+        weight: 1
+      - path: Charakter/Thorax/Head
+        weight: 1
+      - path: Charakter/Thorax/Head/Mandibles
+        weight: 1
+      - path: Charakter/Thorax/L_Leg
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_1
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_2
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_3
+        weight: 1
+      - path: Charakter/Thorax/R_Leg
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_1
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_2
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_3
+        weight: 1
+      - path: Gorcrasp
+        weight: 1
+      - path: Gorcrasp/Augen
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_1
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_2
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_3
+        weight: 1
+      - path: Gorcrasp/Gorcrasp_2
+        weight: 1
+      - path: Gorcrasp/Haare
+        weight: 1
+      - path: Gorcrasp/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Boring
+      takeName: C4D Animation Take
+      firstFrame: 30
+      lastFrame: 180
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Charakter
+        weight: 1
+      - path: Charakter/Insect_rig
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Claw_00_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Tarsus_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Tip_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Claw_00_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Tarsus_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Tip_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Claw_00_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Tarsus_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Tip_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Claw_00_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Tarsus_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Tip_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Claw_00_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Tarsus_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Tip_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Claw_00_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Tarsus_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Tip_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Claw_00_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Tarsus_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Tip_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Claw_00_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Tarsus_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Tip_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/AbdomenSD_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/Head_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/L_Claw_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/L_Claw_con_/L_Claw_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/R_Claw_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/R_Claw_con__1/R_Claw_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt/L_Claw_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt/L_Claw_jnt/L_Tip_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Leg_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1/L_Claw_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1/L_Claw_jnt_1/L_Tip_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Leg_pole_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2/L_Claw_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2/L_Claw_jnt_2/L_Tip_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Leg_pole_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3/L_Claw_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3/L_Claw_jnt_3/L_Tip_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Leg_pole_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt/R_Claw_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt/R_Claw_jnt/R_Tip_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Leg_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1/R_Claw_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1/R_Claw_jnt_1/R_Tip_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Leg_pole_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2/R_Claw_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2/R_Claw_jnt_2/R_Tip_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Leg_pole_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3/R_Claw_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3/R_Claw_jnt_3/R_Tip_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Leg_pole_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt/Abdomen_SD_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt/Abdomen_SD_01_jnt/Abdomen_SD_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt/L_Tibia_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt/L_Tibia_03_jnt/L_Tibia_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt/R_Tibia_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt/R_Tibia_03_jnt/R_Tibia_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt/L_Tarsus_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt/L_Tarsus_03_jnt/L_Tarsus_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2/L_Tibia_03_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2/L_Tibia_03_jnt_2/L_Tibia_04_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1/R_Tarsus_03_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1/R_Tarsus_03_jnt_1/R_Tarsus_04_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1/R_Tibia_03_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1/R_Tibia_03_jnt_1/R_Tibia_04_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_pole_1
+        weight: 1
+      - path: Charakter/Thorax
+        weight: 1
+      - path: Charakter/Thorax/Abdomen_SD
+        weight: 1
+      - path: Charakter/Thorax/Claw
+        weight: 1
+      - path: Charakter/Thorax/Claw_1
+        weight: 1
+      - path: Charakter/Thorax/Head
+        weight: 1
+      - path: Charakter/Thorax/Head/Mandibles
+        weight: 1
+      - path: Charakter/Thorax/L_Leg
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_1
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_2
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_3
+        weight: 1
+      - path: Charakter/Thorax/R_Leg
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_1
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_2
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_3
+        weight: 1
+      - path: Gorcrasp
+        weight: 1
+      - path: Gorcrasp/Augen
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_1
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_2
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_3
+        weight: 1
+      - path: Gorcrasp/Gorcrasp_2
+        weight: 1
+      - path: Gorcrasp/Haare
+        weight: 1
+      - path: Gorcrasp/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: C4D Animation Take
+      firstFrame: 180
+      lastFrame: 197
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Charakter
+        weight: 1
+      - path: Charakter/Insect_rig
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Claw_00_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Tarsus_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Tip_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Claw_00_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Tarsus_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Tip_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Claw_00_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Tarsus_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Tip_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Claw_00_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Tarsus_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Tip_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Claw_00_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Tarsus_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Tip_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Claw_00_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Tarsus_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Tip_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Claw_00_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Tarsus_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Tip_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Claw_00_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Tarsus_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Tip_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/AbdomenSD_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/Head_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/L_Claw_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/L_Claw_con_/L_Claw_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/R_Claw_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/R_Claw_con__1/R_Claw_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt/L_Claw_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt/L_Claw_jnt/L_Tip_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Leg_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1/L_Claw_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1/L_Claw_jnt_1/L_Tip_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Leg_pole_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2/L_Claw_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2/L_Claw_jnt_2/L_Tip_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Leg_pole_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3/L_Claw_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3/L_Claw_jnt_3/L_Tip_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Leg_pole_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt/R_Claw_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt/R_Claw_jnt/R_Tip_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Leg_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1/R_Claw_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1/R_Claw_jnt_1/R_Tip_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Leg_pole_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2/R_Claw_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2/R_Claw_jnt_2/R_Tip_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Leg_pole_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3/R_Claw_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3/R_Claw_jnt_3/R_Tip_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Leg_pole_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt/Abdomen_SD_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt/Abdomen_SD_01_jnt/Abdomen_SD_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt/L_Tibia_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt/L_Tibia_03_jnt/L_Tibia_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt/R_Tibia_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt/R_Tibia_03_jnt/R_Tibia_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt/L_Tarsus_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt/L_Tarsus_03_jnt/L_Tarsus_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2/L_Tibia_03_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2/L_Tibia_03_jnt_2/L_Tibia_04_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1/R_Tarsus_03_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1/R_Tarsus_03_jnt_1/R_Tarsus_04_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1/R_Tibia_03_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1/R_Tibia_03_jnt_1/R_Tibia_04_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_pole_1
+        weight: 1
+      - path: Charakter/Thorax
+        weight: 1
+      - path: Charakter/Thorax/Abdomen_SD
+        weight: 1
+      - path: Charakter/Thorax/Claw
+        weight: 1
+      - path: Charakter/Thorax/Claw_1
+        weight: 1
+      - path: Charakter/Thorax/Head
+        weight: 1
+      - path: Charakter/Thorax/Head/Mandibles
+        weight: 1
+      - path: Charakter/Thorax/L_Leg
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_1
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_2
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_3
+        weight: 1
+      - path: Charakter/Thorax/R_Leg
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_1
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_2
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_3
+        weight: 1
+      - path: Gorcrasp
+        weight: 1
+      - path: Gorcrasp/Augen
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_1
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_2
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_3
+        weight: 1
+      - path: Gorcrasp/Gorcrasp_2
+        weight: 1
+      - path: Gorcrasp/Haare
+        weight: 1
+      - path: Gorcrasp/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Jump
+      takeName: C4D Animation Take
+      firstFrame: 197
+      lastFrame: 220
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Charakter
+        weight: 1
+      - path: Charakter/Insect_rig
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Claw_00_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Tarsus_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Tip_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Claw_00_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Tarsus_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Tip_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Claw_00_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Tarsus_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Tip_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Claw_00_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Tarsus_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Tip_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Claw_00_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Tarsus_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Tip_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Claw_00_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Tarsus_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Tip_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Claw_00_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Tarsus_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Tip_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Claw_00_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Tarsus_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Tip_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/AbdomenSD_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/Head_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/L_Claw_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/L_Claw_con_/L_Claw_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/R_Claw_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/R_Claw_con__1/R_Claw_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt/L_Claw_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt/L_Claw_jnt/L_Tip_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Leg_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1/L_Claw_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1/L_Claw_jnt_1/L_Tip_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Leg_pole_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2/L_Claw_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2/L_Claw_jnt_2/L_Tip_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Leg_pole_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3/L_Claw_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3/L_Claw_jnt_3/L_Tip_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Leg_pole_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt/R_Claw_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt/R_Claw_jnt/R_Tip_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Leg_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1/R_Claw_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1/R_Claw_jnt_1/R_Tip_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Leg_pole_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2/R_Claw_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2/R_Claw_jnt_2/R_Tip_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Leg_pole_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3/R_Claw_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3/R_Claw_jnt_3/R_Tip_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Leg_pole_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt/Abdomen_SD_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt/Abdomen_SD_01_jnt/Abdomen_SD_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt/L_Tibia_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt/L_Tibia_03_jnt/L_Tibia_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt/R_Tibia_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt/R_Tibia_03_jnt/R_Tibia_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt/L_Tarsus_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt/L_Tarsus_03_jnt/L_Tarsus_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2/L_Tibia_03_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2/L_Tibia_03_jnt_2/L_Tibia_04_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1/R_Tarsus_03_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1/R_Tarsus_03_jnt_1/R_Tarsus_04_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1/R_Tibia_03_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1/R_Tibia_03_jnt_1/R_Tibia_04_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_pole_1
+        weight: 1
+      - path: Charakter/Thorax
+        weight: 1
+      - path: Charakter/Thorax/Abdomen_SD
+        weight: 1
+      - path: Charakter/Thorax/Claw
+        weight: 1
+      - path: Charakter/Thorax/Claw_1
+        weight: 1
+      - path: Charakter/Thorax/Head
+        weight: 1
+      - path: Charakter/Thorax/Head/Mandibles
+        weight: 1
+      - path: Charakter/Thorax/L_Leg
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_1
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_2
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_3
+        weight: 1
+      - path: Charakter/Thorax/R_Leg
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_1
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_2
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_3
+        weight: 1
+      - path: Gorcrasp
+        weight: 1
+      - path: Gorcrasp/Augen
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_1
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_2
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_3
+        weight: 1
+      - path: Gorcrasp/Gorcrasp_2
+        weight: 1
+      - path: Gorcrasp/Haare
+        weight: 1
+      - path: Gorcrasp/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Hit
+      takeName: C4D Animation Take
+      firstFrame: 220
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Charakter
+        weight: 1
+      - path: Charakter/Insect_rig
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Claw_00_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Tarsus_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Tip_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Claw_00_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Tarsus_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Tip_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Claw_00_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Tarsus_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Tip_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Claw_00_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Tarsus_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Tip_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Claw_00_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Tarsus_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Tip_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Claw_00_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Tarsus_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Tip_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Claw_00_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Tarsus_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Tip_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Claw_00_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Tarsus_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Tip_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/AbdomenSD_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/Head_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/L_Claw_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/L_Claw_con_/L_Claw_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/R_Claw_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/R_Claw_con__1/R_Claw_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt/L_Claw_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt/L_Claw_jnt/L_Tip_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Leg_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1/L_Claw_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1/L_Claw_jnt_1/L_Tip_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Leg_pole_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2/L_Claw_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2/L_Claw_jnt_2/L_Tip_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Leg_pole_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3/L_Claw_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3/L_Claw_jnt_3/L_Tip_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Leg_pole_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt/R_Claw_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt/R_Claw_jnt/R_Tip_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Leg_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1/R_Claw_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1/R_Claw_jnt_1/R_Tip_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Leg_pole_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2/R_Claw_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2/R_Claw_jnt_2/R_Tip_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Leg_pole_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3/R_Claw_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3/R_Claw_jnt_3/R_Tip_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Leg_pole_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt/Abdomen_SD_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt/Abdomen_SD_01_jnt/Abdomen_SD_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt/L_Tibia_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt/L_Tibia_03_jnt/L_Tibia_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt/R_Tibia_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt/R_Tibia_03_jnt/R_Tibia_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt/L_Tarsus_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt/L_Tarsus_03_jnt/L_Tarsus_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2/L_Tibia_03_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2/L_Tibia_03_jnt_2/L_Tibia_04_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1/R_Tarsus_03_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1/R_Tarsus_03_jnt_1/R_Tarsus_04_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1/R_Tibia_03_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1/R_Tibia_03_jnt_1/R_Tibia_04_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_pole_1
+        weight: 1
+      - path: Charakter/Thorax
+        weight: 1
+      - path: Charakter/Thorax/Abdomen_SD
+        weight: 1
+      - path: Charakter/Thorax/Claw
+        weight: 1
+      - path: Charakter/Thorax/Claw_1
+        weight: 1
+      - path: Charakter/Thorax/Head
+        weight: 1
+      - path: Charakter/Thorax/Head/Mandibles
+        weight: 1
+      - path: Charakter/Thorax/L_Leg
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_1
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_2
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_3
+        weight: 1
+      - path: Charakter/Thorax/R_Leg
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_1
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_2
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_3
+        weight: 1
+      - path: Gorcrasp
+        weight: 1
+      - path: Gorcrasp/Augen
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_1
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_2
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_3
+        weight: 1
+      - path: Gorcrasp/Gorcrasp_2
+        weight: 1
+      - path: Gorcrasp/Haare
+        weight: 1
+      - path: Gorcrasp/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Death
+      takeName: C4D Animation Take
+      firstFrame: 240
+      lastFrame: 285
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Charakter
+        weight: 1
+      - path: Charakter/Insect_rig
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Claw_00_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Tarsus_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con_/L_Tip_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Claw_00_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Tarsus_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__1/L_Tip_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Claw_00_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Tarsus_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__2/L_Tip_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Claw_00_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Tarsus_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/L_Leg_con__3/L_Tip_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Claw_00_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Tarsus_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con_/R_Tip_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Claw_00_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Tarsus_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__1/R_Tip_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Claw_00_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Tarsus_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__2/R_Tip_goal_2
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Claw_00_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Tarsus_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/R_Leg_con__3/R_Tip_goal_3
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/AbdomenSD_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/Head_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/L_Claw_con_
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/L_Claw_con_/L_Claw_goal
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/R_Claw_con__1
+        weight: 1
+      - path: Charakter/Insect_rig/Master_con_/Root_con_/R_Claw_con__1/R_Claw_goal_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt/L_Claw_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Coxa_jnt/L_Femur_jnt_2/L_Patella_jnt_2/L_Tibia_jnt/L_Metarsus_jnt/L_Tarsus_jnt/L_Claw_jnt/L_Tip_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null/L_Leg_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1/L_Claw_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Coxa_jnt_1/L_Femur_jnt_1/L_Patella_jnt_1/L_Tibia_jnt_1/L_Metarsus_jnt_1/L_Tarsus_jnt_1/L_Claw_jnt_1/L_Tip_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_1/L_Leg_pole_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2/L_Claw_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Coxa_jnt_2/L_Femur_jnt_2_2/L_Patella_jnt_2_2/L_Tibia_jnt_2/L_Metarsus_jnt_2/L_Tarsus_jnt_2/L_Claw_jnt_2/L_Tip_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_2/L_Leg_pole_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3/L_Claw_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Coxa_jnt_3/L_Femur_jnt_3/L_Patella_jnt_3/L_Tibia_jnt_3/L_Metarsus_jnt_3/L_Tarsus_jnt_3/L_Claw_jnt_3/L_Tip_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/L_Leg_null_3/L_Leg_pole_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt/R_Claw_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Coxa_jnt/R_Femur_jnt/R_Patella_jnt/R_Tibia_jnt/R_Metarsus_jnt/R_Tarsus_jnt/R_Claw_jnt/R_Tip_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null/R_Leg_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1/R_Claw_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Coxa_jnt_1/R_Femur_jnt_1_2/R_Patella_jnt_1_2/R_Tibia_jnt_1/R_Metarsus_jnt_1/R_Tarsus_jnt_1/R_Claw_jnt_1/R_Tip_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_1/R_Leg_pole_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2/R_Claw_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Coxa_jnt_2/R_Femur_jnt_2/R_Patella_jnt_2/R_Tibia_jnt_2/R_Metarsus_jnt_2/R_Tarsus_jnt_2/R_Claw_jnt_2/R_Tip_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_2/R_Leg_pole_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3/R_Claw_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Coxa_jnt_3/R_Femur_jnt_3/R_Patella_jnt_3/R_Tibia_jnt_3/R_Metarsus_jnt_3/R_Tarsus_jnt_3/R_Claw_jnt_3/R_Tip_jnt_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/R_Leg_null_3/R_Leg_pole_3
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt/Abdomen_SD_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Abdomen_SD_null/Abdomen_SD_00_jnt/Abdomen_SD_01_jnt/Abdomen_SD_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt/L_Tibia_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/L_Tibia_null/L_Tibia_00_jnt/L_Tibia_01_jnt/L_Tibia_02_jnt/L_Tibia_03_jnt/L_Tibia_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt/R_Tibia_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/Head_null/Head_00_jnt/Head_01_jnt/Mandibles_null/R_Tibia_null/R_Tibia_00_jnt/R_Tibia_01_jnt/R_Tibia_02_jnt/R_Tibia_03_jnt/R_Tibia_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt/L_Tarsus_03_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tarsus_null/L_Tarsus_00_jnt/L_Tarsus_01_jnt/L_Tarsus_02_jnt/L_Tarsus_03_jnt/L_Tarsus_04_jnt
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2/L_Tibia_03_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_jnt/L_Patella_jnt/L_Wrist_jnt/L_Claw_Pincers_null/L_Tibia_null_2/L_Tibia_00_jnt_2/L_Tibia_01_jnt_2/L_Tibia_02_jnt_2/L_Tibia_03_jnt_2/L_Tibia_04_jnt_2
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/L_Claw_null/L_Femur_pole
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1/R_Tarsus_03_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tarsus_null_1/R_Tarsus_00_jnt_1/R_Tarsus_01_jnt_1/R_Tarsus_02_jnt_1/R_Tarsus_03_jnt_1/R_Tarsus_04_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1/R_Tibia_03_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_jnt_1/R_Patella_jnt_1/R_Wrist_jnt_1/R_Claw_Pincers_null_1/R_Tibia_null_1/R_Tibia_00_jnt_1/R_Tibia_01_jnt_1/R_Tibia_02_jnt_1/R_Tibia_03_jnt_1/R_Tibia_04_jnt_1
+        weight: 1
+      - path: Charakter/Insect_rig/Thorax_null/Thorax_00_jnt/Thorax_01_jnt/R_Claw_null_1/R_Femur_pole_1
+        weight: 1
+      - path: Charakter/Thorax
+        weight: 1
+      - path: Charakter/Thorax/Abdomen_SD
+        weight: 1
+      - path: Charakter/Thorax/Claw
+        weight: 1
+      - path: Charakter/Thorax/Claw_1
+        weight: 1
+      - path: Charakter/Thorax/Head
+        weight: 1
+      - path: Charakter/Thorax/Head/Mandibles
+        weight: 1
+      - path: Charakter/Thorax/L_Leg
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_1
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_2
+        weight: 1
+      - path: Charakter/Thorax/L_Leg_3
+        weight: 1
+      - path: Charakter/Thorax/R_Leg
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_1
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_2
+        weight: 1
+      - path: Charakter/Thorax/R_Leg_3
+        weight: 1
+      - path: Gorcrasp
+        weight: 1
+      - path: Gorcrasp/Augen
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_1
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_2
+        weight: 1
+      - path: Gorcrasp/Augen/Kugel_3
+        weight: 1
+      - path: Gorcrasp/Gorcrasp_2
+        weight: 1
+      - path: Gorcrasp/Haare
+        weight: 1
+      - path: Gorcrasp/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 

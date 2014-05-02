@@ -66,6 +66,7 @@ public class SectorData
 			throw new System.ArgumentNullException("module");
 
 		Vector3 newPos;
+		// first connector is null!
 		if (outConnector == null)
 		{
 			newPos = new Vector3(0, 0, 0);
@@ -118,6 +119,14 @@ public class SectorData
 		}
 	}
 
+	public Sector GeneratorSector
+	{
+		get
+		{
+			return generatorSector;
+		}
+	}
+
 	public SpawnModule SpawnModule
 	{
 		get
@@ -135,19 +144,41 @@ public class SectorData
 	}
 
 	////////////////////////////////////////////////////////////////////
-	
-	List<Module> gerneratorModules = new List<Module>();
 
+	/// <summary>
+	/// The modules that are used to generate the sector with the LevelGenerator.
+	/// </summary>
+	List<Module> gerneratorModules = new List<Module>();
+	/// <summary>
+	/// The generated sector modules.
+	/// </summary>
 	List<Module> sectorModules = new List<Module>();
 
+	/// <summary>
+	/// The sector that is used (with its gerneratorModules) to create an instance.
+	/// </summary>
 	Sector generatorSector;
 
+	////////////////////////////////////////////////////////////////////
+	
+	/// <summary>
+	/// The spawning module.
+	/// </summary>
 	SpawnModule spawnModule;
 
+	/// <summary>
+	/// The fighting module.
+	/// </summary>
 	FightingModule fightingModule;
 
+	/// <summary>
+	/// The amount of modules per sector.
+	/// </summary>
 	int modulesPerSectorCount;
 
+	/// <summary>
+	/// The last out connector used in level loading.
+	/// </summary>
 	ConnectorElement lastOutConnector;
 }
 

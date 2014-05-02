@@ -89,15 +89,15 @@ public class GUIManager : MonoBehaviour, IInputListener
         {
             Select();
         }
-        if (button == InputStringMapping.GUIInputMapping.Back)
+        else if (button == InputStringMapping.GUIInputMapping.Back)
         {
             Back();
         }
-        if (button == InputStringMapping.GUIInputMapping.Cancel)
+		else if (button == InputStringMapping.GUIInputMapping.Cancel)
         {
             Cancel();
         }
-        if (button == InputStringMapping.GUIInputMapping.Pause)
+		else if (button == InputStringMapping.GUIInputMapping.Pause)
         {
             Pause();
         }
@@ -124,17 +124,17 @@ public class GUIManager : MonoBehaviour, IInputListener
     {
 		if (axis > AxisThreshold)
 		{
-			FocusIndex(-1);
+			FocusIndex(1);
 		}
 		else if (axis < -AxisThreshold)
 		{			
-			FocusIndex(1);
+			FocusIndex(-1);
 		}
     }
 
     private void Select()
     {
-        focus = GetCurrentFocus();
+        DoFocus();
         if (focus != null)
         {
             focus.OnSelect();
@@ -183,7 +183,7 @@ public class GUIManager : MonoBehaviour, IInputListener
 		}
 
         GUIItem lastFocus = focus;
-        focus = GetCurrentFocus();
+		DoFocus();
 
         if (lastFocus != null)
         {
@@ -196,14 +196,12 @@ public class GUIManager : MonoBehaviour, IInputListener
         }
     }
 
-    public GUIItem GetCurrentFocus()
+    public void DoFocus()
     {
-        focus = null;
-        if (guiElements.TryGetValue(currentAccessIndex, out focus))
+        if (!guiElements.TryGetValue(currentAccessIndex, out focus))
         {
-            return focus;
+			focus = null;
         }
-        return null;
     }
 
     ////////////////////////////////////////////////////////

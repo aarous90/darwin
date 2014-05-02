@@ -1,14 +1,15 @@
 using UnityEngine;
 using System.Collections;
 
-public class TimerHUD : MonoBehaviour
+public class TimerHUD : GUIItem
 {
 
 	// Use this for initialization
-	void Start()
+	protected override void Init()
 	{
 		timerText = GetComponent<GUIText>();
 		playerTimer = new Util.Timer(-1, -1, true);
+		base.Init();
 	}
 	
 	// Update is called once per frame
