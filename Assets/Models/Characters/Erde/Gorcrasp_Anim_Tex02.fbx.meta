@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: c5931564a5492e9449860e91ac3a956b
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: Abdomen_SD
     100002: Abdomen_SD_00_jnt
@@ -419,12 +419,12 @@ ModelImporter:
     4300006: Kugel_2
     4300008: Kugel_1
     4300010: Kugel
-    7400000: Idle
-    7400002: Boring
-    7400004: Walk
-    7400006: Jump
-    7400008: Hit
-    7400010: Death
+    7400000: Gorcrasp_Idle
+    7400002: Gorcrasp_Boring
+    7400004: Gorcrasp_Walk
+    7400006: Gorcrasp_Jump
+    7400008: Gorcrasp_Hit
+    7400010: Gorcrasp_Death
     9500000: //RootNode
     13700000: Gorcrasp_2
     13700002: Haare
@@ -448,7 +448,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Gorcrasp_Idle
       takeName: C4D Animation Take
       firstFrame: 1
       lastFrame: 30
@@ -457,7 +457,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -884,7 +884,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Boring
+      name: Gorcrasp_Boring
       takeName: C4D Animation Take
       firstFrame: 30
       lastFrame: 180
@@ -893,7 +893,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -1320,7 +1320,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Walk
+      name: Gorcrasp_Walk
       takeName: C4D Animation Take
       firstFrame: 180
       lastFrame: 197
@@ -1329,7 +1329,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -1756,7 +1756,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Jump
+      name: Gorcrasp_Jump
       takeName: C4D Animation Take
       firstFrame: 197
       lastFrame: 220
@@ -2192,7 +2192,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Hit
+      name: Gorcrasp_Hit
       takeName: C4D Animation Take
       firstFrame: 220
       lastFrame: 240
@@ -2628,7 +2628,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Death
+      name: Gorcrasp_Death
       takeName: C4D Animation Take
       firstFrame: 240
       lastFrame: 285
@@ -3099,4 +3099,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  additionalBone: 0
   userData: 
