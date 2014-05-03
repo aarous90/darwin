@@ -27,6 +27,9 @@ public class GroundCharacter : ICharacter
 
 				//Initial Character rotation flipped horizontally
 				LookLeft = LookRight * Quaternion.Euler (0, 180, 0); 
+
+				Controller = GetComponent<_CharacterController> ();
+				Anim = GetComponent<Animator> ();
 		
 		}
 
@@ -37,7 +40,21 @@ public class GroundCharacter : ICharacter
 
 		void FixedUpdate ()
 		{		
+				if (CanMove ()) {
+						MoveDirection.x = MoveSpeed * MoveForce;
+						MoveForce *= 1.0f - Drag;
+				}
 
+				MoveDirection.y -= Gravity * Time.deltaTime;
+
+				if (Math.Abs (MoveDirection.x) > 0.1) {
+						Anim.SetBool ("Walk", true);
+				} else {
+						Anim.SetBool ("Walk", false);
+				}
+
+				Controller.Move (MoveDirection * Time.deltaTime);
+				//Debug.Log (MoveDirection);
 		}
 
 		////////////////////////////////////////////////////////////////////
@@ -76,23 +93,34 @@ public class GroundCharacter : ICharacter
 
 		public override bool CanMove ()
 		{
-				throw new NotImplementedException ();
+				if (Controller.grounded) {
+						return true;
+				} else {
+						return false;
+				}
 
 		}
 
 		public override void Move (float deltaTime)
-		{
-				throw new NotImplementedException ();
+		{		
+				if (CanMove ()) {
+						MoveForce += 0.5f * MoveSpeed * Math.Sign (Direction);
+				}
 		}
 
 		public override bool CanJump ()
 		{
-				throw new NotImplementedException ();
+				if (Controller.grounded) {
+						return true;
+				} else {
+						return false;
+				}
 		}
 
 		public override void Jump (float deltaTime)
 		{
-				throw new NotImplementedException ();
+				Anim.SetTrigger ("Jump");
+				MoveDirection.y = JumpSpeed;
 		}
 
 		public override bool CanFly ()
@@ -140,21 +168,26 @@ public class GroundCharacter : ICharacter
 		////////////////////////////////////////////////////////////////////
 
 		public bool								Sequence;
-		public float							Gravity = 9.81f;
+		public float							Gravity = 20;
 		public float 							MaxSpeed_1 = 5;
 		public float 							MaxSpeed_2 = 10;
-		public float 							MoveForce = 100f;
-		public float 							JumpForce = 500f;
+		public float 							MoveSpeed = 5;
+		public float 							JumpSpeed = 15;
+		public float 							Drag = 0.1f;
 
 		////////////////////////////////////////////////////////////////////
 
 		Vector3 								RayOffset;
 		Vector3 								Velocity;
+		Vector2 								MoveDirection;
 		Quaternion								LookRight;
 		Quaternion								LookLeft;
+		float 									MoveForce;
 		float 									RayLength;
 		float 									MaxSpeed;
 		float 									Direction;
+		_CharacterController                    Controller;
+		Animator  								Anim;
 
 }
 
