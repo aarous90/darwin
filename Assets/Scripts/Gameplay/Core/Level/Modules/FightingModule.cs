@@ -1,6 +1,6 @@
 using System;
 
-public class FightingModule : Module
+public class FightingModule : SpawnModule
 {
 	
 	// Use this for initialization

@@ -2,6 +2,7 @@
 using UnityEngine;
 using System;
 
+[RequireComponent (typeof(_CharacterController))]
 public class GroundCharacter : ICharacter
 {
 		public GroundCharacter ()
@@ -12,7 +13,11 @@ public class GroundCharacter : ICharacter
 		public void Flip (float h)
 		{
 				transform.rotation = (h > 0) ? LookRight : LookLeft;
-				Direction = h;
+		}
+
+		public void SetDirection (float x)
+		{
+				Direction = x;
 		}
 
 		void Start ()
@@ -23,13 +28,9 @@ public class GroundCharacter : ICharacter
 				//Initial Character rotation flipped horizontally
 				LookLeft = LookRight * Quaternion.Euler (0, 180, 0); 
 
-				//Length of Raycast to check ground considering collider offset
-				RayLength = collider.bounds.size.y / 2 - 
-						Math.Abs (transform.position.y - collider.bounds.center.y);
-
-				//Offset value for additional Raycasts considering collider offset
-				RayOffset = Vector3.right * (collider.bounds.size.x / 2 - 
-						Math.Abs (transform.position.x - collider.bounds.center.x));
+				Controller = GetComponent<_CharacterController> ();
+				Anim = GetComponent<Animator> ();
+		
 		}
 
 		void Update ()
@@ -39,60 +40,26 @@ public class GroundCharacter : ICharacter
 
 		void FixedUpdate ()
 		{		
-				//Check for Input Sequence adjust Maxspeed
-				MaxSpeed = (Sequence) ? MaxSpeed_2 : MaxSpeed_1;
-
-				//If Character is grounded apply Movementforce and Drag
 				if (CanMove ()) {
-						rigidbody.AddForce (Vector3.right * MovementForce * MovementSpeed);
-						MovementForce *= 1.0f - Drag;
-
+						MoveDirection.x = MoveSpeed * MoveForce;
+						MoveForce *= 1.0f - Drag;
 				}
 
-				//If Character is exceeding Maxspeed set velocity to Maxspeed
-				if (Mathf.Abs (rigidbody.velocity.x) > MaxSpeed) {
-						Velocity = rigidbody.velocity;
-						Velocity.x = Mathf.Sign (rigidbody.velocity.x) * MaxSpeed;
-						rigidbody.velocity = Velocity;
+				MoveDirection.y -= Gravity * Time.deltaTime;
+
+				if (Math.Abs (MoveDirection.x) > 0.1) {
+						Anim.SetBool ("Walk", true);
+				} else {
+						Anim.SetBool ("Walk", false);
 				}
 
-				//Apply Gravity
-				rigidbody.AddForce (-Vector3.up * Gravity * rigidbody.mass);
-
+				Controller.Move (MoveDirection * Time.deltaTime);
+				//Debug.Log (MoveDirection);
 		}
 
+		////////////////////////////////////////////////////////////////////
 
-#region ICharacter implementation
-
-		public override float GetLive ()
-		{
-				throw new System.NotImplementedException ();
-		}
-
-		public override void Regenerate (float value)
-		{
-				throw new System.NotImplementedException ();
-		}
-
-		public override void TakeDamage (float value)
-		{
-				throw new System.NotImplementedException ();
-		}
-
-		public override float GetBoost ()
-		{
-				throw new System.NotImplementedException ();
-		}
-
-		public override void GainBoost (float value)
-		{
-				throw new System.NotImplementedException ();
-		}
-
-		public override void UseBoost (float value)
-		{
-				throw new System.NotImplementedException ();
-		}
+	#region ICharacter implementation
 
 		public override bool UseSpecial (AttackContext context)
 		{
@@ -126,9 +93,7 @@ public class GroundCharacter : ICharacter
 
 		public override bool CanMove ()
 		{
-				if (Physics.Raycast (transform.position, -transform.up, RayLength) || 
-						Physics.Raycast (transform.position + RayOffset, -transform.up, RayLength) ||
-						Physics.Raycast (transform.position - RayOffset, -transform.up, RayLength)) {
+				if (Controller.grounded) {
 						return true;
 				} else {
 						return false;
@@ -137,15 +102,15 @@ public class GroundCharacter : ICharacter
 		}
 
 		public override void Move (float deltaTime)
-		{
-				MovementForce += 0.5f * MovementSpeed * Math.Sign (Direction);
+		{		
+				if (CanMove ()) {
+						MoveForce += 0.5f * MoveSpeed * Math.Sign (Direction);
+				}
 		}
 
 		public override bool CanJump ()
 		{
-				if (Physics.Raycast (transform.position, -transform.up, RayLength) || 
-						Physics.Raycast (transform.position + RayOffset, -transform.up, RayLength) ||
-						Physics.Raycast (transform.position - RayOffset, -transform.up, RayLength)) {
+				if (Controller.grounded) {
 						return true;
 				} else {
 						return false;
@@ -154,7 +119,8 @@ public class GroundCharacter : ICharacter
 
 		public override void Jump (float deltaTime)
 		{
-				rigidbody.velocity = rigidbody.velocity + (Vector3.up * JumpSpeed);
+				Anim.SetTrigger ("Jump");
+				MoveDirection.y = JumpSpeed;
 		}
 
 		public override bool CanFly ()
@@ -177,24 +143,51 @@ public class GroundCharacter : ICharacter
 				throw new System.NotImplementedException ();
 		}
 
-#endregion
+		public override void OnDamaged ()
+		{
+				throw new NotImplementedException ();
+		}
 
-		bool 									Grounded;
-		Vector3 								RayOffset;
-		Vector3 								Velocity;
-		Quaternion								LookRight;
-		Quaternion								LookLeft;
-		float 									RayLength;
-		float 									MovementForce;
-		float 									MaxSpeed;
-		float 									Direction;
+		public override void OnDeath ()
+		{
+				throw new NotImplementedException ();
+		}
+
+		public override void OnRegenerate ()
+		{
+				throw new NotImplementedException ();
+		}
+
+		public override void OnBoost ()
+		{
+				throw new NotImplementedException ();
+		}
+
+	#endregion
+
+		////////////////////////////////////////////////////////////////////
+
 		public bool								Sequence;
-		public float 							Drag = 0.3f;
-		public float							Gravity = 9.81f;
+		public float							Gravity = 20;
 		public float 							MaxSpeed_1 = 5;
 		public float 							MaxSpeed_2 = 10;
-		public float							MovementSpeed = 10;
-		public float							JumpSpeed = 10;
+		public float 							MoveSpeed = 5;
+		public float 							JumpSpeed = 15;
+		public float 							Drag = 0.1f;
+
+		////////////////////////////////////////////////////////////////////
+
+		Vector3 								RayOffset;
+		Vector3 								Velocity;
+		Vector2 								MoveDirection;
+		Quaternion								LookRight;
+		Quaternion								LookLeft;
+		float 									MoveForce;
+		float 									RayLength;
+		float 									MaxSpeed;
+		float 									Direction;
+		_CharacterController                    Controller;
+		Animator  								Anim;
 
 }
 

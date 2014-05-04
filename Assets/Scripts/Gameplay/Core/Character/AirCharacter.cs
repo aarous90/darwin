@@ -17,36 +17,6 @@ public class AirCharacter : ICharacter
 
 	#region ICharacter implementation
 
-	public override float GetLive()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override void Regenerate(float value)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override void TakeDamage(float value)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override float GetBoost()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override void GainBoost(float value)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override void UseBoost(float value)
-	{
-		throw new System.NotImplementedException();
-	}
-
 	public override bool UseSpecial(AttackContext context)
 	{
 		throw new System.NotImplementedException();
@@ -113,6 +83,26 @@ public class AirCharacter : ICharacter
 	}
 
 	public override void Swim(float deltaTime)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override void OnDamaged()
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override void OnDeath()
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override void OnRegenerate()
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override void OnBoost()
 	{
 		throw new System.NotImplementedException();
 	}

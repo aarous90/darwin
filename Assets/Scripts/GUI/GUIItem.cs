@@ -5,8 +5,8 @@ public class GUIItem : MonoBehaviour
 {
 	protected virtual void Init()
 	{
-		m_Element = gameObject.GetComponent(m_Name);
-		GlobalGUI.AddItem(this);
+		Element = gameObject.GetComponent(ElementName);
+		GUIManager.Get().AddItem(this);
 	}
 
     // Use this for initialization
@@ -65,13 +65,23 @@ public class GUIItem : MonoBehaviour
     /// <returns></returns>
     public Component GetElement()
     {
-        return m_Element;
+        return Element;
     }
 
     ////////////////////////////////////////////////////////
 
-    protected string        m_Name;         	/// The name of the gui element component
-    private Component       m_Element;      	/// A reference to the Component itself
-    public GUIManager       GlobalGUI;      	/// Field for the global GUIManager
-    public int              AccessIndex = -1;    /// The index for navigaion with gamepad
+	/// <summary>
+	/// The name of the gui element component.
+	/// </summary>
+    protected string        	ElementName;
+    
+	/// <summary>
+	/// A reference to the Component itself.
+	/// </summary>
+	protected Component       	Element;
+
+	/// <summary>
+	/// The index for navigaion with gamepad.
+	/// </summary>
+    public int					AccessIndex = -1;    	
 }

@@ -21,16 +21,17 @@ public class CharacterSpawn : MonoBehaviour
 
 	}
 
-	public void DoSpawn(int playerIndex, ICharacter character)
+	public ICharacter DoSpawn(int playerIndex, ICharacter character)
 	{
 		if (playerIndex > -1 && playerIndex < PlayerManager.Get().GetPlayerCount())
 		{
 			ICharacter spawned;
 			if ((spawned = character.Spawn(PlayerManager.Get().GetPlayer(playerIndex), this)) != null)
 			{
-				PlayerManager.Get().GetPlayer(playerIndex).GetController().UseCharacter(spawned);
+				return spawned;
 			}
 		}
+		return null;
 	}
 
 	/// <summary>
