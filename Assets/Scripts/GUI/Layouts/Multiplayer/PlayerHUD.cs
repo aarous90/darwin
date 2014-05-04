@@ -14,7 +14,7 @@ public class PlayerHUD : GUIItem
 	// Update is called once per frame
 	void Update()
 	{
-		if (player == null)
+		if (player == null || player.GetCharacter() == null)
 		{
 			return;
 		}
