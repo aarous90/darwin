@@ -18,11 +18,17 @@ public class FallingAction : ActionElement
 
 	#region implemented abstract members of ActionElement
 
-	public override void DoAction()
+	protected override void DoAction()
 	{
 		foreach (GameObject g in FallingObjects)
 		{
-			g.rigidbody.isKinematic = true;
+			if (g == null) continue;
+
+			GameObject obj = GameObject.Find(g.name);
+			if (obj != null)
+			{
+				obj.rigidbody.useGravity = true;
+			}
 		}
 	}
 

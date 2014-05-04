@@ -13,14 +13,14 @@ public class BoxTrigger : TriggerElement
 	// Update is called once per frame
 	void Update()
 	{
-	
+		transform.Translate(0,0,0);
 	}
 
 	#region implemented abstract members of TriggerElement
 
 	protected override void TriggerAction()
 	{
-		Action.DoAction();
+		Action.OnTriggered();
 	}
 
 	#endregion

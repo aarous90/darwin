@@ -16,5 +16,10 @@ public abstract class ActionElement : IElement
 	
 	}
 
-	public abstract void DoAction();
+	public void OnTriggered()
+	{
+		DoAction();
+	}
+
+	protected abstract void DoAction();
 }
