@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TriggerElement : IElement
+public abstract class TriggerElement : IElement
 {
 
 	// Use this for initialization
@@ -16,5 +16,7 @@ public class TriggerElement : IElement
 	
 	}
 
-	public ActionElement[] Actions;
+	protected abstract void TriggerAction();
+
+	public ActionElement Action;
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ActionElement : IElement
+public abstract class ActionElement : IElement
 {
 
 	// Use this for initialization
@@ -15,4 +15,6 @@ public class ActionElement : IElement
 	{
 	
 	}
+
+	public abstract void DoAction();
 }
