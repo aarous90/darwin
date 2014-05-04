@@ -4,158 +4,152 @@ using UnityEngine;
 public abstract class ICharacter : MonoBehaviour
 {
 
-	public Player GetOwningPlayer()
-	{
-		return Owner;
-	}
-
-	////////////////////////////////////////////////////////////////////
-
-	/// <summary>
-	/// Spawns an instance of this character for a player at a spawner.
-	/// </summary>
-	public ICharacter Spawn(Player owner, CharacterSpawn spawner)
-	{
-		IsSpawner = true;
-		Object obj = Object.Instantiate(this, spawner.transform.localPosition, spawner.transform.rotation);
-		if (obj is ICharacter)
+		public Player GetOwningPlayer ()
 		{
-			ICharacter character = obj as ICharacter;
-			character.IsSpawned = true;
-			character.Owner = owner;
-			character.live = MaxLive;
-			character.boost = 0;
-			CharacterManager.Get().RegisterCharacter(owner.PlayerIndex, this);
-			return character;
+				return Owner;
 		}
-		return null;
-	}
 
-	/// <summary>
-	/// Remove this instance.
-	/// </summary>
-	public void Remove()
-	{
-		CharacterManager.Get().UnregisterCharacter(Owner.PlayerIndex);
-	}
+		////////////////////////////////////////////////////////////////////
 
-	////////////////////////////////////////////////////////////////////
-
-	//void Init(MovementController controller);
-
-	//MovementController GetController();
-
-	////////////////////////////////////////////////////////////////////
-
-	public virtual float GetLive()
-	{
-		return live;
-	}
-
-	public virtual void Regenerate(float value)
-	{
-		live += value;
-		if (live > MaxLive)
+		/// <summary>
+		/// Spawns an instance of this character for a player at a spawner.
+		/// </summary>
+		public ICharacter Spawn (Player owner, CharacterSpawn spawner)
 		{
-			live = MaxLive;
+				IsSpawner = true;
+				Object obj = Object.Instantiate (this, spawner.transform.localPosition, transform.rotation);
+				if (obj is ICharacter) {
+						ICharacter character = obj as ICharacter;
+						character.IsSpawned = true;
+						character.Owner = owner;
+						character.live = MaxLive;
+						character.boost = 0;
+						CharacterManager.Get ().RegisterCharacter (owner.PlayerIndex, this);
+						return character;
+				}
+				return null;
 		}
-		OnRegenerate();
-	}
 
-	public virtual void TakeDamage(float value)
-	{
-		live -= value;
-		if (live <= 0)
+		/// <summary>
+		/// Remove this instance.
+		/// </summary>
+		public void Remove ()
 		{
-			live = 0;
-			OnDeath();
-			return;
+				CharacterManager.Get ().UnregisterCharacter (Owner.PlayerIndex);
 		}
-		OnDamaged();
-	}
 
-	////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////
 
-	public virtual float GetBoost()
-	{
-		return boost;
-	}
+		//void Init(MovementController controller);
 
-	public virtual void GainBoost(float value)
-	{
-		boost += value;
-	}
+		//MovementController GetController();
 
-	public virtual void UseBoost(float value)
-	{
-		boost = 0;
-	}
+		////////////////////////////////////////////////////////////////////
 
-	////////////////////////////////////////////////////////////////////
+		public virtual float GetLive ()
+		{
+				return live;
+		}
 
-	/// Try using a special ability, return true if successful
-	public abstract bool UseSpecial(AttackContext context);
+		public virtual void Regenerate (float value)
+		{
+				live += value;
+				if (live > MaxLive) {
+						live = MaxLive;
+				}
+				OnRegenerate ();
+		}
 
-	/// Try using a melee attack, return true if successful
-	public abstract bool UseMelee(AttackContext context);
+		public virtual void TakeDamage (float value)
+		{
+				live -= value;
+				if (live <= 0) {
+						live = 0;
+						OnDeath ();
+						return;
+				}
+				OnDamaged ();
+		}
 
-	/// Try using a ranged attack, return true if successful
-	public abstract bool UseRanged(AttackContext context);
+		////////////////////////////////////////////////////////////////////
 
-	////////////////////////////////////////////////////////////////////
+		public virtual float GetBoost ()
+		{
+				return boost;
+		}
 
-	public abstract void DoMeleeDamage(DamageContext context);
+		public virtual void GainBoost (float value)
+		{
+				boost += value;
+		}
 
-	public abstract void DoRangedDamage(DamageContext context);
+		public virtual void UseBoost (float value)
+		{
+				boost = 0;
+		}
 
-	public abstract void DoSpecialDamage(DamageContext context);
+		////////////////////////////////////////////////////////////////////
 
-	////////////////////////////////////////////////////////////////////
+		/// Try using a special ability, return true if successful
+		public abstract bool UseSpecial (AttackContext context);
 
-	public abstract bool CanMove();
+		/// Try using a melee attack, return true if successful
+		public abstract bool UseMelee (AttackContext context);
 
-	public abstract void Move(float deltaTime);
+		/// Try using a ranged attack, return true if successful
+		public abstract bool UseRanged (AttackContext context);
 
-	public abstract bool CanJump();
+		////////////////////////////////////////////////////////////////////
 
-	public abstract void Jump(float deltaTime);
+		public abstract void DoMeleeDamage (DamageContext context);
 
-	public abstract bool CanFly();
+		public abstract void DoRangedDamage (DamageContext context);
 
-	public abstract void Fly(float deltaTime);
+		public abstract void DoSpecialDamage (DamageContext context);
 
-	public abstract bool CanSwim();
+		////////////////////////////////////////////////////////////////////
 
-	public abstract void Swim(float deltaTime);
+		public abstract bool CanMove ();
 
-	////////////////////////////////////////////////////////////////////
+		public abstract void Move (float deltaTime);
 
-	public abstract void OnDamaged();
+		public abstract bool CanJump ();
 
-	public abstract void OnDeath();
+		public abstract void Jump (float deltaTime);
 
-	public abstract void OnRegenerate();
+		public abstract bool CanFly ();
 
-	public abstract void OnBoost();
+		public abstract void Fly (float deltaTime);
 
-	////////////////////////////////////////////////////////////////////
+		public abstract bool CanSwim ();
 
-	public bool IsSpawned;
+		public abstract void Swim (float deltaTime);
 
-	public float MaxLive = 100f;
-	public float MaxBoost = 100f;
+		////////////////////////////////////////////////////////////////////
 
-	////////////////////////////////////////////////////////////////////
+		public abstract void OnDamaged ();
 
-	protected bool IsSpawner;
+		public abstract void OnDeath ();
 
-	protected Player Owner;
+		public abstract void OnRegenerate ();
 
-	////////////////////////////////////////////////////////////////////
+		public abstract void OnBoost ();
+
+		////////////////////////////////////////////////////////////////////
+
+		public bool IsSpawned;
+		public float MaxLive = 100f;
+		public float MaxBoost = 100f;
+
+		////////////////////////////////////////////////////////////////////
+
+		protected bool IsSpawner;
+		protected Player Owner;
+
+		////////////////////////////////////////////////////////////////////
 	 
-	float live;
-
-	float boost;
+		float live;
+		float boost;
 
 
 }

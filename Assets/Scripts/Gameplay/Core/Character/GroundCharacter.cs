@@ -41,11 +41,16 @@ public class GroundCharacter : ICharacter
 		void FixedUpdate ()
 		{		
 				if (CanMove ()) {
+						MoveDirection.y = 0;
 						MoveDirection.x = MoveSpeed * MoveForce;
 						MoveForce *= 1.0f - Drag;
 				}
 
-				MoveDirection.y -= Gravity * Time.deltaTime;
+				if (CanJump () && Jumping) {
+						Jumping = false;
+						Anim.SetTrigger ("Jump");
+						MoveDirection.y = JumpSpeed;
+				}
 
 				if (Math.Abs (MoveDirection.x) > 0.1) {
 						Anim.SetBool ("Walk", true);
@@ -53,8 +58,8 @@ public class GroundCharacter : ICharacter
 						Anim.SetBool ("Walk", false);
 				}
 
+				MoveDirection.y -= Gravity * Time.deltaTime;
 				Controller.Move (MoveDirection * Time.deltaTime);
-				//Debug.Log (MoveDirection);
 		}
 
 		////////////////////////////////////////////////////////////////////
@@ -93,7 +98,7 @@ public class GroundCharacter : ICharacter
 
 		public override bool CanMove ()
 		{
-				if (Controller.grounded) {
+				if (Controller.Grounded) {
 						return true;
 				} else {
 						return false;
@@ -110,7 +115,7 @@ public class GroundCharacter : ICharacter
 
 		public override bool CanJump ()
 		{
-				if (Controller.grounded) {
+				if (Controller.Grounded) {
 						return true;
 				} else {
 						return false;
@@ -119,8 +124,7 @@ public class GroundCharacter : ICharacter
 
 		public override void Jump (float deltaTime)
 		{
-				Anim.SetTrigger ("Jump");
-				MoveDirection.y = JumpSpeed;
+				Jumping = true;
 		}
 
 		public override bool CanFly ()
@@ -186,6 +190,7 @@ public class GroundCharacter : ICharacter
 		float 									RayLength;
 		float 									MaxSpeed;
 		float 									Direction;
+		bool									Jumping = false;
 		_CharacterController                    Controller;
 		Animator  								Anim;
 
