@@ -50,7 +50,7 @@ public class _CharacterController : MonoBehaviour
 			Debug.DrawRay(new Vector2(RayOriginX, RayOriginY), new Vector2(0, direction));
 			if (Physics.Raycast(new Vector2(RayOriginX, RayOriginY), Vector2.up * direction, out Hit, Mathf.Abs(deltaY) + Skin))
 			{
-				if (Hit.collider.gameObject.GetComponent<TriggerElement>() != null)
+				if (Hit.collider.gameObject.GetComponent<VolumeTrigger>() != null)
 				{
 					continue;
 				}
@@ -88,7 +88,7 @@ public class _CharacterController : MonoBehaviour
 
 			if (Physics.Raycast(new Vector2(RayOriginX, RayOriginY), Vector2.right * direction, out Hit, Mathf.Abs(deltaX) + Skin))
 			{
-				if (Hit.collider.gameObject.GetComponent<TriggerElement>() != null)
+				if (Hit.collider.gameObject.GetComponent<VolumeTrigger>() != null)
 				{
 					continue;
 				}
@@ -113,7 +113,7 @@ public class _CharacterController : MonoBehaviour
 		return deltaX;
 	}
 
-//Check for diagonal collisions if the character is ungrounded and in movement
+	//Check for diagonal collisions if the character is ungrounded and in movement
 	private float DiagonalCollisions(float deltaX, float deltaY)
 	{
 		Vector3 direction = new Vector3(deltaX, deltaY);
@@ -128,14 +128,14 @@ public class _CharacterController : MonoBehaviour
 		return deltaY;
 	}
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-//[HideInInspector]
+	//[HideInInspector]
 	public bool								Grounded;
-//[HideInInspector]
+	//[HideInInspector]
 	public bool 							SideCollision;
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
 	private Collider 						Collider;
 	private Vector2 						MoveTransform;

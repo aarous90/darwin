@@ -27,7 +27,7 @@ public class DestroyAction : ActionElement
 			GameObject obj = GameObject.Find(DestroyObjects[i].name);
 			if (obj != null)
 			{
-				Object.Destroy(obj, 1);
+				Object.Destroy(obj, Delay);
 			}
 		}
 
@@ -40,6 +40,8 @@ public class DestroyAction : ActionElement
 	/// The list of objects that will be destoryed if the action is triggered.
 	/// </summary>
 	public GameObject[] DestroyObjects;
+
+	public float Delay = 0;
 
 	/// <summary>
 	/// The deleted flag marks if the action was already triggered.
