@@ -5,194 +5,203 @@ using System;
 [RequireComponent (typeof(_CharacterController))]
 public class GroundCharacter : ICharacter
 {
-		public GroundCharacter ()
+	public GroundCharacter()
+	{
+
+	}
+
+	public void Flip(float h)
+	{
+		if (Direction != 0)
 		{
+			transform.eulerAngles = (h > 0) ? Vector3.up * 90 : Vector3.up * -90;
 
 		}
+	}
 
-		public void Flip (float h)
+	public void SetDirection(float x)
+	{
+		Direction = x;
+	}
+
+	void Start()
+	{
+		Controller = GetComponent<_CharacterController>();
+		Anim = GetComponent<Animator>();
+	}
+
+	void Update()
+	{
+
+	}
+
+	void FixedUpdate()
+	{	
+
+		if (CanMove())
 		{
-				transform.rotation = (h > 0) ? LookRight : LookLeft;
+			MoveDirection.y = 0;
+			MoveDirection.x = MoveSpeed * MoveForce;
+			MoveForce *= 1.0f - Drag;
 		}
 
-		public void SetDirection (float x)
+		if (CanJump() && Jumping)
 		{
-				Direction = x;
+			Jumping = false;
+			Anim.SetTrigger("Jump");
+			MoveDirection.y = JumpSpeed;
 		}
 
-		void Start ()
+		Flip(Direction);
+
+		if (Math.Abs(MoveDirection.x) > 0.1)
 		{
-				//Initial Character rotation
-				LookRight = transform.rotation;
-
-				//Initial Character rotation flipped horizontally
-				LookLeft = LookRight * Quaternion.Euler (0, 180, 0); 
-
-				Controller = GetComponent<_CharacterController> ();
-				Anim = GetComponent<Animator> ();
-		
+			Anim.SetBool("Walk", true);
 		}
-
-		void Update ()
+		else
 		{
-
+			Anim.SetBool("Walk", false);
 		}
 
-		void FixedUpdate ()
-		{		
-				if (CanMove ()) {
-						MoveDirection.y = 0;
-						MoveDirection.x = MoveSpeed * MoveForce;
-						MoveForce *= 1.0f - Drag;
-				}
+		MoveDirection.y -= Gravity * Time.deltaTime;
+		Controller.Move(MoveDirection * Time.deltaTime);
+	}
 
-				if (CanJump () && Jumping) {
-						Jumping = false;
-						Anim.SetTrigger ("Jump");
-						MoveDirection.y = JumpSpeed;
-				}
-
-				if (Math.Abs (MoveDirection.x) > 0.1) {
-						Anim.SetBool ("Walk", true);
-				} else {
-						Anim.SetBool ("Walk", false);
-				}
-
-				MoveDirection.y -= Gravity * Time.deltaTime;
-				Controller.Move (MoveDirection * Time.deltaTime);
-		}
-
-		////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
 	#region ICharacter implementation
 
-		public override bool UseSpecial (AttackContext context)
+	public override bool UseSpecial(AttackContext context)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override bool UseMelee(AttackContext context)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override bool UseRanged(AttackContext context)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override void DoMeleeDamage(DamageContext context)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override void DoRangedDamage(DamageContext context)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override void DoSpecialDamage(DamageContext context)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override bool CanMove()
+	{
+		if (Controller.Grounded)
 		{
-				throw new System.NotImplementedException ();
+			return true;
 		}
-
-		public override bool UseMelee (AttackContext context)
+		else
 		{
-				throw new System.NotImplementedException ();
+			return false;
 		}
 
-		public override bool UseRanged (AttackContext context)
+	}
+
+	public override void Move(float deltaTime)
+	{		
+		if (CanMove())
 		{
-				throw new System.NotImplementedException ();
+			MoveForce += 0.5f * MoveSpeed * Math.Sign(Direction);
+			Flip(Direction);
 		}
+	}
 
-		public override void DoMeleeDamage (DamageContext context)
+	public override bool CanJump()
+	{
+		if (Controller.Grounded)
 		{
-				throw new System.NotImplementedException ();
+			return true;
 		}
-
-		public override void DoRangedDamage (DamageContext context)
+		else
 		{
-				throw new System.NotImplementedException ();
+			return false;
 		}
+	}
 
-		public override void DoSpecialDamage (DamageContext context)
-		{
-				throw new System.NotImplementedException ();
-		}
+	public override void Jump(float deltaTime)
+	{
+		Jumping = true;
+	}
 
-		public override bool CanMove ()
-		{
-				if (Controller.Grounded) {
-						return true;
-				} else {
-						return false;
-				}
+	public override bool CanFly()
+	{
+		throw new System.NotImplementedException();
+	}
 
-		}
+	public override void Fly(float deltaTime)
+	{
+		throw new System.NotImplementedException();
+	}
 
-		public override void Move (float deltaTime)
-		{		
-				if (CanMove ()) {
-						MoveForce += 0.5f * MoveSpeed * Math.Sign (Direction);
-				}
-		}
+	public override bool CanSwim()
+	{
+		throw new System.NotImplementedException();
+	}
 
-		public override bool CanJump ()
-		{
-				if (Controller.Grounded) {
-						return true;
-				} else {
-						return false;
-				}
-		}
+	public override void Swim(float deltaTime)
+	{
+		throw new System.NotImplementedException();
+	}
 
-		public override void Jump (float deltaTime)
-		{
-				Jumping = true;
-		}
+	public override void OnDamaged()
+	{
+		throw new NotImplementedException();
+	}
 
-		public override bool CanFly ()
-		{
-				throw new System.NotImplementedException ();
-		}
+	public override void OnDeath()
+	{
+		throw new NotImplementedException();
+	}
 
-		public override void Fly (float deltaTime)
-		{
-				throw new System.NotImplementedException ();
-		}
+	public override void OnRegenerate()
+	{
+		throw new NotImplementedException();
+	}
 
-		public override bool CanSwim ()
-		{
-				throw new System.NotImplementedException ();
-		}
-
-		public override void Swim (float deltaTime)
-		{
-				throw new System.NotImplementedException ();
-		}
-
-		public override void OnDamaged ()
-		{
-				throw new NotImplementedException ();
-		}
-
-		public override void OnDeath ()
-		{
-				throw new NotImplementedException ();
-		}
-
-		public override void OnRegenerate ()
-		{
-				throw new NotImplementedException ();
-		}
-
-		public override void OnBoost ()
-		{
-				throw new NotImplementedException ();
-		}
+	public override void OnBoost()
+	{
+		throw new NotImplementedException();
+	}
 
 	#endregion
 
-		////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-		public bool								Sequence;
-		public float							Gravity = 20;
-		public float 							MaxSpeed_1 = 5;
-		public float 							MaxSpeed_2 = 10;
-		public float 							MoveSpeed = 5;
-		public float 							JumpSpeed = 15;
-		public float 							Drag = 0.1f;
+	public bool								Sequence;
+	public float							Gravity = 20;
+	public float 							MaxSpeed_1 = 5;
+	public float 							MaxSpeed_2 = 10;
+	public float 							MoveSpeed = 5;
+	public float 							JumpSpeed = 15;
+	public float 							Drag = 0.1f;
 
-		////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-		Vector3 								RayOffset;
-		Vector3 								Velocity;
-		Vector2 								MoveDirection;
-		Quaternion								LookRight;
-		Quaternion								LookLeft;
-		float 									MoveForce;
-		float 									RayLength;
-		float 									MaxSpeed;
-		float 									Direction;
-		bool									Jumping = false;
-		_CharacterController                    Controller;
-		Animator  								Anim;
+	Vector3 								Velocity;
+	Vector2 								MoveDirection;
+	float 									MoveForce;
+	float 									MaxSpeed;
+	float 									Direction;
+	bool									Jumping = false;
+	_CharacterController                    Controller;
+	Animator  								Anim;
 
 }
 
