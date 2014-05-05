@@ -5,13 +5,19 @@ using System.Collections;
 public class _CharacterController : MonoBehaviour
 {		
 // Use this for initialization
-		void Start ()
+		void Awake ()
 		{
 				Collider = GetComponent<BoxCollider> ();
+		}
+// Use this for initialization
+		void Start ()
+		{
+
 		}
 // Update is called once per frame
 		void Update ()
 		{
+
 		}
 
 		public void Move (Vector2 moveDirection)
@@ -106,14 +112,15 @@ public class _CharacterController : MonoBehaviour
 
 ////////////////////////////////////////////////////////////////////
 
-		[HideInInspector]
+		//[HideInInspector]
 		public bool								Grounded;
+		//[HideInInspector]
+		public bool 							SideCollision;
 
 ////////////////////////////////////////////////////////////////////
 
 		private Collider 						Collider;
 		private Vector2 						MoveTransform;
-		private bool 							SideCollision;
 		private int 							SideDivisions = 4;
 		private float 							Skin = .005f;
 		private RaycastHit 						Hit;
