@@ -40,7 +40,7 @@ public class _CharacterController : MonoBehaviour
 
 			if (Physics.Raycast(new Vector2(RayOriginX, RayOriginY), Vector2.up * direction, out hit, Mathf.Abs(deltaY) + skin))
 			{
-				if (hit.collider.gameObject.GetComponent<TriggerElement>() != null)
+				if (hit.collider.gameObject.GetComponent<VolumeTrigger>() != null)
 				{
 					continue;
 				}
@@ -77,7 +77,7 @@ public class _CharacterController : MonoBehaviour
 
 			if (Physics.Raycast(new Vector2(RayOriginX, RayOriginY), Vector2.right * direction, out hit, Mathf.Abs(deltaX) + skin))
 			{
-				if (hit.collider.gameObject.GetComponent<TriggerElement>() != null)
+				if (hit.collider.gameObject.GetComponent<VolumeTrigger>() != null)
 				{
 					continue;
 				}
@@ -109,7 +109,7 @@ public class _CharacterController : MonoBehaviour
 			Debug.DrawRay(origin, direction.normalized);
 
 			if (Physics.Raycast(origin, direction.normalized, out hit, Mathf.Sqrt(deltaX * deltaX + deltaY * deltaY)) 
-			    && hit.collider.gameObject.GetComponent<TriggerElement>() == null)
+			    && hit.collider.gameObject.GetComponent<VolumeTrigger>() == null)
 			{
 				grounded = true;
 				deltaY = 0;
