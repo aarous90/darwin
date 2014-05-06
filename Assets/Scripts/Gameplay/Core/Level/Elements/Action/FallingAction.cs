@@ -20,29 +20,16 @@ public class FallingAction : ActionElement
 
 	protected override void DoAction()
 	{
-		foreach (GameObject g in FallingObjects)
+		GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
+
+		foreach (GameObject obj in objects)
 		{
-			if (g == null) continue;
-
-			GameObject obj = GameObject.Find(g.name);
-			if (obj != null)
-			{
-				obj.rigidbody.useGravity = true;
-
-				initalAlpha = obj.renderer.material.color.a;
-				Destroy(obj, FadeTime);
-			}
+			obj.rigidbody.useGravity = true;
 		}
 	}
 
 	#endregion
 
-	public GameObject[] FallingObjects;
-
 	public float FadeTime = 5f;
-
-	float initalAlpha;
-
-	float targetAlpha = 0.0f;
 }
  
