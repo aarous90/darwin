@@ -20,20 +20,15 @@ public class FallingAction : ActionElement
 
 	protected override void DoAction()
 	{
-		foreach (GameObject g in FallingObjects)
-		{
-			if (g == null) continue;
+		
+		GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
 
-			GameObject obj = GameObject.Find(g.name);
-			if (obj != null)
-			{
-				obj.rigidbody.useGravity = true;
-			}
+		foreach (GameObject obj in objects)
+		{
+			obj.rigidbody.useGravity = true;
 		}
 	}
 
 	#endregion
-
-	public GameObject[] FallingObjects;
 }
  
