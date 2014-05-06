@@ -13,7 +13,7 @@ public class FallingAction : ActionElement
 	// Update is called once per frame
 	void Update()
 	{
-	
+		
 	}
 
 	#region implemented abstract members of ActionElement
@@ -28,6 +28,9 @@ public class FallingAction : ActionElement
 			if (obj != null)
 			{
 				obj.rigidbody.useGravity = true;
+
+				initalAlpha = obj.renderer.material.color.a;
+				Destroy(obj, FadeTime);
 			}
 		}
 	}
@@ -35,5 +38,11 @@ public class FallingAction : ActionElement
 	#endregion
 
 	public GameObject[] FallingObjects;
+
+	public float FadeTime = 5f;
+
+	float initalAlpha;
+
+	float targetAlpha = 0.0f;
 }
  

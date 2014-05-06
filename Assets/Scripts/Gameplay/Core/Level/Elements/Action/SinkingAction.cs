@@ -6,10 +6,6 @@ public class SinkingAction : ActionElement
 	// Use this for initialization
 	void Start()
 	{
-		if (collider == null || rigidbody == null)
-		{
-			throw new UnityException("The trigger has no collider or rigidbody attached!");
-		}
 		initialPosition = transform.localPosition;
 	}
 	
@@ -47,7 +43,7 @@ public class SinkingAction : ActionElement
 
 	float currentSink = 0.0f;
 
-	public float SinkingSpeed = 1f;
+	public float SinkingSpeed = 0.01f;
 
 	public float MaxSink = 1f;
 
