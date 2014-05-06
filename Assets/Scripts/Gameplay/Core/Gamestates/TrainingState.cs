@@ -23,7 +23,7 @@ public class TrainingState : IGameState
 
 	public void Enter()
 	{
-
+		GUIManager.Get().ClearGUI();
 	}
 
 	public void Leave()
