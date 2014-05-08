@@ -52,13 +52,14 @@ public class GroundCharacter : ICharacter
 				Jumping = false;
 				Anim.SetTrigger("Jump");
 				MoveDirection.y = JumpSpeed;
-				MoveForce = 0;
 			}
 
 			CurrentSpeed = MoveDirection.x;
 		}
 		else
 		{
+			MoveForce = 0;
+
 			if (CurrentSpeed != 0 && Math.Abs(CurrentSpeed) > MaxSpeed * 0.3f)
 			{
 				if (CurrentSpeed >= 0 && Direction >= 0 || CurrentSpeed < 0 && Direction < 0)
@@ -71,13 +72,11 @@ public class GroundCharacter : ICharacter
 					MoveDirection.x = 0;
 				}
 
-
 			}
 			else
 			{
 				MoveDirection.x = MoveSpeed * Direction;
 			}
-
 		}
 
 
@@ -218,7 +217,7 @@ public class GroundCharacter : ICharacter
 #endregion
 
 ////////////////////////////////////////////////////////////////////
-
+	[HideInInspector]
 	public bool								Sequence;
 	public float							Gravity = 20;
 	public float 							MaxSpeed_1 = 5;
@@ -229,13 +228,12 @@ public class GroundCharacter : ICharacter
 
 ////////////////////////////////////////////////////////////////////
 
-	Vector3 								Velocity;
 	Vector2 								MoveDirection;
 	float 									MoveForce;
 	float 									MaxSpeed;
 	float 									CurrentSpeed;
 	float 									Direction;
-	bool									Jumping = false;
+	bool									Jumping;
 	_CharacterController                    Controller;
 	Animator  								Anim;
 

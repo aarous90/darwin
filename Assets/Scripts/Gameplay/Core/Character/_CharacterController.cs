@@ -130,9 +130,9 @@ public class _CharacterController : MonoBehaviour
 
 ////////////////////////////////////////////////////////////////////
 
-//[HideInInspector]
+[HideInInspector]
 	public bool								Grounded;
-//[HideInInspector]
+[HideInInspector]
 	public bool 							SideCollision;
 
 ////////////////////////////////////////////////////////////////////
