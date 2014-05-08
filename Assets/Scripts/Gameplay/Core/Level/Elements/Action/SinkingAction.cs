@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SinkingAction : ActionElement
+public class SinkingAction : AbstractAction
 {
 	// Use this for initialization
 	void Start()
@@ -16,14 +16,18 @@ public class SinkingAction : ActionElement
 		{
 			if (currentSink < MaxSink)
 			{
-				transform.Translate(0, -(currentSink += SinkingSpeed * Time.deltaTime), 0);
+				float translate = SinkingSpeed * Time.deltaTime;
+				currentSink += translate;
+				transform.Translate(0, -translate, 0);
 			}
 		}
 		else
 		{
 			if (currentSink > 0)
 			{
-				transform.Translate(0, (currentSink -= SinkingSpeed * Time.deltaTime), 0);
+				float translate = SinkingSpeed * Time.deltaTime;
+				currentSink -= translate;
+				transform.Translate(0, translate, 0);
 			}
 		}
 	}
@@ -43,7 +47,7 @@ public class SinkingAction : ActionElement
 
 	float currentSink = 0.0f;
 
-	public float SinkingSpeed = 0.01f;
+	public float SinkingSpeed = 1.5f;
 
 	public float MaxSink = 1f;
 
