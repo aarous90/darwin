@@ -113,7 +113,7 @@ public class _CharacterController : MonoBehaviour
 		return deltaX;
 	}
 
-	//Check for diagonal collisions if the character is ungrounded and in movement
+//Check for diagonal collisions if the character is ungrounded and in movement
 	private float DiagonalCollisions(float deltaX, float deltaY)
 	{
 		Vector3 direction = new Vector3(deltaX, deltaY);
@@ -128,20 +128,17 @@ public class _CharacterController : MonoBehaviour
 		return deltaY;
 	}
 
-	////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-[HideInInspector]
-	public bool								Grounded;
-[HideInInspector]
-=======
-	//[HideInInspector]
-	public bool								Grounded;
-	//[HideInInspector]
->>>>>>> 2988b6024ec81d71916ddd8da70cc3866ed10c61
-	public bool 							SideCollision;
+	[HideInInspector]
+	public bool
+		Grounded;
+	[HideInInspector]
 
-	////////////////////////////////////////////////////////////////////
+	public bool
+		SideCollision;
+
+////////////////////////////////////////////////////////////////////
 
 	private Collider 						Collider;
 	private Vector2 						MoveTransform;
