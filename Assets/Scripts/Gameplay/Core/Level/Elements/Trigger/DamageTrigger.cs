@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DamageTrigger : TriggerElement
+public class DamageTrigger : AbstractTrigger
 {
 
 	// Use this for initialization

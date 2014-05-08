@@ -1,15 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BoxTrigger : TriggerElement
-{
-
-	// Use this for initialization
-	void Start()
-	{
-		triggerBox = GetComponent<BoxCollider>();
-	}
-	
+public class BoxTrigger : VolumeTrigger
+{	
 	// Update is called once per frame
 	void Update()
 	{
@@ -25,7 +18,7 @@ public class BoxTrigger : TriggerElement
 
 	#endregion
 
-	void OnTriggerEnter(Collider other)
+	protected override void OnTriggerEnter(Collider other)
 	{
 		// trigger only for characters
 		if (other.gameObject.GetComponent<ICharacter>() != null)
@@ -34,15 +27,13 @@ public class BoxTrigger : TriggerElement
 		}
 	}
 
-	void OnTriggerExit(Collider other)
+	protected override void OnTriggerExit(Collider other)
 	{
 		
 	}
 
-	void OnTriggerStay(Collider other)
+	protected override void OnTriggerStay(Collider other)
 	{
 
 	}
-
-	BoxCollider triggerBox;
 }

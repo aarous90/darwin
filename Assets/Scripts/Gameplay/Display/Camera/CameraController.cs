@@ -13,6 +13,11 @@ public class CameraController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		cameraOffset = 
+			right * RightOffset + 
+			front * -DistanceOffset + 
+			up * HeightOffset;
+
 		if (owner != null && owner.GetCharacter() != null)
 		{
 			ICharacter character = owner.GetCharacter();
@@ -34,25 +39,31 @@ public class CameraController : MonoBehaviour
 	void Initialize()
 	{
 		owner = PlayerManager.Get().GetPlayer(PlayerIndex);
+
+		right = transform.right.normalized;
+
+		front = transform.forward.normalized;
+
+		up = transform.up.normalized;
+		
 		cameraOffset = 
-				transform.right.normalized * RightOffset + 
-				transform.forward.normalized * -DistanceOffset + 
-				transform.up.normalized * HeightOffset;
+			right * RightOffset + 
+			front * -DistanceOffset + 
+			up * HeightOffset;
 	}
 
 	////////////////////////////////////////////////////////////////////
 
 	public int PlayerIndex = 0;
-
 	public float RightOffset = 5f;
-
 	public float DistanceOffset = 5f;
-
 	public float HeightOffset = 1.5f;
 
 	////////////////////////////////////////////////////////////////////
 
 	Player owner;
-
 	Vector3 cameraOffset;
+	Vector3 front;
+	Vector3 up;
+	Vector3 right;
 }
