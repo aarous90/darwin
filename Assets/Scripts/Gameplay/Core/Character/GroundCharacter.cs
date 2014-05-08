@@ -38,23 +38,53 @@ public class GroundCharacter : ICharacter
 	void FixedUpdate()
 	{	
 
+
 		if (CanMove())
 		{
+			MaxSpeed = (Sequence) ? MaxSpeed_2 : MaxSpeed_1;
+			CurrentSpeed = 0;
 			MoveDirection.y = 0;
 			MoveDirection.x = MoveSpeed * MoveForce;
 			MoveForce *= 1.0f - Drag;
+
+			if (CanJump() && Jumping)
+			{
+				Jumping = false;
+				Anim.SetTrigger("Jump");
+				MoveDirection.y = JumpSpeed;
+				MoveForce = 0;
+			}
+
+			CurrentSpeed = MoveDirection.x;
+		}
+		else
+		{
+			if (CurrentSpeed != 0 && Math.Abs(CurrentSpeed) > MaxSpeed * 0.3f)
+			{
+				if (CurrentSpeed >= 0 && Direction >= 0 || CurrentSpeed < 0 && Direction < 0)
+				{			
+
+				}
+				else
+				{
+					CurrentSpeed = 0;
+					MoveDirection.x = 0;
+				}
+
+
+			}
+			else
+			{
+				MoveDirection.x = MoveSpeed * Direction;
+			}
+
 		}
 
-		if (CanJump() && Jumping)
-		{
-			Jumping = false;
-			Anim.SetTrigger("Jump");
-			MoveDirection.y = JumpSpeed;
-		}
+
 
 		Flip(Direction);
 
-		if (Math.Abs(MoveDirection.x) > 0.1)
+		if (Math.Abs(MoveDirection.x) > 0.1 && CanMove())
 		{
 			Anim.SetBool("Walk", true);
 		}
@@ -63,13 +93,19 @@ public class GroundCharacter : ICharacter
 			Anim.SetBool("Walk", false);
 		}
 
+
+		if (Math.Abs(MoveDirection.x) > MaxSpeed)
+		{
+			MoveDirection.x = Math.Sign(MoveDirection.x) * MaxSpeed;
+		}
+
 		MoveDirection.y -= Gravity * Time.deltaTime;
 		Controller.Move(MoveDirection * Time.deltaTime);
 	}
 
-	////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
-	#region ICharacter implementation
+#region ICharacter implementation
 
 	public override bool UseSpecial(AttackContext context)
 	{
@@ -119,7 +155,6 @@ public class GroundCharacter : ICharacter
 		if (CanMove())
 		{
 			MoveForce += 0.5f * MoveSpeed * Math.Sign(Direction);
-			Flip(Direction);
 		}
 	}
 
@@ -180,9 +215,9 @@ public class GroundCharacter : ICharacter
 		throw new NotImplementedException();
 	}
 
-	#endregion
+#endregion
 
-	////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
 	public bool								Sequence;
 	public float							Gravity = 20;
@@ -192,12 +227,13 @@ public class GroundCharacter : ICharacter
 	public float 							JumpSpeed = 15;
 	public float 							Drag = 0.1f;
 
-	////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
 	Vector3 								Velocity;
 	Vector2 								MoveDirection;
 	float 									MoveForce;
 	float 									MaxSpeed;
+	float 									CurrentSpeed;
 	float 									Direction;
 	bool									Jumping = false;
 	_CharacterController                    Controller;
