@@ -119,7 +119,7 @@ public class _CharacterController : MonoBehaviour
 		Vector3 direction = new Vector3(deltaX, deltaY);
 		Vector3 origin = new Vector3(Collider.bounds.center.x + Collider.bounds.extents.x * Mathf.Sign(deltaX), Collider.bounds.center.y + Collider.bounds.extents.y * Mathf.Sign(deltaY));
 		Debug.DrawRay(origin, direction.normalized);
-		if (Physics.Raycast(origin, direction.normalized, out Hit, Mathf.Sqrt(deltaX * deltaX + deltaY * deltaY)) && Hit.collider.gameObject.GetComponent<TriggerElement>() == null)
+		if (Physics.Raycast(origin, direction.normalized, out Hit, Mathf.Sqrt(deltaX * deltaX + deltaY * deltaY)) && Hit.collider.gameObject.GetComponent<AbstractTrigger>() == null)
 		{
 			Grounded = true;
 			deltaY = 0;

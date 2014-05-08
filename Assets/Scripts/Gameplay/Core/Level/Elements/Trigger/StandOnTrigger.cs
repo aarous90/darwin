@@ -26,6 +26,8 @@ public class StandOnTrigger : VolumeTrigger
 		if (other.gameObject.GetComponent<ICharacter>() != null)
 		{
 			TriggerAction();
+			old = other.transform.parent;
+			other.transform.parent = this.transform;
 		}
 	}
 
@@ -35,6 +37,7 @@ public class StandOnTrigger : VolumeTrigger
 		if (other.gameObject.GetComponent<ICharacter>() != null)
 		{
 			TriggerAction();
+			other.transform.parent = old;
 		}
 	}
 
@@ -45,4 +48,6 @@ public class StandOnTrigger : VolumeTrigger
 
 	#endregion
 
+
+	Transform old;
 }

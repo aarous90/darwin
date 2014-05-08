@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroyAction : ActionElement
+public class DestroyAction : AbstractAction
 {
 
 	// Use this for initialization
@@ -22,10 +22,13 @@ public class DestroyAction : ActionElement
 	{
 		if (deleted) return;
 
-		for (int i = 0; i < DestroyObjects.Length; i++)
+		GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
+
+		if (objects == null) return;
+
+		foreach (GameObject obj in objects)
 		{
-			GameObject obj = GameObject.Find(DestroyObjects[i].name);
-			if (obj != null)
+			if (obj != null && obj.GetComponent<DestroyAction>() == null)
 			{
 				Object.Destroy(obj, Delay);
 			}
@@ -35,11 +38,6 @@ public class DestroyAction : ActionElement
 	}
 
 	#endregion
-
-	/// <summary>
-	/// The list of objects that will be destoryed if the action is triggered.
-	/// </summary>
-	public GameObject[] DestroyObjects;
 
 	public float Delay = 0;
 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class VolumeTrigger : TriggerElement
+public abstract class VolumeTrigger : AbstractTrigger
 {
 	// Use this for initialization
 	void Start()

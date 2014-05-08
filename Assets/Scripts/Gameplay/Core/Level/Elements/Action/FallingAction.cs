@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FallingAction : ActionElement
+public class FallingAction : AbstractAction
 {
 
 	// Use this for initialization
@@ -24,7 +24,10 @@ public class FallingAction : ActionElement
 
 		foreach (GameObject obj in objects)
 		{
-			obj.rigidbody.useGravity = true;
+			if (obj != null && obj.GetComponent<FallingAction>() == null)
+			{
+				obj.rigidbody.useGravity = true;
+			}
 		}
 	}
 
