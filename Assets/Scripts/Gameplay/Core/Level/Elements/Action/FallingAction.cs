@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FallingAction : ActionElement
+public class FallingAction : AbstractAction
 {
 
 	// Use this for initialization
@@ -13,19 +13,18 @@ public class FallingAction : ActionElement
 	// Update is called once per frame
 	void Update()
 	{
-	
+		
 	}
 
 	#region implemented abstract members of ActionElement
 
 	protected override void DoAction()
 	{
-		foreach (GameObject g in FallingObjects)
-		{
-			if (g == null) continue;
+		GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
 
-			GameObject obj = GameObject.Find(g.name);
-			if (obj != null)
+		foreach (GameObject obj in objects)
+		{
+			if (obj != null && obj.GetComponent<FallingAction>() == null)
 			{
 				obj.rigidbody.useGravity = true;
 			}
@@ -34,6 +33,6 @@ public class FallingAction : ActionElement
 
 	#endregion
 
-	public GameObject[] FallingObjects;
+	public float FadeTime = 5f;
 }
  

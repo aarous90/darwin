@@ -50,7 +50,7 @@ public class _CharacterController : MonoBehaviour
 			Debug.DrawRay(new Vector2(RayOriginX, RayOriginY), new Vector2(0, direction));
 			if (Physics.Raycast(new Vector2(RayOriginX, RayOriginY), Vector2.up * direction, out Hit, Mathf.Abs(deltaY) + Skin))
 			{
-				if (Hit.collider.gameObject.GetComponent<TriggerElement>() != null)
+				if (Hit.collider.gameObject.GetComponent<VolumeTrigger>() != null)
 				{
 					continue;
 				}
@@ -88,7 +88,7 @@ public class _CharacterController : MonoBehaviour
 
 			if (Physics.Raycast(new Vector2(RayOriginX, RayOriginY), Vector2.right * direction, out Hit, Mathf.Abs(deltaX) + Skin))
 			{
-				if (Hit.collider.gameObject.GetComponent<TriggerElement>() != null)
+				if (Hit.collider.gameObject.GetComponent<VolumeTrigger>() != null)
 				{
 					continue;
 				}
@@ -113,13 +113,13 @@ public class _CharacterController : MonoBehaviour
 		return deltaX;
 	}
 
-//Check for diagonal collisions if the character is ungrounded and in movement
+	//Check for diagonal collisions if the character is ungrounded and in movement
 	private float DiagonalCollisions(float deltaX, float deltaY)
 	{
 		Vector3 direction = new Vector3(deltaX, deltaY);
 		Vector3 origin = new Vector3(Collider.bounds.center.x + Collider.bounds.extents.x * Mathf.Sign(deltaX), Collider.bounds.center.y + Collider.bounds.extents.y * Mathf.Sign(deltaY));
 		Debug.DrawRay(origin, direction.normalized);
-		if (Physics.Raycast(origin, direction.normalized, out Hit, Mathf.Sqrt(deltaX * deltaX + deltaY * deltaY)) && Hit.collider.gameObject.GetComponent<TriggerElement>() == null)
+		if (Physics.Raycast(origin, direction.normalized, out Hit, Mathf.Sqrt(deltaX * deltaX + deltaY * deltaY)) && Hit.collider.gameObject.GetComponent<AbstractTrigger>() == null)
 		{
 			Grounded = true;
 			deltaY = 0;
@@ -128,14 +128,14 @@ public class _CharacterController : MonoBehaviour
 		return deltaY;
 	}
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-//[HideInInspector]
+	//[HideInInspector]
 	public bool								Grounded;
-//[HideInInspector]
+	//[HideInInspector]
 	public bool 							SideCollision;
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
 	private Collider 						Collider;
 	private Vector2 						MoveTransform;

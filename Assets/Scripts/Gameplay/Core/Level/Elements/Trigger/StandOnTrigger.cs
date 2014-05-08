@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BoxTrigger : VolumeTrigger
-{	
+public class StandOnTrigger : VolumeTrigger
+{
 	// Update is called once per frame
 	void Update()
 	{
@@ -18,22 +18,36 @@ public class BoxTrigger : VolumeTrigger
 
 	#endregion
 
+	#region implemented abstract members of VolumeTrigger
+
 	protected override void OnTriggerEnter(Collider other)
-	{
+	{		
 		// trigger only for characters
 		if (other.gameObject.GetComponent<ICharacter>() != null)
 		{
 			TriggerAction();
+			old = other.transform.parent;
+			other.transform.parent = this.transform;
 		}
 	}
 
 	protected override void OnTriggerExit(Collider other)
 	{
-		
+		// trigger only for characters
+		if (other.gameObject.GetComponent<ICharacter>() != null)
+		{
+			TriggerAction();
+			other.transform.parent = old;
+		}
 	}
 
 	protected override void OnTriggerStay(Collider other)
 	{
 
 	}
+
+	#endregion
+
+
+	Transform old;
 }

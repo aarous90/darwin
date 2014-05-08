@@ -17,29 +17,29 @@ public class GUIManager : MonoBehaviour, IInputListener
 		return null;
 	}
 
-    // Use this for initialization
-    void Start()
+	// Use this for initialization
+	void Start()
 	{
 		UnityEngine.Object.DontDestroyOnLoad(this);
 		GlobalInput.RegisterListener(InputManager.InputCategory.GUI, this);
 		FocusIndex(0);
-    }
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
+	// Update is called once per frame
+	void Update()
+	{
 
-    }
+	}
 
-    ////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////
 
-    public void AddItem(GUIItem item)
-    {
+	public void AddItem(GUIItem item)
+	{
 		if (item.AccessIndex >= 0)
 		{
 			guiElements.Add(item.AccessIndex, item);
 		}
-    }
+	}
 
 	public void RemoveItem(GUIItem item)
 	{
@@ -54,7 +54,7 @@ public class GUIManager : MonoBehaviour, IInputListener
 		guiElements.Clear();
 	}
 
-    ////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////
 	
 	public void OnAxis(string axisName, float axisValue)
 	{
@@ -83,45 +83,45 @@ public class GUIManager : MonoBehaviour, IInputListener
 
 	}
 
-    public void OnButtonUp(string button)
-    {
-        if (button == InputStringMapping.GUIInputMapping.Select)
-        {
-            Select();
-        }
-        else if (button == InputStringMapping.GUIInputMapping.Back)
-        {
-            Back();
-        }
+	public void OnButtonUp(string button)
+	{
+		if (button == InputStringMapping.GUIInputMapping.Select)
+		{
+			Select();
+		}
+		else if (button == InputStringMapping.GUIInputMapping.Back)
+		{
+			Back();
+		}
 		else if (button == InputStringMapping.GUIInputMapping.Cancel)
-        {
-            Cancel();
-        }
+		{
+			Cancel();
+		}
 		else if (button == InputStringMapping.GUIInputMapping.Pause)
-        {
-            Pause();
-        }
-    }
+		{
+			Pause();
+		}
+	}
 
-    public void OnButtonPressed(string button)
-    {
+	public void OnButtonPressed(string button)
+	{
 
-    }
+	}
 
-    public void OnButtonDown(string button)
-    {
+	public void OnButtonDown(string button)
+	{
 
-    }
+	}
 
-    ////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////
 
-    private void NavigateHorizontal(float axis)
-    {
+	private void NavigateHorizontal(float axis)
+	{
 		// TODO
-    }
+	}
 
 	private void NavigateVertical(float axis)
-    {
+	{
 		if (axis > AxisThreshold)
 		{
 			FocusIndex(1);
@@ -130,36 +130,36 @@ public class GUIManager : MonoBehaviour, IInputListener
 		{			
 			FocusIndex(-1);
 		}
-    }
+	}
 
-    private void Select()
-    {
-        DoFocus();
-        if (focus != null)
-        {
-            focus.OnSelect();
-        }
-    }
+	private void Select()
+	{
+		DoFocus();
+		if (focus != null)
+		{
+			focus.OnSelect();
+		}
+	}
 
-    private void Back()
-    {
+	private void Back()
+	{
 		// TODO
-    }
+	}
 
-    private void Pause()
-    {
+	private void Pause()
+	{
 		// TODO
-    }
+	}
 
-    private void Cancel()
-    {
+	private void Cancel()
+	{
 		// TODO
-    }
+	}
 
-    ////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////
 
-    public void FocusIndex(int go)
-    {
+	public void FocusIndex(int go)
+	{
 		if (go > 0)
 		{
 			++currentAccessIndex;
@@ -182,42 +182,39 @@ public class GUIManager : MonoBehaviour, IInputListener
 			currentAccessIndex = 0;
 		}
 
-        GUIItem lastFocus = focus;
+		GUIItem lastFocus = focus;
 		DoFocus();
 
-        if (lastFocus != null)
-        {
-            lastFocus.OnUnfocused();
-        }
+		if (lastFocus != null)
+		{
+			lastFocus.OnUnfocused();
+		}
 
-        if (focus != null)
-        {
-            focus.OnFocused();
-        }
-    }
+		if (focus != null)
+		{
+			focus.OnFocused();
+		}
+	}
 
-    public void DoFocus()
-    {
-        if (!guiElements.TryGetValue(currentAccessIndex, out focus))
-        {
+	public void DoFocus()
+	{
+		if (!guiElements.TryGetValue(currentAccessIndex, out focus))
+		{
 			focus = null;
-        }
-    }
+		}
+	}
 
-    ////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////
 
-    public InputManager						GlobalInput;
+	public InputManager						GlobalInput;
 	public float							AxisThreshold = 0.1f;
 	public float							AxisMax = 0.9f;
 
 	////////////////////////////////////////////////////////
 	
 	private int                             currentAccessIndex = 0;
-	
 	private GUIItem                         focus;
-	
 	private Dictionary<int, GUIItem>        guiElements = new Dictionary<int, GUIItem>();
-	
 	private Dictionary<string, float>		maxAxis = new Dictionary<string, float>();
 
 }
