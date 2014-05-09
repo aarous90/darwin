@@ -2,145 +2,140 @@
 using UnityEngine;
 using System;
 
+[RequireComponent (typeof(_CharacterController))]
 public class WaterCharacter : ICharacter
 {
 	public WaterCharacter()
 	{
+
 	}
-	
+
+	public void Flip(float h)
+	{
+		if (h != 0)
+		{
+			transform.eulerAngles = (h > 0) ? Vector3.up * 90 : Vector3.up * -90;
+
+		}
+	}
+
+	public void SetDirection(Vector2 SwimDir)
+	{
+		SwimDirection = SwimDir;
+	}
+
 	void Start()
 	{
-		//Initial Character rotation
-		LookRight = transform.rotation;
-		
-		//Initial Character rotation flipped horizontally
-		LookLeft = LookRight * Quaternion.Euler(0, 180, 0);
+		Controller = GetComponent<_CharacterController>();
+		Anim = GetComponent<Animator>();
 	}
-	
+
 	void Update()
 	{
+
 	}
-	
+
 	void FixedUpdate()
-	{
-		
-		//Check for Input Sequence adjust Maxspeed
+	{	
+
+
+//		if (CanSwim())
+//		{
 		MaxSpeed = (Sequence) ? MaxSpeed_2 : MaxSpeed_1;
-		
-		rigidbody.AddForce(Vector3.right * HorizontalForce * MovementSpeed);
-		rigidbody.AddForce(Vector3.up * VerticalForce * MovementSpeed);
-		
-		//MovementForce Drag
+		SwimDirection.x = MoveSpeed * HorizontalForce;
+		SwimDirection.y = MoveSpeed * VerticalForce;
 		VerticalForce *= 1.0f - Drag;
 		HorizontalForce *= 1.0f - Drag;
-		
-		//Velocity Drag
-		Velocity = rigidbody.velocity;
-		Velocity.x *= 0.9f;
-		Velocity.y *= 0.9f;
-		rigidbody.velocity = Velocity;
-		
-		// set velocity to MaxSpeed if exceeding
-		if (Mathf.Abs(rigidbody.velocity.x) > MaxSpeed)
+		SwimDirection *= 0.9f;
+//			}
+
+		Flip(SwimDirection.x);
+
+		if (Math.Abs(SwimDirection.x) > MaxSpeed)
 		{
-			Velocity = rigidbody.velocity;
-			Velocity.x = Mathf.Sign(rigidbody.velocity.x) * MaxSpeed;
-			rigidbody.velocity = Velocity;
+			SwimDirection.x = Math.Sign(SwimDirection.x) * MaxSpeed;
 		}
-		if (Mathf.Abs(rigidbody.velocity.y) > MaxSpeed)
+		if (Math.Abs(SwimDirection.y) > MaxSpeed)
 		{
-			Velocity = rigidbody.velocity;
-			Velocity.y = Mathf.Sign(rigidbody.velocity.y) * MaxSpeed;
-			rigidbody.velocity = Velocity;
+			SwimDirection.y = Math.Sign(SwimDirection.y) * MaxSpeed;
 		}
-		
-	}
-	
-	public void Flip(float x)
-	{
-		transform.rotation = (x > 0) ? LookRight : LookLeft;
-	}
-	
-	public void SetDirection(float x, float y)
-	{
-		X_Direction = x;
-		Y_Direction = y;
+
+		Controller.Move(SwimDirection * Time.deltaTime);
 	}
 
-	////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
-	#region ICharacter implementation
-	
+#region ICharacter implementation
+
 	public override bool UseSpecial(AttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override bool UseMelee(AttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override bool UseRanged(AttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override void DoMeleeDamage(DamageContext context)
 	{
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override void DoRangedDamage(DamageContext context)
 	{
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override void DoSpecialDamage(DamageContext context)
 	{
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override bool CanMove()
 	{
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override void Move(float deltaTime)
-	{	
+	{		
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override bool CanJump()
 	{
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override void Jump(float deltaTime)
 	{
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override bool CanFly()
 	{
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override void Fly(float deltaTime)
 	{
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override bool CanSwim()
 	{
 		throw new System.NotImplementedException();
 	}
-	
+
 	public override void Swim(float deltaTime)
 	{
-		Flip(X_Direction);
-		HorizontalForce += 0.5f * MovementSpeed * Math.Sign(X_Direction);
-		VerticalForce += 0.5f * MovementSpeed * Math.Sign(Y_Direction) * -1;
+		HorizontalForce += 0.5f * MoveSpeed * Math.Sign(SwimDirection.x);
+		VerticalForce += 0.5f * MoveSpeed * Math.Sign(SwimDirection.y) * -1;
 	}
 
 	public override void OnDamaged()
@@ -162,26 +157,27 @@ public class WaterCharacter : ICharacter
 	{
 		throw new NotImplementedException();
 	}
-	
-	#endregion
 
-	////////////////////////////////////////////////////////////////////
-	
+#endregion
 
-	////////////////////////////////////////////////////////////////////
-
-	float									MaxSpeed;
-	float									HorizontalForce;
-	float									VerticalForce;
-	float 									X_Direction;
-	float 									Y_Direction;
-	Quaternion								LookRight;
-	Quaternion								LookLeft;
-	Vector3 								Velocity;
+////////////////////////////////////////////////////////////////////
+// [HideInInspector]
 	public bool								Sequence;
-	public float 							Drag = 0.3f;
-	public float							MovementSpeed = 10;
+
+//  public float							Gravity = 20;
 	public float 							MaxSpeed_1 = 5;
 	public float 							MaxSpeed_2 = 10;
+	public float 							MoveSpeed = 5;
+	public float 							Drag = 0.1f;
+
+////////////////////////////////////////////////////////////////////
+
+	float									HorizontalForce;
+	float									VerticalForce;
+	Vector2 								SwimDirection;
+	float 									MaxSpeed;
+	_CharacterController                    Controller;
+	Animator  								Anim;
+
 }
 
