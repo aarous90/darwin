@@ -9,6 +9,27 @@ public class GroundController : IController
 		PID = joystickID;
 	}
 
+	private bool CheckSequence(String s)
+	{
+		bool Seq;
+
+		if (LastUsed == null)
+		{
+			Seq = false;
+		}
+		else if (s == LastUsed)
+		{
+			Seq = false;
+		}
+		else
+		{
+			Seq = true;
+		}
+
+		LastUsed = s;
+		return Seq;
+	}
+
 #region IController implementation
 
 	public override void Initialize(ICharacter character)
@@ -39,86 +60,80 @@ public class GroundController : IController
 
 	public override void FixedUpdate()
 	{		
+
 		currentCharacter.SetDirection(Input.GetAxis("L_XAxis_" + PID));
 
-		//Add left Trigger to AxisInUse when value exceeds AxisMax and store time 
-		if (Input.GetAxis("L_Trigger_" + PID) > AxisMax && !AxisInUse.Contains("L_Trigger_" + PID))
+		if (Input.GetAxis("R_Trigger_" + PID) > AxisMax && R_T == false)
 		{
-			AxisInUse.Add("L_Trigger_" + PID);
-			L_Trigger_Time = Time.time;
-		}
+			R_T = true;
+			R_T_Time = Time.time;
+			currentCharacter.Sequence = CheckSequence("R_T");
 
-		//Add right Trigger to AxisInUse when value exceeds AxisMax and store time
-		if (Input.GetAxis("R_Trigger_" + PID) > AxisMax && !AxisInUse.Contains("R_Trigger_" + PID))
-		{
-			AxisInUse.Add("R_Trigger_" + PID);
-			R_Trigger_Time = Time.time;
-		}	
-
-		//Jump if AxisInUse contains both Triggers and the time difference is below 0.05 
-		if (AxisInUse.Contains("R_Trigger_" + PID) && AxisInUse.Contains("L_Trigger_" + PID))
-		{
-			if (Math.Abs(L_Trigger_Time - R_Trigger_Time) <= 0.05)
+			if (L_T == true && R_T == true)
 			{
-				//TODO JUMP
-				if (currentCharacter.CanJump())
+				if (Math.Abs(L_T_Time - R_T_Time) <= TimeTolerance)
 				{
 					currentCharacter.Jump(Time.deltaTime);
 				}
-				AxisInUse.Clear();
-			}
-		}
-
-		//Remove left Trigger from AxisInUse when value deceeds AxisMax, check for input sequence and call move
-		if (Input.GetAxis("L_Trigger_" + PID) < AxisMax && AxisInUse.Contains("L_Trigger_" + PID))
-		{
-			L_Trigger = true;	
-			if (R_Trigger)
-			{
-				currentCharacter.Sequence = true;
-				//TODO MOVE
-				currentCharacter.Move(Time.deltaTime);
-				R_Trigger = false;
+				else
+				{
+					currentCharacter.Move(Time.deltaTime);
+				}
 			}
 			else
 			{
-				currentCharacter.Sequence = false;
-				//TODO MOVE
 				currentCharacter.Move(Time.deltaTime);
 			}
-			AxisInUse.Remove("L_Trigger_" + PID);
-			L_Trigger_Time = Time.time;
 		}
 
-		//Remove right Trigger from AxisInUse when value deceeds AxisMax, check for input sequence and call move
-		if (Input.GetAxis("R_Trigger_" + PID) < AxisMax && AxisInUse.Contains("R_Trigger_" + PID))
+		if (Input.GetAxis("L_Trigger_" + PID) > AxisMax && L_T == false)
 		{
-			R_Trigger = true;	
-			if (L_Trigger)
+			L_T = true;
+			L_T_Time = Time.time;
+			currentCharacter.Sequence = CheckSequence("L_T");
+
+			if (L_T == true && R_T == true)
 			{
-				currentCharacter.Sequence = true;
-				//TODO MOVE
-				currentCharacter.Move(Time.deltaTime);
-				L_Trigger = false;
+				if (Math.Abs(L_T_Time - R_T_Time) <= TimeTolerance)
+				{
+					currentCharacter.Jump(Time.deltaTime);
+				}
+				else
+				{
+					currentCharacter.Move(Time.deltaTime);
+				}
 			}
 			else
 			{
-				currentCharacter.Sequence = false;
-				//TODO MOVE
 				currentCharacter.Move(Time.deltaTime);
 			}
-			AxisInUse.Remove("R_Trigger_" + PID);
-			R_Trigger_Time = Time.time;
+		}
+
+		if (Input.GetAxis("L_Trigger_" + PID) < AxisThreshold)
+		{
+			L_T = false;
+		}
+
+		if (Input.GetAxis("R_Trigger_" + PID) < AxisThreshold)
+		{
+			R_T = false;
 		}
 	}
 
-	List<string>							AxisInUse = new List<string>();
-	bool    								R_Trigger;
-	bool 									L_Trigger;
-	float    								R_Trigger_Time;
-	float 									L_Trigger_Time;
-	int 									PID;
+////////////////////////////////////////////////////////////////////
+
 	public float							AxisThreshold = 0.3f;
 	public float							AxisMax = 0.9f;
+	public float							TimeTolerance = 0.05f;
+
+////////////////////////////////////////////////////////////////////
+
 	GroundCharacter 						currentCharacter;
+	String									LastUsed;
+	int 									PID;
+	bool    								R_T;
+	bool 									L_T;
+	float    								R_T_Time;
+	float 									L_T_Time;
+
 }

@@ -94,7 +94,7 @@ public class WaterController : IController
 //Check for simultaneous stick input and swim accordingly
 		if (L_Stick_Time != 0 && R_Stick_Time != 0)
 		{
-			if (Math.Abs(L_Stick_Time - R_Stick_Time) <= 0.1)
+			if (Math.Abs(L_Stick_Time - R_Stick_Time) <= TimeTolerance)
 			{
 				Res_Stroke = L_Stroke + R_Stroke;
 				Swim(Res_Stroke, true);
@@ -136,18 +136,25 @@ public class WaterController : IController
 
 	}
 
+	////////////////////////////////////////////////////////////////////
+
+	public float 							deadzone = 0.9f;
+	public float							AxisThreshold = 0;
+	public float							AxisMax = 0.75f;
+	public float							TimeTolerance = 0.1f;
+
+	////////////////////////////////////////////////////////////////////
+
+	WaterCharacter 							currentCharacter;
 	int 									PID;
-	bool									L_Axis;
-	bool									R_Axis;
-	float 									L_Stick_Time;
-	float 									R_Stick_Time;
 	Vector2 								StickInput_1;
 	Vector2 								StickInput_2;
 	Vector2									L_Stroke;
 	Vector2 								R_Stroke;
 	Vector2 								Res_Stroke;
-	public float 							deadzone = 0.9f;
-	public float							AxisThreshold = 0;
-	public float							AxisMax = 0.75f;
-	WaterCharacter 							currentCharacter;
+	bool									L_Axis;
+	bool									R_Axis;
+	float 									L_Stick_Time;
+	float 									R_Stick_Time;
+
 }

@@ -1,21 +1,70 @@
 
 using UnityEngine;
+using System;
 
+[RequireComponent (typeof(_CharacterController))]
 public class AirCharacter : ICharacter
 {
 	public AirCharacter()
 	{
-	}
-	
-	void Start()
-	{
-	}
-	
-	void Update()
-	{
+
 	}
 
-	#region ICharacter implementation
+	public void Flip(float h)
+	{
+		if (Direction != 0)
+		{
+			transform.eulerAngles = (h > 0) ? Vector3.up * 90 : Vector3.up * -90;
+
+		}
+	}
+
+	public void SetDirection(float x)
+	{
+		Direction = x;
+	}
+
+	void Start()
+	{
+		Controller = GetComponent<_CharacterController>();
+		Anim = GetComponent<Animator>();
+	}
+
+	void Update()
+	{
+
+	}
+
+	void FixedUpdate()
+	{	
+		FlyDirection.x = Direction * HorizontalSpeed;
+
+		if (Swinging)
+		{
+			if (Sequence)
+			{
+				FlyDirection.y = VerticalSpeed;
+			}
+			else
+			{
+				FlyDirection.y = VerticalSpeed / 2;
+			}
+			Swinging = false;
+		}
+
+		if (Math.Abs(FlyDirection.x) > MaxSpeed)
+		{
+			FlyDirection.x = Math.Sign(FlyDirection.x) * MaxSpeed;
+		}
+
+		Flip(Direction);
+		FlyDirection.y -= Gravity * Time.deltaTime;
+		Controller.Move(FlyDirection * Time.deltaTime);
+	}
+
+////////////////////////////////////////////////////////////////////
+
+#region ICharacter implementation
 
 	public override bool UseSpecial(AttackContext context)
 	{
@@ -50,10 +99,11 @@ public class AirCharacter : ICharacter
 	public override bool CanMove()
 	{
 		throw new System.NotImplementedException();
+
 	}
 
 	public override void Move(float deltaTime)
-	{
+	{		
 		throw new System.NotImplementedException();
 	}
 
@@ -74,7 +124,7 @@ public class AirCharacter : ICharacter
 
 	public override void Fly(float deltaTime)
 	{
-		throw new System.NotImplementedException();
+		Swinging = true;
 	}
 
 	public override bool CanSwim()
@@ -89,24 +139,43 @@ public class AirCharacter : ICharacter
 
 	public override void OnDamaged()
 	{
-		throw new System.NotImplementedException();
+		throw new NotImplementedException();
 	}
 
 	public override void OnDeath()
 	{
-		throw new System.NotImplementedException();
+		throw new NotImplementedException();
 	}
 
 	public override void OnRegenerate()
 	{
-		throw new System.NotImplementedException();
+		throw new NotImplementedException();
 	}
 
 	public override void OnBoost()
 	{
-		throw new System.NotImplementedException();
+		throw new NotImplementedException();
 	}
 
-	#endregion
+#endregion
+
+////////////////////////////////////////////////////////////////////
+	[HideInInspector]
+	public bool								Sequence;
+
+	public float							Gravity = 20;
+	public float 							MaxSpeed = 10;
+	public float 							HorizontalSpeed = 5;
+	public float 							VerticalSpeed = 15;
+	public float 							Drag = 0.1f;
+
+////////////////////////////////////////////////////////////////////
+
+	Vector2 								FlyDirection;
+	float 									Direction;
+	bool									Swinging;
+	_CharacterController                    Controller;
+	Animator  								Anim;
+
 }
 

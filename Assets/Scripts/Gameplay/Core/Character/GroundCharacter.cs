@@ -37,8 +37,7 @@ public class GroundCharacter : ICharacter
 
 	void FixedUpdate()
 	{	
-
-
+	
 		if (CanMove())
 		{
 			MaxSpeed = (Sequence) ? MaxSpeed_2 : MaxSpeed_1;
@@ -47,7 +46,7 @@ public class GroundCharacter : ICharacter
 			MoveDirection.x = MoveSpeed * MoveForce;
 			MoveForce *= 1.0f - Drag;
 
-			if (CanJump() && Jumping)
+			if (Jumping)
 			{
 				Jumping = false;
 				Anim.SetTrigger("Jump");
@@ -71,7 +70,6 @@ public class GroundCharacter : ICharacter
 					CurrentSpeed = 0;
 					MoveDirection.x = 0;
 				}
-
 			}
 			else
 			{
@@ -171,7 +169,10 @@ public class GroundCharacter : ICharacter
 
 	public override void Jump(float deltaTime)
 	{
-		Jumping = true;
+		if (CanJump())
+		{
+			Jumping = true;
+		}
 	}
 
 	public override bool CanFly()
@@ -217,8 +218,9 @@ public class GroundCharacter : ICharacter
 #endregion
 
 ////////////////////////////////////////////////////////////////////
-	[HideInInspector]
+	//[HideInInspector]
 	public bool								Sequence;
+
 	public float							Gravity = 20;
 	public float 							MaxSpeed_1 = 5;
 	public float 							MaxSpeed_2 = 10;
