@@ -60,7 +60,7 @@ public class Level : MonoBehaviour
 	/// <param name="module">The Module to spawn in.</param>
 	void DoSpawn(SpawnModule module)
 	{
-		List<int> spawns = new List<int>(new int[] {1, 2, 3});
+		List<int> spawns = new List<int>(new int[] {0, 1, 2});
 
 		int maxSpawns = Mathf.Min(2, ControllerManager.Get().GetControllers().Count);
 
