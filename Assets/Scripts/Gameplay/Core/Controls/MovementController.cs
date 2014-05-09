@@ -8,50 +8,51 @@ using System;
 
 public class MovementController
 {
-
+	
 	public MovementController(string joystickName, int joystickID)
 	{
 		this.joystickID = joystickID;
 		this.joystickName = joystickName;
+		airController = new AirController(joystickID);
 		groundController = new GroundController(joystickID);
 		waterController = new WaterController(joystickID);
 	}
-
+	
 	public void FixedUpdate()
 	{
 		// TODO: remove this, character will do all stuff
-
+		
 		// Switch on control type
 		switch (currentMovementType)
 		{
 			case MovementType.Air:
-				{
-					airController.FixedUpdate();
-				}
+			{
+				airController.FixedUpdate();
+			}
 				break;
 			case MovementType.Ground:
-				{
-					groundController.FixedUpdate();
-				}
+			{
+				groundController.FixedUpdate();
+			}
 				break;
 			case MovementType.Water:
-				{
-					waterController.FixedUpdate();
-				}
+			{
+				waterController.FixedUpdate();
+			}
 				break;
 			case MovementType.Invalid:
-				{
-				}
+			{
+			}
 				break;
 			default:
-				{
-					throw new UnityException("Invalid control type!");
-				}
+			{
+				throw new UnityException("Invalid control type!");
+			}
 		}
 	}
-
-////////////////////////////////////////////////////////////////////
-
+	
+	////////////////////////////////////////////////////////////////////
+	
 	/// <summary>
 	/// Take control of a certain character. Automaticly switches the input layout!
 	/// </summary>
@@ -59,7 +60,7 @@ public class MovementController
 	{
 		// TODO: free old character
 		currentCharacter = character;
-
+		
 		if (currentCharacter is AirCharacter)
 		{
 			currentMovementType = MovementType.Air;
@@ -84,7 +85,7 @@ public class MovementController
 			throw new UnityException("Invalid control type!");
 		}
 	}
-
+	
 	public ICharacter CurrentCharacter
 	{
 		get
@@ -97,7 +98,7 @@ public class MovementController
 			return currentCharacter;
 		}
 	}
-
+	
 	public MovementType CurrentControlType
 	{
 		get
@@ -105,7 +106,7 @@ public class MovementController
 			return currentMovementType;
 		}
 	}
-
+	
 	public string JoystickName
 	{
 		get
@@ -113,7 +114,7 @@ public class MovementController
 			return joystickName;
 		}
 	}
-
+	
 	public int JoystickID
 	{
 		get
@@ -121,35 +122,35 @@ public class MovementController
 			return joystickID;
 		}
 	}
-
+	
 	////////////////////////////////////////////////////////////////////
-
+	
 	string joystickName;
 	int joystickID;
-
+	
 	/// <summary>
 	/// The type of the current control.
 	/// </summary>
 	MovementType currentMovementType = MovementType.Invalid;
-
+	
 	/// <summary>
 	/// The current used character.
 	/// </summary>
 	ICharacter currentCharacter = null;
-
+	
 	/// <summary>
 	/// The air controller.
 	/// </summary>
-	AirController airController = new AirController();
-
+	AirController airController;
+	
 	/// <summary>
 	/// The ground controller.
 	/// </summary>
 	GroundController groundController;
-
+	
 	/// <summary>
 	/// The water controller.
 	/// </summary>
 	WaterController waterController;
-
+	
 }
