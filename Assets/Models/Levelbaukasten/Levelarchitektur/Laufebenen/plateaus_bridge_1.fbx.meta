@@ -1,13 +1,57 @@
 fileFormatVersion: 2
-guid: 9fe9839fd5d19d143b8e84d759fd3574
+guid: 53a8d2d5798c9fc4d9efa3697b9e8b14
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cylinder_000
+    100000: Cube_000
+    100002: Cube_001
+    100004: Cube_004
+    100006: Cube_005
+    100008: Cube_006
+    100010: Cylinder
+    100012: Cylinder_001
+    100014: Cylinder_002
+    100016: Plane
+    100018: //RootNode
+    100020: Sun
+    400000: Cube_000
+    400002: Cube_001
+    400004: Cube_004
+    400006: Cube_005
+    400008: Cube_006
+    400010: Cylinder
+    400012: Cylinder_001
+    400014: Cylinder_002
+    400016: Plane
+    400018: //RootNode
+    400020: Sun
+    2300000: Cube_000
+    2300002: Cube_001
+    2300004: Cube_004
+    2300006: Cube_005
+    2300008: Cube_006
+    2300010: Cylinder
+    2300012: Cylinder_001
+    2300014: Cylinder_002
+    2300016: Plane
+    3300000: Cube_000
+    3300002: Cube_001
+    3300004: Cube_004
+    3300006: Cube_005
+    3300008: Cube_006
+    3300010: Cylinder
+    3300012: Cylinder_001
+    3300014: Cylinder_002
+    3300016: Plane
+    4300000: Cube_001
+    4300002: Cube_000
+    4300004: Cube_006
+    4300006: Cube_005
+    4300008: Cylinder_002
+    4300010: Cylinder_001
+    4300012: Cylinder
+    4300014: Cube_004
+    4300016: Plane
     7400000: Default Take
     9500000: //RootNode
   materials:
