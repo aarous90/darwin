@@ -18,7 +18,7 @@ public class DamageTrigger : AbstractTrigger
 
 	#region implemented abstract members of TriggerElement
 
-	protected override void TriggerAction()
+	protected override void TriggerAction(Collider other)
 	{
 		throw new System.NotImplementedException();
 	}

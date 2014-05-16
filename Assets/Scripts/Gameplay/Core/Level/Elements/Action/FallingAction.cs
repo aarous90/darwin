@@ -18,7 +18,7 @@ public class FallingAction : AbstractAction
 
 	#region implemented abstract members of ActionElement
 
-	protected override void DoAction()
+	protected override void DoAction(Collider other)
 	{
 		GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
 

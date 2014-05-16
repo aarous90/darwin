@@ -20,17 +20,20 @@ public class CameraController : MonoBehaviour
 
 		if (owner != null && owner.GetCharacter() != null)
 		{
-			ICharacter character = owner.GetCharacter();
-			transform.position = character.transform.position + cameraOffset;
-			Vector3 lookAt = character.transform.position;
-			lookAt.x = transform.position.x;
-			transform.LookAt(lookAt);
+			LookAt(owner.GetCharacter().transform.position);
 		}
 		else
 		{
-			transform.position = new Vector3(cameraOffset.x, cameraOffset.y, cameraOffset.z);
-			transform.LookAt(new Vector3());
+			LookAt(characterPosition);
 		}
+	}
+
+	void LookAt(Vector3 position)
+	{
+		transform.position = position + cameraOffset;
+		Vector3 lookAt = characterPosition = position;
+		lookAt.x = transform.position.x;
+		transform.LookAt(lookAt);
 	}
 
 	/// <summary>
@@ -66,4 +69,6 @@ public class CameraController : MonoBehaviour
 	Vector3 front;
 	Vector3 up;
 	Vector3 right;
+
+	Vector3 characterPosition = new Vector3();
 }

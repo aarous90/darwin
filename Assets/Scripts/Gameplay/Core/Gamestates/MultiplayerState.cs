@@ -1,10 +1,8 @@
+using UnityEngine;
 
 /// <summary>
 /// Ther multiplayer state
 /// </summary>
-using System;
-
-
 public class MultiplayerState : IGameState
 {
 	public MultiplayerState()
@@ -14,30 +12,30 @@ public class MultiplayerState : IGameState
 
 	#region IGameState implementation
 
-	public string GetName()
+	public override string GetName()
 	{
 		return "Multiplayer State";
 	}
 
-	public GamestateType GetGamestateType()
+	public override GamestateType GetGamestateType()
 	{
 		return GamestateType.Multiplayer;
 	}
 
-	public void Enter()
+	public override void Enter()
 	{
 		//LevelManager.Get().Load();
 		//LevelManager.Get().Spawn();
+		
+		Application.LoadLevel("Multiplayer");
+	}
 
+	public override void Leave()
+	{
 		GUIManager.Get().ClearGUI();
 	}
 
-	public void Leave()
-	{
-
-	}
-
-	public void Reset()
+	public override void Reset()
 	{
 
 	}

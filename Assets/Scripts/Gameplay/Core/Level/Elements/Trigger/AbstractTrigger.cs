@@ -16,7 +16,7 @@ public abstract class AbstractTrigger : IElement
 	
 	}
 
-	protected abstract void TriggerAction();
+	protected abstract void TriggerAction(Collider other);
 
 	public AbstractAction Action;
 }

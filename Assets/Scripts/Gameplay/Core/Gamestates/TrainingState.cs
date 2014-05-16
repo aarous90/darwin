@@ -1,3 +1,4 @@
+using UnityEngine;
 
 /// <summary>
 /// The training state
@@ -11,27 +12,27 @@ public class TrainingState : IGameState
 
 	#region IGameState implementation
 
-	public string GetName()
+	public override string GetName()
 	{
 		return "Training State";
 	}
 
-	public GamestateType GetGamestateType()
+	public override GamestateType GetGamestateType()
 	{
 		return GamestateType.Training;
 	}
 
-	public void Enter()
+	public override void Enter()
+	{
+		Application.LoadLevel("Training");
+	}
+
+	public override void Leave()
 	{
 		GUIManager.Get().ClearGUI();
 	}
 
-	public void Leave()
-	{
-
-	}
-
-	public void Reset()
+	public override void Reset()
 	{
 
 	}

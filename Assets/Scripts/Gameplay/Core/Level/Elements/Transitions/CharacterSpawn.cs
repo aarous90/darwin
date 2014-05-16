@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// The Character spawn is responsible to spawn a character in a level.
 /// </summary>
-public class CharacterSpawn : MonoBehaviour
+public class CharacterSpawn : IElement
 {
 
 	void Start()

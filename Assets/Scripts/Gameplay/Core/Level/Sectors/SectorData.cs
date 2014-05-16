@@ -143,6 +143,14 @@ public class SectorData
 		}
 	}
 
+	public string Name
+	{
+		get
+		{
+			return generatorSector.name;
+		}
+	}
+
 	////////////////////////////////////////////////////////////////////
 
 	/// <summary>

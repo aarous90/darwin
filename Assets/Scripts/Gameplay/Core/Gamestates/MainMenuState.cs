@@ -1,3 +1,4 @@
+using UnityEngine;
 
 /// <summary>
 /// The main menu state
@@ -11,27 +12,28 @@ public class MainMenuState : IGameState
 
 	#region IGameState implementation
 
-	public string GetName()
+	public override string GetName()
 	{
 		return "Main Menu State";
 	}
 
-	public GamestateType GetGamestateType()
+	public override GamestateType GetGamestateType()
 	{
 		return GamestateType.MainMenu;
 	}
 
-	public void Enter()
+	public override void Enter()
 	{
+		Application.LoadLevel("MainMenu");
+	}
+
+	public override void Leave()
+	{
+		GUIManager.Get().ClearGUI();
 
 	}
 
-	public void Leave()
-	{
-
-	}
-
-	public void Reset()
+	public override void Reset()
 	{
 
 	}

@@ -18,7 +18,7 @@ public class DestroyAction : AbstractAction
 
 	#region implemented abstract members of ActionElement
 
-	protected override void DoAction()
+	protected override void DoAction(Collider other)
 	{
 		if (deleted) return;
 

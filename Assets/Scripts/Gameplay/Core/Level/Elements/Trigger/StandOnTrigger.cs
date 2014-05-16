@@ -11,9 +11,9 @@ public class StandOnTrigger : VolumeTrigger
 
 	#region implemented abstract members of TriggerElement
 
-	protected override void TriggerAction()
+	protected override void TriggerAction(Collider other)
 	{
-		Action.OnTriggered();
+		Action.OnTriggered(other);
 	}
 
 	#endregion
@@ -25,7 +25,7 @@ public class StandOnTrigger : VolumeTrigger
 		// trigger only for characters
 		if (other.gameObject.GetComponent<ICharacter>() != null)
 		{
-			TriggerAction();
+			TriggerAction(other);
 			old = other.transform.parent;
 			other.transform.parent = this.transform;
 		}
@@ -36,7 +36,7 @@ public class StandOnTrigger : VolumeTrigger
 		// trigger only for characters
 		if (other.gameObject.GetComponent<ICharacter>() != null)
 		{
-			TriggerAction();
+			TriggerAction(other);
 			other.transform.parent = old;
 		}
 	}

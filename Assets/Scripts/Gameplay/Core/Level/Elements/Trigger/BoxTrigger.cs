@@ -11,9 +11,9 @@ public class BoxTrigger : VolumeTrigger
 
 	#region implemented abstract members of TriggerElement
 
-	protected override void TriggerAction()
+	protected override void TriggerAction(Collider other)
 	{
-		Action.OnTriggered();
+		Action.OnTriggered(other);
 	}
 
 	#endregion
@@ -23,7 +23,7 @@ public class BoxTrigger : VolumeTrigger
 		// trigger only for characters
 		if (other.gameObject.GetComponent<ICharacter>() != null)
 		{
-			TriggerAction();
+			TriggerAction(other);
 		}
 	}
 

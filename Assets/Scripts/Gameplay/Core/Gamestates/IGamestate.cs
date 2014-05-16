@@ -1,18 +1,19 @@
-﻿
+﻿using UnityEngine;
+
 /// <summary>
 /// The gamestate interface
 /// </summary>
-public interface IGameState 
+public abstract class IGameState
 {
-	string GetName();
+	public abstract string GetName();
 
-	GamestateType GetGamestateType();
+	public abstract GamestateType GetGamestateType();
 
-	void Enter();
+	public abstract void Enter();
 
-	void Leave();
+	public abstract void Leave();
 
-	void Reset();
+	public abstract void Reset();
 
 }
 

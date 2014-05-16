@@ -64,9 +64,12 @@ public class CharacterManager : MonoBehaviour
 	/// <param name="character">Character.</param>
 	public void UnregisterCharacter(int playerIndex)
 	{
-		if (characters.ContainsKey(playerIndex))
+		ICharacter c = null;
+		if (characters.TryGetValue(playerIndex, out c) && c != null)
 		{
 			characters.Remove(playerIndex);
+			GameObject obj = GameObject.Find(c.name);
+			Object.Destroy(obj);
 		}
 	}
 

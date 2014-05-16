@@ -16,10 +16,10 @@ public abstract class AbstractAction : IElement
 	
 	}
 
-	public void OnTriggered()
+	public void OnTriggered(Collider other)
 	{
-		DoAction();
+		DoAction(other);
 	}
 
-	protected abstract void DoAction();
+	protected abstract void DoAction(Collider other);
 }
