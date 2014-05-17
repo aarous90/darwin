@@ -1,26 +1,24 @@
 fileFormatVersion: 2
-guid: bdd6eb10c650e26448594c753b7d3ad9
+guid: deae4ee5f59b73047ba5dad9c87a1ca6
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: Camera
-    100002: Cylinder
-    100004: Cylinder_001
-    100006: Cylinder_002
-    100008: Cylinder_003
-    100010: Cylinder_005
-    100012: Cylinder_006
-    100014: Cylinder_007
-    100016: //RootNode
-    400000: Camera
-    400002: Cylinder
-    400004: Cylinder_001
-    400006: Cylinder_002
-    400008: Cylinder_003
-    400010: Cylinder_005
-    400012: Cylinder_006
-    400014: Cylinder_007
-    400016: //RootNode
+    100000: Cylinder
+    100002: Cylinder_001
+    100004: Cylinder_002
+    100006: Cylinder_003
+    100008: Cylinder_005
+    100010: Cylinder_006
+    100012: Cylinder_007
+    100014: //RootNode
+    400000: Cylinder
+    400002: Cylinder_001
+    400004: Cylinder_002
+    400006: Cylinder_003
+    400008: Cylinder_005
+    400010: Cylinder_006
+    400012: Cylinder_007
+    400014: //RootNode
     2300000: Cylinder
     2300002: Cylinder_001
     2300004: Cylinder_002
