@@ -37,14 +37,17 @@ public class _CharacterController : MonoBehaviour
 		private float VerticalCollisions (float deltaY)
 		{
 				bool rayHasHit = false;
-				float direction = (deltaY > 0) ? 1 : -1;
-				float smallestHitDistance = Mathf.Infinity;
-				float rayLength = Collider.bounds.extents.y + (Grounded ? 2 : Mathf.Abs (deltaY * Time.deltaTime));
 				int hitIndex = 0;
+				float smallestHitDistance = Mathf.Infinity;
+				float offset = Collider.bounds.extents.x - (Collider.bounds.extents.x * 0.1f);
 
+				float direction = (deltaY > 0) ? 1 : -1;
+				
+				float rayLength = Collider.bounds.extents.y + Skin + (Grounded ? (2 * Collider.bounds.extents.y) : Mathf.Abs (deltaY));
+			
 				for (int i = 0; i <= SideDivisions; i++) {
 
-						Vector2 raycastOrigin = new Vector2 (Collider.bounds.center.x + Collider.bounds.extents.x - (Collider.bounds.extents.x * 2 / SideDivisions * i), Collider.bounds.center.y);
+						Vector2 raycastOrigin = new Vector2 (Collider.bounds.center.x + offset - (offset * 2 / SideDivisions * i), Collider.bounds.center.y);
 						Debug.DrawRay (raycastOrigin, new Vector2 (0, direction));
 
 						if (Physics.Raycast (raycastOrigin, Vector2.up * direction, out Hits [i], rayLength)) {
@@ -62,7 +65,7 @@ public class _CharacterController : MonoBehaviour
 
 				if (rayHasHit) {
 
-						transform.Translate ((Vector2.up * direction) * (Hits [hitIndex].distance - (Collider.bounds.extents.y)), Space.World);
+						transform.Translate ((Vector2.up * direction) * (Hits [hitIndex].distance - (Collider.bounds.extents.y + Skin)), Space.World);
 						deltaY = 0;
 						Grounded = true;
 
@@ -78,17 +81,20 @@ public class _CharacterController : MonoBehaviour
 //Check for horizontal collisions in movementdirection
 		private float HorizontalCollisions (float deltaX)
 		{
+				SideCollision = false;
 
 				if (deltaX != 0) {
+
 						float direction = Mathf.Sign (deltaX);
 						float lastHit = 0;
+						float offset = Collider.bounds.extents.y - (Collider.bounds.extents.y * 0.1f);
 
 						for (int i = 0; i <= SideDivisions; i++) {
 				
-								Vector2 raycastOrigin = new Vector2 (Collider.bounds.center.x, Collider.bounds.center.y + Collider.bounds.extents.y - (Collider.bounds.extents.y * 2 / SideDivisions * i));
+								Vector2 raycastOrigin = new Vector2 (Collider.bounds.center.x, Collider.bounds.center.y + offset - (offset * 2 / SideDivisions * i));
 								Debug.DrawRay (raycastOrigin, new Vector2 (direction, 0));
 
-								if (Physics.Raycast (raycastOrigin, Vector2.right * direction, out Hits [i], Collider.bounds.extents.x + Mathf.Abs (deltaX))) {
+								if (Physics.Raycast (raycastOrigin, Vector2.right * direction, out Hits [i], Collider.bounds.extents.x + Skin + Mathf.Abs (deltaX))) {
 			
 										if (lastHit > 0) {
 
@@ -96,8 +102,9 @@ public class _CharacterController : MonoBehaviour
 
 												if (Mathf.Abs (angle - 90) < DriftAngle) {
 
-														transform.Translate ((Vector2.right * direction) * (Hits [i].distance - (Collider.bounds.extents.x)), Space.World);
+														transform.Translate ((Vector2.right * direction) * (Hits [i].distance - (Collider.bounds.extents.x + Skin)), Space.World);
 														deltaX = 0;
+														SideCollision = true;
 														break;
 
 												}
@@ -118,6 +125,8 @@ public class _CharacterController : MonoBehaviour
 
 		[HideInInspector]
 		public bool								Grounded;
+		[HideInInspector]
+		public bool								SideCollision;
 
 		public float							DriftAngle = 5;
 
@@ -125,6 +134,7 @@ public class _CharacterController : MonoBehaviour
 
 		private Collider 						Collider;
 		private Vector2 						MoveTransform;
+		private float							Skin = 0.05f;
 		private int 							SideDivisions = 4;
 		private RaycastHit 						Hit;
 		private RaycastHit[]					Hits;
