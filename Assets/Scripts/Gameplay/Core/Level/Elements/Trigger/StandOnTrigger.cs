@@ -11,9 +11,13 @@ public class StandOnTrigger : VolumeTrigger
 
 	#region implemented abstract members of TriggerElement
 
-	protected override void TriggerAction(Collider other)
+	protected override void TriggerAction(UnityEngine.Component other)
 	{
-		Action.OnTriggered(other);
+		foreach (AbstractAction a in Actions)
+		{
+			if (a != null)
+				a.OnTriggered(other);
+		}
 	}
 
 	#endregion

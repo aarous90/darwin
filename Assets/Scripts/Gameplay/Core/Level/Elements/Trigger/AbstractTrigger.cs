@@ -16,7 +16,7 @@ public abstract class AbstractTrigger : IElement
 	
 	}
 
-	protected abstract void TriggerAction(Collider other);
+	protected abstract void TriggerAction(UnityEngine.Component other);
 
-	public AbstractAction Action;
+	public AbstractAction[] Actions;
 }

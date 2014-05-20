@@ -22,7 +22,6 @@ public class GUIManager : MonoBehaviour, IInputListener
 	{
 		UnityEngine.Object.DontDestroyOnLoad(this);
 		GlobalInput.RegisterListener(InputManager.InputCategory.GUI, this);
-		FocusIndex(0);
 	}
 
 	// Update is called once per frame

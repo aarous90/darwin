@@ -30,7 +30,7 @@ public class MainMenuState : IGameState
 	public override void Leave()
 	{
 		GUIManager.Get().ClearGUI();
-
+		CameraManager.Get().Clear();
 	}
 
 	public override void Reset()

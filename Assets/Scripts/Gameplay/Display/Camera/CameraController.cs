@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class CameraController : MonoBehaviour
@@ -7,7 +7,15 @@ public class CameraController : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		
+		if (camera == null)
+		{
+			throw new UnityException("No camera to control is attached!");
+		}
+		
 		Initialize();
+
+		CameraManager.Get().Add(this);
 	}
 	
 	// Update is called once per frame

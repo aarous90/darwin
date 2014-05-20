@@ -9,31 +9,56 @@ public class BoxTrigger : VolumeTrigger
 		transform.Translate(0,0,0);
 	}
 
+	void TriggerForCharacter(Collider other)
+	{
+		ICharacter character = null;
+		// trigger only for characters
+		if ((character = other.gameObject.GetComponent<ICharacter>()) != null)
+		{
+			TriggerAction(character);
+		}
+	}
+
 	#region implemented abstract members of TriggerElement
 
-	protected override void TriggerAction(Collider other)
+	protected override void TriggerAction(UnityEngine.Component other)
 	{
-		Action.OnTriggered(other);
+		foreach (AbstractAction a in Actions)
+		{
+			if (a != null)
+				a.OnTriggered(other);
+		}
 	}
 
 	#endregion
 
+	#region implemented abstract members of VolumeTrigger
+	
 	protected override void OnTriggerEnter(Collider other)
 	{
-		// trigger only for characters
-		if (other.gameObject.GetComponent<ICharacter>() != null)
-		{
-			TriggerAction(other);
-		}
-	}
+		if (!TriggerOnEnter) return;
 
+		TriggerForCharacter(other);
+	}
+	
 	protected override void OnTriggerExit(Collider other)
 	{
+		if (!TriggerOnExit) return;
 		
+		TriggerForCharacter(other);
 	}
-
+	
 	protected override void OnTriggerStay(Collider other)
 	{
-
+		if (!TriggerOnStay) return;
+		
+		TriggerForCharacter(other);
 	}
+	#endregion
+
+	public bool TriggerOnEnter = true;
+
+	public bool TriggerOnExit;
+
+	public bool TriggerOnStay;
 }

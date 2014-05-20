@@ -62,38 +62,43 @@ public class AirCharacter : ICharacter
 		Controller.Move(FlyDirection * Time.deltaTime);
 	}
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-#region ICharacter implementation
+	#region ICharacter implementation
 
-	public override bool UseSpecial(AttackContext context)
+	public override CharacterType GetCharacterType()
+	{
+		return CharacterType.Air;
+	}
+
+	public override bool UseSpecial(SpecialAttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public override bool UseMelee(AttackContext context)
+	public override bool UseMelee(MeleeAttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public override bool UseRanged(AttackContext context)
+	public override bool UseRanged(RangedAttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
 
 	public override void DoMeleeDamage(DamageContext context)
 	{
-		throw new System.NotImplementedException();
+		base.DoMeleeDamage(context);
 	}
 
 	public override void DoRangedDamage(DamageContext context)
 	{
-		throw new System.NotImplementedException();
+		base.DoRangedDamage(context);
 	}
 
 	public override void DoSpecialDamage(DamageContext context)
 	{
-		throw new System.NotImplementedException();
+		base.DoSpecialDamage(context);
 	}
 
 	public override bool CanMove()
@@ -136,30 +141,41 @@ public class AirCharacter : ICharacter
 	{
 		throw new System.NotImplementedException();
 	}
-
-	public override void OnDamaged()
+	
+	public override void OnDamaged(DamageContext damage)
 	{
-		throw new NotImplementedException();
+		base.OnDamaged(damage);
 	}
-
+	
 	public override void OnDeath()
 	{
-		throw new NotImplementedException();
+		base.OnDeath();
 	}
-
+	
 	public override void OnRegenerate()
 	{
-		throw new NotImplementedException();
+		base.OnRegenerate();
 	}
-
+	
 	public override void OnBoost()
 	{
-		throw new NotImplementedException();
+		base.OnBoost();
+	}
+	
+	public override void OnDecay()
+	{
+		base.OnDecay();
+	}
+	
+	public override void OnSpawned()
+	{
+		base.OnSpawned();
 	}
 
-#endregion
+	#endregion
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+
 	[HideInInspector]
 	public bool								Sequence;
 
@@ -169,7 +185,7 @@ public class AirCharacter : ICharacter
 	public float 							VerticalSpeed = 15;
 	public float 							Drag = 0.1f;
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
 	Vector2 								FlyDirection;
 	float 									Direction;
