@@ -36,7 +36,9 @@ public class ProgressHUD : GUIItem
 
 		float aspect = ((float) TimelineBackground.height / TimelineBackground.width);
 
-		GUI.BeginGroup(new Rect(Position.x, Position.y + cam.pixelHeight - TimelineBackground.height, cam.pixelWidth, cam.pixelWidth * aspect));
+		GUI.BeginGroup(new Rect(
+			(cam.pixelRect.x) + Position.x, 
+			(cam.pixelRect.y) + Position.y + cam.pixelHeight - TimelineBackground.height, cam.pixelWidth, cam.pixelWidth * aspect));
 
 			// Draw the progress bar
 	        GUI.DrawTexture(new Rect(

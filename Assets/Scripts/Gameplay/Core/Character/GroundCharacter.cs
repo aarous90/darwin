@@ -37,14 +37,29 @@ public class GroundCharacter : ICharacter
 
 	void FixedUpdate()
 	{	
-	
+
+		if (Controller.SideCollision)
+		{
+			MoveForce = 0;
+			MoveDirection.x = 0;
+		}
+
 		if (CanMove())
 		{
+		
+			if (Mathf.Abs(MoveForce) < 0.1)
+			{
+				MoveForce = 0;
+			}
+
 			MaxSpeed = (Sequence) ? MaxSpeed_2 : MaxSpeed_1;
+
 			CurrentSpeed = 0;
 			MoveDirection.y = 0;
 			MoveDirection.x = MoveSpeed * MoveForce;
 			MoveForce *= 1.0f - Drag;
+
+			CurrentSpeed = MoveDirection.x;
 
 			if (Jumping)
 			{
@@ -53,17 +68,17 @@ public class GroundCharacter : ICharacter
 				MoveDirection.y = JumpSpeed;
 			}
 
-			CurrentSpeed = MoveDirection.x;
+						
 		}
 		else
 		{
 			MoveForce = 0;
 
-			if (CurrentSpeed != 0 && Math.Abs(CurrentSpeed) > MaxSpeed * 0.3f)
+			if (CurrentSpeed != 0 && Math.Abs(CurrentSpeed) > MaxSpeed * 0.75f)
 			{
-				if (CurrentSpeed >= 0 && Direction >= 0 || CurrentSpeed < 0 && Direction < 0)
+				if (CurrentSpeed > 0 && Direction >= 0 || CurrentSpeed < 0 && Direction <= 0)
 				{			
-
+								
 				}
 				else
 				{
@@ -83,6 +98,7 @@ public class GroundCharacter : ICharacter
 
 		if (Math.Abs(MoveDirection.x) > 0.1 && CanMove())
 		{
+			Anim.speed = 1 + (Math.Abs(MoveDirection.x) * 0.1f);
 			Anim.SetBool("Walk", true);
 		}
 		else
@@ -156,7 +172,7 @@ public class GroundCharacter : ICharacter
 	{		
 		if (CanMove())
 		{
-			MoveForce += 0.5f * MoveSpeed * Math.Sign(Direction);
+			MoveForce += 1.5f * Math.Sign(Direction);
 		}
 	}
 
@@ -230,12 +246,12 @@ public class GroundCharacter : ICharacter
 		base.OnSpawned();
 	}
 
-#endregion
+	#endregion
 
-////////////////////////////////////////////////////////////////////
-	//[HideInInspector]
+	////////////////////////////////////////////////////////////////////
+
+	[HideInInspector]
 	public bool								Sequence;
-
 	public float							Gravity = 20;
 	public float 							MaxSpeed_1 = 5;
 	public float 							MaxSpeed_2 = 10;

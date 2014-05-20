@@ -44,7 +44,9 @@ public class PlayerHUD : GUIItem
 
 	void OnGUI()
 	{
-		GUI.BeginGroup(new Rect(Position.x + playerPosition.x, Position.y + playerPosition.y, Size.x, Size.y));
+		GUI.BeginGroup(new Rect(
+			(cam.pixelRect.x) + Position.x + playerPosition.x, 
+			(cam.pixelRect.y) + Position.y + playerPosition.y, Size.x, Size.y));
 			GUI.DrawTexture(new Rect(
 				9,
 				112, 
