@@ -1,6 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public delegate void OnPlayerFinishesHandler(Player player);
+
+public delegate void OnPlayerWinsHandler(Player player);
+
+public delegate void OnPlayerLoosesHandler(Player player);
+
+/// <summary>
+/// The Player class holds the movement controller 
+/// which controls the different character types,
+/// also handles the events for loosing, winning, and finishing.
+/// </summary>
 public class Player 
 {
 	public Player(int key, MovementController value)
@@ -24,6 +35,10 @@ public class Player
 	
 	}
 
+	/// <summary>
+	/// Gets the movement-controller this player has, the controller contros the character.
+	/// </summary>
+	/// <returns>The controller.</returns>
 	public MovementController GetController()
 	{
 		if (controller == null)
@@ -33,6 +48,10 @@ public class Player
 		return controller;
 	}
 
+	/// <summary>
+	/// Gets the character from the used movement-controller.
+	/// </summary>
+	/// <returns>The character.</returns>
 	public ICharacter GetCharacter()
 	{
 		MovementController c = GetController();
@@ -40,21 +59,62 @@ public class Player
 
 	}
 
+	/// <summary>
+	/// Raises the finish event.
+	/// </summary>
+	public void OnFinish()
+	{
+		PlayerFinishesEvent(this);
+	}
+
+	/// <summary>
+	/// Raises the loose event.
+	/// </summary>
+	public void OnLoose()
+	{
+		PlayerLoosesEvent(this);
+	}
+
+	/// <summary>
+	/// Raises the win event.
+	/// </summary>
+	public void OnWin()
+	{
+		PlayerWinsEvent(this);
+	}
+
 	////////////////////////////////////////////////////////////////////
 
-	public string 				PlayerName;
+	/// <summary>
+	/// Occurs when player looses.
+	/// </summary>
+	public event OnPlayerLoosesHandler 		PlayerLoosesEvent;
 
-	public int 				PlayerIndex;
+	/// <summary>
+	/// Occurs when player finishes.
+	/// </summary>
+	public event OnPlayerFinishesHandler 	PlayerFinishesEvent;
+
+	/// <summary>
+	/// Occurs when player wins.
+	/// </summary>
+	public event OnPlayerWinsHandler 		PlayerWinsEvent;
+
+	////////////////////////////////////////////////////////////////////
+
+	public string 							PlayerName;
+
+	public int 								PlayerIndex;
 
 	////////////////////////////////////////////////////////////////////
 
 	/// <summary>
 	/// The movement controller of this player.
 	/// </summary>
-	MovementController 			controller;
+	MovementController 						controller;
 
 	/// <summary>
 	/// The player stats.
 	/// </summary>
-	PlayerStats 				playerStats;
+	PlayerStats 							playerStats;
 }

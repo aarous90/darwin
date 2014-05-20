@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class SpawnModule : Module
 {
@@ -38,7 +39,7 @@ public class SpawnModule : Module
 			}
 			else
 			{	
-				throw new UnityException("The Spawn and Fighting Module need three spawns for air, ground and water!");
+				throw new UnityException("The Spawn and Fighting Module needs three spawns for air, ground and water!");
 			}
 			return spawns;
 		}

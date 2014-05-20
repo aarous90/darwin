@@ -6,6 +6,9 @@ public class SectorData
 	public SectorData(int modulesPerSectorCount)
 	{
 		this.modulesPerSectorCount = modulesPerSectorCount;
+		
+		spawnsUnused = new List<int>(new int[] {0, 1, 2});
+		reachedFighting = new bool[ControllerManager.Get().GetControllers().Count];
 	}
 
 	////////////////////////////////////////////////////////////////////
@@ -151,6 +154,26 @@ public class SectorData
 		}
 	}
 
+	public List<int> SpawnsUnused
+	{
+		get
+		{
+			return spawnsUnused;
+		}
+		set
+		{
+			spawnsUnused = value;
+		}
+	}
+
+	public bool[] ReachedFighting
+	{
+		get
+		{
+			return reachedFighting;
+		}
+	}
+
 	////////////////////////////////////////////////////////////////////
 
 	/// <summary>
@@ -188,6 +211,9 @@ public class SectorData
 	/// The last out connector used in level loading.
 	/// </summary>
 	ConnectorElement lastOutConnector;
+	
+	List<int> spawnsUnused;
+	bool[] reachedFighting;
 }
 
 

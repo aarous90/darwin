@@ -1,7 +1,19 @@
 ﻿
 using UnityEngine;
 
-public abstract class ICharacter : MonoBehaviour
+public delegate void OnBoostHandler(ICharacter character);
+
+public delegate void OnDeathHandler(ICharacter character);
+
+public delegate void OnSpawnedHandler(ICharacter character);
+
+public delegate void OnDecayHandler(ICharacter character);
+
+public delegate void OnRegenerateHandler(ICharacter character);
+
+public delegate void OnDamagedHandler(ICharacter character);
+
+public abstract class ICharacter : MonoBehaviour, IFightable
 {
 
 	public Player GetOwningPlayer()
@@ -14,21 +26,27 @@ public abstract class ICharacter : MonoBehaviour
 	/// <summary>
 	/// Spawns an instance of this character for a player at a spawner.
 	/// </summary>
-	public ICharacter Spawn(Player owner, CharacterSpawn spawner)
+	public ICharacter Create(Player owner, CharacterSpawn spawner)
 	{
 		IsSpawner = true;
-		Object obj = Object.Instantiate(this, spawner.transform.localPosition, transform.rotation);
+		Object obj = Object.Instantiate(this);//, spawner.transform.localPosition, transform.rotation);
 		if (obj is ICharacter)
 		{
 			ICharacter character = obj as ICharacter;
 			character.IsSpawned = true;
 			character.Owner = owner;
-			character.live = MaxLive;
-			character.boost = 0;
+			character.Respawn(spawner);
+
 			CharacterManager.Get().RegisterCharacter(owner.PlayerIndex, character);
 			return character;
 		}
 		return null;
+	}
+
+	public void Respawn(CharacterSpawn spawner)
+	{
+		transform.position = spawner.transform.position;
+		OnSpawned();
 	}
 
 	/// <summary>
@@ -40,6 +58,8 @@ public abstract class ICharacter : MonoBehaviour
 	}
 
 	////////////////////////////////////////////////////////////////////
+
+	public abstract CharacterType GetCharacterType();
 
 	//void Init(MovementController controller);
 
@@ -62,18 +82,6 @@ public abstract class ICharacter : MonoBehaviour
 		OnRegenerate();
 	}
 
-	public virtual void TakeDamage(float value)
-	{
-		live -= value;
-		if (live <= 0)
-		{
-			live = 0;
-			OnDeath();
-			return;
-		}
-		OnDamaged();
-	}
-
 	////////////////////////////////////////////////////////////////////
 
 	public virtual float GetBoost()
@@ -86,29 +94,36 @@ public abstract class ICharacter : MonoBehaviour
 		boost += value;
 	}
 
-	public virtual void UseBoost(float value)
-	{
-		boost = 0;
-	}
-
 	////////////////////////////////////////////////////////////////////
-
-	/// Try using a special ability, return true if successful
-	public abstract bool UseSpecial(AttackContext context);
 
 	/// Try using a melee attack, return true if successful
-	public abstract bool UseMelee(AttackContext context);
+	public abstract bool UseMelee(MeleeAttackContext context);
 
 	/// Try using a ranged attack, return true if successful
-	public abstract bool UseRanged(AttackContext context);
+	public abstract bool UseRanged(RangedAttackContext context);
+
+	/// Try using a special ability, return true if successful
+	public abstract bool UseSpecial(SpecialAttackContext context);
 
 	////////////////////////////////////////////////////////////////////
 
-	public abstract void DoMeleeDamage(DamageContext context);
+	public virtual void DoMeleeDamage(DamageContext context)
+	{
+		context.IsMeele = true;
+		context.Enemy.OnDamaged(context);
+	}
 
-	public abstract void DoRangedDamage(DamageContext context);
+	public virtual void DoRangedDamage(DamageContext context)
+	{
+		context.IsRanged = true;
+		context.Enemy.OnDamaged(context);
+	}
 
-	public abstract void DoSpecialDamage(DamageContext context);
+	public virtual void DoSpecialDamage(DamageContext context)
+	{
+		context.IsSpecial = true;
+		context.Enemy.OnDamaged(context);
+	}
 
 	////////////////////////////////////////////////////////////////////
 
@@ -130,19 +145,82 @@ public abstract class ICharacter : MonoBehaviour
 
 	////////////////////////////////////////////////////////////////////
 
-	public abstract void OnDamaged();
+	public virtual void OnDamaged(DamageContext damage)
+	{
+		live -= damage.RollDamage();
+		if (live <= 0)
+		{
+			live = 0;
+			OnDeath();
+			return;
+		}
 
-	public abstract void OnDeath();
+		if (DamagedEvent != null)
+			DamagedEvent(this);
+	}
 
-	public abstract void OnRegenerate();
+	public virtual void OnDeath()
+	{
+		this.enabled = false;
 
-	public abstract void OnBoost();
+		if (DeathEvent != null)
+			DeathEvent(this);
+	}
+
+	public virtual void OnDecay()
+	{
+		if (DecayEvent != null)
+			DecayEvent(this);
+	}
+
+	public virtual void OnRegenerate()
+	{
+		if (RegenerateEvent != null)
+			RegenerateEvent(this);
+	}
+
+	public virtual void OnBoost()
+	{
+		boost = 0;
+		if (BoostEvent != null)
+			BoostEvent(this);
+	}
+
+	public virtual void OnSpawned()
+	{
+		live = MaxLive;
+		boost = 0;
+		this.enabled = true;
+
+		if (SpawnedEvent != null)
+			SpawnedEvent(this);
+	}
 
 	////////////////////////////////////////////////////////////////////
 
 	public bool IsSpawned;
 	public float MaxLive = 100f;
 	public float MaxBoost = 100f;
+
+	////////////////////////////////////////////////////////////////////
+
+	public MeleeAttackContext MeleeAttack;
+	public RangedAttackContext RangedAttack;
+	public SpecialAttackContext SpecialAttack;
+	
+	////////////////////////////////////////////////////////////////////
+	
+	public event OnBoostHandler BoostEvent;
+	
+	public event OnDeathHandler DeathEvent;
+	
+	public event OnSpawnedHandler SpawnedEvent;
+	
+	public event OnDecayHandler DecayEvent;
+	
+	public event OnDamagedHandler DamagedEvent;
+	
+	public event OnRegenerateHandler RegenerateEvent;
 
 	////////////////////////////////////////////////////////////////////
 

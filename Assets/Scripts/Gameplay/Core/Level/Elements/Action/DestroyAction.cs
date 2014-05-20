@@ -18,31 +18,14 @@ public class DestroyAction : AbstractAction
 
 	#region implemented abstract members of ActionElement
 
-	protected override void DoAction(Collider other)
+	protected override void DoAction(UnityEngine.Component other)
 	{
-		if (deleted) return;
-
-		GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
-
-		if (objects == null) return;
-
-		foreach (GameObject obj in objects)
-		{
-			if (obj != null && obj.GetComponent<DestroyAction>() == null)
-			{
-				Object.Destroy(obj, Delay);
-			}
-		}
-
-		deleted = true;
+		if (gameObject == null) return;
+		
+		Object.Destroy(gameObject, Delay);
 	}
 
 	#endregion
 
 	public float Delay = 0;
-
-	/// <summary>
-	/// The deleted flag marks if the action was already triggered.
-	/// </summary>
-	bool deleted = false;
 }

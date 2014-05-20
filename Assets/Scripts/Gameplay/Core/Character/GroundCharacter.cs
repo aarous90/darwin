@@ -37,14 +37,29 @@ public class GroundCharacter : ICharacter
 
 	void FixedUpdate()
 	{	
-	
+
+		if (Controller.SideCollision)
+		{
+			MoveForce = 0;
+			MoveDirection.x = 0;
+		}
+
 		if (CanMove())
 		{
+		
+			if (Mathf.Abs(MoveForce) < 0.1)
+			{
+				MoveForce = 0;
+			}
+
 			MaxSpeed = (Sequence) ? MaxSpeed_2 : MaxSpeed_1;
+
 			CurrentSpeed = 0;
 			MoveDirection.y = 0;
 			MoveDirection.x = MoveSpeed * MoveForce;
 			MoveForce *= 1.0f - Drag;
+
+			CurrentSpeed = MoveDirection.x;
 
 			if (Jumping)
 			{
@@ -53,17 +68,17 @@ public class GroundCharacter : ICharacter
 				MoveDirection.y = JumpSpeed;
 			}
 
-			CurrentSpeed = MoveDirection.x;
+						
 		}
 		else
 		{
 			MoveForce = 0;
 
-			if (CurrentSpeed != 0 && Math.Abs(CurrentSpeed) > MaxSpeed * 0.3f)
+			if (CurrentSpeed != 0 && Math.Abs(CurrentSpeed) > MaxSpeed * 0.75f)
 			{
-				if (CurrentSpeed >= 0 && Direction >= 0 || CurrentSpeed < 0 && Direction < 0)
+				if (CurrentSpeed > 0 && Direction >= 0 || CurrentSpeed < 0 && Direction <= 0)
 				{			
-
+								
 				}
 				else
 				{
@@ -83,6 +98,7 @@ public class GroundCharacter : ICharacter
 
 		if (Math.Abs(MoveDirection.x) > 0.1 && CanMove())
 		{
+			Anim.speed = 1 + (Math.Abs(MoveDirection.x) * 0.1f);
 			Anim.SetBool("Walk", true);
 		}
 		else
@@ -103,35 +119,40 @@ public class GroundCharacter : ICharacter
 ////////////////////////////////////////////////////////////////////
 
 #region ICharacter implementation
+	
+	public override CharacterType GetCharacterType()
+	{
+		return CharacterType.Ground;
+	}
 
-	public override bool UseSpecial(AttackContext context)
+	public override bool UseSpecial(SpecialAttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
-
-	public override bool UseMelee(AttackContext context)
+	
+	public override bool UseMelee(MeleeAttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
-
-	public override bool UseRanged(AttackContext context)
+	
+	public override bool UseRanged(RangedAttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
-
+	
 	public override void DoMeleeDamage(DamageContext context)
 	{
-		throw new System.NotImplementedException();
+		base.DoMeleeDamage(context);
 	}
-
+	
 	public override void DoRangedDamage(DamageContext context)
 	{
-		throw new System.NotImplementedException();
+		base.DoRangedDamage(context);
 	}
-
+	
 	public override void DoSpecialDamage(DamageContext context)
 	{
-		throw new System.NotImplementedException();
+		base.DoSpecialDamage(context);
 	}
 
 	public override bool CanMove()
@@ -151,7 +172,7 @@ public class GroundCharacter : ICharacter
 	{		
 		if (CanMove())
 		{
-			MoveForce += 0.5f * MoveSpeed * Math.Sign(Direction);
+			MoveForce += 1.5f * Math.Sign(Direction);
 		}
 	}
 
@@ -194,33 +215,43 @@ public class GroundCharacter : ICharacter
 	{
 		throw new System.NotImplementedException();
 	}
-
-	public override void OnDamaged()
+	
+	public override void OnDamaged(DamageContext damage)
 	{
-		throw new NotImplementedException();
+		base.OnDamaged(damage);
 	}
-
+	
 	public override void OnDeath()
 	{
-		throw new NotImplementedException();
+		base.OnDeath();
 	}
-
+	
 	public override void OnRegenerate()
 	{
-		throw new NotImplementedException();
+		base.OnRegenerate();
 	}
-
+	
 	public override void OnBoost()
 	{
-		throw new NotImplementedException();
+		base.OnBoost();
+	}
+	
+	public override void OnDecay()
+	{
+		base.OnDecay();
+	}
+	
+	public override void OnSpawned()
+	{
+		base.OnSpawned();
 	}
 
-#endregion
+	#endregion
 
-////////////////////////////////////////////////////////////////////
-	//[HideInInspector]
+	////////////////////////////////////////////////////////////////////
+
+	[HideInInspector]
 	public bool								Sequence;
-
 	public float							Gravity = 20;
 	public float 							MaxSpeed_1 = 5;
 	public float 							MaxSpeed_2 = 10;
