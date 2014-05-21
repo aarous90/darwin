@@ -57,8 +57,8 @@ public class TimerHUD : GUIItem
 //			default:
 //				break;
 //		}
-		timerText.fontSize = 30;
-		timerText.fontStyle = FontStyle.Bold;
+		//timerText.fontSize = 30;
+		//timerText.fontStyle = FontStyle.Bold;
 	}
     
     public Util.Timer PlayerTimer

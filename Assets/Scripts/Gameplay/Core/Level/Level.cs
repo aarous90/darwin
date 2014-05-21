@@ -112,7 +112,7 @@ public class Level : MonoBehaviour
 		// Spawn a random char for the player
 		character = sector.SpawnModule.Spawns[pick].DoSpawn(player, charTypes [Util.Randomizer.Next(charTypes.Length)]);
 
-		character.DeathEvent += new OnDeathHandler(OnCharacterDeath);
+		character.DecayEvent += new OnDecayHandler(OnCharacterDecay);
 
 		Debug.Log("Spawned character " + character.name + " in sector " + currentSectors[player.PlayerIndex].Name + " in module " + sector.SpawnModule.name + " for player " + player.PlayerName + " (" + player.PlayerIndex + ")");
 
@@ -223,7 +223,7 @@ public class Level : MonoBehaviour
 	/// Event that is called for a dying character.
 	/// </summary>
 	/// <param name="character">Character.</param>
-	static void OnCharacterDeath(ICharacter character)
+	static void OnCharacterDecay(ICharacter character)
 	{
 		Respawn(character.GetOwningPlayer());
 	}

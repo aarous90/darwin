@@ -161,6 +161,7 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 
 	public virtual void OnDeath()
 	{
+
 		this.enabled = false;
 
 		if (DeathEvent != null)
@@ -195,6 +196,7 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 		if (SpawnedEvent != null)
 			SpawnedEvent(this);
 	}
+	
 
 	////////////////////////////////////////////////////////////////////
 
@@ -211,15 +213,10 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 	////////////////////////////////////////////////////////////////////
 	
 	public event OnBoostHandler BoostEvent;
-	
 	public event OnDeathHandler DeathEvent;
-	
 	public event OnSpawnedHandler SpawnedEvent;
-	
 	public event OnDecayHandler DecayEvent;
-	
 	public event OnDamagedHandler DamagedEvent;
-	
 	public event OnRegenerateHandler RegenerateEvent;
 
 	////////////////////////////////////////////////////////////////////

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class StandOnTrigger : VolumeTrigger
@@ -50,7 +50,8 @@ public class StandOnTrigger : VolumeTrigger
 						// trigger only for characters
 						if (other.gameObject.GetComponent<ICharacter> () != null) {
 								// trigger only if the trigger collider contains the complete character collider
-								if (collider.bounds.Contains (new Vector3 (other.collider.bounds.center.x - other.collider.bounds.extents.x, collider.bounds.center.y, collider.bounds.center.z)) && collider.bounds.Contains (new Vector3 (other.collider.bounds.center.x + other.collider.bounds.extents.x, collider.bounds.center.y, collider.bounds.center.z))) {
+								if (collider.bounds.Contains (new Vector3 (other.collider.bounds.center.x - other.collider.bounds.extents.x, collider.bounds.center.y, collider.bounds.center.z)) 
+				    && collider.bounds.Contains (new Vector3 (other.collider.bounds.center.x + other.collider.bounds.extents.x, collider.bounds.center.y, collider.bounds.center.z))) {
 										TriggerAction (other);
 										old = other.transform.parent;
 										other.transform.parent = this.transform;
