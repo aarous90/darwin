@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 
 [RequireComponent (typeof(_CharacterController))]
-public class AirCharacter : ICharacter
+public class AirCharacter : ICharacter, IAirAnimations
 {
 	public AirCharacter()
 	{
@@ -12,7 +12,7 @@ public class AirCharacter : ICharacter
 
 	public void Flip(float h)
 	{
-		if (Direction != 0)
+		if (direction != 0)
 		{
 			transform.eulerAngles = (h > 0) ? Vector3.up * 90 : Vector3.up * -90;
 
@@ -21,13 +21,13 @@ public class AirCharacter : ICharacter
 
 	public void SetDirection(float x)
 	{
-		Direction = x;
+		direction = x;
 	}
 
 	void Start()
 	{
-		Controller = GetComponent<_CharacterController>();
-		Anim = GetComponent<Animator>();
+		controller = GetComponent<_CharacterController>();
+		anim = GetComponent<Animator>();
 	}
 
 	void Update()
@@ -35,32 +35,106 @@ public class AirCharacter : ICharacter
 
 	}
 
+	void OnDeathEnded ()
+	{
+		OnDecay ();
+		anim.SetBool ("Death", false);
+	}
+
 	void FixedUpdate()
 	{	
-		FlyDirection.x = Direction * HorizontalSpeed;
+		flyDirection.x = direction * HorizontalSpeed;
 
-		if (Swinging)
+		if (swinging)
 		{
 			if (Sequence)
 			{
-				FlyDirection.y = VerticalSpeed;
+				flyDirection.y = VerticalSpeed;
 			}
 			else
 			{
-				FlyDirection.y = VerticalSpeed / 2;
+				flyDirection.y = VerticalSpeed / 2;
 			}
-			Swinging = false;
+			swinging = false;
 		}
 
-		if (Math.Abs(FlyDirection.x) > MaxSpeed)
+		if (Math.Abs(flyDirection.x) > MaxSpeed)
 		{
-			FlyDirection.x = Math.Sign(FlyDirection.x) * MaxSpeed;
+			flyDirection.x = Math.Sign(flyDirection.x) * MaxSpeed;
 		}
 
-		Flip(Direction);
-		FlyDirection.y -= Gravity * Time.deltaTime;
-		Controller.Move(FlyDirection * Time.deltaTime);
+		Flip(direction);
+		flyDirection.y -= Gravity * Time.deltaTime;
+		controller.Move(flyDirection * Time.deltaTime);
 	}
+
+	////////////////////////////////////////////////////////////////////
+
+	#region IAirAnimations implementation
+
+	public void OnIdleBegin()
+	{
+
+	}
+
+	public void OnIdleEnd()
+	{
+
+	}
+
+	public void OnBoringBegin()
+	{
+
+	}
+
+	public void OnBoringEnd()
+	{
+
+	}
+
+	public void OnWalkBegin()
+	{
+
+	}
+
+	public void OnWalkEnd()
+	{
+
+	}
+
+	public void OnJumpBegin()
+	{
+
+	}
+
+	public void OnJumpEnd()
+	{
+
+	}
+
+	public void OnHitBegin()
+	{
+
+	}
+
+	public void OnHitEnd()
+	{
+		
+		anim.SetBool("Hit", false);
+	}
+
+	public void OnDeathBegin()
+	{
+
+	}
+
+	public void OnDeathEnd()
+	{
+		OnDecay();
+		anim.SetBool("Death", false);
+	}
+
+	#endregion
 
 	////////////////////////////////////////////////////////////////////
 
@@ -129,7 +203,7 @@ public class AirCharacter : ICharacter
 
 	public override void Fly(float deltaTime)
 	{
-		Swinging = true;
+		swinging = true;
 	}
 
 	public override bool CanSwim()
@@ -144,11 +218,13 @@ public class AirCharacter : ICharacter
 	
 	public override void OnDamaged(DamageContext damage)
 	{
+		anim.SetBool("Hit", true);
 		base.OnDamaged(damage);
 	}
 	
 	public override void OnDeath()
 	{
+		anim.SetBool ("Death", true);
 		base.OnDeath();
 	}
 	
@@ -187,11 +263,11 @@ public class AirCharacter : ICharacter
 
 	////////////////////////////////////////////////////////////////////
 
-	Vector2 								FlyDirection;
-	float 									Direction;
-	bool									Swinging;
-	_CharacterController                    Controller;
-	Animator  								Anim;
+	Vector2 								flyDirection;
+	float 									direction;
+	bool									swinging;
+	_CharacterController                    controller;
+	Animator  								anim;
 
 }
 

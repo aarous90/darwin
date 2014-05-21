@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 
 [RequireComponent (typeof(_CharacterController))]
-public class GroundCharacter : ICharacter
+public class GroundCharacter : ICharacter, IGroundAnimations
 {
 	public GroundCharacter()
 	{
@@ -12,7 +12,7 @@ public class GroundCharacter : ICharacter
 
 	public void Flip(float h)
 	{
-		if (Direction != 0)
+		if (direction != 0)
 		{
 			transform.eulerAngles = (h > 0) ? Vector3.up * 90 : Vector3.up * -90;
 
@@ -21,13 +21,13 @@ public class GroundCharacter : ICharacter
 
 	public void SetDirection(float x)
 	{
-		Direction = x;
+		direction = x;
 	}
 
 	void Start()
 	{
-		Controller = GetComponent<_CharacterController>();
-		Anim = GetComponent<Animator>();
+		controller = GetComponent<_CharacterController>();
+		anim = GetComponent<Animator>();
 	}
 
 	void Update()
@@ -38,87 +38,149 @@ public class GroundCharacter : ICharacter
 	void FixedUpdate()
 	{	
 
-		if (Controller.SideCollision)
+		if (controller.SideCollision)
 		{
-			MoveForce = 0;
-			MoveDirection.x = 0;
+			moveForce = 0;
+			moveDirection.x = 0;
 		}
 
 		if (CanMove())
 		{
 		
-			if (Mathf.Abs(MoveForce) < 0.1)
+			if (Mathf.Abs(moveForce) < 0.1)
 			{
-				MoveForce = 0;
+				moveForce = 0;
 			}
 
-			MaxSpeed = (Sequence) ? MaxSpeed_2 : MaxSpeed_1;
+			maxSpeed = (Sequence) ? MaxSpeed_2 : MaxSpeed_1;
 
-			CurrentSpeed = 0;
-			MoveDirection.y = 0;
-			MoveDirection.x = MoveSpeed * MoveForce;
-			MoveForce *= 1.0f - Drag;
+			currentSpeed = 0;
+			moveDirection.y = 0;
+			moveDirection.x = MoveSpeed * moveForce;
+			moveForce *= 1.0f - Drag;
 
-			CurrentSpeed = MoveDirection.x;
+			currentSpeed = moveDirection.x;
 
-			if (Jumping)
+			if (jumping)
 			{
-				Jumping = false;
-				Anim.SetTrigger("Jump");
-				MoveDirection.y = JumpSpeed;
+				jumping = false;
+				anim.SetTrigger("Jump");
+				moveDirection.y = JumpSpeed;
 			}
 
 						
-		}
-		else
+		} else
 		{
-			MoveForce = 0;
+			moveForce = 0;
 
-			if (CurrentSpeed != 0 && Math.Abs(CurrentSpeed) > MaxSpeed * 0.75f)
+			if (currentSpeed != 0 && Math.Abs(currentSpeed) > maxSpeed * 0.75f)
 			{
-				if (CurrentSpeed > 0 && Direction >= 0 || CurrentSpeed < 0 && Direction <= 0)
+				if (currentSpeed > 0 && direction >= 0 || currentSpeed < 0 && direction <= 0)
 				{			
 								
-				}
-				else
+				} else
 				{
-					CurrentSpeed = 0;
-					MoveDirection.x = 0;
+					currentSpeed = 0;
+					moveDirection.x = 0;
 				}
-			}
-			else
+			} else
 			{
-				MoveDirection.x = MoveSpeed * Direction;
+				moveDirection.x = MoveSpeed * direction;
 			}
 		}
 
 
 
-		Flip(Direction);
+		Flip(direction);
 
-		if (Math.Abs(MoveDirection.x) > 0.1 && CanMove())
+		if (Math.Abs(moveDirection.x) > 0.1 && CanMove())
 		{
-			Anim.speed = 1 + (Math.Abs(MoveDirection.x) * 0.1f);
-			Anim.SetBool("Walk", true);
-		}
-		else
+			anim.speed = 1 + (Math.Abs(moveDirection.x) * 0.1f);
+			anim.SetBool("Walk", true);
+		} else
 		{
-			Anim.SetBool("Walk", false);
-		}
-
-
-		if (Math.Abs(MoveDirection.x) > MaxSpeed)
-		{
-			MoveDirection.x = Math.Sign(MoveDirection.x) * MaxSpeed;
+			anim.SetBool("Walk", false);
 		}
 
-		MoveDirection.y -= Gravity * Time.deltaTime;
-		Controller.Move(MoveDirection * Time.deltaTime);
+
+		if (Math.Abs(moveDirection.x) > maxSpeed)
+		{
+			moveDirection.x = Math.Sign(moveDirection.x) * maxSpeed;
+		}
+
+		moveDirection.y -= Gravity * Time.deltaTime;
+		controller.Move(moveDirection * Time.deltaTime);
 	}
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-#region ICharacter implementation
+	#region IGroundAnimations implementation
+
+	public void OnIdleBegin()
+	{
+	}
+
+	public void OnIdleEnd()
+	{
+
+	}
+
+	public void OnBoringBegin()
+	{
+
+	}
+
+	public void OnBoringEnd()
+	{
+
+	}
+
+	public void OnWalkBegin()
+	{
+
+	}
+
+	public void OnWalkEnd()
+	{
+
+	}
+
+	public void OnJumpBegin()
+	{
+
+	}
+
+	public void OnJumpEnd()
+	{
+
+	}
+
+	public void OnHitBegin()
+	{
+
+	}
+
+	public void OnHitEnd()
+	{
+		anim.SetBool("Hit", false);
+	}
+
+	public void OnDeathBegin()
+	{
+
+	}
+	
+	public void OnDeathEnd()
+	{
+		OnDecay();
+		anim.SetBool("Death", false);
+    }
+
+	#endregion
+
+	////////////////////////////////////////////////////////////////////
+
+	#region ICharacter implementation
 	
 	public override CharacterType GetCharacterType()
 	{
@@ -157,11 +219,10 @@ public class GroundCharacter : ICharacter
 
 	public override bool CanMove()
 	{
-		if (Controller.Grounded)
+		if (controller.Grounded)
 		{
 			return true;
-		}
-		else
+		} else
 		{
 			return false;
 		}
@@ -172,17 +233,16 @@ public class GroundCharacter : ICharacter
 	{		
 		if (CanMove())
 		{
-			MoveForce += 1.5f * Math.Sign(Direction);
+			moveForce += 1.5f * Math.Sign(direction);
 		}
 	}
 
 	public override bool CanJump()
 	{
-		if (Controller.Grounded)
+		if (controller.Grounded)
 		{
 			return true;
-		}
-		else
+		} else
 		{
 			return false;
 		}
@@ -192,7 +252,7 @@ public class GroundCharacter : ICharacter
 	{
 		if (CanJump())
 		{
-			Jumping = true;
+			jumping = true;
 		}
 	}
 
@@ -218,11 +278,15 @@ public class GroundCharacter : ICharacter
 	
 	public override void OnDamaged(DamageContext damage)
 	{
+		anim.SetBool("Hit", true);
+
 		base.OnDamaged(damage);
 	}
 	
 	public override void OnDeath()
 	{
+		anim.SetBool("Death", true);
+
 		base.OnDeath();
 	}
 	
@@ -261,14 +325,14 @@ public class GroundCharacter : ICharacter
 
 ////////////////////////////////////////////////////////////////////
 
-	Vector2 								MoveDirection;
-	float 									MoveForce;
-	float 									MaxSpeed;
-	float 									CurrentSpeed;
-	float 									Direction;
-	bool									Jumping;
-	_CharacterController                    Controller;
-	Animator  								Anim;
+	Vector2 								moveDirection;
+	float 									moveForce;
+	float 									maxSpeed;
+	float 									currentSpeed;
+	float 									direction;
+	bool									jumping;
+	_CharacterController                    controller;
+	Animator  								anim;
 
 }
 
