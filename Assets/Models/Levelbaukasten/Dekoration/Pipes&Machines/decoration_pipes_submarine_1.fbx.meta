@@ -1,13 +1,30 @@
 fileFormatVersion: 2
-guid: 4a0a65774cda7db43b9eb487e81aaa2a
+guid: 939c5d20fb95a1c468f5dc15d6071a8c
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Plane
+    100000: Cube
+    100002: Cylinder_000
+    100004: Cylinder_002
+    100006: //RootNode
+    100008: Sphere
+    400000: Cube
+    400002: Cylinder_000
+    400004: Cylinder_002
+    400006: //RootNode
+    400008: Sphere
+    2300000: Cube
+    2300002: Cylinder_000
+    2300004: Cylinder_002
+    2300006: Sphere
+    3300000: Cube
+    3300002: Cylinder_000
+    3300004: Cylinder_002
+    3300006: Sphere
+    4300000: Cylinder_000
+    4300002: Cylinder_002
+    4300004: Cube
+    4300006: Sphere
     7400000: Default Take
     9500000: //RootNode
   materials:
