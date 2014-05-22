@@ -76,7 +76,7 @@ public class SectorData
 		}
 		else
 		{
-			newPos = -module.transform.position + outConnector.transform.position;// outConnector.transform.localPosition);
+			newPos = -module.InConnector.transform.localPosition + outConnector.transform.position;// outConnector.transform.localPosition);
 		}
 		return newPos;
 	}

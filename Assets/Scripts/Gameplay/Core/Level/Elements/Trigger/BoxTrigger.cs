@@ -54,6 +54,7 @@ public class BoxTrigger : VolumeTrigger
 		
 		TriggerForCharacter(other);
 	}
+
 	#endregion
 
 	public bool TriggerOnEnter = true;

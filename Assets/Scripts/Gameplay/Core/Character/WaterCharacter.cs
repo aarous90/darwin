@@ -35,12 +35,6 @@ public class WaterCharacter : ICharacter, IWaterAnimations
 
 	}
 
-	void OnDeathEnded()
-	{
-		OnDecay();
-		anim.SetBool("Death", false);
-	}
-
 	void FixedUpdate()
 	{
 //		if (CanSwim())
@@ -246,7 +240,7 @@ public class WaterCharacter : ICharacter, IWaterAnimations
 		base.OnSpawned();
 	}
 
-#endregion
+	#endregion
 
 	////////////////////////////////////////////////////////////////////
 	// [HideInInspector]
