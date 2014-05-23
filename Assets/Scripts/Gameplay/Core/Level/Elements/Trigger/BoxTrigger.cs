@@ -51,10 +51,47 @@ public class BoxTrigger : VolumeTrigger
 	protected override void OnTriggerStay(Collider other)
 	{
 		if (!TriggerOnStay) return;
-		
+
 		TriggerForCharacter(other);
 	}
+
 	#endregion
+
+	protected bool IsCharacter(Collider other, CharacterType type, out ICharacter character)
+	{
+		character = null;
+		
+		switch (type)
+		{
+			case CharacterType.Air:
+			{
+				if ((character = other.gameObject.GetComponent<AirCharacter>()) != null)
+				{
+					return true;
+				}
+			}
+				break;
+			case CharacterType.Ground:
+			{
+				if ((character = other.gameObject.GetComponent<GroundCharacter>()) != null)
+				{
+					return true;
+				}
+			}
+				break;
+			case CharacterType.Water:
+			{
+				if ((character = other.gameObject.GetComponent<WaterCharacter>()) != null)
+				{
+					return true;
+				}
+			}
+				break;
+			default:
+				break;
+		}
+		return false;
+	}
 
 	public bool TriggerOnEnter = true;
 

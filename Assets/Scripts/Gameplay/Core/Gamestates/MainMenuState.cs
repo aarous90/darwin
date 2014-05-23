@@ -24,6 +24,7 @@ public class MainMenuState : IGameState
 
 	public override void Enter()
 	{
+		ControllerManager.Get().MaximumUsable = 1;
 		Application.LoadLevel("MainMenu");
 	}
 
