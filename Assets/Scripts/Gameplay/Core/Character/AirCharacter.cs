@@ -35,12 +35,6 @@ public class AirCharacter : ICharacter, IAirAnimations
 
 	}
 
-	void OnDeathEnded ()
-	{
-		OnDecay ();
-		anim.SetBool ("Death", false);
-	}
-
 	void FixedUpdate()
 	{	
 		flyDirection.x = direction * HorizontalSpeed;
@@ -119,7 +113,6 @@ public class AirCharacter : ICharacter, IAirAnimations
 
 	public void OnHitEnd()
 	{
-		
 		anim.SetBool("Hit", false);
 	}
 
@@ -224,7 +217,7 @@ public class AirCharacter : ICharacter, IAirAnimations
 	
 	public override void OnDeath()
 	{
-		anim.SetBool ("Death", true);
+		anim.SetBool("Death", true);
 		base.OnDeath();
 	}
 	
@@ -253,8 +246,8 @@ public class AirCharacter : ICharacter, IAirAnimations
 	////////////////////////////////////////////////////////////////////
 
 	[HideInInspector]
-	public bool								Sequence;
-
+	public bool
+		Sequence;
 	public float							Gravity = 20;
 	public float 							MaxSpeed = 10;
 	public float 							HorizontalSpeed = 5;

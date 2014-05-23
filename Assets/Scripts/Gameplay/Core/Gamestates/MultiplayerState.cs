@@ -26,7 +26,7 @@ public class MultiplayerState : IGameState
 	{
 		//LevelManager.Get().Load();
 		//LevelManager.Get().Spawn();
-		
+		ControllerManager.Get().MaximumUsable = 2;
 		Application.LoadLevel("Multiplayer");
 	}
 

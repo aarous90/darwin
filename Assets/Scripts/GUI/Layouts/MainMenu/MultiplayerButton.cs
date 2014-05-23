@@ -4,6 +4,9 @@ public class MultiplayerButton : Button
 {
 	public override void OnSelect()
 	{
-		GamestateManager.Get().ChangeState(GamestateType.Multiplayer);
+		if (ControllerManager.Get().AvailabeJoystickCount >= 2)
+		{
+			GamestateManager.Get().ChangeState(GamestateType.Multiplayer);
+		}
 	}
 }

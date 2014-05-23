@@ -8,7 +8,7 @@ public class SectorData
 		this.modulesPerSectorCount = modulesPerSectorCount;
 		
 		spawnsUnused = new List<int>(new int[] {0, 1, 2});
-		reachedFighting = new bool[ControllerManager.Get().GetControllers().Count];
+		reachedFighting = new bool[ControllerManager.Get().MaximumUsable];
 	}
 
 	////////////////////////////////////////////////////////////////////
