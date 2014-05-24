@@ -55,10 +55,26 @@ public class PlayerManager : MonoBehaviour {
 	/// </summary>
 	void CreatePlayers()
 	{
-		foreach (var mc in ControllerManager.Get().GetControllers())
+		ControllerManager cm =  ControllerManager.Get();
+		if (cm != null)
 		{
-			players.Add(mc.Key, new Player(mc.Key, mc.Value));
+			cm.ControllerConnectedEvent += new OnControllerConnectedHandler(OnControllerConnected);
+			cm.ControllerDisconnectedEvent += new OnControllerDisconnectedHandler(OnControllerDisconnected);
 		}
+		else
+		{
+			throw new UnityException("ControllerManager is not initialized properly!");
+		}
+	}
+
+	void OnControllerConnected(int id, MovementController controller)
+	{
+		players.Add(id, new Player(id, controller));
+	}
+	
+	void OnControllerDisconnected(int id, MovementController controller)
+	{
+		players.Remove(id);
 	}
 
 	////////////////////////////////////////////////////////////////////

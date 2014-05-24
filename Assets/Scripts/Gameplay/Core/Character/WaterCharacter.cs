@@ -112,7 +112,7 @@ public class WaterCharacter : ICharacter, IWaterAnimations
 
 	public void OnHitEnd()
 	{
-
+		anim.SetBool("Hit", false);
 	}
 
 	public void OnDeathBegin()

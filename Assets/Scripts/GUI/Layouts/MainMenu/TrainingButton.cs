@@ -11,6 +11,9 @@ public class TrainingButton : Button
 
 	public override void OnSelect()
 	{
-		GamestateManager.Get().ChangeState(GamestateType.Training);
+		if (ControllerManager.Get().AvailabeJoystickCount >= 1)
+		{
+			GamestateManager.Get().ChangeState(GamestateType.Training);
+		}
 	}
 }

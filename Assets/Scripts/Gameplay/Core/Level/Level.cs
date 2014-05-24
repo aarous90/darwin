@@ -8,7 +8,7 @@ public class Level : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		int playerCount = ControllerManager.Get().GetControllers().Count;
+		int playerCount = ControllerManager.Get().MaximumUsable;
 		playersEnded = new bool[playerCount];
 		sectorNumber = new int[playerCount];
 		currentSectors = new SectorData[playerCount];
@@ -59,7 +59,7 @@ public class Level : MonoBehaviour
 			sectorNumber[i] = 0;
 		}
 
-		int maxSpawns = Mathf.Min(2, ControllerManager.Get().GetControllers().Count);
+		int maxSpawns = Mathf.Min(2, ControllerManager.Get().MaximumUsable);
 		
 		for (int i = 0; i < maxSpawns; i++)
 		{
