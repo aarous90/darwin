@@ -1,0 +1,13 @@
+Beecrocha|	Animation			Frames
+======================================
+
+	1.	Idle				0  - 25
+	2.	Boring 1			26 - 181
+	3.	Fly in			182- 207
+	4.	Fly-loop			208- 233
+	5.	Fly out			234- 259				
+	5.	Hit				260- 292
+	6.	Attack: Bite		295- 315
+	7. 	Attack: Shot		317- 326		
+	8.	Death				328- 339
+	9.	Falling-Loop		340- 350

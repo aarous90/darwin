@@ -1,0 +1,1914 @@
+fileFormatVersion: 2
+guid: 2931854154dfba142b665a8adf6a9d10
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Backbones_null
+    100002: //RootNode
+    100004: Bird_rig
+    100006: Bott_null
+    100008: Cervical_Vertbrae_00_jnt
+    100010: Cervical_Vertbrae_01_jnt
+    100012: Cervical_Vertbrae_02_jnt
+    100014: Cervical_Vertbrae_03_jnt
+    100016: Cervical_Vertbrae_04_jnt
+    100018: Cervical_Vertbrae_05_jnt
+    100020: Character
+    100022: Croc_1
+    100024: Head
+    100026: Head_con_
+    100028: IK_spline
+    100030: Jaw_Con_
+    100032: L_Humerus_jnt
+    100034: L_Phalanges_Digit_00_jnt
+    100036: L_Phalanges_Digit_01_jnt
+    100038: L_Phalanges_Digit_02_jnt
+    100040: L_Phalanges_Digit_03_jnt
+    100042: L_Radius_Ulna_jnt
+    100044: L_Wing
+    100046: L_Wing_con_
+    100048: L_Wing_goal
+    100050: L_wing_pole
+    100052: L_Wrist_jnt
+    100054: L_Wrist_null
+    100056: Lower_Beak_0000_jnt
+    100058: Lower_Beak_0100_jnt
+    100060: Lower_Beak_null
+    100062: Master_con_
+    100064: Neck
+    100066: Neck_Base_con_
+    100068: Neck_null
+    100070: Neck_Top_con_
+    100072: Pelvis
+    100074: R_Humerus_jnt_1
+    100076: R_Phalanges_Digit_00_jnt_1
+    100078: R_Phalanges_Digit_01_jnt_1
+    100080: R_Phalanges_Digit_02_jnt_1
+    100082: R_Phalanges_Digit_03_jnt_1
+    100084: R_Radius_Ulna_jnt_1
+    100086: R_Wing
+    100088: R_Wing_con__1
+    100090: R_Wing_goal_1
+    100092: R_wing_pole_1
+    100094: R_Wrist_jnt_1
+    100096: R_Wrist_null_1
+    100098: Root_con_
+    100100: Root_null_jnt
+    100102: Skin
+    100104: Skull_0000_jnt
+    100106: Skull_0100_jnt
+    100108: Skull_null
+    100110: Spine
+    100112: Spine_bott_00_jnt
+    100114: Spine_bott_01_jnt
+    100116: Spine_top_00_jnt
+    100118: Spine_top_01_jnt
+    100120: Tail
+    100122: Tail_00_jnt
+    100124: Tail_01_jnt
+    100126: Tail_02_jnt
+    100128: Tail_03_jnt
+    100130: Tail_04_jnt
+    100132: Tail_05_jnt
+    100134: Tail_Bones_null
+    100136: Top_null
+    100138: Wing
+    100140: Wing_1
+    100142: Xpression_null
+    400000: Backbones_null
+    400002: //RootNode
+    400004: Bird_rig
+    400006: Bott_null
+    400008: Cervical_Vertbrae_00_jnt
+    400010: Cervical_Vertbrae_01_jnt
+    400012: Cervical_Vertbrae_02_jnt
+    400014: Cervical_Vertbrae_03_jnt
+    400016: Cervical_Vertbrae_04_jnt
+    400018: Cervical_Vertbrae_05_jnt
+    400020: Character
+    400022: Croc_1
+    400024: Head
+    400026: Head_con_
+    400028: IK_spline
+    400030: Jaw_Con_
+    400032: L_Humerus_jnt
+    400034: L_Phalanges_Digit_00_jnt
+    400036: L_Phalanges_Digit_01_jnt
+    400038: L_Phalanges_Digit_02_jnt
+    400040: L_Phalanges_Digit_03_jnt
+    400042: L_Radius_Ulna_jnt
+    400044: L_Wing
+    400046: L_Wing_con_
+    400048: L_Wing_goal
+    400050: L_wing_pole
+    400052: L_Wrist_jnt
+    400054: L_Wrist_null
+    400056: Lower_Beak_0000_jnt
+    400058: Lower_Beak_0100_jnt
+    400060: Lower_Beak_null
+    400062: Master_con_
+    400064: Neck
+    400066: Neck_Base_con_
+    400068: Neck_null
+    400070: Neck_Top_con_
+    400072: Pelvis
+    400074: R_Humerus_jnt_1
+    400076: R_Phalanges_Digit_00_jnt_1
+    400078: R_Phalanges_Digit_01_jnt_1
+    400080: R_Phalanges_Digit_02_jnt_1
+    400082: R_Phalanges_Digit_03_jnt_1
+    400084: R_Radius_Ulna_jnt_1
+    400086: R_Wing
+    400088: R_Wing_con__1
+    400090: R_Wing_goal_1
+    400092: R_wing_pole_1
+    400094: R_Wrist_jnt_1
+    400096: R_Wrist_null_1
+    400098: Root_con_
+    400100: Root_null_jnt
+    400102: Skin
+    400104: Skull_0000_jnt
+    400106: Skull_0100_jnt
+    400108: Skull_null
+    400110: Spine
+    400112: Spine_bott_00_jnt
+    400114: Spine_bott_01_jnt
+    400116: Spine_top_00_jnt
+    400118: Spine_top_01_jnt
+    400120: Tail
+    400122: Tail_00_jnt
+    400124: Tail_01_jnt
+    400126: Tail_02_jnt
+    400128: Tail_03_jnt
+    400130: Tail_04_jnt
+    400132: Tail_05_jnt
+    400134: Tail_Bones_null
+    400136: Top_null
+    400138: Wing
+    400140: Wing_1
+    400142: Xpression_null
+    4300000: Croc_1
+    7400000: Idle
+    7400002: Boring1
+    7400004: Fly_in
+    7400006: Fly_loop
+    7400008: Fly_out
+    7400010: Hit
+    7400012: Attack_bite
+    7400014: Attack_shoot
+    7400016: Death
+    7400018: Falling_loop
+    9500000: //RootNode
+    13700000: Croc_1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character
+        weight: 1
+      - path: Character/Bird_rig
+        weight: 1
+      - path: Character/Bird_rig/Master_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_/L_Wing_goal
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1/R_Wing_goal_1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Base_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_/Jaw_Con_
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt/Tail_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Xpression_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt/Lower_Beak_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt/Skull_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/IK_spline
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt/L_Phalanges_Digit_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_wing_pole
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1/R_Phalanges_Digit_03_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_wing_pole_1
+        weight: 1
+      - path: Character/Pelvis
+        weight: 1
+      - path: Character/Pelvis/Spine
+        weight: 1
+      - path: Character/Pelvis/Spine/L_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck/Head
+        weight: 1
+      - path: Character/Pelvis/Spine/R_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Tail
+        weight: 1
+      - path: Croc_1
+        weight: 1
+      - path: Croc_1/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Boring1
+      takeName: C4D Animation Take
+      firstFrame: 26
+      lastFrame: 181
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character
+        weight: 1
+      - path: Character/Bird_rig
+        weight: 1
+      - path: Character/Bird_rig/Master_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_/L_Wing_goal
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1/R_Wing_goal_1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Base_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_/Jaw_Con_
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt/Tail_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Xpression_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt/Lower_Beak_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt/Skull_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/IK_spline
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt/L_Phalanges_Digit_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_wing_pole
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1/R_Phalanges_Digit_03_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_wing_pole_1
+        weight: 1
+      - path: Character/Pelvis
+        weight: 1
+      - path: Character/Pelvis/Spine
+        weight: 1
+      - path: Character/Pelvis/Spine/L_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck/Head
+        weight: 1
+      - path: Character/Pelvis/Spine/R_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Tail
+        weight: 1
+      - path: Croc_1
+        weight: 1
+      - path: Croc_1/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Fly_in
+      takeName: C4D Animation Take
+      firstFrame: 182
+      lastFrame: 207
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character
+        weight: 1
+      - path: Character/Bird_rig
+        weight: 1
+      - path: Character/Bird_rig/Master_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_/L_Wing_goal
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1/R_Wing_goal_1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Base_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_/Jaw_Con_
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt/Tail_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Xpression_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt/Lower_Beak_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt/Skull_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/IK_spline
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt/L_Phalanges_Digit_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_wing_pole
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1/R_Phalanges_Digit_03_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_wing_pole_1
+        weight: 1
+      - path: Character/Pelvis
+        weight: 1
+      - path: Character/Pelvis/Spine
+        weight: 1
+      - path: Character/Pelvis/Spine/L_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck/Head
+        weight: 1
+      - path: Character/Pelvis/Spine/R_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Tail
+        weight: 1
+      - path: Croc_1
+        weight: 1
+      - path: Croc_1/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Fly_loop
+      takeName: C4D Animation Take
+      firstFrame: 208
+      lastFrame: 233
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character
+        weight: 1
+      - path: Character/Bird_rig
+        weight: 1
+      - path: Character/Bird_rig/Master_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_/L_Wing_goal
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1/R_Wing_goal_1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Base_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_/Jaw_Con_
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt/Tail_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Xpression_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt/Lower_Beak_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt/Skull_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/IK_spline
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt/L_Phalanges_Digit_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_wing_pole
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1/R_Phalanges_Digit_03_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_wing_pole_1
+        weight: 1
+      - path: Character/Pelvis
+        weight: 1
+      - path: Character/Pelvis/Spine
+        weight: 1
+      - path: Character/Pelvis/Spine/L_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck/Head
+        weight: 1
+      - path: Character/Pelvis/Spine/R_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Tail
+        weight: 1
+      - path: Croc_1
+        weight: 1
+      - path: Croc_1/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Fly_out
+      takeName: C4D Animation Take
+      firstFrame: 234
+      lastFrame: 259
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character
+        weight: 1
+      - path: Character/Bird_rig
+        weight: 1
+      - path: Character/Bird_rig/Master_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_/L_Wing_goal
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1/R_Wing_goal_1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Base_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_/Jaw_Con_
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt/Tail_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Xpression_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt/Lower_Beak_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt/Skull_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/IK_spline
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt/L_Phalanges_Digit_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_wing_pole
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1/R_Phalanges_Digit_03_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_wing_pole_1
+        weight: 1
+      - path: Character/Pelvis
+        weight: 1
+      - path: Character/Pelvis/Spine
+        weight: 1
+      - path: Character/Pelvis/Spine/L_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck/Head
+        weight: 1
+      - path: Character/Pelvis/Spine/R_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Tail
+        weight: 1
+      - path: Croc_1
+        weight: 1
+      - path: Croc_1/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Hit
+      takeName: C4D Animation Take
+      firstFrame: 260
+      lastFrame: 292
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character
+        weight: 1
+      - path: Character/Bird_rig
+        weight: 1
+      - path: Character/Bird_rig/Master_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_/L_Wing_goal
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1/R_Wing_goal_1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Base_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_/Jaw_Con_
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt/Tail_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Xpression_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt/Lower_Beak_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt/Skull_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/IK_spline
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt/L_Phalanges_Digit_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_wing_pole
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1/R_Phalanges_Digit_03_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_wing_pole_1
+        weight: 1
+      - path: Character/Pelvis
+        weight: 1
+      - path: Character/Pelvis/Spine
+        weight: 1
+      - path: Character/Pelvis/Spine/L_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck/Head
+        weight: 1
+      - path: Character/Pelvis/Spine/R_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Tail
+        weight: 1
+      - path: Croc_1
+        weight: 1
+      - path: Croc_1/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attack_bite
+      takeName: C4D Animation Take
+      firstFrame: 295
+      lastFrame: 315
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character
+        weight: 1
+      - path: Character/Bird_rig
+        weight: 1
+      - path: Character/Bird_rig/Master_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_/L_Wing_goal
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1/R_Wing_goal_1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Base_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_/Jaw_Con_
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt/Tail_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Xpression_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt/Lower_Beak_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt/Skull_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/IK_spline
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt/L_Phalanges_Digit_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_wing_pole
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1/R_Phalanges_Digit_03_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_wing_pole_1
+        weight: 1
+      - path: Character/Pelvis
+        weight: 1
+      - path: Character/Pelvis/Spine
+        weight: 1
+      - path: Character/Pelvis/Spine/L_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck/Head
+        weight: 1
+      - path: Character/Pelvis/Spine/R_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Tail
+        weight: 1
+      - path: Croc_1
+        weight: 1
+      - path: Croc_1/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attack_shoot
+      takeName: C4D Animation Take
+      firstFrame: 317
+      lastFrame: 326
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character
+        weight: 1
+      - path: Character/Bird_rig
+        weight: 1
+      - path: Character/Bird_rig/Master_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_/L_Wing_goal
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1/R_Wing_goal_1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Base_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_/Jaw_Con_
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt/Tail_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Xpression_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt/Lower_Beak_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt/Skull_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/IK_spline
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt/L_Phalanges_Digit_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_wing_pole
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1/R_Phalanges_Digit_03_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_wing_pole_1
+        weight: 1
+      - path: Character/Pelvis
+        weight: 1
+      - path: Character/Pelvis/Spine
+        weight: 1
+      - path: Character/Pelvis/Spine/L_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck/Head
+        weight: 1
+      - path: Character/Pelvis/Spine/R_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Tail
+        weight: 1
+      - path: Croc_1
+        weight: 1
+      - path: Croc_1/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Death
+      takeName: C4D Animation Take
+      firstFrame: 328
+      lastFrame: 339
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character
+        weight: 1
+      - path: Character/Bird_rig
+        weight: 1
+      - path: Character/Bird_rig/Master_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_/L_Wing_goal
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1/R_Wing_goal_1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Base_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_/Jaw_Con_
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt/Tail_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Xpression_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt/Lower_Beak_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt/Skull_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/IK_spline
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt/L_Phalanges_Digit_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_wing_pole
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1/R_Phalanges_Digit_03_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_wing_pole_1
+        weight: 1
+      - path: Character/Pelvis
+        weight: 1
+      - path: Character/Pelvis/Spine
+        weight: 1
+      - path: Character/Pelvis/Spine/L_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck/Head
+        weight: 1
+      - path: Character/Pelvis/Spine/R_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Tail
+        weight: 1
+      - path: Croc_1
+        weight: 1
+      - path: Croc_1/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Falling_loop
+      takeName: C4D Animation Take
+      firstFrame: 340
+      lastFrame: 350
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character
+        weight: 1
+      - path: Character/Bird_rig
+        weight: 1
+      - path: Character/Bird_rig/Master_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/L_Wing_con_/L_Wing_goal
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/R_Wing_con__1/R_Wing_goal_1
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Base_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_
+        weight: 1
+      - path: Character/Bird_rig/Master_con_/Root_con_/Neck_Top_con_/Head_con_/Jaw_Con_
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Tail_00_jnt/Tail_01_jnt/Tail_02_jnt/Tail_03_jnt/Tail_04_jnt/Tail_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Bott_null/Spine_bott_00_jnt/Spine_bott_01_jnt/Tail_Bones_null/Xpression_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Lower_Beak_null/Lower_Beak_0000_jnt/Lower_Beak_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/Cervical_Vertbrae_00_jnt/Cervical_Vertbrae_01_jnt/Cervical_Vertbrae_02_jnt/Cervical_Vertbrae_03_jnt/Cervical_Vertbrae_04_jnt/Cervical_Vertbrae_05_jnt/Skull_null/Skull_0000_jnt/Skull_0100_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Top_null/Spine_top_00_jnt/Spine_top_01_jnt/Neck_null/IK_spline
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_Humerus_jnt/L_Radius_Ulna_jnt/L_Wrist_jnt/L_Wrist_null/L_Phalanges_Digit_00_jnt/L_Phalanges_Digit_01_jnt/L_Phalanges_Digit_02_jnt/L_Phalanges_Digit_03_jnt
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing/L_wing_pole
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_Humerus_jnt_1/R_Radius_Ulna_jnt_1/R_Wrist_jnt_1/R_Wrist_null_1/R_Phalanges_Digit_00_jnt_1/R_Phalanges_Digit_01_jnt_1/R_Phalanges_Digit_02_jnt_1/R_Phalanges_Digit_03_jnt_1
+        weight: 1
+      - path: Character/Bird_rig/Root_null_jnt/Backbones_null/Wing_1/R_wing_pole_1
+        weight: 1
+      - path: Character/Pelvis
+        weight: 1
+      - path: Character/Pelvis/Spine
+        weight: 1
+      - path: Character/Pelvis/Spine/L_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck
+        weight: 1
+      - path: Character/Pelvis/Spine/Neck/Head
+        weight: 1
+      - path: Character/Pelvis/Spine/R_Wing
+        weight: 1
+      - path: Character/Pelvis/Spine/Tail
+        weight: 1
+      - path: Croc_1
+        weight: 1
+      - path: Croc_1/Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 
