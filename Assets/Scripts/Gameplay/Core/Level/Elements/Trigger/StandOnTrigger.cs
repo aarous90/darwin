@@ -12,12 +12,12 @@ public class StandOnTrigger : VolumeTrigger
 
 	#region implemented abstract members of TriggerElement
 
-	protected override void TriggerAction(UnityEngine.Component other)
+	protected override void DoTrigger(UnityEngine.Component other)
 	{
 		foreach (AbstractAction a in Actions)
 		{
 			if (a != null)
-				a.OnTriggered(other);
+				a.OnAction(other);
 		}
 	}
 
@@ -32,7 +32,7 @@ public class StandOnTrigger : VolumeTrigger
 		// trigger only for characters
 		if (other.gameObject.GetComponent<ICharacter>() != null)
 		{
-			TriggerAction(other);
+			InvokeTrigger(other);
 			
 			oldParents.Add(other.gameObject, other.gameObject.transform.parent);
 
@@ -49,7 +49,7 @@ public class StandOnTrigger : VolumeTrigger
 		// trigger only for characters
 		if (other.gameObject.GetComponent<ICharacter>() != null)
 		{
-			TriggerAction(other);
+			InvokeTrigger(other);
 			Transform oldParent;
 			if (oldParents.TryGetValue(other.gameObject, out oldParent))
 			{

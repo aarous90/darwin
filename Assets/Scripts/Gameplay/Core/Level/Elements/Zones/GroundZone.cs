@@ -19,11 +19,11 @@ public class GroundZone : BoxTrigger
 		ICharacter character;
 		if (IsCharacter(other, CharacterType.Water, out character))
 		{
-			OtherDamage.OnTriggered(character);
+			OtherDamage.OnAction(character);
 		}
 		else if (IsCharacter(other, CharacterType.Air, out character))
 		{
-			OtherDamage.OnTriggered(character);
+			OtherDamage.OnAction(character);
 		}
 	}
 	
