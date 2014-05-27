@@ -59,6 +59,15 @@ public class AirCharacter : ICharacter, IAirAnimations
 			flyDirection.x = Math.Sign(flyDirection.x) * MaxSpeed;
 		}
 
+		if (Math.Abs(flyDirection.x) > 0.1)
+		{
+			anim.speed = 1 + (Math.Abs(flyDirection.x) * 0.1f);
+			anim.SetBool("Fly", true);
+		} else
+		{
+			anim.SetBool("Fly", false);
+		}
+
 		Flip(direction);
 		flyDirection.y -= Gravity * Time.deltaTime;
 		controller.Move(flyDirection * Time.deltaTime);

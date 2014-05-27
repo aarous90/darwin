@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 2931854154dfba142b665a8adf6a9d10
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: Backbones_null
     100002: //RootNode
@@ -148,16 +148,16 @@ ModelImporter:
     400140: Wing_1
     400142: Xpression_null
     4300000: Croc_1
-    7400000: Idle
-    7400002: Boring1
-    7400004: Fly_in
-    7400006: Fly_loop
-    7400008: Fly_out
-    7400010: Hit
-    7400012: Attack_bite
-    7400014: Attack_shoot
-    7400016: Death
-    7400018: Falling_loop
+    7400000: Beechrocha_Idle
+    7400002: Beechrocha_Boring1
+    7400004: Beechrocha_Fly_in
+    7400006: Beechrocha_Fly_loop
+    7400008: Beechrocha_Fly_out
+    7400010: Beechrocha_Hit
+    7400012: Beechrocha_Attack_bite
+    7400014: Beechrocha_Attack_shoot
+    7400016: Beechrocha_Death
+    7400018: Beechrocha_Falling_loop
     9500000: //RootNode
     13700000: Croc_1
   materials:
@@ -176,7 +176,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Beechrocha_Idle
       takeName: C4D Animation Take
       firstFrame: 0
       lastFrame: 25
@@ -185,7 +185,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -346,7 +346,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Boring1
+      name: Beechrocha_Boring1
       takeName: C4D Animation Take
       firstFrame: 26
       lastFrame: 181
@@ -516,7 +516,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Fly_in
+      name: Beechrocha_Fly_in
       takeName: C4D Animation Take
       firstFrame: 182
       lastFrame: 207
@@ -686,7 +686,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Fly_loop
+      name: Beechrocha_Fly_loop
       takeName: C4D Animation Take
       firstFrame: 208
       lastFrame: 233
@@ -695,7 +695,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -856,7 +856,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Fly_out
+      name: Beechrocha_Fly_out
       takeName: C4D Animation Take
       firstFrame: 234
       lastFrame: 259
@@ -1026,7 +1026,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Hit
+      name: Beechrocha_Hit
       takeName: C4D Animation Take
       firstFrame: 260
       lastFrame: 292
@@ -1196,7 +1196,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Attack_bite
+      name: Beechrocha_Attack_bite
       takeName: C4D Animation Take
       firstFrame: 295
       lastFrame: 315
@@ -1366,7 +1366,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Attack_shoot
+      name: Beechrocha_Attack_shoot
       takeName: C4D Animation Take
       firstFrame: 317
       lastFrame: 326
@@ -1536,7 +1536,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Death
+      name: Beechrocha_Death
       takeName: C4D Animation Take
       firstFrame: 328
       lastFrame: 339
@@ -1706,7 +1706,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Falling_loop
+      name: Beechrocha_Falling_loop
       takeName: C4D Animation Take
       firstFrame: 340
       lastFrame: 350
@@ -1911,4 +1911,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  additionalBone: 0
   userData: 
