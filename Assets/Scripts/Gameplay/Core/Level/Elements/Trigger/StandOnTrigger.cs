@@ -9,7 +9,7 @@ public class StandOnTrigger : VolumeTrigger
 		transform.Translate(0, 0, 0);
 	}
 
-#region implemented abstract members of TriggerElement
+	#region implemented abstract members of TriggerElement
 
 	protected override void TriggerAction(UnityEngine.Component other)
 	{
@@ -20,12 +20,13 @@ public class StandOnTrigger : VolumeTrigger
 		}
 	}
 
-#endregion
+	#endregion
 
-#region implemented abstract members of VolumeTrigger
+	#region implemented abstract members of VolumeTrigger
 
 	protected override void OnTriggerEnter(Collider other)
-	{		
+	{
+		if (!Active) return;
 		// trigger only for characters
 		if (other.gameObject.GetComponent<ICharacter>() != null)
 		{
@@ -37,6 +38,7 @@ public class StandOnTrigger : VolumeTrigger
 
 	protected override void OnTriggerExit(Collider other)
 	{
+		if (!Active) return;
 		// trigger only for characters
 		if (other.gameObject.GetComponent<ICharacter>() != null)
 		{

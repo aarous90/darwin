@@ -89,8 +89,6 @@ public class MovementAction : AbstractAction
 
 	public bool Loop;
 
-	public bool Active;
-
 	public GameObject[] Waypoints;
 
 	int currentWaypointIndex = 0;

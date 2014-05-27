@@ -21,4 +21,6 @@ public abstract class AbstractTrigger : IElement
 	public AbstractAction[] Actions;
 
 	public bool Active = true;
+
+	public bool TriggerOnce = false;
 }

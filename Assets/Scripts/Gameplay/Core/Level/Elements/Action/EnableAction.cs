@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnableAction : MonoBehaviour {
+public class EnableAction : AbstractAction
+{
+	#region implemented abstract members of AbstractAction
 
-	// Use this for initialization
-	void Start () {
-	
+	protected override void DoAction(Component other)
+	{
+		if (ActionToEnable != null) 
+		{
+			ActionToEnable.Active = true;
+		}
+
+		if (TriggerToEnable != null) 
+		{
+			TriggerToEnable.Active = true;
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+	#endregion
+
+	public AbstractAction ActionToEnable;
+
+	public AbstractTrigger TriggerToEnable;
 }

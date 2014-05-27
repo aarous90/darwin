@@ -43,7 +43,9 @@ public class DamageTrigger : AbstractTrigger, IDamageable
 	#region implemented abstract members of TriggerElement
 
 	protected override void TriggerAction(UnityEngine.Component other)
-	{		
+	{
+		if (!Active) return;
+
 		foreach (AbstractAction a in Actions)
 		{
 			if (a != null)

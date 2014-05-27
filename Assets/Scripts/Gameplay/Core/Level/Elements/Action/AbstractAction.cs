@@ -22,4 +22,6 @@ public abstract class AbstractAction : IElement
 	}
 
 	protected abstract void DoAction(UnityEngine.Component other);
+	
+	public bool Active = true;
 }
