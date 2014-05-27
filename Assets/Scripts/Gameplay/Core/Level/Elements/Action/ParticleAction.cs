@@ -21,7 +21,12 @@ public class ParticleAction : AbstractAction
 			for (int i = 0; i < EffectsToPlay.Length; i++)
 			{
 				Object instance;
-				instantiatedObjects.AddLast(instance = Object.Instantiate(EffectsToPlay[i], this.gameObject.transform.position, this.gameObject.transform.rotation));
+
+				instantiatedObjects.AddLast(instance = Object.Instantiate(
+					EffectsToPlay [i], 
+					this.gameObject.transform.position, 
+					this.gameObject.transform.rotation));
+
 				if (Lifetime > 0)
 				{
 					Object.Destroy(instance, Lifetime);
@@ -33,9 +38,7 @@ public class ParticleAction : AbstractAction
 	#endregion
 
 	public ParticleEffect[] EffectsToPlay;
-
 	public float Lifetime = 0;
-
 	private LinkedList<Object> instantiatedObjects = new LinkedList<Object>();
 }
 

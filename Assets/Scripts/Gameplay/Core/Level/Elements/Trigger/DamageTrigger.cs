@@ -24,7 +24,7 @@ public class DamageTrigger : AbstractTrigger, IDamageable
 
 		if (currentDamage >= TriggerDamage)
 		{
-			TriggerAction(this);
+			InvokeTrigger(this);
 		}
 	}
 
@@ -42,14 +42,14 @@ public class DamageTrigger : AbstractTrigger, IDamageable
 
 	#region implemented abstract members of TriggerElement
 
-	protected override void TriggerAction(UnityEngine.Component other)
+	protected override void DoTrigger(UnityEngine.Component other)
 	{
 		if (!Active) return;
 
 		foreach (AbstractAction a in Actions)
 		{
 			if (a != null)
-				a.OnTriggered(other);
+				a.OnAction(other);
 		}
 	}
 

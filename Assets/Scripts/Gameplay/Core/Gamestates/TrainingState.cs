@@ -24,7 +24,6 @@ public class TrainingState : IGameState
 
 	public override void Enter()
 	{
-		ControllerManager.Get().MaximumUsable = 1;
 		Application.LoadLevel("Training");
 	}
 

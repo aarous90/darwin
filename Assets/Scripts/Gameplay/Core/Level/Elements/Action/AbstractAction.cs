@@ -16,7 +16,7 @@ public abstract class AbstractAction : IElement
 	
 	}
 
-	public void OnTriggered(UnityEngine.Component other)
+	public void OnAction(UnityEngine.Component other)
 	{
 		DoAction(other);
 	}

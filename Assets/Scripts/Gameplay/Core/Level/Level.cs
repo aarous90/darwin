@@ -88,7 +88,17 @@ public class Level : MonoBehaviour
 	{
 		// Pick a random spawn point (or what is remaining)
 		// TODO: this is unfair, because the second player cannot pick out of 3 spawns
-		int pick = sector.SpawnsUnused[Util.Randomizer.Next(sector.SpawnsUnused.Count)];
+		int pick;
+		int pref = LevelSettings.PreferedLayer[player.PlayerIndex];
+		if (pref > -1 && pref < 3)
+		{
+			pick = pref;
+		}
+		else
+		{
+			pick = sector.SpawnsUnused[Util.Randomizer.Next(sector.SpawnsUnused.Count)];
+		}
+
 		ICharacter[] charTypes;
 		
 		// get the available characters
@@ -295,6 +305,14 @@ public class Level : MonoBehaviour
 		get
 		{
 			return currentLevel;
+		}
+	}
+
+	public static SettingsManager.LevelSettings LevelSettings
+	{
+		get 
+		{
+			return SettingsManager.Get().CurrentLevelSetings;
 		}
 	}
 

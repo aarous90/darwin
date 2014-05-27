@@ -7,6 +7,8 @@ public class LevelGenerator : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		sectorCount = SettingsManager.Get().CurrentLevelSetings.SectorCount;
+		modulesPerSectorCount = SettingsManager.Get().CurrentLevelSetings.ModuleCount;
 	}
 	
 	// Update is called once per frame
@@ -26,13 +28,13 @@ public class LevelGenerator : MonoBehaviour
 
 		LevelData data = new LevelData();
 		List<Sector> sectorBowl = new List<Sector>(sectors);
-		int maxSector = Mathf.Min(sectors.Length, SectorCount);
+		int maxSector = Mathf.Min(sectors.Length, sectorCount);
 		Sector s = null;
 
 		for (int i = 0; i < maxSector; i++)
 		{
 			s = sectorBowl[Util.Randomizer.Next(sectorBowl.Count)];
-			SectorData sd = new SectorData(ModulesPerSectorCount);
+			SectorData sd = new SectorData(modulesPerSectorCount);
 			sd.Generate(s);
 			data.Sectors.Add(sd);
 			sectorBowl.Remove(s);
@@ -71,8 +73,8 @@ public class LevelGenerator : MonoBehaviour
 
 	////////////////////////////////////////////////////////////////////
 
-	public int SectorCount = 2;
-	public int ModulesPerSectorCount = 5;
+	private int sectorCount;
+	private int modulesPerSectorCount;
 
 	////////////////////////////////////////////////////////////////////
 

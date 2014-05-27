@@ -15,18 +15,18 @@ public class BoxTrigger : VolumeTrigger
 		// trigger only for characters
 		if ((character = other.gameObject.GetComponent<ICharacter>()) != null)
 		{
-			TriggerAction(character);
+			InvokeTrigger(character);
 		}
 	}
 
 	#region implemented abstract members of TriggerElement
 
-	protected override void TriggerAction(UnityEngine.Component other)
+	protected override void DoTrigger(UnityEngine.Component other)
 	{
 		foreach (AbstractAction a in Actions)
 		{
 			if (a != null)
-				a.OnTriggered(other);
+				a.OnAction(other);
 		}
 	}
 
