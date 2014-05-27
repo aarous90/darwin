@@ -37,6 +37,7 @@ public class GroundCharacter : ICharacter, IGroundAnimations
 
 	void FixedUpdate()
 	{	
+		if (IsDead) return;
 
 		if (controller.SideCollision)
 		{
@@ -69,7 +70,8 @@ public class GroundCharacter : ICharacter, IGroundAnimations
 			}
 
 						
-		} else
+		} 
+		else
 		{
 			moveForce = 0;
 
@@ -167,7 +169,7 @@ public class GroundCharacter : ICharacter, IGroundAnimations
 
 	public void OnDeathBegin()
 	{
-
+		anim.SetBool("Hit", false);
 	}
 	
 	public void OnDeathEnd()
@@ -219,7 +221,7 @@ public class GroundCharacter : ICharacter, IGroundAnimations
 
 	public override bool CanMove()
 	{
-		if (controller.Grounded)
+		if (controller.Grounded && !IsDead)
 		{
 			return true;
 		} else
@@ -239,7 +241,7 @@ public class GroundCharacter : ICharacter, IGroundAnimations
 
 	public override bool CanJump()
 	{
-		if (controller.Grounded)
+		if (controller.Grounded && !IsDead)
 		{
 			return true;
 		} else
@@ -278,6 +280,8 @@ public class GroundCharacter : ICharacter, IGroundAnimations
 	
 	public override void OnDamaged(DamageContext damage)
 	{
+		if (IsDead) return;
+
 		anim.SetBool("Hit", true);
 
 		base.OnDamaged(damage);
@@ -285,6 +289,8 @@ public class GroundCharacter : ICharacter, IGroundAnimations
 	
 	public override void OnDeath()
 	{
+		if (IsDead) return;
+
 		anim.SetBool("Death", true);
 
 		base.OnDeath();
@@ -302,6 +308,8 @@ public class GroundCharacter : ICharacter, IGroundAnimations
 	
 	public override void OnDecay()
 	{
+		anim.SetBool("Death", false);
+		anim.SetBool("Hit", false);
 		base.OnDecay();
 	}
 	

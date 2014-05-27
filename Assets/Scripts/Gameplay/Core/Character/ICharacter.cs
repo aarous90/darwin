@@ -147,6 +147,8 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 
 	public virtual void OnDamaged(DamageContext damage)
 	{
+		if (IsDead) return;
+
 		live -= damage.RollDamage();
 		if (live <= 0)
 		{
@@ -161,8 +163,11 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 
 	public virtual void OnDeath()
 	{
+		if (IsDead) return;
 
-		this.enabled = false;
+		Debug.Log(this + ", owned by player " + GetOwningPlayer().PlayerIndex + " died!");
+
+		isDead = true;
 
 		if (DeathEvent != null)
 			DeathEvent(this);
@@ -170,18 +175,27 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 
 	public virtual void OnDecay()
 	{
+		if (isDecayed) return;
+		if (!isDead) throw new UnityException("Character is not dead? There was an error, sorry :(");
+		
+		Debug.Log(this + ", owned by player " + GetOwningPlayer().PlayerIndex + " finally decayed!");
+
+		isDecayed = true;
+
 		if (DecayEvent != null)
 			DecayEvent(this);
 	}
 
 	public virtual void OnRegenerate()
 	{
+		if (IsDead) return;
 		if (RegenerateEvent != null)
 			RegenerateEvent(this);
 	}
 
 	public virtual void OnBoost()
 	{
+		if (IsDead) return;
 		boost = 0;
 		if (BoostEvent != null)
 			BoostEvent(this);
@@ -191,12 +205,30 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 	{
 		live = MaxLive;
 		boost = 0;
-		this.enabled = true;
+		isDead = false;
+		isDecayed = false;
+		
+		Debug.Log(this + ", owned by player " + GetOwningPlayer().PlayerIndex + " was spawned!");
 
 		if (SpawnedEvent != null)
 			SpawnedEvent(this);
 	}
-	
+
+	public bool IsDead
+	{
+		get
+		{
+			return isDead && live <= 0;
+		}
+	}	
+
+	public bool IsDecayed
+	{
+		get
+		{
+			return isDecayed && IsDead;
+		}
+	}
 
 	////////////////////////////////////////////////////////////////////
 
@@ -228,6 +260,8 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 	 
 	float live;
 	float boost;
+	bool isDead;
+	bool isDecayed;
 
 
 }

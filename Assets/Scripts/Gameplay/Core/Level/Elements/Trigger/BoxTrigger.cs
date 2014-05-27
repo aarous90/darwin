@@ -36,21 +36,21 @@ public class BoxTrigger : VolumeTrigger
 	
 	protected override void OnTriggerEnter(Collider other)
 	{
-		if (!TriggerOnEnter) return;
+		if (!TriggerOnEnter || !Active) return;
 
 		TriggerForCharacter(other);
 	}
 	
 	protected override void OnTriggerExit(Collider other)
 	{
-		if (!TriggerOnExit) return;
+		if (!TriggerOnExit || !Active) return;
 		
 		TriggerForCharacter(other);
 	}
 	
 	protected override void OnTriggerStay(Collider other)
 	{
-		if (!TriggerOnStay) return;
+		if (!TriggerOnStay || !Active) return;
 
 		TriggerForCharacter(other);
 	}

@@ -24,7 +24,8 @@ public class DamageAction : AbstractAction
 
 			DamageContext damage = new DamageContext();
 			damage.Attack = Attack;
-			damage.Enemy = null;
+			damage.Attacker = null;
+			damage.Enemy = damageable;
 			damage.IsMeele = true;
 
 			damageable.OnDamaged(damage);

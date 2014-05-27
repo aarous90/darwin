@@ -4,14 +4,11 @@ using UnityEngine;
 
 public struct DamageContext
 {
+	public IFightable Attacker;
 	public IDamageable Enemy;
-
 	public AttackContext Attack;
-
 	public bool IsMeele;
-
 	public bool IsRanged;
-
 	public bool IsSpecial;
 
 	/// <summary>
@@ -34,6 +31,10 @@ public struct DamageContext
 		{
 			randomDamage += Util.Randomizer.Next(Attack.DiceSides);
 		}
+
+		Debug.Log(Attacker + " did attack (" + Attack.DiceCount + "d" + Attack.DiceSides + " + " + Attack.BaseDamage 
+		          + ") to " + Enemy + " with " + (Attack.BaseDamage + randomDamage) + " damage!");
+
 		return Attack.BaseDamage + randomDamage;
 	}
 }
