@@ -212,12 +212,16 @@ public class WaterCharacter : ICharacter, IWaterAnimations
 
 	public override void OnDamaged(DamageContext damage)
 	{
+		if (IsDead) return;
+
 		anim.SetBool("Hit", true);
 		base.OnDamaged(damage);
 	}
 
 	public override void OnDeath()
 	{
+		if (IsDead) return;
+
 		anim.SetBool("Death", true);
 		base.OnDeath();
 	}
