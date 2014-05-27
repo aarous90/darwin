@@ -9,8 +9,10 @@ public class MovementAction : AbstractAction
 		{
 			throw new UnityException("There must be at least two waypoints!");
 		}
+
 		currentWaypointIndex = 0;
 		lastWaypointIndex = Waypoints.Length - 1;
+		currentDuration = Duration;
 
 		gameObject.transform.position = Waypoints[currentWaypointIndex].transform.position;
 	}
@@ -24,20 +26,22 @@ public class MovementAction : AbstractAction
 			    && currentWaypointIndex < Waypoints.Length 
 			    && Waypoints[currentWaypointIndex] != null)
 			{
-				float t = currentDuration / Duration;
-				Vector3 next = (1-t) * Waypoints[lastWaypointIndex].transform.position + t * Waypoints[currentWaypointIndex].transform.position;
-				Vector3 fullPath = Waypoints[currentWaypointIndex].transform.position - Waypoints[lastWaypointIndex].transform.position;
-				Vector3 currentPath = gameObject.transform.position - Waypoints[lastWaypointIndex].transform.position;
-				var minLeft = 0.01f;
-				if (1 - (Util.Length(fullPath) / Util.Length(currentPath)) > minLeft)
+//				Vector3 fullPath = Waypoints[currentWaypointIndex].transform.position - Waypoints[lastWaypointIndex].transform.position;
+//				Vector3 currentPath = gameObject.transform.position - Waypoints[lastWaypointIndex].transform.position;
+//				var minLeft = 0.01f;
+				if (currentDuration > Time.deltaTime)
 				{
-					direction = currentPath.normalized;
-					gameObject.transform.Translate( direction * Time.deltaTime * Speed );
+					currentDuration -= Time.deltaTime;
+					float t = currentDuration / Duration;
+					Vector3 next = (t) * Waypoints[lastWaypointIndex].transform.position + (1-t) * Waypoints[currentWaypointIndex].transform.position;
+					gameObject.transform.position = next;
 				}
 				else
 				{
 					lastWaypointIndex = currentWaypointIndex;
 					currentWaypointIndex++;
+					
+					currentDuration = Duration;
 
 					if (Loop)
 					{
