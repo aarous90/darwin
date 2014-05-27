@@ -4,7 +4,8 @@ using System.Collections.Generic;
 /// <summary>
 /// The Player manager takes care of the players/controllers registered to a game session.
 /// </summary>
-public class PlayerManager : MonoBehaviour {
+public class PlayerManager : MonoBehaviour
+{
 
 	public static PlayerManager Get()
 	{
@@ -24,7 +25,7 @@ public class PlayerManager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update() 
+	void Update()
 	{
 		
 	}
@@ -33,7 +34,7 @@ public class PlayerManager : MonoBehaviour {
 
 	public uint GetPlayerCount()
 	{
-		return (uint) players.Count;
+		return (uint)players.Count;
 	}
 
 	/// <summary>
@@ -45,7 +46,7 @@ public class PlayerManager : MonoBehaviour {
 	{
 		if (index >= 0 && players.ContainsKey(index))
 		{
-			return players[index];
+			return players [index];
 		}
 		return null;
 	}
@@ -55,13 +56,12 @@ public class PlayerManager : MonoBehaviour {
 	/// </summary>
 	void CreatePlayers()
 	{
-		ControllerManager cm =  ControllerManager.Get();
+		ControllerManager cm = ControllerManager.Get();
 		if (cm != null)
 		{
 			cm.ControllerConnectedEvent += new OnControllerConnectedHandler(OnControllerConnected);
 			cm.ControllerDisconnectedEvent += new OnControllerDisconnectedHandler(OnControllerDisconnected);
-		}
-		else
+		} else
 		{
 			throw new UnityException("ControllerManager is not initialized properly!");
 		}

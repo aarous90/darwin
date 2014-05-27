@@ -13,7 +13,7 @@ public class TrainingButton : Button
 	{
 		if (ControllerManager.Get().AvailabeJoystickCount >= 1)
 		{
-			GamestateManager.Get().ChangeState(GamestateType.Training);
+			GamestateManager.Get().ChangeState(GamestateType.TrainingSettings);
 		}
 	}
 }
