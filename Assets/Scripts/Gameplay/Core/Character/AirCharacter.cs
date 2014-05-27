@@ -37,7 +37,8 @@ public class AirCharacter : ICharacter, IAirAnimations
 
 	void FixedUpdate()
 	{	
-		if (IsDead) return;
+		if (IsDead)
+			return;
 
 		flyDirection.x = direction * HorizontalSpeed;
 
@@ -63,7 +64,8 @@ public class AirCharacter : ICharacter, IAirAnimations
 		{
 			anim.speed = 1 + (Math.Abs(flyDirection.x) * 0.1f);
 			anim.SetBool("Fly", true);
-		} else
+		}
+		else
 		{
 			anim.SetBool("Fly", false);
 		}
@@ -97,24 +99,34 @@ public class AirCharacter : ICharacter, IAirAnimations
 
 	}
 
-	public void OnWalkBegin()
+	public void OnFlyBegin()
 	{
 
 	}
 
-	public void OnWalkEnd()
+	public void OnFlyEnd()
 	{
 
 	}
 
-	public void OnJumpBegin()
+	public void OnMeleeBegin()
 	{
-
+		
+	}
+	
+	public void OnMeleeEnd()
+	{
+		
 	}
 
-	public void OnJumpEnd()
+	public void OnRangedBegin()
 	{
-
+		
+	}
+	
+	public void OnRangedEnd()
+	{
+		
 	}
 
 	public void OnHitBegin()
@@ -136,6 +148,16 @@ public class AirCharacter : ICharacter, IAirAnimations
 	{
 		OnDecay();
 		anim.SetBool("Death", false);
+	}
+
+	public void OnFallingBegin()
+	{
+		
+	}
+	
+	public void OnFallingEnd()
+	{
+		
 	}
 
 	#endregion

@@ -11,13 +11,17 @@ public interface IAirAnimations
 	
 	void OnBoringEnd();
 	
-	void OnWalkBegin();
+	void OnFlyBegin();
 	
-	void OnWalkEnd();
+	void OnFlyEnd();
+
+	void OnMeleeBegin();
 	
-	void OnJumpBegin();
+	void OnMeleeEnd();
+
+	void OnRangedBegin();
 	
-	void OnJumpEnd();
+	void OnRangedEnd();
 	
 	void OnHitBegin();
 	
@@ -26,5 +30,9 @@ public interface IAirAnimations
 	void OnDeathBegin();
 	
 	void OnDeathEnd();
+
+	void OnFallingBegin();
+	
+	void OnFallingEnd();
 }
 
