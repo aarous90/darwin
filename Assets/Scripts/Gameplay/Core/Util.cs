@@ -7,6 +7,9 @@ public class Util
 	{
 	}
 
+	public static Vector2 OnePlayersPositions = new Vector2(0.5f, 0.5f);
+	public static Vector2[] TwoPlayersPositions = { new Vector2(0.25f, 0.5f), new Vector2(0.75f, 0.5f) };
+
 	public static System.Random Randomizer = new System.Random((int) (DateTime.Now.Ticks));
 
 	public static System.Random RandomFromSeed(int seed)
@@ -14,6 +17,10 @@ public class Util
 		return new System.Random(seed);
 	}
 
+	public static float Length(Vector3 v)
+	{
+		return Mathf.Sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+	}
 
 	public class Timer
 	{

@@ -24,13 +24,14 @@ public class MainMenuState : IGameState
 
 	public override void Enter()
 	{
+		ControllerManager.Get().MaximumUsable = 1;
 		Application.LoadLevel("MainMenu");
 	}
 
 	public override void Leave()
 	{
 		GUIManager.Get().ClearGUI();
-
+		CameraManager.Get().Clear();
 	}
 
 	public override void Reset()

@@ -18,21 +18,18 @@ public class FallingAction : AbstractAction
 
 	#region implemented abstract members of ActionElement
 
-	protected override void DoAction(Collider other)
+	protected override void DoAction(UnityEngine.Component other)
 	{
-		GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
-
-		foreach (GameObject obj in objects)
+		//GameObject go = GameObject.Find(name);
+		gameObject.rigidbody.useGravity = true;
+		if (FadeTime > 0)
 		{
-			if (obj != null && obj.GetComponent<FallingAction>() == null)
-			{
-				obj.rigidbody.useGravity = true;
-			}
+			Destroy(gameObject, FadeTime);
 		}
 	}
 
 	#endregion
 
-	public float FadeTime = 5f;
+	public float FadeTime = 0;
 }
  

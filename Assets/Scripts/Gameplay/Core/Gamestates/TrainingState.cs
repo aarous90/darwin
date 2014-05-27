@@ -24,12 +24,14 @@ public class TrainingState : IGameState
 
 	public override void Enter()
 	{
+		ControllerManager.Get().MaximumUsable = 1;
 		Application.LoadLevel("Training");
 	}
 
 	public override void Leave()
 	{
 		GUIManager.Get().ClearGUI();
+		CameraManager.Get().Clear();
 	}
 
 	public override void Reset()

@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 
 [RequireComponent (typeof(_CharacterController))]
-public class WaterCharacter : ICharacter
+public class WaterCharacter : ICharacter, IWaterAnimations
 {
 	public WaterCharacter()
 	{
@@ -21,13 +21,13 @@ public class WaterCharacter : ICharacter
 
 	public void SetDirection(Vector2 SwimDir)
 	{
-		SwimDirection = SwimDir;
+		swimDirection = SwimDir;
 	}
 
 	void Start()
 	{
-		Controller = GetComponent<_CharacterController>();
-		Anim = GetComponent<Animator>();
+		controller = GetComponent<_CharacterController>();
+		anim = GetComponent<Animator>();
 	}
 
 	void Update()
@@ -36,65 +36,137 @@ public class WaterCharacter : ICharacter
 	}
 
 	void FixedUpdate()
-	{	
-
+	{
+		if (IsDead) return;
 
 //		if (CanSwim())
 //		{
-		MaxSpeed = (Sequence) ? MaxSpeed_2 : MaxSpeed_1;
-		SwimDirection.x = MoveSpeed * HorizontalForce;
-		SwimDirection.y = MoveSpeed * VerticalForce;
-		VerticalForce *= 1.0f - Drag;
-		HorizontalForce *= 1.0f - Drag;
-		SwimDirection *= 0.9f;
+		maxSpeed = (Sequence) ? MaxSpeed_2 : MaxSpeed_1;
+		swimDirection.x = MoveSpeed * horizontalForce;
+		swimDirection.y = MoveSpeed * verticalForce;
+		verticalForce *= 1.0f - Drag;
+		horizontalForce *= 1.0f - Drag;
+		swimDirection *= 0.9f;
 //			}
 
-		Flip(SwimDirection.x);
+		Flip(swimDirection.x);
 
-		if (Math.Abs(SwimDirection.x) > MaxSpeed)
+		if (Math.Abs(swimDirection.x) > maxSpeed)
 		{
-			SwimDirection.x = Math.Sign(SwimDirection.x) * MaxSpeed;
+			swimDirection.x = Math.Sign(swimDirection.x) * maxSpeed;
 		}
-		if (Math.Abs(SwimDirection.y) > MaxSpeed)
+		if (Math.Abs(swimDirection.y) > maxSpeed)
 		{
-			SwimDirection.y = Math.Sign(SwimDirection.y) * MaxSpeed;
+			swimDirection.y = Math.Sign(swimDirection.y) * maxSpeed;
 		}
 
-		Controller.Move(SwimDirection * Time.deltaTime);
+		controller.Move(swimDirection * Time.deltaTime);
 	}
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-#region ICharacter implementation
+	#region IWaterAnimations implementation
 
-	public override bool UseSpecial(AttackContext context)
+	public void OnIdleBegin()
+	{
+
+	}
+
+	public void OnIdleEnd()
+	{
+
+	}
+
+	public void OnBoringBegin()
+	{
+
+	}
+
+	public void OnBoringEnd()
+	{
+
+	}
+
+	public void OnWalkBegin()
+	{
+
+	}
+
+	public void OnWalkEnd()
+	{
+
+	}
+
+	public void OnJumpBegin()
+	{
+
+	}
+
+	public void OnJumpEnd()
+	{
+
+	}
+
+	public void OnHitBegin()
+	{
+
+	}
+
+	public void OnHitEnd()
+	{
+		anim.SetBool("Hit", false);
+	}
+
+	public void OnDeathBegin()
+	{
+		anim.SetBool("Hit", false);
+	}
+
+	public void OnDeathEnd()
+	{
+		OnDecay();
+		anim.SetBool("Death", false);
+	}
+
+	#endregion
+
+	////////////////////////////////////////////////////////////////////
+
+	#region ICharacter implementation
+
+	public override CharacterType GetCharacterType()
+	{
+		return CharacterType.Water;
+	}
+
+	public override bool UseSpecial(SpecialAttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
-
-	public override bool UseMelee(AttackContext context)
+	
+	public override bool UseMelee(MeleeAttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
-
-	public override bool UseRanged(AttackContext context)
+	
+	public override bool UseRanged(RangedAttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
-
+	
 	public override void DoMeleeDamage(DamageContext context)
 	{
-		throw new System.NotImplementedException();
+		base.DoMeleeDamage(context);
 	}
-
+	
 	public override void DoRangedDamage(DamageContext context)
 	{
-		throw new System.NotImplementedException();
+		base.DoRangedDamage(context);
 	}
-
+	
 	public override void DoSpecialDamage(DamageContext context)
 	{
-		throw new System.NotImplementedException();
+		base.DoSpecialDamage(context);
 	}
 
 	public override bool CanMove()
@@ -134,50 +206,64 @@ public class WaterCharacter : ICharacter
 
 	public override void Swim(float deltaTime)
 	{
-		HorizontalForce += 0.5f * MoveSpeed * Math.Sign(SwimDirection.x);
-		VerticalForce += 0.5f * MoveSpeed * Math.Sign(SwimDirection.y) * -1;
+		horizontalForce += 0.5f * MoveSpeed * Math.Sign(swimDirection.x);
+		verticalForce += 0.5f * MoveSpeed * Math.Sign(swimDirection.y) * -1;
 	}
 
-	public override void OnDamaged()
+	public override void OnDamaged(DamageContext damage)
 	{
-		throw new NotImplementedException();
+		anim.SetBool("Hit", true);
+		base.OnDamaged(damage);
 	}
 
 	public override void OnDeath()
 	{
-		throw new NotImplementedException();
+		anim.SetBool("Death", true);
+		base.OnDeath();
 	}
 
 	public override void OnRegenerate()
 	{
-		throw new NotImplementedException();
+		base.OnRegenerate();
 	}
 
 	public override void OnBoost()
 	{
-		throw new NotImplementedException();
+		base.OnBoost();
+	}
+	
+	public override void OnDecay()
+	{
+		anim.SetBool("Death", false);
+		anim.SetBool("Hit", false);
+		base.OnDecay();
+	}
+	
+	public override void OnSpawned()
+	{
+		base.OnSpawned();
 	}
 
-#endregion
+	#endregion
 
-////////////////////////////////////////////////////////////////////
-// [HideInInspector]
+	////////////////////////////////////////////////////////////////////
+	// [HideInInspector]
 	public bool								Sequence;
 
-//  public float							Gravity = 20;
+	//  public float							Gravity = 20;
 	public float 							MaxSpeed_1 = 5;
 	public float 							MaxSpeed_2 = 10;
 	public float 							MoveSpeed = 5;
 	public float 							Drag = 0.1f;
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-	float									HorizontalForce;
-	float									VerticalForce;
-	Vector2 								SwimDirection;
-	float 									MaxSpeed;
-	_CharacterController                    Controller;
-	Animator  								Anim;
+	float									horizontalForce;
+	float									verticalForce;
+	Vector2 								swimDirection;
+	float 									maxSpeed;
+	_CharacterController                    controller;
+	Animator  								anim;
 
 }
 

@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 
 [RequireComponent (typeof(_CharacterController))]
-public class AirCharacter : ICharacter
+public class AirCharacter : ICharacter, IAirAnimations
 {
 	public AirCharacter()
 	{
@@ -12,7 +12,7 @@ public class AirCharacter : ICharacter
 
 	public void Flip(float h)
 	{
-		if (Direction != 0)
+		if (direction != 0)
 		{
 			transform.eulerAngles = (h > 0) ? Vector3.up * 90 : Vector3.up * -90;
 
@@ -21,13 +21,13 @@ public class AirCharacter : ICharacter
 
 	public void SetDirection(float x)
 	{
-		Direction = x;
+		direction = x;
 	}
 
 	void Start()
 	{
-		Controller = GetComponent<_CharacterController>();
-		Anim = GetComponent<Animator>();
+		controller = GetComponent<_CharacterController>();
+		anim = GetComponent<Animator>();
 	}
 
 	void Update()
@@ -37,63 +37,137 @@ public class AirCharacter : ICharacter
 
 	void FixedUpdate()
 	{	
-		FlyDirection.x = Direction * HorizontalSpeed;
+		if (IsDead) return;
 
-		if (Swinging)
+		flyDirection.x = direction * HorizontalSpeed;
+
+		if (swinging)
 		{
 			if (Sequence)
 			{
-				FlyDirection.y = VerticalSpeed;
+				flyDirection.y = VerticalSpeed;
 			}
 			else
 			{
-				FlyDirection.y = VerticalSpeed / 2;
+				flyDirection.y = VerticalSpeed / 2;
 			}
-			Swinging = false;
+			swinging = false;
 		}
 
-		if (Math.Abs(FlyDirection.x) > MaxSpeed)
+		if (Math.Abs(flyDirection.x) > MaxSpeed)
 		{
-			FlyDirection.x = Math.Sign(FlyDirection.x) * MaxSpeed;
+			flyDirection.x = Math.Sign(flyDirection.x) * MaxSpeed;
 		}
 
-		Flip(Direction);
-		FlyDirection.y -= Gravity * Time.deltaTime;
-		Controller.Move(FlyDirection * Time.deltaTime);
+		Flip(direction);
+		flyDirection.y -= Gravity * Time.deltaTime;
+		controller.Move(flyDirection * Time.deltaTime);
 	}
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-#region ICharacter implementation
+	#region IAirAnimations implementation
 
-	public override bool UseSpecial(AttackContext context)
+	public void OnIdleBegin()
+	{
+
+	}
+
+	public void OnIdleEnd()
+	{
+
+	}
+
+	public void OnBoringBegin()
+	{
+
+	}
+
+	public void OnBoringEnd()
+	{
+
+	}
+
+	public void OnWalkBegin()
+	{
+
+	}
+
+	public void OnWalkEnd()
+	{
+
+	}
+
+	public void OnJumpBegin()
+	{
+
+	}
+
+	public void OnJumpEnd()
+	{
+
+	}
+
+	public void OnHitBegin()
+	{
+
+	}
+
+	public void OnHitEnd()
+	{
+		anim.SetBool("Hit", false);
+	}
+
+	public void OnDeathBegin()
+	{
+		anim.SetBool("Hit", false);
+	}
+
+	public void OnDeathEnd()
+	{
+		OnDecay();
+		anim.SetBool("Death", false);
+	}
+
+	#endregion
+
+	////////////////////////////////////////////////////////////////////
+
+	#region ICharacter implementation
+
+	public override CharacterType GetCharacterType()
+	{
+		return CharacterType.Air;
+	}
+
+	public override bool UseSpecial(SpecialAttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public override bool UseMelee(AttackContext context)
+	public override bool UseMelee(MeleeAttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public override bool UseRanged(AttackContext context)
+	public override bool UseRanged(RangedAttackContext context)
 	{
 		throw new System.NotImplementedException();
 	}
 
 	public override void DoMeleeDamage(DamageContext context)
 	{
-		throw new System.NotImplementedException();
+		base.DoMeleeDamage(context);
 	}
 
 	public override void DoRangedDamage(DamageContext context)
 	{
-		throw new System.NotImplementedException();
+		base.DoRangedDamage(context);
 	}
 
 	public override void DoSpecialDamage(DamageContext context)
 	{
-		throw new System.NotImplementedException();
+		base.DoSpecialDamage(context);
 	}
 
 	public override bool CanMove()
@@ -124,7 +198,7 @@ public class AirCharacter : ICharacter
 
 	public override void Fly(float deltaTime)
 	{
-		Swinging = true;
+		swinging = true;
 	}
 
 	public override bool CanSwim()
@@ -136,46 +210,61 @@ public class AirCharacter : ICharacter
 	{
 		throw new System.NotImplementedException();
 	}
-
-	public override void OnDamaged()
+	
+	public override void OnDamaged(DamageContext damage)
 	{
-		throw new NotImplementedException();
+		anim.SetBool("Hit", true);
+		base.OnDamaged(damage);
 	}
-
+	
 	public override void OnDeath()
 	{
-		throw new NotImplementedException();
+		anim.SetBool("Death", true);
+		base.OnDeath();
 	}
-
+	
 	public override void OnRegenerate()
 	{
-		throw new NotImplementedException();
+		base.OnRegenerate();
 	}
-
+	
 	public override void OnBoost()
 	{
-		throw new NotImplementedException();
+		base.OnBoost();
+	}
+	
+	public override void OnDecay()
+	{
+		anim.SetBool("Death", false);
+		anim.SetBool("Hit", false);
+		base.OnDecay();
+	}
+	
+	public override void OnSpawned()
+	{
+		base.OnSpawned();
 	}
 
-#endregion
+	#endregion
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
+
 	[HideInInspector]
-	public bool								Sequence;
-
+	public bool
+		Sequence;
 	public float							Gravity = 20;
 	public float 							MaxSpeed = 10;
 	public float 							HorizontalSpeed = 5;
 	public float 							VerticalSpeed = 15;
 	public float 							Drag = 0.1f;
 
-////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////
 
-	Vector2 								FlyDirection;
-	float 									Direction;
-	bool									Swinging;
-	_CharacterController                    Controller;
-	Animator  								Anim;
+	Vector2 								flyDirection;
+	float 									direction;
+	bool									swinging;
+	_CharacterController                    controller;
+	Animator  								anim;
 
 }
 

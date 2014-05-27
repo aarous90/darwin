@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class CharacterDespawn : BoxTrigger
@@ -18,13 +18,13 @@ public class CharacterDespawn : BoxTrigger
 
 	#region implemented abstract members of TriggerElement
 	
-	protected override void TriggerAction(Collider other)
+	protected override void TriggerAction(UnityEngine.Component other)
 	{
 		ICharacter character = other.gameObject.GetComponent<ICharacter>();
 		// trigger only for characters
 		if (character != null)
 		{
-			Level.DoDespawn(character);
+			Level.DoDelete(character);
 		}
 	}
 	

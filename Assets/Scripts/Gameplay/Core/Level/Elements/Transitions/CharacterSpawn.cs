@@ -21,12 +21,12 @@ public class CharacterSpawn : IElement
 
 	}
 
-	public ICharacter DoSpawn(int playerIndex, ICharacter character)
+	public ICharacter DoSpawn(Player player, ICharacter character)
 	{
-		if (playerIndex > -1 && playerIndex < PlayerManager.Get().GetPlayerCount())
+		if (PlayerManager.Get().GetPlayer(player.PlayerIndex) != null)
 		{
 			ICharacter spawned;
-			if ((spawned = character.Spawn(PlayerManager.Get().GetPlayer(playerIndex), this)) != null)
+			if ((spawned = character.Create(player, this)) != null)
 			{
 				return spawned;
 			}

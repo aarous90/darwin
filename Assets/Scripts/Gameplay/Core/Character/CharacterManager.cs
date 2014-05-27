@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Character manager.
@@ -36,7 +36,7 @@ public class CharacterManager : MonoBehaviour
 	{
 		get
 		{
-			return new Dictionary<int, ICharacter>(characters);
+			return characters;
 		}
 	}
 
@@ -55,7 +55,6 @@ public class CharacterManager : MonoBehaviour
 			return;
 		}
 		characters.Add(playerIndex, character);
-		
 	}
 
 	/// <summary>
@@ -67,20 +66,29 @@ public class CharacterManager : MonoBehaviour
 		ICharacter c = null;
 		if (characters.TryGetValue(playerIndex, out c) && c != null)
 		{
+//			characters.Remove(playerIndex);
+//			GameObject obj = GameObject.Find(c.name);
+			Object.Destroy(c.gameObject);
 			characters.Remove(playerIndex);
-			GameObject obj = GameObject.Find(c.name);
-			Object.Destroy(obj);
+		}
+		else
+		{
+			throw new UnityException("Failed to find player index " + playerIndex + " in character manager!");
 		}
 	}
 
 	////////////////////////////////////////////////////////////////////
 
 	public AirCharacter[] 		AirCharacterTypes;
+
 	public GroundCharacter[] 	GroundCharacterTypes;
+
 	public WaterCharacter[] 	WaterCharacterTypes;
 
 	////////////////////////////////////////////////////////////////////
 
 	Dictionary<int, ICharacter> characters = new Dictionary<int, ICharacter>();
+	
+
 
 }
