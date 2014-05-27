@@ -37,6 +37,8 @@ public class AirCharacter : ICharacter, IAirAnimations
 
 	void FixedUpdate()
 	{	
+		if (IsDead) return;
+
 		flyDirection.x = direction * HorizontalSpeed;
 
 		if (swinging)
@@ -118,7 +120,7 @@ public class AirCharacter : ICharacter, IAirAnimations
 
 	public void OnDeathBegin()
 	{
-
+		anim.SetBool("Hit", false);
 	}
 
 	public void OnDeathEnd()
@@ -233,6 +235,8 @@ public class AirCharacter : ICharacter, IAirAnimations
 	
 	public override void OnDecay()
 	{
+		anim.SetBool("Death", false);
+		anim.SetBool("Hit", false);
 		base.OnDecay();
 	}
 	

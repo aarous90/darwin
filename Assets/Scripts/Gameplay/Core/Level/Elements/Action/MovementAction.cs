@@ -70,19 +70,11 @@ public class MovementAction : AbstractAction
 		foreach (ContactPoint contact in collision.contacts) {
 			Debug.DrawRay(contact.point, contact.normal, Color.white);
 		}
-
-		oldParents.Add(collision.gameObject, collision.gameObject.transform);
-		
-		collision.gameObject.transform.parent = this.transform;
 	}
 
 	void OnCollisionExit(Collision collision) 
 	{
-		Transform transform;
-		if (oldParents.TryGetValue(collision.gameObject, out transform))
-		{
-			collision.gameObject.transform.parent = transform;
-		}
+
 	}
 	
 	public float Duration = 1.0f;
@@ -100,6 +92,5 @@ public class MovementAction : AbstractAction
 	int lastWaypointIndex = 0;
 
 
-	Dictionary<GameObject, Transform> oldParents = new Dictionary<GameObject, Transform>();
 
 }
