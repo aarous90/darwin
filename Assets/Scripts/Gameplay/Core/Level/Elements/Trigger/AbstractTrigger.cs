@@ -19,4 +19,6 @@ public abstract class AbstractTrigger : IElement
 	protected abstract void TriggerAction(UnityEngine.Component other);
 
 	public AbstractAction[] Actions;
+
+	public bool Active = true;
 }
