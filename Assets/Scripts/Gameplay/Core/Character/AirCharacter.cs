@@ -37,6 +37,9 @@ public class AirCharacter : ICharacter, IAirAnimations
 
 	void FixedUpdate()
 	{	
+		if (IsDead)
+			return;
+
 		flyDirection.x = direction * HorizontalSpeed;
 
 		if (swinging)
@@ -55,6 +58,16 @@ public class AirCharacter : ICharacter, IAirAnimations
 		if (Math.Abs(flyDirection.x) > MaxSpeed)
 		{
 			flyDirection.x = Math.Sign(flyDirection.x) * MaxSpeed;
+		}
+
+		if (Math.Abs(flyDirection.x) > 0.1)
+		{
+			anim.speed = 1 + (Math.Abs(flyDirection.x) * 0.1f);
+			anim.SetBool("Fly", true);
+		}
+		else
+		{
+			anim.SetBool("Fly", false);
 		}
 
 		Flip(direction);
@@ -86,24 +99,34 @@ public class AirCharacter : ICharacter, IAirAnimations
 
 	}
 
-	public void OnWalkBegin()
+	public void OnFlyBegin()
 	{
 
 	}
 
-	public void OnWalkEnd()
+	public void OnFlyEnd()
 	{
 
 	}
 
-	public void OnJumpBegin()
+	public void OnMeleeBegin()
 	{
-
+		
+	}
+	
+	public void OnMeleeEnd()
+	{
+		
 	}
 
-	public void OnJumpEnd()
+	public void OnRangedBegin()
 	{
-
+		
+	}
+	
+	public void OnRangedEnd()
+	{
+		
 	}
 
 	public void OnHitBegin()
@@ -118,13 +141,23 @@ public class AirCharacter : ICharacter, IAirAnimations
 
 	public void OnDeathBegin()
 	{
-
+		anim.SetBool("Hit", false);
 	}
 
 	public void OnDeathEnd()
 	{
 		OnDecay();
 		anim.SetBool("Death", false);
+	}
+
+	public void OnFallingBegin()
+	{
+		
+	}
+	
+	public void OnFallingEnd()
+	{
+		
 	}
 
 	#endregion
@@ -191,12 +224,15 @@ public class AirCharacter : ICharacter, IAirAnimations
 
 	public override bool CanFly()
 	{
-		throw new System.NotImplementedException();
+		return !IsDead;
 	}
 
 	public override void Fly(float deltaTime)
 	{
-		swinging = true;
+		if (CanFly())
+		{
+			swinging = true;
+		}
 	}
 
 	public override bool CanSwim()
@@ -211,12 +247,18 @@ public class AirCharacter : ICharacter, IAirAnimations
 	
 	public override void OnDamaged(DamageContext damage)
 	{
+		if (IsDead) return;
+		
+		anim.SetBool("Fly", false);
 		anim.SetBool("Hit", true);
 		base.OnDamaged(damage);
 	}
 	
 	public override void OnDeath()
 	{
+		if (IsDead) return;
+		
+		anim.SetBool("Fly", false);
 		anim.SetBool("Death", true);
 		base.OnDeath();
 	}
@@ -233,6 +275,8 @@ public class AirCharacter : ICharacter, IAirAnimations
 	
 	public override void OnDecay()
 	{
+		anim.SetBool("Death", false);
+		anim.SetBool("Hit", false);
 		base.OnDecay();
 	}
 	

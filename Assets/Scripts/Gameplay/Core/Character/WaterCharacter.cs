@@ -37,6 +37,8 @@ public class WaterCharacter : ICharacter, IWaterAnimations
 
 	void FixedUpdate()
 	{
+		if (IsDead) return;
+
 //		if (CanSwim())
 //		{
 		maxSpeed = (Sequence) ? MaxSpeed_2 : MaxSpeed_1;
@@ -117,7 +119,7 @@ public class WaterCharacter : ICharacter, IWaterAnimations
 
 	public void OnDeathBegin()
 	{
-
+		anim.SetBool("Hit", false);
 	}
 
 	public void OnDeathEnd()
@@ -210,12 +212,16 @@ public class WaterCharacter : ICharacter, IWaterAnimations
 
 	public override void OnDamaged(DamageContext damage)
 	{
+		if (IsDead) return;
+
 		anim.SetBool("Hit", true);
 		base.OnDamaged(damage);
 	}
 
 	public override void OnDeath()
 	{
+		if (IsDead) return;
+
 		anim.SetBool("Death", true);
 		base.OnDeath();
 	}
@@ -232,6 +238,8 @@ public class WaterCharacter : ICharacter, IWaterAnimations
 	
 	public override void OnDecay()
 	{
+		anim.SetBool("Death", false);
+		anim.SetBool("Hit", false);
 		base.OnDecay();
 	}
 	

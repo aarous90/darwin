@@ -51,6 +51,11 @@ public class GamestateManager : MonoBehaviour
 		return trainingState;
 	}
 	
+	public TrainingSettingsState GetTrainingSettingsState()
+	{
+		return trainingSettingsState;
+	}
+	
 	public IGameState GetCurrentState()
 	{
 		return currentGameState;
@@ -71,20 +76,23 @@ public class GamestateManager : MonoBehaviour
 		
 		switch (nextState) // change to next state
 		{
-		case GamestateType.MainMenu:
-			currentGameState = GetMainMenuState();
-			break;
-		case GamestateType.Multiplayer:
-			currentGameState = GetMultiplayerState();
-			break;
-		case GamestateType.Training:
-			currentGameState = GetTrainingState();
-			break;
-		case GamestateType.Exit:
-			currentGameState = null;
-			return;
-		default:
-			throw new Exception("Invalid Gamestate Type!");
+			case GamestateType.MainMenu:
+				currentGameState = GetMainMenuState();
+				break;
+			case GamestateType.Multiplayer:
+				currentGameState = GetMultiplayerState();
+				break;
+			case GamestateType.Training:
+				currentGameState = GetTrainingState();
+				break;
+			case GamestateType.TrainingSettings:
+				currentGameState = GetTrainingSettingsState();
+				break;
+			case GamestateType.Exit:
+				currentGameState = null;
+				return;
+			default:
+				throw new Exception("Invalid Gamestate Type!");
 		}
 		
 		currentGameState.Enter();
@@ -111,6 +119,12 @@ public class GamestateManager : MonoBehaviour
 			return;
 		}
 		trainingState = new TrainingState();
+
+		if (trainingSettingsState != null)
+		{
+			return;
+		}
+		trainingSettingsState = new TrainingSettingsState();
 	}
 	
 	////////////////////////////////////////////////////////////////////
@@ -118,10 +132,9 @@ public class GamestateManager : MonoBehaviour
 	////////////////////////////////////////////////////////////////////
 	
 	private MainMenuState mainMenuState;
-	
 	private MultiplayerState multiplayerState;
-	
 	private TrainingState trainingState;
+	private TrainingSettingsState trainingSettingsState;
 	
 	////////////////////////////////////////////////////////////////////
 	

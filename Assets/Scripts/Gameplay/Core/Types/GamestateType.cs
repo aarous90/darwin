@@ -16,6 +16,7 @@ public enum GamestateType
 	Invalid,        // If none is set
 	MainMenu,
 	Training,
+	TrainingSettings,
 	Multiplayer,
 	Exit
 }

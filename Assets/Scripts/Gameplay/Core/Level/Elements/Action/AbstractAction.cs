@@ -16,10 +16,12 @@ public abstract class AbstractAction : IElement
 	
 	}
 
-	public void OnTriggered(UnityEngine.Component other)
+	public void OnAction(UnityEngine.Component other)
 	{
 		DoAction(other);
 	}
 
 	protected abstract void DoAction(UnityEngine.Component other);
+	
+	public bool Active = true;
 }

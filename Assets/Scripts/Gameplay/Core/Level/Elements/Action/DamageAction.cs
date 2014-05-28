@@ -24,13 +24,14 @@ public class DamageAction : AbstractAction
 
 			DamageContext damage = new DamageContext();
 			damage.Attack = Attack;
-			damage.Enemy = null;
+			damage.Attacker = null;
+			damage.Enemy = damageable;
 			damage.IsMeele = true;
 
 			damageable.OnDamaged(damage);
 
 			if (Util.Length(Force) > 0 
-			    && other.gameObject.rigidbody != null)
+				&& other.gameObject.rigidbody != null)
 			{
 				other.gameObject.rigidbody.AddForce(Force);
 			}
@@ -40,14 +41,9 @@ public class DamageAction : AbstractAction
 	#endregion
 
 	public AttackContext Attack;
-
 	public bool RangedDamage;
-
 	public bool MeleeDamage;
-
 	public bool SpecialDamage;
-
 	public Vector3 Force;
-
 	float timer = 0;
 }

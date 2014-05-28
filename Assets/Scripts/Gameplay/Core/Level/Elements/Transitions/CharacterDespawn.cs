@@ -18,7 +18,7 @@ public class CharacterDespawn : BoxTrigger
 
 	#region implemented abstract members of TriggerElement
 	
-	protected override void TriggerAction(UnityEngine.Component other)
+	protected override void DoTrigger(UnityEngine.Component other)
 	{
 		ICharacter character = other.gameObject.GetComponent<ICharacter>();
 		// trigger only for characters
