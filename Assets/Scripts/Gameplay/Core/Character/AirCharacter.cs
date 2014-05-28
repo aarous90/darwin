@@ -224,12 +224,15 @@ public class AirCharacter : ICharacter, IAirAnimations
 
 	public override bool CanFly()
 	{
-		throw new System.NotImplementedException();
+		return !IsDead;
 	}
 
 	public override void Fly(float deltaTime)
 	{
-		swinging = true;
+		if (CanFly())
+		{
+			swinging = true;
+		}
 	}
 
 	public override bool CanSwim()
@@ -245,7 +248,8 @@ public class AirCharacter : ICharacter, IAirAnimations
 	public override void OnDamaged(DamageContext damage)
 	{
 		if (IsDead) return;
-
+		
+		anim.SetBool("Fly", false);
 		anim.SetBool("Hit", true);
 		base.OnDamaged(damage);
 	}
@@ -253,7 +257,8 @@ public class AirCharacter : ICharacter, IAirAnimations
 	public override void OnDeath()
 	{
 		if (IsDead) return;
-
+		
+		anim.SetBool("Fly", false);
 		anim.SetBool("Death", true);
 		base.OnDeath();
 	}
