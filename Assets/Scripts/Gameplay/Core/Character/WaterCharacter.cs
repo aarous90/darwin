@@ -243,9 +243,9 @@ public class WaterCharacter : ICharacter, IWaterAnimations
 		base.OnDecay();
 	}
 	
-	public override void OnSpawned()
+	public override void OnSpawned(CharacterSpawn spawner)
 	{
-		base.OnSpawned();
+		base.OnSpawned(spawner);
 	}
 
 	#endregion

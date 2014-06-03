@@ -66,7 +66,9 @@ public class Level : MonoBehaviour
 			Player p = PlayerManager.Get().GetPlayer(i);
 			PlayerNextSector(currentLevel.Sectors[0], p);
 			ICharacter c = Create(p);
-            UseCharacter(p, c);
+			UseCharacter(p, c);
+			CharacterSpawn spawner = currentSectors[p.PlayerIndex].SpawnModule.Spawns[(int) c.GetCharacterType()];
+			c.Spawn(spawner);
 		}
 
 		started = true;
@@ -77,14 +79,14 @@ public class Level : MonoBehaviour
 	/// </summary>
 	static ICharacter Create(Player player)
 	{
-		return DoCreate(currentSectors[player.PlayerIndex], player);
+		return CreateCharacter(currentSectors[player.PlayerIndex], player);
 	}
 
 	/// <summary>
 	/// Spawn in the specified module.
 	/// </summary>
 	/// <param name="module">The Module to spawn in.</param>
-	static ICharacter DoCreate(SectorData sector, Player player)
+	static ICharacter CreateCharacter(SectorData sector, Player player)
 	{
 		// Pick a random spawn point (or what is remaining)
 		// TODO: this is unfair, because the second player cannot pick out of 3 spawns
@@ -120,7 +122,7 @@ public class Level : MonoBehaviour
 
 		ICharacter character;
 		// Spawn a random char for the player
-		character = sector.SpawnModule.Spawns[pick].DoSpawn(player, charTypes [Util.Randomizer.Next(charTypes.Length)]);
+		character = InstantiateCharacter(player, charTypes[Util.Randomizer.Next(charTypes.Length)]);		
 
 		character.DecayEvent += new OnDecayHandler(OnCharacterDecay);
 
@@ -131,7 +133,21 @@ public class Level : MonoBehaviour
 
 		return character;
 	}
+
 	
+	public static ICharacter InstantiateCharacter(Player player, ICharacter character)
+	{
+		if (PlayerManager.Get().GetPlayer(player.PlayerIndex) != null)
+		{
+			ICharacter spawned;
+			if ((spawned = character.Create(player)) != null)
+			{
+				return spawned;
+			}
+		}
+		return null;
+	}
+
 	/// <summary>
 	/// Dos the deletion of characters if they reached a secor ending (genmanipulator).
 	/// </summary>
@@ -246,12 +262,12 @@ public class Level : MonoBehaviour
 	{
 		if (currentSectors[player.PlayerIndex].ReachedFighting[player.PlayerIndex])
 		{
-			player.GetCharacter().Respawn(
+			player.GetCharacter().Spawn(
 				currentSectors[player.PlayerIndex].FightingModule.Spawns[(int)player.GetCharacter().GetCharacterType()]);
 		}
 		else
 		{
-			player.GetCharacter().Respawn(
+			player.GetCharacter().Spawn(
 				currentSectors[player.PlayerIndex].SpawnModule.Spawns[(int)player.GetCharacter().GetCharacterType()]);
 		}
 		//Create(reachedFighting[player.PlayerIndex], player);

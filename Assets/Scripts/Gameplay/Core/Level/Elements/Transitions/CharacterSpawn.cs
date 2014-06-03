@@ -21,22 +21,14 @@ public class CharacterSpawn : IElement
 
 	}
 
-	public ICharacter DoSpawn(Player player, ICharacter character)
-	{
-		if (PlayerManager.Get().GetPlayer(player.PlayerIndex) != null)
-		{
-			ICharacter spawned;
-			if ((spawned = character.Create(player, this)) != null)
-			{
-				return spawned;
-			}
-		}
-		return null;
-	}
-
 	/// <summary>
 	/// The type of the terrain that spawner is for, 0 - Air, 1 - Ground, 2 - Water.
 	/// </summary>
 	public int TerrainType = -1;
+
+	/// <summary>
+	/// The movement offset the character can move up and down and the camera will follow.
+	/// </summary>
+	public float MovementOffset = 3;
 }
 

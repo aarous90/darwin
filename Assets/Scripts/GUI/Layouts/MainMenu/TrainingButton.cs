@@ -7,6 +7,16 @@ public class TrainingButton : Button
 	{
 		base.Init();
 		GUIManager.Get().FocusIndex(0);
+
+	}
+
+	void Update()
+	{
+//		if ()
+//		{
+//
+//		}
+//		transform.position.x = 
 	}
 
 	public override void OnSelect()
@@ -16,4 +26,6 @@ public class TrainingButton : Button
 			GamestateManager.Get().ChangeState(GamestateType.TrainingSettings);
 		}
 	}
+
+	private float oldX;
 }

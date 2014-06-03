@@ -280,9 +280,9 @@ public class AirCharacter : ICharacter, IAirAnimations
 		base.OnDecay();
 	}
 	
-	public override void OnSpawned()
+	public override void OnSpawned(CharacterSpawn spawner)
 	{
-		base.OnSpawned();
+		base.OnSpawned(spawner);
 	}
 
 	#endregion

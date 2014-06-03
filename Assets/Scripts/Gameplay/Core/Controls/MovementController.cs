@@ -5,6 +5,7 @@
 /// </summary>
 using System;
 
+public delegate void OnUseCharacterHandler(MovementController controller,ICharacter character);
 
 public class MovementController
 {
@@ -26,28 +27,28 @@ public class MovementController
 		switch (currentMovementType)
 		{
 			case MovementType.Air:
-			{
-				airController.FixedUpdate();
-			}
+				{
+					airController.FixedUpdate();
+				}
 				break;
 			case MovementType.Ground:
-			{
-				groundController.FixedUpdate();
-			}
+				{
+					groundController.FixedUpdate();
+				}
 				break;
 			case MovementType.Water:
-			{
-				waterController.FixedUpdate();
-			}
+				{
+					waterController.FixedUpdate();
+				}
 				break;
 			case MovementType.Invalid:
-			{
-			}
+				{
+				}
 				break;
 			default:
-			{
-				throw new UnityException("Invalid control type!");
-			}
+				{
+					throw new UnityException("Invalid control type!");
+				}
 		}
 	}
 	
@@ -66,24 +67,28 @@ public class MovementController
 			currentMovementType = MovementType.Air;
 			airController.Initialize(character);
 			airController.Start(); // TODO: remove start call after moving init to character
+			UseCharacterEvent(this, character);
 		}
 		else if (currentCharacter is GroundCharacter)
 		{
 			currentMovementType = MovementType.Ground;
 			groundController.Initialize(character);
 			groundController.Start(); // TODO: remove start call after moving init to character
+			UseCharacterEvent(this, character);
 		}
 		else if (currentCharacter is WaterCharacter)
 		{
 			currentMovementType = MovementType.Water;
 			waterController.Initialize(character);
 			waterController.Start(); // TODO: remove start call after moving init to character
+			UseCharacterEvent(this, character);
 		}
 		else
 		{
 			currentMovementType = MovementType.Invalid;
 			throw new UnityException("Invalid control type!");
 		}
+
 	}
 	
 	public ICharacter CurrentCharacter
@@ -122,6 +127,8 @@ public class MovementController
 			return joystickID;
 		}
 	}
+
+	public event OnUseCharacterHandler UseCharacterEvent;
 	
 	////////////////////////////////////////////////////////////////////
 	

@@ -5,7 +5,7 @@ public delegate void OnBoostHandler(ICharacter character);
 
 public delegate void OnDeathHandler(ICharacter character);
 
-public delegate void OnSpawnedHandler(ICharacter character);
+public delegate void OnSpawnedHandler(ICharacter character, CharacterSpawn spawner);
 
 public delegate void OnDecayHandler(ICharacter character);
 
@@ -26,7 +26,7 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 	/// <summary>
 	/// Spawns an instance of this character for a player at a spawner.
 	/// </summary>
-	public ICharacter Create(Player owner, CharacterSpawn spawner)
+	public ICharacter Create(Player owner)
 	{
 		IsSpawner = true;
 		Object obj = Object.Instantiate(this);//, spawner.transform.localPosition, transform.rotation);
@@ -35,7 +35,6 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 			ICharacter character = obj as ICharacter;
 			character.IsSpawned = true;
 			character.Owner = owner;
-			character.Respawn(spawner);
 
 			CharacterManager.Get().RegisterCharacter(owner.PlayerIndex, character);
 			return character;
@@ -43,10 +42,10 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 		return null;
 	}
 
-	public void Respawn(CharacterSpawn spawner)
+	public void Spawn(CharacterSpawn spawner)
 	{
 		transform.position = spawner.transform.position;
-		OnSpawned();
+		OnSpawned(spawner);
 	}
 
 	/// <summary>
@@ -201,7 +200,7 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 			BoostEvent(this);
 	}
 
-	public virtual void OnSpawned()
+	public virtual void OnSpawned(CharacterSpawn spawner)
 	{
 		live = MaxLive;
 		boost = 0;
@@ -211,7 +210,7 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 		Debug.Log(this + ", owned by player " + GetOwningPlayer().PlayerIndex + " was spawned!");
 
 		if (SpawnedEvent != null)
-			SpawnedEvent(this);
+			SpawnedEvent(this, spawner);
 	}
 
 	public bool IsDead

@@ -21,6 +21,8 @@ public class CameraController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (usedCharacter == null) return;
+
 		cameraOffset = 
 			right * RightOffset + 
 			front * -DistanceOffset + 
@@ -38,10 +40,33 @@ public class CameraController : MonoBehaviour
 
 	void LookAt(Vector3 position)
 	{
-		transform.position = position + cameraOffset;
-		Vector3 lookAt = characterPosition = position;
-		lookAt.x = transform.position.x;
-		transform.LookAt(lookAt);
+		float camHeight = initialPosition.y;
+		// over spawn
+		if (position.y - camHeight > 0)
+		{
+			if (Mathf.Abs(position.y - camHeight) > MaxUpDistance)
+			{
+				camHeight = initialPosition.y + MaxUpDistance;
+			}
+			else
+				camHeight = position.y;
+		}
+		// below spawn
+		else
+		{			
+			if (Mathf.Abs(position.y - camHeight) > MaxUpDistance)
+			{
+				camHeight = initialPosition.y - MaxUpDistance;
+			}
+			else
+				camHeight = position.y;
+		}
+		transform.position = characterPosition = 
+			new Vector3(position.x + cameraOffset.x, camHeight, position.z + cameraOffset.z);
+//		Vector3 lookAt = characterPosition = position;
+//		lookAt.x = transform.position.x;
+//		lookAt.y = initialPosition.y;
+//		transform.LookAt(lookAt);
 	}
 
 	/// <summary>
@@ -50,6 +75,18 @@ public class CameraController : MonoBehaviour
 	void Initialize()
 	{
 		owner = PlayerManager.Get().GetPlayer(PlayerIndex);
+
+		owner.GetController().UseCharacterEvent += delegate(MovementController controller, ICharacter character)
+		{
+			character.SpawnedEvent += delegate(ICharacter spawned, CharacterSpawn spawner) 
+			{
+				usedCharacter = spawned;
+				initialPosition = character.transform.position;
+				MaxUpDistance = spawner.MovementOffset;
+			};
+		};
+
+		initialPosition = characterPosition;
 
 		right = transform.right.normalized;
 
@@ -72,11 +109,13 @@ public class CameraController : MonoBehaviour
 
 	////////////////////////////////////////////////////////////////////
 
+	ICharacter usedCharacter;
 	Player owner;
 	Vector3 cameraOffset;
 	Vector3 front;
 	Vector3 up;
 	Vector3 right;
-
 	Vector3 characterPosition = new Vector3();
+	Vector3 initialPosition;
+	float MaxUpDistance;
 }
