@@ -1,4 +1,4 @@
-﻿#pragma strict
+﻿/*#pragma strict
 
 function Start () {
     var flickerSpeed : float = 0.07;
@@ -15,4 +15,4 @@ function Update () {
         randomizer = Random.Range (0, 1.1);
         yield WaitForSeconds (flickerSpeed);
     }
-}
+}*/
