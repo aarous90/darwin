@@ -9,7 +9,7 @@ public class AudioAction : AbstractAction
 		{
 			for (int i = 0; i < ClipsToPlay.Length; i++)
 			{
-				Vector3 AudioOrigin = new Vector3(transform.position.x - other.transform.position.x, 0, 0);
+				Vector3 AudioOrigin = transform.position - other.transform.position;
 				AudioSource.PlayClipAtPoint(ClipsToPlay [i], AudioOrigin);
 			}
 		}
