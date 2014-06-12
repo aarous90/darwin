@@ -35,7 +35,10 @@ public class ControllerManager : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		if (Input.GetJoystickNames().Length > joysticks.Count)
+		if(joysticks.Count==0){
+			Initialize();
+		}
+		else if (Input.GetJoystickNames().Length > joysticks.Count)
 		{
 			joysticks.Clear();
 			Initialize();
