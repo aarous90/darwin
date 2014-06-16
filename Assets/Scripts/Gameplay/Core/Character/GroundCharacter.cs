@@ -184,9 +184,13 @@ public class GroundCharacter : ICharacter, IGroundAnimations
 
 	#region ICharacter implementation
 	
-	public override CharacterType GetCharacterType()
+	
+	public override CharacterType CharacterType
 	{
-		return CharacterType.Ground;
+		get
+		{
+			return CharacterType.Ground;
+		}
 	}
 
 	public override bool UseSpecial(SpecialAttackContext context)

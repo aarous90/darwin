@@ -67,7 +67,7 @@ public class Level : MonoBehaviour
 			PlayerNextSector(currentLevel.Sectors[0], p);
 			ICharacter c = Create(p);
 			UseCharacter(p, c);
-			CharacterSpawn spawner = currentSectors[p.PlayerIndex].SpawnModule.Spawns[(int) c.GetCharacterType()];
+			CharacterSpawn spawner = currentSectors[p.PlayerIndex].SpawnModule.Spawns[(int) c.CharacterType];
 			c.Spawn(spawner);
 		}
 
@@ -116,9 +116,11 @@ public class Level : MonoBehaviour
 				charTypes = CharacterManager.Get().WaterCharacterTypes;
 				break;
 			default:
-				throw new UnityException("Error while spawning character!");
+			{
+				Debug.LogError("Error while spawning character!");
+				return null;
+			}
 		}
-
 
 		ICharacter character;
 		// Spawn a random char for the player
@@ -263,12 +265,12 @@ public class Level : MonoBehaviour
 		if (currentSectors[player.PlayerIndex].ReachedFighting[player.PlayerIndex])
 		{
 			player.GetCharacter().Spawn(
-				currentSectors[player.PlayerIndex].FightingModule.Spawns[(int)player.GetCharacter().GetCharacterType()]);
+				currentSectors[player.PlayerIndex].FightingModule.Spawns[(int)player.GetCharacter().CharacterType]);
 		}
 		else
 		{
 			player.GetCharacter().Spawn(
-				currentSectors[player.PlayerIndex].SpawnModule.Spawns[(int)player.GetCharacter().GetCharacterType()]);
+				currentSectors[player.PlayerIndex].SpawnModule.Spawns[(int)player.GetCharacter().CharacterType]);
 		}
 		//Create(reachedFighting[player.PlayerIndex], player);
 	}
@@ -279,14 +281,14 @@ public class Level : MonoBehaviour
 	{
 		if (character != null && CurrentLevel != null)
 		{
-			float length = Mathf.Abs(
-				currentLevel.Sectors [0].SpawnModule.InConnector.transform.position.x - 
-				currentLevel.Sectors [currentLevel.Sectors.Count - 1].FightingModule.OutConnector.transform.position.x);
+			float start = currentLevel.Sectors [0].SpawnModule.Spawns[(int)character.CharacterType].transform.position.x;
+			float end = currentLevel.Sectors [currentLevel.Sectors.Count - 1].FightingModule.Despawn.transform.position.x;
+
+			float length = Mathf.Abs(start - end);
 	
 			if (length != 0)
 			{
-				float progress = Mathf.Abs(currentLevel.Sectors [0].SpawnModule.InConnector.transform.position.x - 
-					character.transform.position.x);
+				float progress = Mathf.Abs(start - character.transform.position.x);
 				return (progress / length);
 			}
 
@@ -297,9 +299,11 @@ public class Level : MonoBehaviour
 	static public float GetSectorProgress(ICharacter character)
 	{
 		if (character != null && CurrentLevel != null)
-		{
-			float length = Vector3.Distance(currentLevel.Sectors [0].SpawnModule.InConnector.transform.position, 
-			                                currentLevel.Sectors [currentLevel.Sectors.Count - 1].FightingModule.OutConnector.transform.position);
+		{			
+			int pIdx = character.GetOwningPlayer().PlayerIndex;
+			float length = Mathf.Abs(
+				currentSectors[pIdx].SpawnModule.Spawns[(int)character.CharacterType].transform.position.x - 
+				currentSectors[pIdx].FightingModule.Despawn.transform.position.x);
 
 			if (length != 0)
 			{

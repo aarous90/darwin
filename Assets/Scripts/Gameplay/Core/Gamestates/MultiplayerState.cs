@@ -24,9 +24,9 @@ public class MultiplayerState : IGameState
 
 	public override void Enter()
 	{
-		//LevelManager.Get().Load();
-		//LevelManager.Get().Spawn();
 		ControllerManager.Get().MaximumUsable = 2;
+		PlayerManager.Get().ActivatePlayer(0);
+		PlayerManager.Get().ActivatePlayer(1);
 		Application.LoadLevel("Multiplayer");
 	}
 
@@ -34,6 +34,8 @@ public class MultiplayerState : IGameState
 	{
 		GUIManager.Get().ClearGUI();
 		CameraManager.Get().Clear();
+		PlayerManager.Get().DeactivatePlayer(0);
+		PlayerManager.Get().DeactivatePlayer(1);
 	}
 
 	public override void Reset()

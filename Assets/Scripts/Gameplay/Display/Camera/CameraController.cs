@@ -10,7 +10,8 @@ public class CameraController : MonoBehaviour
 		
 		if (camera == null)
 		{
-			throw new UnityException("No camera to control is attached!");
+			Debug.LogError("No camera to control is attached!");
+			return;
 		}
 		
 		Initialize();

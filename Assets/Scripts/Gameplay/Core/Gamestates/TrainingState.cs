@@ -24,6 +24,8 @@ public class TrainingState : IGameState
 
 	public override void Enter()
 	{
+		ControllerManager.Get().MaximumUsable = 1;
+		PlayerManager.Get().ActivatePlayer(0);
 		Application.LoadLevel("Training");
 	}
 
@@ -31,6 +33,7 @@ public class TrainingState : IGameState
 	{
 		GUIManager.Get().ClearGUI();
 		CameraManager.Get().Clear();
+		PlayerManager.Get().DeactivatePlayer(0);
 	}
 
 	public override void Reset()

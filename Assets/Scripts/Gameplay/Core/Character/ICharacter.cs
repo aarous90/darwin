@@ -58,7 +58,6 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 
 	////////////////////////////////////////////////////////////////////
 
-	public abstract CharacterType GetCharacterType();
 
 	//void Init(MovementController controller);
 
@@ -68,15 +67,15 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 
 	public virtual float GetLive()
 	{
-		return live;
+		return Live;
 	}
 
 	public virtual void Regenerate(float value)
 	{
-		live += value;
-		if (live > MaxLive)
+		Live += value;
+		if (Live > MaxLive)
 		{
-			live = MaxLive;
+			Live = MaxLive;
 		}
 		OnRegenerate();
 	}
@@ -85,12 +84,12 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 
 	public virtual float GetBoost()
 	{
-		return boost;
+		return Boost;
 	}
 
 	public virtual void GainBoost(float value)
 	{
-		boost += value;
+		Boost += value;
 	}
 
 	////////////////////////////////////////////////////////////////////
@@ -148,10 +147,10 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 	{
 		if (IsDead) return;
 
-		live -= damage.RollDamage();
-		if (live <= 0)
+		Live -= damage.RollDamage();
+		if (Live <= 0)
 		{
-			live = 0;
+			Live = 0;
 			OnDeath();
 			return;
 		}
@@ -175,7 +174,11 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 	public virtual void OnDecay()
 	{
 		if (isDecayed) return;
-		if (!isDead) throw new UnityException("Character is not dead? There was an error, sorry :(");
+		if (!isDead)
+		{
+			Debug.LogError("Character is not dead? There was an error, sorry :(");
+			return;
+		}
 		
 		Debug.Log(this + ", owned by player " + GetOwningPlayer().PlayerIndex + " finally decayed!");
 
@@ -195,15 +198,15 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 	public virtual void OnBoost()
 	{
 		if (IsDead) return;
-		boost = 0;
+		Boost = 0;
 		if (BoostEvent != null)
 			BoostEvent(this);
 	}
 
 	public virtual void OnSpawned(CharacterSpawn spawner)
 	{
-		live = MaxLive;
-		boost = 0;
+		Live = MaxLive;
+		Boost = 0;
 		isDead = false;
 		isDecayed = false;
 		
@@ -217,7 +220,7 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 	{
 		get
 		{
-			return isDead && live <= 0;
+			return isDead && Live <= 0;
 		}
 	}	
 
@@ -228,12 +231,23 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 			return isDecayed && IsDead;
 		}
 	}
+	
+	public virtual CharacterType CharacterType
+	{
+		get
+		{
+			return CharacterType.None;
+		}
+	}
 
 	////////////////////////////////////////////////////////////////////
 
 	public bool IsSpawned;
 	public float MaxLive = 100f;
 	public float MaxBoost = 100f;
+
+	public float Live;
+	public float Boost;
 
 	////////////////////////////////////////////////////////////////////
 
@@ -257,10 +271,7 @@ public abstract class ICharacter : MonoBehaviour, IFightable
 
 	////////////////////////////////////////////////////////////////////
 	 
-	float live;
-	float boost;
 	bool isDead;
 	bool isDecayed;
-
 
 }

@@ -1,8 +1,8 @@
 
 public enum CharacterType
 {
-	Air,
-	Ground,
-	Water,
-	None
+	Air = 0,
+	Ground = 1,
+	Water = 2,
+	None = 42
 }

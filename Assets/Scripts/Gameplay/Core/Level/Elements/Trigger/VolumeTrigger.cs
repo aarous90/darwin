@@ -8,7 +8,7 @@ public abstract class VolumeTrigger : AbstractTrigger
 	{
 		if (collider == null || rigidbody == null)
 		{
-			throw new UnityException("The trigger has no collider or rigidbody attached!");
+			Debug.LogError("The trigger has no collider or rigidbody attached!");
 		}
 	}
 

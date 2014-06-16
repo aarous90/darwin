@@ -165,10 +165,13 @@ public class AirCharacter : ICharacter, IAirAnimations
 	////////////////////////////////////////////////////////////////////
 
 	#region ICharacter implementation
-
-	public override CharacterType GetCharacterType()
+	
+	public override CharacterType CharacterType
 	{
-		return CharacterType.Air;
+		get
+		{
+			return CharacterType.Air;
+		}
 	}
 
 	public override bool UseSpecial(SpecialAttackContext context)

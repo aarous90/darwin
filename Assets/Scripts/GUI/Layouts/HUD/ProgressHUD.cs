@@ -8,14 +8,27 @@ public class ProgressHUD : GUIItem
 		player = PlayerManager.Get().GetPlayer(PlayerIndex);
 		progressHUD = GetComponent<GUITexture>();
 		progressHUD.enabled = false;
-        base.Init();
 
 		cam = CameraManager.Get().GetCamera(PlayerIndex);
+		if (player == null)
+		{
+			Debug.LogError("No player found for index + " + PlayerIndex + " !");
+			return;
+		}
 		if (cam == null)
 		{
-			throw new UnityException("No camera for player " + PlayerIndex + " HUD found!");
+			Debug.LogError("No camera for player " + PlayerIndex + " HUD found!");
+			return;
 		}
-    }
+
+		guiRect = new Rect(cam.pixelRect);
+		if (PlayerManager.Get().GetPlayerCount() > 1)
+		{
+			guiRect.y = guiRect.height - guiRect.y;
+		}
+
+		base.Init();
+	}
 
 	// Update is called once per frame
 	void Update()
@@ -35,32 +48,40 @@ public class ProgressHUD : GUIItem
 		}
 
 		float aspect = ((float) TimelineBackground.height / TimelineBackground.width);
+		float aspect2 = ((float) TimelineBar.height / TimelineBar.width);
 
-		GUI.BeginGroup(new Rect(
-			(cam.pixelRect.x) + Position.x, 
-			(cam.pixelRect.y) + Position.y + cam.pixelHeight - TimelineBackground.height, cam.pixelWidth, cam.pixelWidth * aspect));
+		GUI.BeginGroup(guiRect);
+			GUI.BeginGroup(
+				new Rect(	Position.x, 
+		         			Position.y + cam.pixelHeight - guiRect.width * aspect, 
+		         			guiRect.width, 
+		         			guiRect.width * aspect));
 
-			// Draw the progress bar
-	        GUI.DrawTexture(new Rect(
-				0,
-				120, 
-				cam.pixelWidth * progressPercentage, 
-				TimelineBar.height),
-			                TimelineBar);
-			// draw the progress background
-			GUI.DrawTexture(new Rect(
-				0,
-				0, 
-			cam.pixelWidth, TimelineBackground.height ),
-			                TimelineBackground);
-			// draw the character icon
-			GUI.DrawTexture(new Rect(
-				cam.pixelWidth * progressPercentage - CharacterIcon.width * 0.5f,
-				CharacterIcon.height, 
-				CharacterIcon.width, 
-				CharacterIcon.height),
-			                CharacterIcon);
 
+
+				// draw the progress background
+				GUI.DrawTexture(new Rect(
+					0,
+					0, 
+				cam.pixelWidth, TimelineBackground.height ),
+				                TimelineBackground);
+				// draw the character icon
+				GUI.DrawTexture(new Rect(
+					cam.pixelWidth * progressPercentage - CharacterIcon.width * 0.5f,
+					CharacterIcon.height, 
+					CharacterIcon.width, 
+					CharacterIcon.height),
+				                CharacterIcon);
+				GUI.BeginGroup(
+					new Rect(0, TimelineBackground.height - TimelineBar.height, cam.pixelWidth * progressPercentage, guiRect.width * aspect));
+				
+					// Draw the progress bar
+					GUI.DrawTexture(
+						new Rect(0, 0, guiRect.width, guiRect.width * aspect2), 
+						TimelineBar);
+				
+				GUI.EndGroup();
+			GUI.EndGroup();
 		GUI.EndGroup();
 	}
 
@@ -77,7 +98,9 @@ public class ProgressHUD : GUIItem
 			if (value != null)
 				player = value;
 			else
-				throw new UnityException("Invalid player object!");
+			{
+				Debug.LogError("Invalid player object!");
+			}
 		}
 	}
 
@@ -97,4 +120,6 @@ public class ProgressHUD : GUIItem
 	Player player;
 
 	Camera cam;
+
+	Rect guiRect;
 }

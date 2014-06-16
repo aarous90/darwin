@@ -73,7 +73,8 @@ public class CharacterManager : MonoBehaviour
 		}
 		else
 		{
-			throw new UnityException("Failed to find player index " + playerIndex + " in character manager!");
+			Debug.LogError("Failed to find player index " + playerIndex + " in character manager!");
+			return;
 		}
 	}
 

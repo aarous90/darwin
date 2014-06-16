@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
 
 	public uint GetPlayerCount()
 	{
-		return (uint)players.Count;
+		return (uint)activePlayers.Count;
 	}
 
 	/// <summary>
@@ -44,9 +44,9 @@ public class PlayerManager : MonoBehaviour
 	/// <param name="index">The index of the player to be returned</param>
 	public Player GetPlayer(int index)
 	{
-		if (index >= 0 && players.ContainsKey(index))
+		if (index >= 0 && activePlayers.ContainsKey(index))
 		{
-			return players [index];
+			return activePlayers [index];
 		}
 		return null;
 	}
@@ -63,7 +63,7 @@ public class PlayerManager : MonoBehaviour
 			cm.ControllerDisconnectedEvent += new OnControllerDisconnectedHandler(OnControllerDisconnected);
 		} else
 		{
-			throw new UnityException("ControllerManager is not initialized properly!");
+			Debug.LogError("ControllerManager is not initialized properly!");
 		}
 	}
 
@@ -77,13 +77,30 @@ public class PlayerManager : MonoBehaviour
 		players.Remove(id);
 	}
 
+	public void ActivatePlayer(int id)
+	{
+		Player p;
+		if (players.TryGetValue(id, out p) && p != null)
+		{
+			activePlayers.Add(id, p);
+		}
+	}
+
+	public void DeactivatePlayer(int id)
+	{
+		Player p;
+		if (activePlayers.TryGetValue(id, out p))
+		{
+			activePlayers.Remove(id);
+		}
+	}
+
 	////////////////////////////////////////////////////////////////////
 
 	/// <summary>
 	/// All players that are managed.
 	/// </summary>
 	Dictionary<int, Player> players = new Dictionary<int, Player>();
-
-
-
+	
+	Dictionary<int, Player> activePlayers = new Dictionary<int, Player>();
 }

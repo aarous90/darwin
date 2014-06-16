@@ -15,5 +15,7 @@ public class FightingModule : SpawnModule
 		
 	}
 
+	public CharacterDespawn Despawn;
+
 }
 

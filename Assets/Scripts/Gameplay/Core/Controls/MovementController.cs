@@ -47,7 +47,8 @@ public class MovementController
 				break;
 			default:
 				{
-					throw new UnityException("Invalid control type!");
+					Debug.LogError("Invalid control type!");
+					return;
 				}
 		}
 	}
@@ -86,7 +87,7 @@ public class MovementController
 		else
 		{
 			currentMovementType = MovementType.Invalid;
-			throw new UnityException("Invalid control type!");
+			Debug.LogError("Invalid control type!");
 		}
 
 	}

@@ -159,6 +159,11 @@ public class GUIManager : MonoBehaviour, IInputListener
 
 	public void FocusIndex(int go)
 	{
+		if (guiElements.Count == 0)
+		{
+			Debug.LogWarning("No gui elements present to focus!");
+			return;
+		}
 		if (go > 0)
 		{
 			++currentAccessIndex;

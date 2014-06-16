@@ -133,10 +133,13 @@ public class WaterCharacter : ICharacter, IWaterAnimations
 	////////////////////////////////////////////////////////////////////
 
 	#region ICharacter implementation
-
-	public override CharacterType GetCharacterType()
+	
+	public override CharacterType CharacterType
 	{
-		return CharacterType.Water;
+		get
+		{
+			return CharacterType.Water;
+		}
 	}
 
 	public override bool UseSpecial(SpecialAttackContext context)

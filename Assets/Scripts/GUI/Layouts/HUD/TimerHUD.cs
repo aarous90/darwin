@@ -16,7 +16,8 @@ public class TimerHUD : GUIItem
 		cam = CameraManager.Get().GetCamera(PlayerIndex);
 		if (cam == null)
 		{
-			throw new UnityException("No camera for player " + PlayerIndex + " HUD found!");
+			Debug.LogError("No camera for player " + PlayerIndex + " HUD found!");
+			return;
         }
         
 		base.Init();

@@ -39,7 +39,8 @@ public class SpawnModule : Module
 			}
 			else
 			{	
-				throw new UnityException("The Spawn and Fighting Module needs three spawns for air, ground and water!");
+				Debug.LogError("The Spawn and Fighting Module needs three spawns for air, ground and water!");
+				return null;
 			}
 			return spawns;
 		}

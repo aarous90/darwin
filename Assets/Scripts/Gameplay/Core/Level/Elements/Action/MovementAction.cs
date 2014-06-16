@@ -7,7 +7,8 @@ public class MovementAction : AbstractAction
 	{
 		if (Waypoints.Length < 2)
 		{
-			throw new UnityException("There must be at least two waypoints!");
+			Debug.LogError("There must be at least two waypoints!");
+			return;
 		}
 
 		currentWaypointIndex = 0;

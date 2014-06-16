@@ -6,6 +6,13 @@ public class PlayerHUD : GUIItem
 	protected override void Init()
 	{
 		player = PlayerManager.Get().GetPlayer(PlayerIndex);
+
+		if (player == null)
+		{
+			Debug.LogError("No player found for index + " + PlayerIndex + " !");
+			return;
+		}
+
 		player.PlayerFinishesEvent += new OnPlayerFinishesHandler(OnPlayerFinishes);
 		backgroundGUI = GetComponent<GUITexture>();
 		backgroundGUI.enabled = false;
@@ -13,7 +20,14 @@ public class PlayerHUD : GUIItem
 		cam = CameraManager.Get().GetCamera(PlayerIndex);
 		if (cam == null)
 		{
-			throw new UnityException("No camera for player " + PlayerIndex + " HUD found!");
+			Debug.LogError("No camera for player " + PlayerIndex + " HUD found!");
+			return;
+		}
+		
+		guiRect = new Rect(cam.pixelRect);
+		if (PlayerManager.Get().GetPlayerCount() > 1)
+		{
+			guiRect.y = guiRect.height - guiRect.y;
 		}
 
 		base.Init();
@@ -30,6 +44,7 @@ public class PlayerHUD : GUIItem
 
 		playerPosition = cam.WorldToViewportPoint(player.GetCharacter().transform.position);
 		playerPosition.Scale(new Vector3(cam.pixelWidth, cam.pixelHeight, 1));
+		playerPosition.y = cam.pixelHeight-playerPosition.y;
 	}
 
 	void UpdateLiveBar()
@@ -44,22 +59,24 @@ public class PlayerHUD : GUIItem
 
 	void OnGUI()
 	{
-		GUI.BeginGroup(new Rect(
-			(cam.pixelRect.x) + Position.x + playerPosition.x, 
-			(cam.pixelRect.y) + Position.y + playerPosition.y, Size.x, Size.y));
-			GUI.DrawTexture(new Rect(
-				9,
-				112, 
-				LiveBar.width * livePercentage, 
-				LiveBar.height),
-			                LiveBar);
+		GUI.BeginGroup(guiRect);
+			GUI.BeginGroup(new Rect(
+				Position.x + playerPosition.x, 
+				Position.y + playerPosition.y, Size.x, Size.y));
+				GUI.DrawTexture(new Rect(
+					9,
+					112, 
+					LiveBar.width * livePercentage, 
+					LiveBar.height),
+				                LiveBar);
 
-			GUI.DrawTexture(new Rect(
-				0, 
-				0, 
-		        backgroundGUI.texture.width, 
-				backgroundGUI.texture.height), 
-			                backgroundGUI.texture);
+				GUI.DrawTexture(new Rect(
+					0, 
+					0, 
+			        backgroundGUI.texture.width, 
+					backgroundGUI.texture.height), 
+				                backgroundGUI.texture);
+			GUI.EndGroup();
 		GUI.EndGroup();
 	}
 
@@ -84,4 +101,6 @@ public class PlayerHUD : GUIItem
 	Vector3 playerPosition;
 
 	Camera cam;
+
+	Rect guiRect;
 }

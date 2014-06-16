@@ -43,7 +43,8 @@ public class Player
 	{
 		if (controller == null)
 		{
-			throw new UnityException("Player " + PlayerIndex + " has no valid controller!");
+			Debug.LogError("Player " + PlayerIndex + " has no valid controller!");
+			return null;
 		}
 		return controller;
 	}
